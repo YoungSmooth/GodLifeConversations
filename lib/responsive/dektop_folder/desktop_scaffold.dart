@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:god_life_conversations/responsive/dektop_folder/connect_header.dart';
 import 'package:god_life_conversations/responsive/dektop_folder/events.dart';
+import 'package:god_life_conversations/responsive/dektop_folder/footnote.dart';
 import 'package:god_life_conversations/responsive/dektop_folder/give.dart';
 import 'package:god_life_conversations/responsive/dektop_folder/header_and_background.dart';
 import 'package:god_life_conversations/responsive/dektop_folder/join_us.dart';
@@ -50,6 +51,7 @@ class _DesktopScaffoldState extends State<DesktopScaffold> {
               SizedBox(
                 height: 40,
               ),
+              FootNote(),
             ],
           ),
         ));
