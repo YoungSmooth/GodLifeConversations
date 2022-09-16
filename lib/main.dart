@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:god_life_conversations/responsive/dektop_folder/desktop_scaffold.dart';
+import 'package:god_life_conversations/responsive/dektop_folder/pages/desktop_home_page.dart';
 import 'package:god_life_conversations/responsive/mobile_folder/mobile_scaffold%20copy.dart';
 import 'package:god_life_conversations/responsive/responsive_layout.dart';
 import 'package:god_life_conversations/responsive/tablet_folder/tablet_scaffold.dart';
