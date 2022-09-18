@@ -1,7 +1,10 @@
+// ignore_for_file: depend_on_referenced_packages
+
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:god_life_conversations/responsive/dektop_folder/pages/desktop_connect_page.dart';
 import 'package:god_life_conversations/responsive/dektop_folder/pages/desktop_home_page.dart';
+
+import '../pages/desktop_messages_page.dart';
 
 class FootNote extends StatelessWidget {
   const FootNote({super.key});
@@ -67,12 +70,22 @@ class FootNote extends StatelessWidget {
                           ),
                         ),
                       ),
-                      const Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: Text(
-                          'MESSAGES',
-                          style: TextStyle(
-                              color: Colors.black, fontWeight: FontWeight.bold),
+                      InkWell(
+                        onTap: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => const DesktopMessagesPage(),
+                            ),
+                          );
+                        },
+                        child: const Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Text(
+                            'MESSAGES',
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold),
+                          ),
                         ),
                       ),
                       const Padding(
@@ -109,6 +122,15 @@ class FootNote extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: NeumorphicIcon(
+                            Icons.telegram,
+                            size: 25,
+                            style: const NeumorphicStyle(
+                                color: Colors.black, depth: 1, intensity: 0.99),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: NeumorphicIcon(
                             Icons.facebook,
                             size: 25,
                             style: const NeumorphicStyle(
@@ -119,15 +141,6 @@ class FootNote extends StatelessWidget {
                           padding: const EdgeInsets.all(8.0),
                           child: NeumorphicIcon(
                             Icons.whatsapp,
-                            size: 25,
-                            style: const NeumorphicStyle(
-                                color: Colors.black, depth: 1, intensity: 0.99),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: NeumorphicIcon(
-                            Icons.telegram,
                             size: 25,
                             style: const NeumorphicStyle(
                                 color: Colors.black, depth: 1, intensity: 0.99),
@@ -154,17 +167,27 @@ class FootNote extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [
-                        Text(
-                          'CONTACT US',
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, color: Colors.black),
-                        )
-                      ],
+                  InkWell(
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const DesktopConnectPage(),
+                        ),
+                      );
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: const [
+                          Text(
+                            'CONTACT US',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black),
+                          )
+                        ],
+                      ),
                     ),
                   ),
                   Padding(

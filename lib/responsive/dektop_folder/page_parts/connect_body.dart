@@ -1,4 +1,4 @@
-import 'dart:ui';
+// ignore_for_file: depend_on_referenced_packages
 
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 
@@ -50,7 +50,7 @@ class DesktopConnectBody extends StatelessWidget {
                         ),
                         Padding(
                           padding: const EdgeInsets.all(8.0),
-                          child: Container(
+                          child: SizedBox(
                             height: 90,
                             width: 190,
                             child: NeumorphicText(
@@ -58,7 +58,7 @@ class DesktopConnectBody extends StatelessWidget {
                               'Desire of All Nations Cathederal, 9 Effanga Offiong Street, Off Edibe Edibe Road, Southern Calabar',
                               textStyle: NeumorphicTextStyle(
                                   fontWeight: FontWeight.bold, fontSize: 13),
-                              style: NeumorphicStyle(
+                              style: const NeumorphicStyle(
                                 color: Colors.black,
                                 depth: 5,
                                 intensity: 0.99,
@@ -72,7 +72,7 @@ class DesktopConnectBody extends StatelessWidget {
                             'Our Location',
                             textStyle: NeumorphicTextStyle(
                                 fontWeight: FontWeight.bold, fontSize: 20),
-                            style: NeumorphicStyle(
+                            style: const NeumorphicStyle(
                               color: Colors.white,
                               depth: 5,
                               intensity: 0.99,
@@ -117,7 +117,7 @@ class DesktopConnectBody extends StatelessWidget {
                                 'Telegram',
                                 textStyle: NeumorphicTextStyle(
                                     fontWeight: FontWeight.bold, fontSize: 15),
-                                style: NeumorphicStyle(
+                                style: const NeumorphicStyle(
                                   color: Colors.white,
                                   depth: 5,
                                   intensity: 0.99,
@@ -156,7 +156,7 @@ class DesktopConnectBody extends StatelessWidget {
                                 'Facebook',
                                 textStyle: NeumorphicTextStyle(
                                     fontWeight: FontWeight.bold, fontSize: 15),
-                                style: NeumorphicStyle(
+                                style: const NeumorphicStyle(
                                   color: Colors.white,
                                   depth: 5,
                                   intensity: 0.99,
@@ -195,7 +195,7 @@ class DesktopConnectBody extends StatelessWidget {
                                 'WhatsApp',
                                 textStyle: NeumorphicTextStyle(
                                     fontWeight: FontWeight.bold, fontSize: 15),
-                                style: NeumorphicStyle(
+                                style: const NeumorphicStyle(
                                   color: Colors.white,
                                   depth: 5,
                                   intensity: 0.99,
@@ -234,7 +234,7 @@ class DesktopConnectBody extends StatelessWidget {
                                 'Email',
                                 textStyle: NeumorphicTextStyle(
                                     fontWeight: FontWeight.bold, fontSize: 15),
-                                style: NeumorphicStyle(
+                                style: const NeumorphicStyle(
                                   color: Colors.white,
                                   depth: 5,
                                   intensity: 0.99,
@@ -274,7 +274,7 @@ class DesktopConnectBody extends StatelessWidget {
                                 'Call',
                                 textStyle: NeumorphicTextStyle(
                                     fontWeight: FontWeight.bold, fontSize: 15),
-                                style: NeumorphicStyle(
+                                style: const NeumorphicStyle(
                                   color: Colors.white,
                                   depth: 5,
                                   intensity: 0.99,

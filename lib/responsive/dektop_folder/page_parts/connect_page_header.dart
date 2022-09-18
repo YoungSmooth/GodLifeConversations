@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+// ignore: depend_on_referenced_packages
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
-import 'package:god_life_conversations/responsive/dektop_folder/pages/desktop_connect_page.dart';
 
 import '../pages/desktop_home_page.dart';
 

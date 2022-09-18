@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:god_life_conversations/responsive/dektop_folder/pages/desktop_connect_page.dart';
+// ignore: depend_on_referenced_packages
+import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
+
+import '../pages/desktop_messages_page.dart';
 
 class HeaderBackground extends StatelessWidget {
   const HeaderBackground({super.key});
@@ -11,12 +15,41 @@ class HeaderBackground extends StatelessWidget {
         SizedBox(
           height: 700,
           width: double.infinity,
-          child:
-              //
+          child: ImageSlideshow(
+            width: double.infinity,
+            height: 700,
+            indicatorBackgroundColor: Colors.black,
+            indicatorColor: Colors.white,
+            autoPlayInterval: 5000,
+            isLoop: true,
+            children: [
               Image.asset(
-            'lib/assets/wb1.jpg',
-            fit: BoxFit.cover,
+                'lib/assets/wb1.jpg',
+                fit: BoxFit.cover,
+              ),
+              Image.asset(
+                'lib/assets/wb2.jpg',
+                fit: BoxFit.cover,
+              ),
+              Image.asset(
+                'lib/assets/wb3.jpg',
+                fit: BoxFit.cover,
+              ),
+              Image.asset(
+                'lib/assets/wb4.jpg',
+                fit: BoxFit.cover,
+              ),
+              Image.asset(
+                'lib/assets/wb5.jpg',
+                fit: BoxFit.cover,
+              ),
+            ],
           ),
+          //
+          //     Image.asset(
+          //   'lib/assets/wb1.jpg',
+          //   fit: BoxFit.cover,
+          // ),
 
           //     Image.network(
           //   'https://images.unsplash.com/photo-1549138144-42ff3cdd2bf8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1452&q=80',
@@ -30,7 +63,7 @@ class HeaderBackground extends StatelessWidget {
               height: 60,
               decoration:
                   BoxDecoration(borderRadius: BorderRadius.circular(30)),
-              child: Image.asset('lib/assets/logoblack.png'),
+              child: Image.asset('lib/assets/logowhite.png'),
             ),
           ),
         ),
@@ -72,6 +105,13 @@ class HeaderBackground extends StatelessWidget {
                   ),
                 ),
                 InkWell(
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => const DesktopMessagesPage(),
+                      ),
+                    );
+                  },
                   child: Container(
                     decoration: BoxDecoration(
                       color: Colors.black.withOpacity(0.3),
