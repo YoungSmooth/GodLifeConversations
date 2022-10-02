@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:god_life_conversations/responsive/dektop_folder/page_parts/footnote.dart';
+import 'package:god_life_conversations/responsive/dektop_folder/constant_parts/footnote.dart';
 
-import '../page_parts/message_page_header.dart';
-import '../page_parts/messages_page_body.dart';
+import '../page_parts/messages_page_parts/message_page_header.dart';
+import '../page_parts/messages_page_parts/messages_page_body.dart';
 
 class DesktopMessagesPage extends StatefulWidget {
   const DesktopMessagesPage({super.key});

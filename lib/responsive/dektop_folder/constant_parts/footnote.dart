@@ -3,8 +3,8 @@
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:god_life_conversations/responsive/dektop_folder/pages/desktop_connect_page.dart';
 import 'package:god_life_conversations/responsive/dektop_folder/pages/desktop_home_page.dart';
-
 import '../pages/desktop_messages_page.dart';
+import '../pages/desktop_serve_page.dart';
 
 class FootNote extends StatelessWidget {
   const FootNote({super.key});
@@ -88,12 +88,22 @@ class FootNote extends StatelessWidget {
                           ),
                         ),
                       ),
-                      const Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: Text(
-                          'SERVE',
-                          style: TextStyle(
-                              color: Colors.black, fontWeight: FontWeight.bold),
+                      InkWell(
+                        onTap: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => const DesktopServePage(),
+                            ),
+                          );
+                        },
+                        child: const Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Text(
+                            'SERVE',
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold),
+                          ),
                         ),
                       ),
                       const Padding(
@@ -108,6 +118,14 @@ class FootNote extends StatelessWidget {
                         padding: EdgeInsets.all(8.0),
                         child: Text(
                           'GIVE',
+                          style: TextStyle(
+                              color: Colors.black, fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      const Padding(
+                        padding: EdgeInsets.all(8.0),
+                        child: Text(
+                          'ABOUT',
                           style: TextStyle(
                               color: Colors.black, fontWeight: FontWeight.bold),
                         ),

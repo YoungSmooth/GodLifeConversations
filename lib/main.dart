@@ -19,7 +19,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(textTheme: GoogleFonts.montserratTextTheme()),
+      theme: ThemeData(
+        textTheme: GoogleFonts.montserratTextTheme(),
+      ),
       debugShowCheckedModeBanner: false,
       home: const ResponsiveLayout(
         mobileScaffold: MobileScaffold2(),

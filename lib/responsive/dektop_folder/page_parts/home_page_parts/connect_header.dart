@@ -1,7 +1,7 @@
 // ignore: depend_on_referenced_packages
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 
-import '../pages/desktop_connect_page.dart';
+import '../../pages/desktop_connect_page.dart';
 
 class SecondHeaderBackground extends StatelessWidget {
   const SecondHeaderBackground({super.key});

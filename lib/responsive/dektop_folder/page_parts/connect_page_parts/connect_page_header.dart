@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 // ignore: depend_on_referenced_packages
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 
-import '../pages/desktop_home_page.dart';
+import '../../pages/desktop_home_page.dart';
 
 class ConnectPageHeader extends StatelessWidget {
   const ConnectPageHeader({super.key});

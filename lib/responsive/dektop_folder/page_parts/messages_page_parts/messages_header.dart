@@ -2,7 +2,7 @@
 
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 
-import '../pages/desktop_messages_page.dart';
+import '../../pages/desktop_messages_page.dart';
 
 class MessagesHeader extends StatelessWidget {
   const MessagesHeader({super.key});

@@ -2,6 +2,8 @@
 
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 
+import '../../pages/desktop_serve_page.dart';
+
 class ServeHeader extends StatelessWidget {
   const ServeHeader({super.key});
 
@@ -23,6 +25,13 @@ class ServeHeader extends StatelessWidget {
             child: Column(
               children: [
                 InkWell(
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => const DesktopServePage(),
+                      ),
+                    );
+                  },
                   child: Padding(
                     padding: const EdgeInsets.only(top: 250),
                     child: Container(

@@ -1,12 +1,11 @@
 // ignore_for_file: depend_on_referenced_packages
 
-import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 
-import '../pages/desktop_home_page.dart';
+import '../../pages/desktop_home_page.dart';
 
-class MessagesPageHeader extends StatelessWidget {
-  const MessagesPageHeader({super.key});
+class GivePageHeader extends StatelessWidget {
+  const GivePageHeader({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +15,7 @@ class MessagesPageHeader extends StatelessWidget {
           height: 350,
           width: double.infinity,
           child: Image.network(
-            'https://images.unsplash.com/photo-1537495329792-41ae41ad3bf0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjR8fGJvb2tzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60',
+            'https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTF8fGhlbHAlMjBwZW9wbGV8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60',
             fit: BoxFit.cover,
             width: double.infinity,
           ),
@@ -60,7 +59,7 @@ class MessagesPageHeader extends StatelessWidget {
                       padding: EdgeInsets.all(10),
                       child: Center(
                         child: Text(
-                          'M E S S A G E S',
+                          'S E R V E',
                           style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.w500,

@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:god_life_conversations/responsive/dektop_folder/pages/desktop_connect_page.dart';
 // ignore: depend_on_referenced_packages
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
-
-import '../pages/desktop_messages_page.dart';
+// ignore: depend_on_referenced_packages
+import 'package:blur/blur.dart';
+import '../../pages/desktop_messages_page.dart';
+import '../../pages/desktop_serve_page.dart';
 
 class HeaderBackground extends StatelessWidget {
   const HeaderBackground({super.key});
@@ -134,6 +136,13 @@ class HeaderBackground extends StatelessWidget {
                   ),
                 ),
                 InkWell(
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => const DesktopServePage(),
+                      ),
+                    );
+                  },
                   child: Container(
                     decoration: BoxDecoration(
                       color: Colors.black.withOpacity(0.3),
@@ -210,9 +219,9 @@ class HeaderBackground extends StatelessWidget {
               padding: const EdgeInsets.only(top: 200),
               child: Column(
                 children: [
-                  const Padding(
-                    padding: EdgeInsets.all(10),
-                    child: SizedBox(
+                  Padding(
+                    padding: const EdgeInsets.all(10),
+                    child: const SizedBox(
                       height: 200,
                       width: 450,
                       child: Text(
@@ -224,6 +233,10 @@ class HeaderBackground extends StatelessWidget {
                           fontSize: 50,
                         ),
                       ),
+                    ).frosted(
+                      blur: 1,
+                      borderRadius: BorderRadius.circular(10),
+                      padding: const EdgeInsets.all(8),
                     ),
                   ),
                   InkWell(

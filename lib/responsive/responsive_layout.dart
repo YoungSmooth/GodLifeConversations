@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:god_life_conversations/responsive/dektop_folder/pages/test.dart';
 
 class ResponsiveLayout extends StatelessWidget {
   final Widget mobileScaffold;
@@ -16,7 +17,9 @@ class ResponsiveLayout extends StatelessWidget {
     return LayoutBuilder(
       builder: (context, constraints) {
         if (constraints.maxWidth < 500) {
-          return mobileScaffold;
+          return const TestPage();
+
+          // mobileScaffold;
         } else if (constraints.maxWidth < 1000) {
           return tabletScaffold;
         } else {
