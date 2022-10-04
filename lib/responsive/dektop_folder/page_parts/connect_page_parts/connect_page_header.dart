@@ -32,8 +32,11 @@ class ConnectPageHeader extends StatelessWidget {
               padding: const EdgeInsets.only(left: 20, top: 20),
               child: Container(
                 height: 60,
-                decoration:
-                    BoxDecoration(borderRadius: BorderRadius.circular(30)),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15),
+                  color: Colors.black,
+                  border: Border.all(color: Colors.white, width: 2),
+                ),
                 child: Image.asset('lib/assets/logowhite.png'),
               ),
             ),
@@ -45,7 +48,7 @@ class ConnectPageHeader extends StatelessWidget {
             child: Column(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(top: 250),
+                  padding: const EdgeInsets.only(top: 130),
                   child: Container(
                     height: 70,
                     width: 250,

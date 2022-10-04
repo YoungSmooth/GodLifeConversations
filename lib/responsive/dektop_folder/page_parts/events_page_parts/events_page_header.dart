@@ -15,7 +15,7 @@ class EventsPageHeader extends StatelessWidget {
           height: 350,
           width: double.infinity,
           child: Image.network(
-            'https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTF8fGhlbHAlMjBwZW9wbGV8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60',
+            'https://images.unsplash.com/photo-1563436798278-f2a5694a5050?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzV8fHJlZCUyMHJvc2VzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60',
             fit: BoxFit.cover,
             width: double.infinity,
           ),
@@ -33,8 +33,11 @@ class EventsPageHeader extends StatelessWidget {
               padding: const EdgeInsets.only(left: 20, top: 20),
               child: Container(
                 height: 60,
-                decoration:
-                    BoxDecoration(borderRadius: BorderRadius.circular(30)),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15),
+                  color: Colors.black,
+                  border: Border.all(color: Colors.white, width: 2),
+                ),
                 child: Image.asset('lib/assets/logowhite.png'),
               ),
             ),
@@ -46,7 +49,7 @@ class EventsPageHeader extends StatelessWidget {
             child: Column(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(top: 250),
+                  padding: const EdgeInsets.only(top: 130),
                   child: Container(
                     height: 70,
                     width: 250,
@@ -59,7 +62,7 @@ class EventsPageHeader extends StatelessWidget {
                       padding: EdgeInsets.all(10),
                       child: Center(
                         child: Text(
-                          'S E R V E',
+                          'E V E N T S',
                           style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.w500,

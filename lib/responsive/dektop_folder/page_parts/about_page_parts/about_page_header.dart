@@ -14,8 +14,8 @@ class AboutPageHeader extends StatelessWidget {
         SizedBox(
           height: 350,
           width: double.infinity,
-          child: Image.network(
-            'https://allnbc.com/wp-content/uploads/2020/11/all-nations-137.jpg',
+          child: Image.asset(
+            'lib/assets/wb5.jpg',
             fit: BoxFit.cover,
           ),
         ),
@@ -32,8 +32,11 @@ class AboutPageHeader extends StatelessWidget {
               padding: const EdgeInsets.only(left: 20, top: 20),
               child: Container(
                 height: 60,
-                decoration:
-                    BoxDecoration(borderRadius: BorderRadius.circular(30)),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15),
+                  color: Colors.black,
+                  border: Border.all(color: Colors.white, width: 2),
+                ),
                 child: Image.asset('lib/assets/logowhite.png'),
               ),
             ),
@@ -45,7 +48,7 @@ class AboutPageHeader extends StatelessWidget {
             child: Column(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(top: 250),
+                  padding: const EdgeInsets.only(top: 130),
                   child: Container(
                     height: 70,
                     width: 250,
@@ -58,7 +61,7 @@ class AboutPageHeader extends StatelessWidget {
                       padding: EdgeInsets.all(10),
                       child: Center(
                         child: Text(
-                          'C O N N E C T',
+                          'A B O U T',
                           style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.w500,

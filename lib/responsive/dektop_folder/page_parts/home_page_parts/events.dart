@@ -2,6 +2,8 @@
 
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 
+import '../../pages/desktop_events_page.dart';
+
 class Events extends StatelessWidget {
   const Events({super.key});
 
@@ -18,19 +20,28 @@ class Events extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               // crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Padding(
-                  padding: const EdgeInsets.all(1),
-                  child: NeumorphicText(
-                    'EVENTS',
-                    style: const NeumorphicStyle(
-                        shadowDarkColor: Colors.grey,
-                        color: Colors.black,
-                        border:
-                            NeumorphicBorder(color: Colors.white, width: 0.8),
-                        depth: 2,
-                        intensity: 0.95),
-                    textStyle: NeumorphicTextStyle(
-                        fontSize: 40, fontWeight: FontWeight.bold),
+                InkWell(
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => const DesktopEventsPage(),
+                      ),
+                    );
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.all(1),
+                    child: NeumorphicText(
+                      'EVENTS',
+                      style: const NeumorphicStyle(
+                          shadowDarkColor: Colors.grey,
+                          color: Colors.black,
+                          border:
+                              NeumorphicBorder(color: Colors.white, width: 0.8),
+                          depth: 2,
+                          intensity: 0.95),
+                      textStyle: NeumorphicTextStyle(
+                          fontSize: 40, fontWeight: FontWeight.bold),
+                    ),
                   ),
                 ),
                 const Padding(

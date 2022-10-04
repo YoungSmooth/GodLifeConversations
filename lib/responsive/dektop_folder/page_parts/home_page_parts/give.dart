@@ -2,6 +2,8 @@
 
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 
+import '../../pages/desktop_give_page.dart';
+
 class GiveHeader extends StatelessWidget {
   const GiveHeader({super.key});
 
@@ -23,6 +25,13 @@ class GiveHeader extends StatelessWidget {
             child: Column(
               children: [
                 InkWell(
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => const DesktopGivePage(),
+                      ),
+                    );
+                  },
                   child: Padding(
                     padding: const EdgeInsets.only(top: 250),
                     child: Container(

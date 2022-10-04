@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:god_life_conversations/responsive/dektop_folder/constant_parts/footnote.dart';
-import '../page_parts/serve_page_parts/serve_page_header.dart';
+import '../page_parts/give_page_parts/give_body.dart';
+import '../page_parts/give_page_parts/give_page_header.dart';
 
 class DesktopGivePage extends StatefulWidget {
   const DesktopGivePage({super.key});
@@ -17,11 +18,14 @@ class _DesktopGivePageState extends State<DesktopGivePage> {
         body: SingleChildScrollView(
           child: Column(
             children: const [
-              ServePageHeader(),
+              GivePageHeader(),
               SizedBox(
                 height: 40,
               ),
-              // AudioSlides(),
+              GiveBody(),
+              SizedBox(
+                height: 40,
+              ),
               FootNote(),
             ],
           ),

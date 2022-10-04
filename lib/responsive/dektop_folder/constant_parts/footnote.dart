@@ -3,6 +3,9 @@
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:god_life_conversations/responsive/dektop_folder/pages/desktop_connect_page.dart';
 import 'package:god_life_conversations/responsive/dektop_folder/pages/desktop_home_page.dart';
+import '../pages/desktop_about_page.dart';
+import '../pages/desktop_events_page.dart';
+import '../pages/desktop_give_page.dart';
 import '../pages/desktop_messages_page.dart';
 import '../pages/desktop_serve_page.dart';
 
@@ -106,28 +109,58 @@ class FootNote extends StatelessWidget {
                           ),
                         ),
                       ),
-                      const Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: Text(
-                          'EVENTS',
-                          style: TextStyle(
-                              color: Colors.black, fontWeight: FontWeight.bold),
+                      InkWell(
+                        onTap: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => const DesktopEventsPage(),
+                            ),
+                          );
+                        },
+                        child: const Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Text(
+                            'EVENTS',
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold),
+                          ),
                         ),
                       ),
-                      const Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: Text(
-                          'GIVE',
-                          style: TextStyle(
-                              color: Colors.black, fontWeight: FontWeight.bold),
+                      InkWell(
+                        onTap: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => const DesktopGivePage(),
+                            ),
+                          );
+                        },
+                        child: const Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Text(
+                            'GIVE',
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold),
+                          ),
                         ),
                       ),
-                      const Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: Text(
-                          'ABOUT',
-                          style: TextStyle(
-                              color: Colors.black, fontWeight: FontWeight.bold),
+                      InkWell(
+                        onTap: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => const DesktopAboutPage(),
+                            ),
+                          );
+                        },
+                        child: const Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Text(
+                            'ABOUT',
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold),
+                          ),
                         ),
                       ),
                     ],
