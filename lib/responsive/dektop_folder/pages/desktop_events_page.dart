@@ -21,7 +21,6 @@ class _DesktopEventsPageState extends State<DesktopEventsPage> {
               SizedBox(
                 height: 40,
               ),
-              // AudioSlides(),
               FootNote(),
             ],
           ),

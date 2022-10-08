@@ -1,6 +1,9 @@
 // ignore_for_file: depend_on_referenced_packages
 
+import 'dart:ui';
+
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
+import 'package:animated_text_kit/animated_text_kit.dart';
 
 class JoinUs extends StatelessWidget {
   const JoinUs({super.key});
@@ -33,11 +36,33 @@ class JoinUs extends StatelessWidget {
                         fontSize: 40, fontWeight: FontWeight.bold),
                   ),
                 ),
-                const Padding(
-                  padding: EdgeInsets.all(24),
-                  child: Text(
-                    'Every service is designed for your spiritual, mental and emotional growth. Join us onsite or online as we grow in Gods presence this Sunday by 4:00 P.M (WAT)',
+                Padding(
+                  padding: const EdgeInsets.all(24),
+                  child: RichText(
                     textAlign: TextAlign.center,
+                    selectionColor: Colors.black,
+                    text: TextSpan(
+                      children: [
+                        TextSpan(
+                          text: 'Every service is designed for your ',
+                          style: TextStyle(
+                              color: Colors.grey.shade600, fontSize: 15),
+                        ),
+                        TextSpan(
+                          text: 'spiritual, mental and emotional growth. ',
+                          style: TextStyle(
+                              color: Colors.grey.shade600,
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        TextSpan(
+                          text:
+                              'Join us onsite or online as we grow in Gods presence this Sunday by 4:00 P.M (WAT)',
+                          style: TextStyle(
+                              color: Colors.grey.shade600, fontSize: 15),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 Row(
