@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:blur/blur.dart';
 
+import 'package:flutter_neumorphic/flutter_neumorphic.dart';
+
 class ServeBody extends StatelessWidget {
   const ServeBody({super.key});
 
@@ -342,6 +344,7 @@ class ServeBody extends StatelessWidget {
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Stack(
               children: <Widget>[
@@ -381,7 +384,7 @@ class ServeBody extends StatelessWidget {
                           Padding(
                             padding: EdgeInsets.only(left: 20, right: 20),
                             child: Text(
-                              'Handle prayer meetings.',
+                              'Responsible for Handling prayer meetings.',
                               style: TextStyle(fontSize: 12),
                             ),
                           ),
