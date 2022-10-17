@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:god_life_conversations/constants.dart';
-import 'package:god_life_conversations/responsive/mobile_folder/homePage_inspirations.dart';
+import 'package:god_life_conversations/responsive/mobile_folder/homePage_tabs/homePage_inspirations.dart';
 import 'package:god_life_conversations/utilities.dart/my_box.dart';
 import 'package:god_life_conversations/utilities.dart/my_tile.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
-import 'homePage_messagess.dart';
+import 'components/glass_Box.dart';
+import 'components/my_bottomBar.dart';
+import 'homePage_tabs/message.dart';
+import 'homePage_tabs/messageStyle.dart';
+import 'package:blur/blur.dart';
 
 class MobileScaffold extends StatefulWidget {
   const MobileScaffold({super.key});
@@ -14,11 +18,27 @@ class MobileScaffold extends StatefulWidget {
 }
 
 class _MobileScaffoldState extends State<MobileScaffold> {
+  // bottom bar navigation
+  int _currentBottomIndex = 0;
+  void _bottomIndexChange(int? index) {
+    setState(() {
+      _currentBottomIndex = index!;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.grey.shade200,
-        body: SafeArea(
+      extendBody: true,
+      backgroundColor: Colors.grey.shade200,
+      bottomNavigationBar: GlassBox(
+        child: BottomBar(
+          index: _currentBottomIndex,
+          onTap: _bottomIndexChange,
+        ),
+      ),
+      body: SafeArea(
+        child: SingleChildScrollView(
           child: Column(
             children: [
               SizedBox(
@@ -47,12 +67,14 @@ class _MobileScaffoldState extends State<MobileScaffold> {
                   ],
                 ),
               ),
-              Container(
+              SizedBox(
                 // color: Colors.blueGrey,
                 height: 540,
                 child: DefaultTabController(
-                    length: 2,
-                    child: Column(
+                  length: 2,
+                  child: Scaffold(
+                    extendBody: true,
+                    body: Column(
                       children: const [
                         TabBar(
                           labelColor: Colors.black,
@@ -69,15 +91,19 @@ class _MobileScaffoldState extends State<MobileScaffold> {
                           child: TabBarView(
                             children: [
                               HomePageInspirations(),
-                              HomePageMessages(),
+                              Messages(),
                             ],
                           ),
                         )
                       ],
-                    )),
+                    ),
+                  ),
+                ),
               ),
             ],
           ),
-        ));
+        ),
+      ),
+    );
   }
 }
