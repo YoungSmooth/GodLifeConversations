@@ -34,7 +34,7 @@ class MessageStyle extends StatelessWidget {
                 ),
               ),
               Positioned(
-                  top: 10,
+                  top: 0,
                   right: 14,
                   child: Container(
                     decoration: BoxDecoration(
@@ -65,9 +65,25 @@ class MessageStyle extends StatelessWidget {
                       children: [
                         Column(
                           children: [
-                            Text(
-                              messageTitle,
-                              style: TextStyle(color: Colors.white),
+                            Padding(
+                              padding: const EdgeInsets.only(top: 3, left: 10),
+                              child: Row(
+                                children: [
+                                  Container(
+                                    height: 13,
+                                    width: 13,
+                                    child:
+                                        Image.asset('lib/assets/songname.png'),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 8),
+                                    child: Text(
+                                      messageTitle,
+                                      style: TextStyle(color: Colors.white),
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
                             Text(
                               messageOwner,

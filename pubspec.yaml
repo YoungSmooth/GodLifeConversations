@@ -51,6 +51,7 @@ dev_dependencies:
   animated_text_kit:
   list_timeline:
   intl:
+  curved_navigation_bar:
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is

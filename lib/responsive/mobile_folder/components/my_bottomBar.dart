@@ -18,19 +18,24 @@ class BottomBar extends StatelessWidget {
         onTap: onTap,
         selectedItemColor: Colors.purple,
         backgroundColor: Colors.transparent,
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
+        iconSize: 30,
+        showSelectedLabels: true,
+        showUnselectedLabels: true,
         elevation: 0,
         type: BottomNavigationBarType.fixed,
         items: const [
           BottomNavigationBarItem(
-              icon: Icon(Icons.home_outlined), label: 'Serve'),
+            icon: Icon(Icons.home_outlined),
+            label: 'Home',
+          ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.home_outlined), label: 'Event'),
+              icon: Icon(Icons.event_available_outlined), label: 'Events'),
           BottomNavigationBarItem(
-              icon: Icon(Icons.home_outlined), label: 'Give'),
+              icon: Icon(Icons.assistant_direction_outlined), label: 'Serve'),
           BottomNavigationBarItem(
-              icon: Icon(Icons.home_outlined), label: 'About'),
+              icon: Icon(Icons.attach_money_outlined), label: 'Give'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.info_outline), label: 'About'),
         ]);
   }
 }

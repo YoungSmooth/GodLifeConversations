@@ -319,53 +319,12 @@ class HeaderBackground extends StatelessWidget {
                         ],
                         isRepeatingAnimation: true,
                       ),
-
-                      // Text(
-                      //   'WELCOME TO GODLIFE CONVERSATIONS',
-                      //   textAlign: TextAlign.center,
-                      //   style: TextStyle(
-                      //     color: Colors.black38,
-                      //     fontWeight: FontWeight.w900,
-                      //     fontSize: 50,
-                      //   ),
-                      // ),
                     ).frosted(
                       blur: 1,
                       borderRadius: BorderRadius.circular(10),
                       padding: const EdgeInsets.all(8),
                     ),
                   ),
-                  // InkWell(
-                  //   onTap: () {
-                  //     Navigator.of(context).push(
-                  //       MaterialPageRoute(
-                  //         builder: (context) => const DesktopConnectPage(),
-                  //       ),
-                  //     );
-                  //   },
-                  //   child: Padding(
-                  //     padding: const EdgeInsets.only(top: 30),
-                  //     child: Container(
-                  //       height: 50,
-                  //       width: 210,
-                  //       decoration: BoxDecoration(
-                  //         color: Colors.black.withOpacity(0.3),
-                  //         border: Border.all(color: Colors.black, width: 1.2),
-                  //         borderRadius: BorderRadius.circular(30),
-                  //       ),
-                  //       child: const Center(
-                  //         child: Text(
-                  //           'I  A M  N E W',
-                  //           style: TextStyle(
-                  //             color: Colors.white,
-                  //             fontWeight: FontWeight.w500,
-                  //             fontSize: 30,
-                  //           ),
-                  //         ),
-                  //       ),
-                  //     ),
-                  //   ),
-                  // ),
                 ],
               ),
             ),

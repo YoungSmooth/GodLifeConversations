@@ -10,9 +10,9 @@ class GlassBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
-      borderRadius: BorderRadius.circular(10),
+      borderRadius: BorderRadius.circular(30),
       child: Container(
-        height: 60,
+        height: 80,
         padding: const EdgeInsets.all(2),
         child: BackdropFilter(
           filter: ImageFilter.blur(
