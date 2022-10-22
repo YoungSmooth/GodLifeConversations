@@ -49,7 +49,7 @@ class JoinUs extends StatelessWidget {
                               color: Colors.grey.shade600, fontSize: 15),
                         ),
                         TextSpan(
-                          text: 'spiritual, mental and emotional growth. ',
+                          text: 'spiritual, mental and emotional growth 🤗. ',
                           style: TextStyle(
                               color: Colors.grey.shade600,
                               fontSize: 14,
