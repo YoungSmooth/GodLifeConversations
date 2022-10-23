@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:god_life_conversations/responsive/dektop_folder/pages/test.dart';
 
 class ResponsiveLayout extends StatelessWidget {
   final Widget mobileScaffold;

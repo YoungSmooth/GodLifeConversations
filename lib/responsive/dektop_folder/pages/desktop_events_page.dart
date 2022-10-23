@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:god_life_conversations/responsive/dektop_folder/constant_parts/footnote.dart';
-import '../page_parts/events_page_parts/event_test.dart';
 import '../page_parts/events_page_parts/events_body.dart';
 import '../page_parts/events_page_parts/events_page_header.dart';
 

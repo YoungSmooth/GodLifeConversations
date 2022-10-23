@@ -1,8 +1,8 @@
+// ignore_for_file: depend_on_referenced_packages
+
 import 'package:flutter/material.dart';
 import 'package:god_life_conversations/responsive/dektop_folder/pages/desktop_connect_page.dart';
-// ignore: depend_on_referenced_packages
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
-// ignore: depend_on_referenced_packages
 import 'package:blur/blur.dart';
 import '../../constant_parts/constants.dart';
 import '../../pages/desktop_about_page.dart';
@@ -10,7 +10,6 @@ import '../../pages/desktop_events_page.dart';
 import '../../pages/desktop_give_page.dart';
 import '../../pages/desktop_messages_page.dart';
 import '../../pages/desktop_serve_page.dart';
-// ignore: depend_on_referenced_packages
 import 'package:hovering/hovering.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 

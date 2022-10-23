@@ -1,9 +1,7 @@
-// ignore_for_file: depend_on_referenced_packages
+// ignore_for_file: depend_on_referenced_packages, deprecated_member_use
 
-import 'dart:ui';
-
+import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
-import 'package:animated_text_kit/animated_text_kit.dart';
 
 class JoinUs extends StatelessWidget {
   const JoinUs({super.key});
@@ -124,15 +122,18 @@ class JoinUs extends StatelessWidget {
                                 fontWeight: FontWeight.bold),
                           ),
                         ),
-                        Container(
-                          color: Colors.white,
-                          height: 100,
-                          width: 100,
-                          child: Text(
-                            'bit.ly/33P2993',
-                            style: TextStyle(
-                                fontWeight: FontWeight.w400,
-                                color: Colors.grey.shade600),
+                        InkWell(
+                          onTap: openTelegram,
+                          child: Container(
+                            color: Colors.white,
+                            height: 100,
+                            width: 100,
+                            child: const Text(
+                              'bit.ly/33P2993',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w400,
+                                  color: Colors.blueAccent),
+                            ),
                           ),
                         ),
                         NeumorphicIcon(
@@ -159,5 +160,17 @@ class JoinUs extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  Future openTelegram() async {
+    const url = 'https://telegram.com';
+    if (await canLaunch(url)) {
+      await launch(
+        url,
+        forceSafariVC: false,
+        forceWebView: false,
+        enableJavaScript: false,
+      );
+    }
   }
 }

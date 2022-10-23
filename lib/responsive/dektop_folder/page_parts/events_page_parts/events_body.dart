@@ -1,9 +1,7 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
+// ignore_for_file: public_member_api_docs, sort_constructors_first, depend_on_referenced_packages
 // ignore_for_file: empty_constructor_bodies
-import 'package:intl/intl.dart';
 import 'package:flutter/material.dart';
 import 'package:list_timeline/custom_list_tracking.dart';
-import 'package:timelines/timelines.dart';
 
 class EventsBody extends StatefulWidget {
   const EventsBody({super.key});

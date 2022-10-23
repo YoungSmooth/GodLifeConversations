@@ -4,8 +4,6 @@ import 'components/glass_Box.dart';
 import 'components/my_bottomBar.dart';
 import 'homePage_tabs/mobileHome.dart';
 
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
-
 class MobileScaffold extends StatefulWidget {
   const MobileScaffold({super.key});
 

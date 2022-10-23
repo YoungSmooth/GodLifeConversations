@@ -1,4 +1,5 @@
-// ignore_for_file: depend_on_referenced_packages
+// ignore_for_file: depend_on_referenced_packages, unused_local_variable
+import 'package:url_launcher/url_launcher.dart';
 
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 
@@ -52,14 +53,22 @@ class MessagesHeader extends StatelessWidget {
                   ),
                   Padding(
                     padding: const EdgeInsets.all(24),
-                    child: Text(
+                    child: RichText(
                       textAlign: TextAlign.center,
-                      'Engage the GodLife that is in you, through these collection of messages designed to give you answers to your questions and prayers',
-                      style: TextStyle(
-                          fontWeight: FontWeight.w400,
-                          fontSize: 15,
-                          color: Colors.grey.shade600,
-                          backgroundColor: Colors.white),
+                      selectionColor: Colors.black,
+                      text: TextSpan(
+                        children: [
+                          TextSpan(
+                            text:
+                                'Engage the GodLife that is in you, through these collection of messages designed to give you answers to your questions and prayers.',
+                            style: TextStyle(
+                                color: Colors.grey.shade600,
+                                fontSize: 14,
+                                fontWeight: FontWeight.w400,
+                                backgroundColor: Colors.white),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                   NeumorphicIcon(
@@ -75,5 +84,24 @@ class MessagesHeader extends StatelessWidget {
         ],
       ),
     );
+  }
+}
+
+Future launchEmail() async {
+  String recipient = 'chukwuonyekachi@gmail.com';
+  String subject = 'I would like to join GLC';
+  String body = 'I will love to join GLC.';
+
+  final Uri email = Uri(
+    scheme: 'mailto',
+    path: recipient,
+    query: 'subject='
+        '${Uri.encodeComponent(subject)}&body=${Uri.encodeComponent(body)}',
+  );
+
+  if (await canLaunchUrl(email)) {
+    await launchUrl(email);
+  } else {
+    String text = 'Cannot send email';
   }
 }
