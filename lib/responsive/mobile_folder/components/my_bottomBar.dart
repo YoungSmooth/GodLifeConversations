@@ -1,5 +1,5 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter/material.dart';
 
 class BottomBar extends StatelessWidget {
@@ -25,7 +25,9 @@ class BottomBar extends StatelessWidget {
         type: BottomNavigationBarType.fixed,
         items: const [
           BottomNavigationBarItem(
+            // FaIcon(FontAwesomeIcons.houseUser ),
             icon: Icon(Icons.home_outlined),
+            activeIcon: Icon(Icons.home),
             label: 'Home',
           ),
           BottomNavigationBarItem(
@@ -35,7 +37,7 @@ class BottomBar extends StatelessWidget {
           BottomNavigationBarItem(
               icon: Icon(Icons.attach_money_outlined), label: 'Give'),
           BottomNavigationBarItem(
-              icon: Icon(Icons.info_outline), label: 'About'),
+              icon: Icon(Icons.info_outline), label: 'Connect'),
         ]);
   }
 }

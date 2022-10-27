@@ -3,6 +3,8 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:god_life_conversations/responsive/dektop_folder/page_parts/home_page_parts/messages_header.dart';
 
+import '../../constant_parts/constants.dart';
+
 class DesktopConnectBody extends StatelessWidget {
   const DesktopConnectBody({super.key});
 
@@ -20,11 +22,8 @@ class DesktopConnectBody extends StatelessWidget {
                 Expanded(
                   child: Center(
                     child: Padding(
-                      padding: EdgeInsets.only(left: 100, right: 100),
-                      child: Text(
-                          textAlign: TextAlign.center,
-                          'We would love to connect with you. We have been praying for you and would love to grow with you. You can visit our location, connect with us via our social media platforms or contact us directly with the information below.'),
-                    ),
+                        padding: EdgeInsets.only(left: 100, right: 100),
+                        child: connectMessage),
                   ),
                 )
               ],
@@ -329,7 +328,7 @@ class DesktopConnectBody extends StatelessWidget {
   }
 
   Future openWhatsapp() async {
-    const url = 'https://whatsapp.com';
+    const url = 'https://chat.whatsapp.com/LNbsEodyYmaBuMMsdbPcBb';
     if (await canLaunch(url)) {
       await launch(
         url,
@@ -353,7 +352,7 @@ class DesktopConnectBody extends StatelessWidget {
   }
 
   Future openTelegram() async {
-    const url = 'https://telegram.com';
+    const url = 'https:bit.ly/33P2993';
     if (await canLaunch(url)) {
       await launch(
         url,
@@ -362,5 +361,24 @@ class DesktopConnectBody extends StatelessWidget {
         enableJavaScript: false,
       );
     }
+  }
+}
+
+Future launchEmail() async {
+  String recipient = 'chukwuonyekachi@gmail.com';
+  String subject = 'I would like to join GLC';
+  String body = 'I will love to join GLC.';
+
+  final Uri email = Uri(
+    scheme: 'mailto',
+    path: recipient,
+    query: 'subject='
+        '${Uri.encodeComponent(subject)}&body=${Uri.encodeComponent(body)}',
+  );
+
+  if (await canLaunchUrl(email)) {
+    await launchUrl(email);
+  } else {
+    String text = 'Cannot send email';
   }
 }

@@ -56,24 +56,26 @@ class MobileHomePage extends StatelessWidget {
                             padding: const EdgeInsets.all(5),
                             child: SizedBox(
                               height: 17,
-                              width: 320,
-                              child: AnimatedTextKit(
-                                totalRepeatCount: 500,
-                                animatedTexts: [
-                                  ColorizeAnimatedText(
-                                    'WELCOME TO GODLIFE CONVERSATIONS',
-                                    textStyle: colorizeTextStyleMobile,
-                                    colors: colorizeColors,
-                                    textDirection: TextDirection.ltr,
-                                  ),
-                                  ColorizeAnimatedText(
-                                    'WELCOME TO GODLIFE CONVERSATIONS',
-                                    textStyle: colorizeTextStyleMobile,
-                                    colors: colorizeColors,
-                                    textDirection: TextDirection.ltr,
-                                  ),
-                                ],
-                                isRepeatingAnimation: true,
+                              width: double.infinity,
+                              child: Center(
+                                child: AnimatedTextKit(
+                                  totalRepeatCount: 500,
+                                  animatedTexts: [
+                                    ColorizeAnimatedText(
+                                      'WELCOME TO GODLIFE CONVERSATIONS',
+                                      textStyle: colorizeTextStyleMobile,
+                                      colors: colorizeColors,
+                                      textDirection: TextDirection.ltr,
+                                    ),
+                                    ColorizeAnimatedText(
+                                      'WELCOME TO GODLIFE CONVERSATIONS',
+                                      textStyle: colorizeTextStyleMobile,
+                                      colors: colorizeColors,
+                                      textDirection: TextDirection.ltr,
+                                    ),
+                                  ],
+                                  isRepeatingAnimation: true,
+                                ),
                               ),
                             ).frosted(
                               blur: 1,

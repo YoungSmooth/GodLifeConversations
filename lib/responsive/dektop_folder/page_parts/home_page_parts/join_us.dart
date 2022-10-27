@@ -129,7 +129,7 @@ class JoinUs extends StatelessWidget {
                             height: 100,
                             width: 100,
                             child: const Text(
-                              'bit.ly/33P2993',
+                              '     Telegram',
                               style: TextStyle(
                                   fontWeight: FontWeight.w400,
                                   color: Colors.blueAccent),
@@ -163,7 +163,7 @@ class JoinUs extends StatelessWidget {
   }
 
   Future openTelegram() async {
-    const url = 'https://telegram.com';
+    const url = 'https:bit.ly/33P2993';
     if (await canLaunch(url)) {
       await launch(
         url,

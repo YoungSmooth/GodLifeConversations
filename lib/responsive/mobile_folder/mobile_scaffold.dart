@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:god_life_conversations/responsive/mobile_folder/givePage/give_page.dart';
 import '../dektop_folder/page_parts/events_page_parts/events_body.dart';
 import 'components/glass_Box.dart';
 import 'components/my_bottomBar.dart';
-import 'homePage_tabs/mobileHome.dart';
+import 'connectPage/mobileConnect_Page.dart';
+import 'homePage/mobileHome.dart';
+import 'servePage/serve_page.dart';
 
 class MobileScaffold extends StatefulWidget {
   const MobileScaffold({super.key});
@@ -18,9 +21,9 @@ class _MobileScaffoldState extends State<MobileScaffold> {
   final screens = const [
     MobileHomePage(),
     EventsBody(),
-    MobileHomePage(),
-    EventsBody(),
-    EventsBody(),
+    ServePage(),
+    GivePage(),
+    MobileConnectPage(),
   ];
 
   void _bottomIndexChange(int? index) {
