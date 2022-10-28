@@ -14,12 +14,10 @@ class ConnectPage extends StatelessWidget {
         const SizedBox(
           height: 100,
           width: double.infinity,
-          child: Expanded(
-            child: Center(
-              child: Padding(
-                padding: EdgeInsets.only(left: 5, right: 5),
-                child: connectMessage,
-              ),
+          child: Center(
+            child: Padding(
+              padding: EdgeInsets.only(left: 5, right: 5),
+              child: connectMessage,
             ),
           ),
         ),
@@ -163,7 +161,14 @@ class ConnectPage extends StatelessWidget {
                   ),
                 ),
                 InkWell(
-                  onTap: openWhatsapp,
+                  onTap:
+                      // () {
+                      //   Uri uri = Uri.https(
+                      //       'https://chat.whatsapp.com/LNbsEodyYmaBuMMsdbPcBb');
+
+                      //   openWA(uri);
+                      // },
+                      openWhatsapp,
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Container(
@@ -318,6 +323,19 @@ Future openWhatsapp() async {
     );
   }
 }
+
+// Future<void> openWA(Uri url) async {
+//   // const url = 'https://chat.whatsapp.com/LNbsEodyYmaBuMMsdbPcBb';
+//   try {
+//     if (await canLaunchUrl(url)) {
+//       await launchUrl(
+//         url,
+//       );
+//     } else {
+//       throw 'cannot launch url $url';
+//     }
+//   } catch (_) {}
+// }
 
 Future openFacebook() async {
   const url = 'https://facebook.com';
