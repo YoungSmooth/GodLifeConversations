@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "631477663593",
+    "project_id": "godlifeconversations-6b007",
+    "storage_bucket": "godlifeconversations-6b007.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:631477663593:android:f7a01850696c8abe516ff8",
+        "android_client_info": {
+          "package_name": "com.onyekachi.god_life_conversations"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "631477663593-msjm4c2a8aop4uk05dmkenion0ge220k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBAUnZ3cLezojxpDbcBEHMxrLWwzhv8gbU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "631477663593-msjm4c2a8aop4uk05dmkenion0ge220k.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "631477663593-7963a0hlj1mitt85v6dpn75sd1e130g9.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.flutterflow.weddingapp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

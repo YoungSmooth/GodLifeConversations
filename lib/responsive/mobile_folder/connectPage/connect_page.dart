@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
@@ -161,14 +163,7 @@ class ConnectPage extends StatelessWidget {
                   ),
                 ),
                 InkWell(
-                  onTap:
-                      // () {
-                      //   Uri uri = Uri.https(
-                      //       'https://chat.whatsapp.com/LNbsEodyYmaBuMMsdbPcBb');
-
-                      //   openWA(uri);
-                      // },
-                      openWhatsapp,
+                  onTap: openWhatsapp,
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Container(
@@ -323,19 +318,6 @@ Future openWhatsapp() async {
     );
   }
 }
-
-// Future<void> openWA(Uri url) async {
-//   // const url = 'https://chat.whatsapp.com/LNbsEodyYmaBuMMsdbPcBb';
-//   try {
-//     if (await canLaunchUrl(url)) {
-//       await launchUrl(
-//         url,
-//       );
-//     } else {
-//       throw 'cannot launch url $url';
-//     }
-//   } catch (_) {}
-// }
 
 Future openFacebook() async {
   const url = 'https://facebook.com';
