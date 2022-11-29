@@ -48,11 +48,16 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.deepPurple,
       ),
       debugShowCheckedModeBanner: false,
-      home: const ResponsiveLayout(
-        mobileScaffold: LoginScreen(),
-        // MobileScaffold(),
-        tabletScaffold: TabletScaffold(),
-        desktopScaffld: DesktopScaffold(),
+      home: StreamBuilder(
+        stream: ,
+        builder: (context, snapshot) {
+        
+      },
+      // const ResponsiveLayout(
+      //   mobileScaffold: SignUpScreen(),
+      //   // MobileScaffold(),
+      //   tabletScaffold: TabletScaffold(),
+      //   desktopScaffld: DesktopScaffold(),
       ),
     );
   }

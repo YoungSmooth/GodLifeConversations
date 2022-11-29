@@ -19,12 +19,10 @@ class AuthMethods {
     String res = 'Some error occurred';
     try {
       if (email.isNotEmpty ||
-              password.isNotEmpty ||
-              username.isNotEmpty ||
-              bio.isNotEmpty
-          // ||
-          // file != null
-          ) {
+          password.isNotEmpty ||
+          username.isNotEmpty ||
+          bio.isNotEmpty ||
+          file != null) {
         // register user
         UserCredential cred = await _auth.createUserWithEmailAndPassword(
             email: email, password: password);
@@ -44,6 +42,26 @@ class AuthMethods {
         });
 
         res = 'success';
+      }
+    } catch (err) {
+      res = err.toString();
+    }
+    return res;
+  }
+
+  // logging in user
+  Future<String> loginUser({
+    required String email,
+    required String password,
+  }) async {
+    String res = 'Some error occured';
+    try {
+      if (email.isNotEmpty || password.isNotEmpty) {
+        await _auth.signInWithEmailAndPassword(
+            email: email, password: password);
+        res = 'Success';
+      } else {
+        res = 'Please enter all credentials';
       }
     } catch (err) {
       res = err.toString();

@@ -42,6 +42,20 @@ class _SignUpScreenState extends State<SignUpScreen> {
     });
   }
 
+  // void signUpUser() async {
+  //   String res = await AuthMethods().signUpUser(
+  //     email: _emailController,
+  //     password: _passwordController,
+  //     username: _usernameController,
+  //     bio: _bioController,
+  //     file: _image,
+  //   );
+
+  //   if (res != 'Registration Successful. Welcome to GLC') {
+  //     showSnackBar(res, context);
+  //   }
+  // }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,9 +71,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 child: Container(),
               ),
               SizedBox(
-                child: Image.asset('lib/assets/logowhite.png'),
+                child: Image.asset(
+                  'lib/assets/Logoblack.png',
+                  height: 64,
+                ),
               ),
-              const SizedBox(height: 128),
+              const SizedBox(height: 40),
               // circular widget to accept and show our selected file
               Stack(
                 children: [

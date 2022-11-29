@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:god_life_conversations/resources/auth_methods.dart';
+import 'package:god_life_conversations/utilities.dart/utils.dart';
 
 import '../../utilities.dart/colors.dart';
 import '../widgets/text_field_input.dart';
@@ -14,12 +16,29 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+  bool isLoading = false;
 
   @override
   void dispose() {
     super.dispose();
     _emailController.dispose();
     _passwordController.dispose();
+  }
+
+  void loginUser() async {
+    setState(() {
+      isLoading = true;
+    });
+    String res = await AuthMethods().loginUser(
+        email: _emailController.text, password: _passwordController.text);
+
+    if (res == 'success') {
+    } else {
+      showSnackBar(res, context);
+    }
+    setState(() {
+      isLoading = false;
+    });
   }
 
   @override
@@ -40,7 +59,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
             SizedBox(
               child: Image.asset(
-                'lib/assets/logowhite.png',
+                'lib/assets/Logoblack.png',
                 height: 64,
               ),
             ),
@@ -68,6 +87,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
             // Text Login
             InkWell(
+              onTap: loginUser,
               child: Container(
                 width: double.infinity,
                 alignment: Alignment.center,
@@ -80,10 +100,16 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   color: blueColor,
                 ),
-                child: const Text(
-                  'Log In',
-                  style: TextStyle(color: Colors.white),
-                ),
+                child: isLoading
+                    ? const Center(
+                        child: CircularProgressIndicator(
+                          color: primaryColor,
+                        ),
+                      )
+                    : const Text(
+                        'Log In',
+                        style: TextStyle(color: Colors.white),
+                      ),
               ),
             ),
             const SizedBox(
