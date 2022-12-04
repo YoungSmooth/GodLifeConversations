@@ -9,11 +9,14 @@ class GivePage extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         SafeArea(
-          child: SizedBox(
-            width: double.infinity,
-            child: Image.asset(
-              'lib/assets/give.jpg',
-              fit: BoxFit.fitHeight,
+          child: Center(
+            child: SizedBox(
+              height: 400,
+              width: 300,
+              child: Image.asset(
+                'lib/assets/give.jpg',
+                fit: BoxFit.contain,
+              ),
             ),
           ),
         ),

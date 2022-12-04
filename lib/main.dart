@@ -7,9 +7,9 @@ import 'package:god_life_conversations/responsive/dektop_folder/pages/desktop_ho
 import 'package:god_life_conversations/responsive/responsive_layout.dart';
 import 'package:god_life_conversations/responsive/screens/login_screen.dart';
 import 'package:god_life_conversations/responsive/screens/signup_screen.dart';
-import 'package:god_life_conversations/responsive/tablet_folder/tablet_scaffold.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'responsive/mobile_folder/mobile_scaffold.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -26,6 +26,7 @@ void main() async {
   } else {
     await Firebase.initializeApp();
   }
+
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(
       statusBarColor: Colors.white24,
@@ -39,7 +40,6 @@ void main() async {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -49,15 +49,29 @@ class MyApp extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
       home: StreamBuilder(
-        stream: ,
+        stream: FirebaseAuth.instance.authStateChanges(),
         builder: (context, snapshot) {
-        
-      },
-      // const ResponsiveLayout(
-      //   mobileScaffold: SignUpScreen(),
-      //   // MobileScaffold(),
-      //   tabletScaffold: TabletScaffold(),
-      //   desktopScaffld: DesktopScaffold(),
+          if (snapshot.connectionState == ConnectionState.active) {
+            if (snapshot.hasData) {
+              return const ResponsiveLayout(
+                mobileScaffold: MobileScaffold(),
+                tabletScaffold: MobileScaffold(),
+                // TabletScaffold(),
+                desktopScaffld: DesktopScaffold(),
+              );
+            } else if (snapshot.hasError) {
+              return Center(
+                child: Text('${snapshot.error}'),
+              );
+            }
+          }
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return const Center(
+              child: CircularProgressIndicator(color: Colors.purple),
+            );
+          }
+          return const LoginScreen();
+        },
       ),
     );
   }

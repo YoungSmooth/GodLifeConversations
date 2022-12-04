@@ -15,10 +15,12 @@ pickImage(ImageSource source) async {
 showSnackBar(String content, BuildContext context) {
   ScaffoldMessenger.of(context).showSnackBar(
     SnackBar(
-      content: Container(
-          decoration: BoxDecoration(
-              color: Colors.white, borderRadius: BorderRadius.circular(10)),
-          child: Text(content)),
+      backgroundColor: Colors.grey.shade800,
+      elevation: 1.0,
+      padding: const EdgeInsets.all(5),
+      content: Text(
+        content,
+      ),
     ),
   );
 }

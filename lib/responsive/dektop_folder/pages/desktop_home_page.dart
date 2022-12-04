@@ -19,41 +19,42 @@ class _DesktopScaffoldState extends State<DesktopScaffold> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
-        body: SingleChildScrollView(
-          child: Column(
-            children: const [
-              HeaderBackground(),
-              SizedBox(
-                height: 40,
-              ),
-              JoinUs(),
-              SizedBox(
-                height: 40,
-              ),
-              SecondHeaderBackground(),
-              SizedBox(
-                height: 40,
-              ),
-              MessagesHeader(),
-              SizedBox(
-                height: 40,
-              ),
-              ServeHeader(),
-              SizedBox(
-                height: 40,
-              ),
-              Events(),
-              SizedBox(
-                height: 40,
-              ),
-              GiveHeader(),
-              SizedBox(
-                height: 40,
-              ),
-              FootNote(),
-            ],
-          ),
-        ));
+      backgroundColor: Colors.white,
+      body: SingleChildScrollView(
+        child: Column(
+          children: const [
+            HeaderBackground(),
+            SizedBox(
+              height: 40,
+            ),
+            JoinUs(),
+            SizedBox(
+              height: 40,
+            ),
+            SecondHeaderBackground(),
+            SizedBox(
+              height: 40,
+            ),
+            MessagesHeader(),
+            SizedBox(
+              height: 40,
+            ),
+            ServeHeader(),
+            SizedBox(
+              height: 40,
+            ),
+            Events(),
+            SizedBox(
+              height: 40,
+            ),
+            GiveHeader(),
+            SizedBox(
+              height: 40,
+            ),
+            FootNote(),
+          ],
+        ),
+      ),
+    );
   }
 }
