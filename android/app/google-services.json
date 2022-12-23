@@ -1,41 +1,63 @@
 {
   "project_info": {
-    "project_number": "631477663593",
-    "project_id": "godlifeconversations-6b007",
-    "storage_bucket": "godlifeconversations-6b007.appspot.com"
+    "project_number": "1093664415469",
+    "project_id": "glc-main-125d7",
+    "storage_bucket": "glc-main-125d7.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:631477663593:android:f7a01850696c8abe516ff8",
+        "mobilesdk_app_id": "1:1093664415469:android:94b9f7f434c66f016ab6e4",
         "android_client_info": {
           "package_name": "com.onyekachi.god_life_conversations"
         }
       },
       "oauth_client": [
         {
-          "client_id": "631477663593-msjm4c2a8aop4uk05dmkenion0ge220k.apps.googleusercontent.com",
+          "client_id": "1093664415469-mnqu611d8pffj4bmimjk617vvafqaqt5.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBAUnZ3cLezojxpDbcBEHMxrLWwzhv8gbU"
+          "current_key": "AIzaSyCLDGqACZXYujH8vkIhjcyDf11VxAK_BZs"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "631477663593-msjm4c2a8aop4uk05dmkenion0ge220k.apps.googleusercontent.com",
+              "client_id": "1093664415469-mnqu611d8pffj4bmimjk617vvafqaqt5.apps.googleusercontent.com",
               "client_type": 3
-            },
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1093664415469:android:ab495697d661b3af6ab6e4",
+        "android_client_info": {
+          "package_name": "web.com.okay"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1093664415469-mnqu611d8pffj4bmimjk617vvafqaqt5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCLDGqACZXYujH8vkIhjcyDf11VxAK_BZs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
             {
-              "client_id": "631477663593-7963a0hlj1mitt85v6dpn75sd1e130g9.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.flutterflow.weddingapp"
-              }
+              "client_id": "1093664415469-mnqu611d8pffj4bmimjk617vvafqaqt5.apps.googleusercontent.com",
+              "client_type": 3
             }
           ]
         }

@@ -54,11 +54,13 @@ dev_dependencies:
   curved_navigation_bar:
   url_launcher:
   image_picker:
-  firebase_core:
-  cloud_firestore:
-  firebase_storage:
+  firebase_core: 
+  cloud_firestore: 
+  firebase_storage: 
   firebase_auth: 
+  firebase_database:
   flutter_svg:
+  provider:
   
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is

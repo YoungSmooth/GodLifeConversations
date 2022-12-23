@@ -2,10 +2,12 @@
 
 // import 'dart:ffi';
 import 'dart:typed_data';
-
+import 'dart:io';
+// import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:god_life_conversations/responsive/screens/login_screen.dart';
+import 'package:god_life_conversations/responsive/registration/login_screen.dart';
 import 'package:image_picker/image_picker.dart';
 
 import '../../resources/auth_methods.dart';
@@ -30,6 +32,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
   final TextEditingController _bioController = TextEditingController();
   final TextEditingController _usernameController = TextEditingController();
   Uint8List? _image;
+
   bool _isLoading = false;
 
   @override
@@ -42,13 +45,20 @@ class _SignUpScreenState extends State<SignUpScreen> {
   }
 
   void selectImage() async {
-    Uint8List im = await pickImage(ImageSource.gallery);
-    setState(() {
-      _image = im;
-    });
+    try {
+      Uint8List im = await pickImage(ImageSource.gallery);
+
+      setState(() {
+        _image = im;
+      });
+    } on PlatformException catch (e) {}
   }
 
-  void signUpUser() async {
+  Future signUpUser() async {
+    setState(() {
+      _isLoading = true;
+    });
+
     String res = await AuthMethods().signUpUser(
       email: _emailController.text,
       password: _passwordController.text,
@@ -57,13 +67,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
       file: _image!,
     );
 
-    setState(() {
-      _isLoading = false;
-    });
-
-    if (res != 'success') {
-      showSnackBar(res, context);
-    } else {
+    if (res == 'success') {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(
           builder: (context) => const ResponsiveLayout(
@@ -73,6 +77,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
           ),
         ),
       );
+    } else {
+      showSnackBar(res, context);
+      // showSnackBar('Please fill in all details correctly', context);
+      setState(() {
+        _isLoading = false;
+      });
     }
   }
 
@@ -172,15 +182,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ),
                 // Text Login
                 InkWell(
-                  onTap: () async {
-                    String res = await AuthMethods().signUpUser(
-                      email: _emailController.text,
-                      password: _passwordController.text,
-                      username: _usernameController.text,
-                      bio: _bioController.text,
-                      file: _image!,
-                    );
-                  },
+                  onTap: signUpUser,
                   child: Container(
                     width: double.infinity,
                     alignment: Alignment.center,
@@ -193,10 +195,16 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       ),
                       color: blueColor,
                     ),
-                    child: const Text(
-                      'Sign up',
-                      style: TextStyle(color: Colors.white),
-                    ),
+                    child: _isLoading
+                        ? const Center(
+                            child: CircularProgressIndicator(
+                              color: primaryColor,
+                            ),
+                          )
+                        : const Text(
+                            'Sign up',
+                            style: TextStyle(color: Colors.white),
+                          ),
                   ),
                 ),
                 const SizedBox(
@@ -214,7 +222,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       padding: const EdgeInsets.symmetric(
                         vertical: 8,
                       ),
-                      child: const Text("Don't have an account?"),
+                      child: const Text("Already have an account?"),
                     ),
                     const SizedBox(
                       width: 10,

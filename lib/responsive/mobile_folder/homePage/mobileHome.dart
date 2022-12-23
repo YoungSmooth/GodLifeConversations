@@ -4,6 +4,7 @@ import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import '../../dektop_folder/constant_parts/constants.dart';
+import 'feed.dart';
 import 'homePage_inspirations.dart';
 import 'message.dart';
 import 'package:blur/blur.dart';
@@ -94,7 +95,7 @@ class MobileHomePage extends StatelessWidget {
               // color: Colors.blueGrey,
               height: 670,
               child: DefaultTabController(
-                length: 2,
+                length: 3,
                 child: Scaffold(
                   // extendBody: true,
                   body: Column(
@@ -102,6 +103,9 @@ class MobileHomePage extends StatelessWidget {
                       TabBar(
                         labelColor: Colors.black,
                         tabs: [
+                          Tab(
+                            text: 'Feed',
+                          ),
                           Tab(
                             text: 'Notes',
                           ),
@@ -113,6 +117,7 @@ class MobileHomePage extends StatelessWidget {
                       Expanded(
                         child: TabBarView(
                           children: [
+                            GlcFeed(),
                             HomePageInspirations(),
                             Messages(),
                           ],

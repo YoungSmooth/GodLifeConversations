@@ -3,24 +3,29 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:god_life_conversations/providers/user_provider.dart';
 import 'package:god_life_conversations/responsive/dektop_folder/pages/desktop_home_page.dart';
+import 'package:god_life_conversations/responsive/mobile_folder/components/select_loginView.dart';
 import 'package:god_life_conversations/responsive/responsive_layout.dart';
-import 'package:god_life_conversations/responsive/screens/login_screen.dart';
-import 'package:god_life_conversations/responsive/screens/signup_screen.dart';
+import 'package:god_life_conversations/responsive/registration/login_screen.dart';
+import 'package:god_life_conversations/responsive/registration/signup_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'responsive/registration/landing_page.dart';
 import 'responsive/mobile_folder/mobile_scaffold.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:provider/provider.dart';
+// import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   if (kIsWeb) {
     await Firebase.initializeApp(
       options: const FirebaseOptions(
-        apiKey: "AIzaSyCtNB7s6PFiY_GhWrfKcadsnMQL5AoFPmw",
-        appId: "1:631477663593:web:46d3f466ab396790516ff8",
-        messagingSenderId: "631477663593",
-        projectId: "godlifeconversations-6b007",
-        storageBucket: "godlifeconversations-6b007.appspot.com",
+        apiKey: "AIzaSyD6XgPt1u8aJK03Y7OGXnudH6jvY9qu1Og",
+        appId: "1:1093664415469:web:e824ef033d3ed0496ab6e4",
+        messagingSenderId: "1093664415469",
+        projectId: "glc-main-125d7",
+        storageBucket: "glc-main-125d7.appspot.com",
       ),
     );
   } else {
@@ -42,36 +47,45 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-        textTheme: GoogleFonts.montserratTextTheme(),
-        primarySwatch: Colors.deepPurple,
-      ),
-      debugShowCheckedModeBanner: false,
-      home: StreamBuilder(
-        stream: FirebaseAuth.instance.authStateChanges(),
-        builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.active) {
-            if (snapshot.hasData) {
-              return const ResponsiveLayout(
-                mobileScaffold: MobileScaffold(),
-                tabletScaffold: MobileScaffold(),
-                // TabletScaffold(),
-                desktopScaffld: DesktopScaffold(),
-              );
-            } else if (snapshot.hasError) {
-              return Center(
-                child: Text('${snapshot.error}'),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (_) => UserProvider(),
+        ),
+      ],
+      child: MaterialApp(
+        theme: ThemeData(
+          textTheme: GoogleFonts.montserratTextTheme(),
+          primarySwatch: Colors.deepPurple,
+        ),
+        debugShowCheckedModeBanner: false,
+        home:
+            // const Landingpage()
+            StreamBuilder(
+          stream: FirebaseAuth.instance.authStateChanges(),
+          builder: (context, snapshot) {
+            if (snapshot.connectionState == ConnectionState.active) {
+              if (snapshot.hasData) {
+                return const ResponsiveLayout(
+                  mobileScaffold: MobileScaffold(),
+                  tabletScaffold: MobileScaffold(),
+                  // TabletScaffold(),
+                  desktopScaffld: DesktopScaffold(),
+                );
+              } else if (snapshot.hasError) {
+                return Center(
+                  child: Text('${snapshot.error}'),
+                );
+              }
+            }
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              return const Center(
+                child: CircularProgressIndicator(color: Colors.purple),
               );
             }
-          }
-          if (snapshot.connectionState == ConnectionState.waiting) {
-            return const Center(
-              child: CircularProgressIndicator(color: Colors.purple),
-            );
-          }
-          return const LoginScreen();
-        },
+            return const SelectFittedLogin();
+          },
+        ),
       ),
     );
   }

@@ -21,6 +21,8 @@ class BottomBar extends StatelessWidget {
         iconSize: 30,
         showSelectedLabels: true,
         showUnselectedLabels: true,
+        selectedFontSize: 12,
+        unselectedFontSize: 10,
         elevation: 0,
         type: BottomNavigationBarType.fixed,
         items: const [
@@ -38,6 +40,7 @@ class BottomBar extends StatelessWidget {
               icon: Icon(Icons.attach_money_outlined), label: 'Give'),
           BottomNavigationBarItem(
               icon: Icon(Icons.info_outline), label: 'Connect'),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
         ]);
   }
 }

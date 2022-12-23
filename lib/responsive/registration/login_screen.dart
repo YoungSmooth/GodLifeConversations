@@ -1,7 +1,9 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:god_life_conversations/resources/auth_methods.dart';
-import 'package:god_life_conversations/responsive/screens/signup_screen.dart';
+import 'package:god_life_conversations/responsive/registration/signup_screen.dart';
 import 'package:god_life_conversations/utilities.dart/utils.dart';
 
 import '../../utilities.dart/colors.dart';
@@ -30,7 +32,7 @@ class _LoginScreenState extends State<LoginScreen> {
     _passwordController.dispose();
   }
 
-  void loginUser() async {
+  Future loginUser() async {
     setState(() {
       isLoading = true;
     });
@@ -49,10 +51,11 @@ class _LoginScreenState extends State<LoginScreen> {
       );
     } else {
       showSnackBar(res, context);
+      // showSnackBar('Wrong credentials', context);
+      setState(() {
+        isLoading = false;
+      });
     }
-    setState(() {
-      isLoading = false;
-    });
   }
 
   void navigateToSignUp() {
