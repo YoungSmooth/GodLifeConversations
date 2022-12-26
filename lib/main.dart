@@ -54,10 +54,8 @@ class MyApp extends StatelessWidget {
         ),
       ],
       child: MaterialApp(
-        theme: ThemeData(
-          textTheme: GoogleFonts.montserratTextTheme(),
-          primarySwatch: Colors.deepPurple,
-        ),
+        theme: lightTheme(),
+        darkTheme: darkTheme(),
         debugShowCheckedModeBanner: false,
         home:
             // const Landingpage()
@@ -87,6 +85,25 @@ class MyApp extends StatelessWidget {
           },
         ),
       ),
+    );
+  }
+
+  ThemeData darkTheme() {
+    return ThemeData(
+      colorSchemeSeed: Colors.deepPurple,
+      brightness: Brightness.dark,
+      useMaterial3: true,
+    );
+  }
+
+  ThemeData lightTheme() {
+    return ThemeData(
+      colorSchemeSeed: Colors.deepPurple,
+      brightness: Brightness.light,
+      textTheme: GoogleFonts.montserratTextTheme(),
+      scaffoldBackgroundColor: Colors.grey.shade100,
+      // primarySwatch: Colors.deepPurple,
+      useMaterial3: true,
     );
   }
 }
