@@ -37,7 +37,7 @@ class MobileHomePage extends StatelessWidget {
                         fit: BoxFit.cover,
                       ),
                       Image.network(
-                        'https://images.unsplash.com/photo-1589483232748-515c025575bc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGxhdWdodGVyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60',
+                        'https://guardian.ng/wp-content/uploads/2022/09/Pastor-Chris-1424x802.jpg',
                         fit: BoxFit.cover,
                       ),
                       Image.network(
