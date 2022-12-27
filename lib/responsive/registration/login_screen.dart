@@ -123,7 +123,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         Radius.circular(4),
                       ),
                     ),
-                    color: blueColor,
+                    color: mainColor,
                   ),
                   child: isLoading
                       ? const Center(

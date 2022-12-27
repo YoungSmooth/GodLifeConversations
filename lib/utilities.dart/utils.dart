@@ -1,5 +1,5 @@
 // ignore_for_file: depend_on_referenced_packages
-
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -9,11 +9,19 @@ pickImage(ImageSource source) async {
   XFile? _file = await _imagePicker.pickImage(source: source);
 
   if (_file != null) {
-    return await _file.readAsBytes();
+    // return await _file.readAsBytes();
+    return await _file.path;
   } else {
     return const Text('No Image selected!');
   }
   // print('no image selected');
+}
+
+pickImagee(ImageSource source) async {
+  final ImagePicker imagePicker = ImagePicker();
+  XFile? file = await imagePicker.pickImage(source: source);
+  if (file == null) return "No Image Selected";
+  return File(file.path);
 }
 
 showSnackBar(String content, BuildContext context) {

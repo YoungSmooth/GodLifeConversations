@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:god_life_conversations/utilities.dart/colors.dart';
 
 import 'about_page.dart';
 import 'connect_page.dart';
@@ -20,7 +21,7 @@ class MobileConnectPage extends StatelessWidget {
               body: Column(
                 children: const [
                   TabBar(
-                    labelColor: Colors.purple,
+                    labelColor: mainColor,
                     tabs: [
                       Tab(
                         text: 'Connect',

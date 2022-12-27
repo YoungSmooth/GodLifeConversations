@@ -193,7 +193,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           Radius.circular(4),
                         ),
                       ),
-                      color: blueColor,
+                      color: mainColor,
                     ),
                     child: _isLoading
                         ? const Center(

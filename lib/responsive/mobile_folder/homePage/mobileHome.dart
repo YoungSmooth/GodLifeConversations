@@ -3,6 +3,7 @@
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:god_life_conversations/utilities.dart/colors.dart';
 import '../../dektop_folder/constant_parts/constants.dart';
 import 'feed.dart';
 import 'homePage_inspirations.dart';
@@ -101,13 +102,14 @@ class MobileHomePage extends StatelessWidget {
                   body: Column(
                     children: const [
                       TabBar(
-                        labelColor: Colors.black,
+                        labelColor: mainColor,
+                        indicatorColor: Colors.grey,
                         tabs: [
                           Tab(
                             text: 'Feed',
                           ),
                           Tab(
-                            text: 'Notes',
+                            text: 'Testimonies',
                           ),
                           Tab(
                             text: 'Messages',

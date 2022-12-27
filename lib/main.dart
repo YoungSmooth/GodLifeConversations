@@ -99,6 +99,7 @@ class MyApp extends StatelessWidget {
   ThemeData lightTheme() {
     return ThemeData(
       colorSchemeSeed: Colors.deepPurple,
+      buttonColor: Colors.black,
       brightness: Brightness.light,
       textTheme: GoogleFonts.montserratTextTheme(),
       scaffoldBackgroundColor: Colors.grey.shade100,
