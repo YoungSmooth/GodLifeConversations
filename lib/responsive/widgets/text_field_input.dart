@@ -2,13 +2,11 @@ import 'package:flutter/material.dart';
 
 class TextFieldInput extends StatelessWidget {
   final TextEditingController textEditingController;
-  final bool isPass;
   final String hintText;
   final TextInputType textInputType;
   const TextFieldInput({
     Key? key,
     required this.textEditingController,
-    this.isPass = false,
     required this.hintText,
     required this.textInputType,
   }) : super(key: key);
@@ -18,57 +16,41 @@ class TextFieldInput extends StatelessWidget {
     final inputBorder = OutlineInputBorder(
       borderSide: Divider.createBorderSide(context),
     );
-    return TextField(
+    return TextFormField(
       controller: textEditingController,
       decoration: InputDecoration(
         hintText: hintText,
         border: inputBorder,
-        focusedBorder: OutlineInputBorder(
-            borderSide: const BorderSide(color: Colors.black),
-            borderRadius: BorderRadius.circular(8)),
-        enabledBorder: OutlineInputBorder(
-            borderSide: const BorderSide(color: Colors.white),
-            borderRadius: BorderRadius.circular(8)),
+        focusedBorder: OutlineInputBorder(borderSide: const BorderSide(color: Colors.black), borderRadius: BorderRadius.circular(8)),
+        enabledBorder: OutlineInputBorder(borderSide: const BorderSide(color: Colors.white), borderRadius: BorderRadius.circular(8)),
         filled: true,
         contentPadding: const EdgeInsets.all(8),
       ),
       keyboardType: textInputType,
-      obscureText: isPass,
     );
   }
 }
 
-class TextFieldInputt extends StatelessWidget {
+class PasswordInputField extends StatelessWidget {
   final TextEditingController textEditingController;
   final bool isPass;
   final String hintText;
   final TextInputType textInputType;
-  const TextFieldInputt({
-    Key? key,
-    required this.textEditingController,
-    this.isPass = false,
-    required this.hintText,
-    required this.textInputType,
-  }) : super(key: key);
+  const PasswordInputField({Key? key, required this.textEditingController, this.isPass = false, required this.hintText, required this.textInputType})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final inputBorder = OutlineInputBorder(
       borderSide: Divider.createBorderSide(context),
     );
-    return TextField(
-      minLines: 1,
-      maxLines: 8,
+    return TextFormField(
       controller: textEditingController,
       decoration: InputDecoration(
         hintText: hintText,
         border: inputBorder,
-        focusedBorder: OutlineInputBorder(
-            borderSide: const BorderSide(color: Colors.black),
-            borderRadius: BorderRadius.circular(8)),
-        enabledBorder: OutlineInputBorder(
-            borderSide: const BorderSide(color: Colors.white),
-            borderRadius: BorderRadius.circular(8)),
+        focusedBorder: OutlineInputBorder(borderSide: const BorderSide(color: Colors.black), borderRadius: BorderRadius.circular(8)),
+        enabledBorder: OutlineInputBorder(borderSide: const BorderSide(color: Colors.white), borderRadius: BorderRadius.circular(8)),
         filled: true,
         contentPadding: const EdgeInsets.all(8),
       ),

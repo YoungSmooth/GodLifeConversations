@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
-import 'messageStyle.dart';
+import 'message_style.dart';
 
 class Messages extends StatefulWidget {
   const Messages({super.key});

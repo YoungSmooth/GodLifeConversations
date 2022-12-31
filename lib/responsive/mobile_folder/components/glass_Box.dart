@@ -5,7 +5,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 class GlassBox extends StatelessWidget {
-  final child;
+  final dynamic child;
 
   const GlassBox({super.key, this.child});
 

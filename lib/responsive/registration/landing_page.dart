@@ -1,8 +1,6 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:god_life_conversations/responsive/mobile_folder/mobile_scaffold.dart';
-import 'package:god_life_conversations/responsive/registration/sign_in.dart';
 
 import '../../resources/auth_page.dart';
 import '../dektop_folder/pages/desktop_home_page.dart';

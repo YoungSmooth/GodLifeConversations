@@ -1,10 +1,8 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter/material.dart';
-import 'package:god_life_conversations/providers/user_provider.dart';
-
 import 'package:god_life_conversations/models/user.dart' as model;
+import 'package:god_life_conversations/providers/user_provider.dart';
 import 'package:provider/provider.dart';
+
 import '../../../utilities.dart/colors.dart';
 
 class BottomBar extends StatelessWidget {
@@ -38,14 +36,10 @@ class BottomBar extends StatelessWidget {
           activeIcon: Icon(Icons.home),
           label: 'Home',
         ),
-        const BottomNavigationBarItem(
-            icon: Icon(Icons.event_available_outlined), label: 'Events'),
-        const BottomNavigationBarItem(
-            icon: Icon(Icons.assistant_direction_outlined), label: 'Serve'),
-        const BottomNavigationBarItem(
-            icon: Icon(Icons.attach_money_outlined), label: 'Give'),
-        const BottomNavigationBarItem(
-            icon: Icon(Icons.info_outline), label: 'Connect'),
+        const BottomNavigationBarItem(icon: Icon(Icons.event_available_outlined), label: 'Events'),
+        const BottomNavigationBarItem(icon: Icon(Icons.assistant_direction_outlined), label: 'Serve'),
+        const BottomNavigationBarItem(icon: Icon(Icons.attach_money_outlined), label: 'Give'),
+        const BottomNavigationBarItem(icon: Icon(Icons.info_outline), label: 'Connect'),
         // BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
         BottomNavigationBarItem(
           icon: Container(

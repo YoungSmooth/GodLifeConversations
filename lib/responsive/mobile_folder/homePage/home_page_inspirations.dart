@@ -14,14 +14,8 @@ class _HomePageInspirationsState extends State<HomePageInspirations> {
       floatingActionButton: FloatingActionButton(
         autofocus: true,
         backgroundColor: Colors.white,
-        child: const IconButton(
-            onPressed: null,
-            icon: Icon(
-              Icons.add,
-              color: Colors.black,
-              size: 20,
-            )),
-        onPressed: () => null,
+        child: const IconButton(onPressed: null, icon: Icon(Icons.add, color: Colors.black, size: 20)),
+        onPressed: () {},
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -69,9 +63,7 @@ class _HomePageInspirationsState extends State<HomePageInspirations> {
                   padding: const EdgeInsets.all(20),
                   child: Container(
                     width: double.infinity,
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10)),
+                    decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(10)),
                     child: Column(
                       children: [
                         ClipRRect(
@@ -104,9 +96,7 @@ class _HomePageInspirationsState extends State<HomePageInspirations> {
                   padding: const EdgeInsets.all(20),
                   child: Container(
                     width: double.infinity,
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10)),
+                    decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(10)),
                     child: Column(
                       children: [
                         ClipRRect(
@@ -139,9 +129,7 @@ class _HomePageInspirationsState extends State<HomePageInspirations> {
                   padding: const EdgeInsets.all(20),
                   child: Container(
                     width: double.infinity,
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10)),
+                    decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(10)),
                     child: Column(
                       children: [
                         ClipRRect(
@@ -174,9 +162,7 @@ class _HomePageInspirationsState extends State<HomePageInspirations> {
                   padding: const EdgeInsets.all(20),
                   child: Container(
                     width: double.infinity,
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10)),
+                    decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(10)),
                     child: Column(
                       children: [
                         ClipRRect(

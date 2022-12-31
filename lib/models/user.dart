@@ -10,15 +10,15 @@ class User {
   final List following;
 
   const User({
-    required this.email,
-    required this.uid,
-    required this.photoUrl,
-    required this.username,
-    required this.bio,
+    this.email = "",
+    this.uid = "",
+    this.photoUrl = "",
+    this.username = "",
+    this.bio = "",
     // required this.department,
     // required this.testimonies,
-    required this.followers,
-    required this.following,
+    this.followers = const [],
+    this.following = const [],
   });
 
   Map<String, dynamic> toJson() => {

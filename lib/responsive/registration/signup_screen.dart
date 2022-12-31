@@ -1,16 +1,11 @@
-// ignore_for_file: unused_local_variable, depend_on_referenced_packages, unused_import, use_build_context_synchronously
-
-// import 'dart:ffi';
-import 'dart:typed_data';
 import 'dart:io';
-// import 'package:firebase_database/firebase_database.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:god_life_conversations/responsive/registration/login_screen.dart';
 import 'package:image_picker/image_picker.dart';
 
 import '../../resources/auth_methods.dart';
+import '../../responsive/registration/login_screen.dart';
 import '../../utilities.dart/colors.dart';
 import '../../utilities.dart/utils.dart';
 import '../dektop_folder/pages/desktop_home_page.dart';
@@ -31,7 +26,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _bioController = TextEditingController();
   final TextEditingController _usernameController = TextEditingController();
-  Uint8List? _image;
+  File? _image;
 
   bool _isLoading = false;
 
@@ -45,13 +40,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
   }
 
   void selectImage() async {
-    try {
-      Uint8List im = await pickImage(ImageSource.gallery);
+    _image = await pickImage(ImageSource.gallery);
 
-      setState(() {
-        _image = im;
-      });
-    } on PlatformException catch (e) {}
+    setState(() {});
   }
 
   Future signUpUser() async {
@@ -64,7 +55,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
       password: _passwordController.text,
       username: _usernameController.text,
       bio: _bioController.text,
-      file: _image!,
+      profileImage: _image!,
     );
 
     if (res == 'success') {
@@ -79,7 +70,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
       );
     } else {
       showSnackBar(res, context);
-      // showSnackBar('Please fill in all details correctly', context);
       setState(() {
         _isLoading = false;
       });
@@ -88,9 +78,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
   void navigateToLogin() {
     Navigator.of(context).push(
-      MaterialPageRoute(
-        builder: (context) => const LoginScreen(),
-      ),
+      MaterialPageRoute(builder: (context) => const LoginScreen()),
     );
   }
 
@@ -105,116 +93,57 @@ class _SignUpScreenState extends State<SignUpScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                SizedBox(
-                  height: 30,
-                ),
-                SizedBox(
-                  child: Image.asset(
-                    'lib/assets/Logoblack.png',
-                    height: 64,
-                  ),
-                ),
+                const SizedBox(height: 30),
+                SizedBox(child: Image.asset('lib/assets/Logoblack.png', height: 64)),
                 const SizedBox(height: 40),
-                // circular widget to accept and show our selected file
                 Stack(
+                  alignment: Alignment.center,
                   children: [
                     _image != null
                         ? CircleAvatar(
                             radius: 60,
-                            backgroundImage: MemoryImage(_image!),
+                            backgroundImage: FileImage(_image!),
                           )
                         : const CircleAvatar(
                             radius: 64,
                             backgroundImage: NetworkImage(
                                 'https://media.istockphoto.com/id/1316420668/vector/user-icon-human-person-symbol-social-profile-icon-avatar-login-sign-web-user-symbol.jpg?s=612x612&w=0&k=20&c=AhqW2ssX8EeI2IYFm6-ASQ7rfeBWfrFFV4E87SaFhJE='),
                           ),
-                    Positioned(
-                      bottom: -10,
-                      left: 80,
-                      child: IconButton(
-                        onPressed: selectImage,
-                        icon: const Icon(
-                          Icons.add_a_photo,
-                        ),
-                      ),
-                    )
+                    Positioned(bottom: -10, left: 80, child: IconButton(onPressed: selectImage, icon: const Icon(Icons.add_a_photo)))
                   ],
                 ),
-                const SizedBox(
-                  height: 24,
-                ),
-                // Textfield for username
+                const SizedBox(height: 24),
                 TextFieldInput(
                   textEditingController: _usernameController,
                   hintText: 'Enter your username',
                   textInputType: TextInputType.text,
                 ),
-                const SizedBox(
-                  height: 24,
-                ),
-                // Textfield for email
+                const SizedBox(height: 24),
                 TextFieldInput(
                   textEditingController: _emailController,
                   hintText: 'Enter your email',
                   textInputType: TextInputType.emailAddress,
                 ),
-                const SizedBox(
-                  height: 24,
-                ),
-                // Textfield for password
-                TextFieldInput(
-                  textEditingController: _passwordController,
-                  hintText: 'Enter your password',
-                  textInputType: TextInputType.text,
-                  isPass: true,
-                ),
-                const SizedBox(
-                  height: 24,
-                ),
-                // textfield input for username
-                TextFieldInput(
-                  textEditingController: _bioController,
-                  hintText: 'Enter your bio',
-                  textInputType: TextInputType.text,
-                ),
-                const SizedBox(
-                  height: 24,
-                ),
-                // Text Login
+                const SizedBox(height: 24),
+                PasswordInputField(textEditingController: _passwordController, hintText: 'Enter your password', textInputType: TextInputType.text),
+                const SizedBox(height: 24),
+                TextFieldInput(textEditingController: _bioController, hintText: 'Enter your bio', textInputType: TextInputType.text),
+                const SizedBox(height: 24),
                 InkWell(
                   onTap: signUpUser,
                   child: Container(
                     width: double.infinity,
                     alignment: Alignment.center,
                     padding: const EdgeInsets.symmetric(vertical: 12),
-                    decoration: const ShapeDecoration(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(4),
-                        ),
-                      ),
-                      color: mainColor,
-                    ),
+                    decoration:
+                        const ShapeDecoration(shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(4))), color: mainColor),
                     child: _isLoading
-                        ? const Center(
-                            child: CircularProgressIndicator(
-                              color: primaryColor,
-                            ),
-                          )
-                        : const Text(
-                            'Sign up',
-                            style: TextStyle(color: Colors.white),
-                          ),
+                        ? const Center(child: CircularProgressIndicator(color: primaryColor))
+                        : const Text('Sign up', style: TextStyle(color: Colors.white)),
                   ),
                 ),
-                const SizedBox(
-                  height: 5,
-                ),
-                const SizedBox(
-                  height: 30,
-                ),
-
-                // Text sign up
+                const SizedBox(height: 5),
+                const SizedBox(height: 30),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -230,20 +159,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     GestureDetector(
                       onTap: navigateToLogin,
                       child: Container(
-                        padding: const EdgeInsets.symmetric(
-                          vertical: 4,
-                        ),
-                        child: const Text(
-                          "Login",
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                        ),
+                        padding: const EdgeInsets.symmetric(vertical: 4),
+                        child: const Text("Login", style: TextStyle(fontWeight: FontWeight.bold)),
                       ),
                     ),
                   ],
                 ),
-                const SizedBox(
-                  height: 10,
-                ),
+                const SizedBox(height: 10),
               ],
             ),
           ),

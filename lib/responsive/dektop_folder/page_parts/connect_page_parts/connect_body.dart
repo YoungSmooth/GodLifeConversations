@@ -1,7 +1,6 @@
 // ignore_for_file: depend_on_referenced_packages, deprecated_member_use
-import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
-import 'package:god_life_conversations/responsive/dektop_folder/page_parts/home_page_parts/messages_header.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../constant_parts/constants.dart';
 
@@ -21,9 +20,7 @@ class DesktopConnectBody extends StatelessWidget {
               children: const [
                 Expanded(
                   child: Center(
-                    child: Padding(
-                        padding: EdgeInsets.only(left: 100, right: 100),
-                        child: connectMessage),
+                    child: Padding(padding: EdgeInsets.only(left: 100, right: 100), child: connectMessage),
                   ),
                 )
               ],
@@ -44,8 +41,7 @@ class DesktopConnectBody extends StatelessWidget {
                           child: NeumorphicIcon(
                             Icons.location_on,
                             size: 40,
-                            style: const NeumorphicStyle(
-                                color: Colors.black, depth: 3, intensity: 0.99),
+                            style: const NeumorphicStyle(color: Colors.black, depth: 3, intensity: 0.99),
                           ),
                         ),
                         Padding(
@@ -56,8 +52,7 @@ class DesktopConnectBody extends StatelessWidget {
                             child: NeumorphicText(
                               textAlign: TextAlign.center,
                               'Desire of All Nations Cathederal, 9 Effanga Offiong Street, Off Edibe Edibe Road, Southern Calabar',
-                              textStyle: NeumorphicTextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 13),
+                              textStyle: NeumorphicTextStyle(fontWeight: FontWeight.bold, fontSize: 13),
                               style: const NeumorphicStyle(
                                 color: Colors.black,
                                 depth: 5,
@@ -70,8 +65,7 @@ class DesktopConnectBody extends StatelessWidget {
                           padding: const EdgeInsets.only(bottom: 10),
                           child: NeumorphicText(
                             'Our Location',
-                            textStyle: NeumorphicTextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 20),
+                            textStyle: NeumorphicTextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                             style: const NeumorphicStyle(
                               color: Colors.white,
                               depth: 5,
@@ -108,18 +102,13 @@ class DesktopConnectBody extends StatelessWidget {
                               NeumorphicIcon(
                                 Icons.telegram,
                                 size: 40,
-                                style: const NeumorphicStyle(
-                                    color: Colors.black,
-                                    depth: 3,
-                                    intensity: 0.99),
+                                style: const NeumorphicStyle(color: Colors.black, depth: 3, intensity: 0.99),
                               ),
                               Padding(
                                 padding: const EdgeInsets.only(top: 10),
                                 child: NeumorphicText(
                                   'Telegram',
-                                  textStyle: NeumorphicTextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 15),
+                                  textStyle: NeumorphicTextStyle(fontWeight: FontWeight.bold, fontSize: 15),
                                   style: const NeumorphicStyle(
                                     color: Colors.white,
                                     depth: 5,
@@ -141,8 +130,7 @@ class DesktopConnectBody extends StatelessWidget {
                           width: 100,
                           decoration: BoxDecoration(
                               color: Colors.black.withOpacity(0.2),
-                              border:
-                                  Border.all(width: 1.2, color: Colors.black),
+                              border: Border.all(width: 1.2, color: Colors.black),
                               borderRadius: BorderRadius.circular(10)),
                           child: Padding(
                             padding: const EdgeInsets.all(10.0),
@@ -151,18 +139,13 @@ class DesktopConnectBody extends StatelessWidget {
                                 NeumorphicIcon(
                                   Icons.facebook,
                                   size: 40,
-                                  style: const NeumorphicStyle(
-                                      color: Colors.black,
-                                      depth: 3,
-                                      intensity: 0.99),
+                                  style: const NeumorphicStyle(color: Colors.black, depth: 3, intensity: 0.99),
                                 ),
                                 Padding(
                                   padding: const EdgeInsets.only(top: 10),
                                   child: NeumorphicText(
                                     'Facebook',
-                                    textStyle: NeumorphicTextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 15),
+                                    textStyle: NeumorphicTextStyle(fontWeight: FontWeight.bold, fontSize: 15),
                                     style: const NeumorphicStyle(
                                       color: Colors.white,
                                       depth: 5,
@@ -185,8 +168,7 @@ class DesktopConnectBody extends StatelessWidget {
                           width: 100,
                           decoration: BoxDecoration(
                               color: Colors.black.withOpacity(0.2),
-                              border:
-                                  Border.all(width: 1.2, color: Colors.black),
+                              border: Border.all(width: 1.2, color: Colors.black),
                               borderRadius: BorderRadius.circular(10)),
                           child: Padding(
                             padding: const EdgeInsets.all(10.0),
@@ -195,18 +177,13 @@ class DesktopConnectBody extends StatelessWidget {
                                 NeumorphicIcon(
                                   Icons.whatsapp,
                                   size: 40,
-                                  style: const NeumorphicStyle(
-                                      color: Colors.black,
-                                      depth: 3,
-                                      intensity: 0.99),
+                                  style: const NeumorphicStyle(color: Colors.black, depth: 3, intensity: 0.99),
                                 ),
                                 Padding(
                                   padding: const EdgeInsets.only(top: 10),
                                   child: NeumorphicText(
                                     'WhatsApp',
-                                    textStyle: NeumorphicTextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 15),
+                                    textStyle: NeumorphicTextStyle(fontWeight: FontWeight.bold, fontSize: 15),
                                     style: const NeumorphicStyle(
                                       color: Colors.white,
                                       depth: 5,
@@ -229,8 +206,7 @@ class DesktopConnectBody extends StatelessWidget {
                           width: 100,
                           decoration: BoxDecoration(
                               color: Colors.black.withOpacity(0.2),
-                              border:
-                                  Border.all(width: 1.2, color: Colors.black),
+                              border: Border.all(width: 1.2, color: Colors.black),
                               borderRadius: BorderRadius.circular(10)),
                           child: Padding(
                             padding: const EdgeInsets.all(10.0),
@@ -239,18 +215,13 @@ class DesktopConnectBody extends StatelessWidget {
                                 NeumorphicIcon(
                                   Icons.mail,
                                   size: 40,
-                                  style: const NeumorphicStyle(
-                                      color: Colors.black,
-                                      depth: 3,
-                                      intensity: 0.99),
+                                  style: const NeumorphicStyle(color: Colors.black, depth: 3, intensity: 0.99),
                                 ),
                                 Padding(
                                   padding: const EdgeInsets.only(top: 10),
                                   child: NeumorphicText(
                                     'Email',
-                                    textStyle: NeumorphicTextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 15),
+                                    textStyle: NeumorphicTextStyle(fontWeight: FontWeight.bold, fontSize: 15),
                                     style: const NeumorphicStyle(
                                       color: Colors.white,
                                       depth: 5,
@@ -283,18 +254,13 @@ class DesktopConnectBody extends StatelessWidget {
                                 NeumorphicIcon(
                                   Icons.call,
                                   size: 40,
-                                  style: const NeumorphicStyle(
-                                      color: Colors.black,
-                                      depth: 3,
-                                      intensity: 0.99),
+                                  style: const NeumorphicStyle(color: Colors.black, depth: 3, intensity: 0.99),
                                 ),
                                 Padding(
                                   padding: const EdgeInsets.only(top: 10),
                                   child: NeumorphicText(
                                     'Call',
-                                    textStyle: NeumorphicTextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 15),
+                                    textStyle: NeumorphicTextStyle(fontWeight: FontWeight.bold, fontSize: 15),
                                     style: const NeumorphicStyle(
                                       color: Colors.white,
                                       depth: 5,
@@ -378,7 +344,8 @@ Future launchEmail() async {
 
   if (await canLaunchUrl(email)) {
     await launchUrl(email);
-  } else {
-    String text = 'Cannot send email';
   }
+  //  else {
+  //   String text = 'Cannot send email';
+  // }
 }

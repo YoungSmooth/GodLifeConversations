@@ -11,16 +11,17 @@ class SelectFittedLogin extends StatefulWidget {
 }
 
 class _SelectFittedLoginState extends State<SelectFittedLogin> {
-  bool isDesktop(BuildContext context) =>
-      MediaQuery.of(context).size.width >= 1000;
+  bool isDesktop(BuildContext context) => MediaQuery.of(context).size.width >= 1000;
 
-  bool isMobile(BuildContext context) =>
-      MediaQuery.of(context).size.width <= 1000;
+  // bool isMobile(BuildContext context) => MediaQuery.of(context).size.width <= 1000;
+
+  Widget? get getBody {
+    if (isDesktop(context)) return const DesktopScaffold();
+    return const LoginScreen();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: (isDesktop(context))
-            ? const DesktopScaffold()
-            : const LoginScreen());
+    return Scaffold(body: getBody);
   }
 }

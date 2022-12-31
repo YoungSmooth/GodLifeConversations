@@ -1,8 +1,6 @@
-// ignore_for_file: deprecated_member_use
-
-import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
+import 'package:url_launcher/url_launcher.dart';
+
 import '../../dektop_folder/constant_parts/constants.dart';
 
 class ConnectPage extends StatelessWidget {
@@ -27,9 +25,7 @@ class ConnectPage extends StatelessWidget {
           padding: const EdgeInsets.only(top: 20),
           child: Container(
             decoration: BoxDecoration(
-                color: Colors.black.withOpacity(0.2),
-                border: Border.all(width: 1.2, color: Colors.black),
-                borderRadius: BorderRadius.circular(10)),
+                color: Colors.black.withOpacity(0.2), border: Border.all(width: 1.2, color: Colors.black), borderRadius: BorderRadius.circular(10)),
             child: Column(
               children: [
                 Padding(
@@ -37,8 +33,7 @@ class ConnectPage extends StatelessWidget {
                   child: NeumorphicIcon(
                     Icons.location_on,
                     size: 40,
-                    style: const NeumorphicStyle(
-                        color: Colors.black, depth: 3, intensity: 0.99),
+                    style: const NeumorphicStyle(color: Colors.black, depth: 3, intensity: 0.99),
                   ),
                 ),
                 Padding(
@@ -49,8 +44,7 @@ class ConnectPage extends StatelessWidget {
                     child: NeumorphicText(
                       textAlign: TextAlign.center,
                       'Desire of All Nations Cathederal, 9 Effanga Offiong Street, Off Edibe Edibe Road, Southern Calabar',
-                      textStyle: NeumorphicTextStyle(
-                          fontWeight: FontWeight.bold, fontSize: 13),
+                      textStyle: NeumorphicTextStyle(fontWeight: FontWeight.bold, fontSize: 13),
                       style: const NeumorphicStyle(
                         color: Colors.black,
                         depth: 5,
@@ -63,8 +57,7 @@ class ConnectPage extends StatelessWidget {
                   padding: const EdgeInsets.only(bottom: 10),
                   child: NeumorphicText(
                     'Our Location',
-                    textStyle: NeumorphicTextStyle(
-                        fontWeight: FontWeight.bold, fontSize: 20),
+                    textStyle: NeumorphicTextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                     style: const NeumorphicStyle(
                       color: Colors.white,
                       depth: 5,
@@ -99,15 +92,13 @@ class ConnectPage extends StatelessWidget {
                           NeumorphicIcon(
                             Icons.telegram,
                             size: 40,
-                            style: const NeumorphicStyle(
-                                color: Colors.black, depth: 3, intensity: 0.99),
+                            style: const NeumorphicStyle(color: Colors.black, depth: 3, intensity: 0.99),
                           ),
                           Padding(
                             padding: const EdgeInsets.only(top: 10),
                             child: NeumorphicText(
                               'Telegram',
-                              textStyle: NeumorphicTextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 15),
+                              textStyle: NeumorphicTextStyle(fontWeight: FontWeight.bold, fontSize: 15),
                               style: const NeumorphicStyle(
                                 color: Colors.white,
                                 depth: 5,
@@ -138,17 +129,13 @@ class ConnectPage extends StatelessWidget {
                             NeumorphicIcon(
                               Icons.facebook,
                               size: 40,
-                              style: const NeumorphicStyle(
-                                  color: Colors.black,
-                                  depth: 3,
-                                  intensity: 0.99),
+                              style: const NeumorphicStyle(color: Colors.black, depth: 3, intensity: 0.99),
                             ),
                             Padding(
                               padding: const EdgeInsets.only(top: 10),
                               child: NeumorphicText(
                                 'Facebook',
-                                textStyle: NeumorphicTextStyle(
-                                    fontWeight: FontWeight.bold, fontSize: 15),
+                                textStyle: NeumorphicTextStyle(fontWeight: FontWeight.bold, fontSize: 15),
                                 style: const NeumorphicStyle(
                                   color: Colors.white,
                                   depth: 5,
@@ -180,17 +167,13 @@ class ConnectPage extends StatelessWidget {
                             NeumorphicIcon(
                               Icons.whatsapp,
                               size: 40,
-                              style: const NeumorphicStyle(
-                                  color: Colors.black,
-                                  depth: 3,
-                                  intensity: 0.99),
+                              style: const NeumorphicStyle(color: Colors.black, depth: 3, intensity: 0.99),
                             ),
                             Padding(
                               padding: const EdgeInsets.only(top: 10),
                               child: NeumorphicText(
                                 'WhatsApp',
-                                textStyle: NeumorphicTextStyle(
-                                    fontWeight: FontWeight.bold, fontSize: 15),
+                                textStyle: NeumorphicTextStyle(fontWeight: FontWeight.bold, fontSize: 15),
                                 style: const NeumorphicStyle(
                                   color: Colors.white,
                                   depth: 5,
@@ -222,17 +205,13 @@ class ConnectPage extends StatelessWidget {
                             NeumorphicIcon(
                               Icons.mail,
                               size: 40,
-                              style: const NeumorphicStyle(
-                                  color: Colors.black,
-                                  depth: 3,
-                                  intensity: 0.99),
+                              style: const NeumorphicStyle(color: Colors.black, depth: 3, intensity: 0.99),
                             ),
                             Padding(
                               padding: const EdgeInsets.only(top: 10),
                               child: NeumorphicText(
                                 'Email',
-                                textStyle: NeumorphicTextStyle(
-                                    fontWeight: FontWeight.bold, fontSize: 15),
+                                textStyle: NeumorphicTextStyle(fontWeight: FontWeight.bold, fontSize: 15),
                                 style: const NeumorphicStyle(
                                   color: Colors.white,
                                   depth: 5,
@@ -265,17 +244,13 @@ class ConnectPage extends StatelessWidget {
                             NeumorphicIcon(
                               Icons.call,
                               size: 40,
-                              style: const NeumorphicStyle(
-                                  color: Colors.black,
-                                  depth: 3,
-                                  intensity: 0.99),
+                              style: const NeumorphicStyle(color: Colors.black, depth: 3, intensity: 0.99),
                             ),
                             Padding(
                               padding: const EdgeInsets.only(top: 10),
                               child: NeumorphicText(
                                 'Call',
-                                textStyle: NeumorphicTextStyle(
-                                    fontWeight: FontWeight.bold, fontSize: 15),
+                                textStyle: NeumorphicTextStyle(fontWeight: FontWeight.bold, fontSize: 15),
                                 style: const NeumorphicStyle(
                                   color: Colors.white,
                                   depth: 5,
@@ -300,46 +275,34 @@ class ConnectPage extends StatelessWidget {
 
 Future makePhoneCall() async {
   const phoneNumber = '+2347034975428';
-  const url = 'tel:$phoneNumber';
+  final Uri url = Uri.parse('tel:$phoneNumber') ;
 
-  if (await canLaunch(url)) {
-    await launch(url);
+  if (await canLaunchUrl(url)) {
+    await launchUrl(url);
   }
 }
 
 Future openWhatsapp() async {
-  const url = 'https://chat.whatsapp.com/LNbsEodyYmaBuMMsdbPcBb';
-  if (await canLaunch(url)) {
-    await launch(
+  final Uri url = Uri.parse("'https://chat.whatsapp.com/LNbsEodyYmaBuMMsdbPcBb'");
+  if (await canLaunchUrl(url)) {
+    await launchUrl(
       url,
-      forceSafariVC: false,
-      forceWebView: false,
-      enableJavaScript: false,
+      mode: LaunchMode.platformDefault,
     );
   }
 }
 
 Future openFacebook() async {
-  const url = 'https://facebook.com';
-  if (await canLaunch(url)) {
-    await launch(
-      url,
-      forceSafariVC: false,
-      forceWebView: false,
-      enableJavaScript: false,
-    );
+  final Uri url = Uri.parse('https://facebook.com');
+  if (await canLaunchUrl(url)) {
+    await launchUrl(url, mode: LaunchMode.platformDefault);
   }
 }
 
 Future openTelegram() async {
-  const url = 'https:bit.ly/33P2993';
-  if (await canLaunch(url)) {
-    await launch(
-      url,
-      forceSafariVC: false,
-      forceWebView: false,
-      enableJavaScript: false,
-    );
+  final Uri url = Uri.parse('https:bit.ly/33P2993');
+  if (await canLaunchUrl(url)) {
+    await launchUrl(url, mode: LaunchMode.platformDefault);
   }
 }
 

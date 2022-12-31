@@ -1,7 +1,5 @@
-import 'package:flutter/material.dart';
-
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
 
 import '../mobile_folder/mobile_scaffold.dart';
 
@@ -29,6 +27,7 @@ class _RegisterPageState extends State<RegisterPage> {
       email: _emailController.text.trim(),
       password: _passwordController.text.trim(),
     );
+    
     Navigator.of(context).push(
       MaterialPageRoute(
         builder: (context) => const MobileScaffold(),
@@ -51,15 +50,11 @@ class _RegisterPageState extends State<RegisterPage> {
               controller: _emailController,
               decoration: InputDecoration(
                 hintText: 'Input Email',
-                enabledBorder: OutlineInputBorder(
-                    borderSide: const BorderSide(color: Colors.white),
-                    borderRadius: BorderRadius.circular(12)),
+                enabledBorder: OutlineInputBorder(borderSide: const BorderSide(color: Colors.white), borderRadius: BorderRadius.circular(12)),
                 fillColor: Colors.grey[200],
                 filled: true,
                 border: InputBorder.none,
-                focusedBorder: OutlineInputBorder(
-                    borderSide: const BorderSide(color: Colors.black),
-                    borderRadius: BorderRadius.circular(12)),
+                focusedBorder: OutlineInputBorder(borderSide: const BorderSide(color: Colors.black), borderRadius: BorderRadius.circular(12)),
                 contentPadding: const EdgeInsets.all(8),
               ),
             ),
@@ -75,9 +70,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 fillColor: Colors.grey[200],
                 filled: true,
                 border: InputBorder.none,
-                focusedBorder: OutlineInputBorder(
-                    borderSide: const BorderSide(color: Colors.black),
-                    borderRadius: BorderRadius.circular(12)),
+                focusedBorder: OutlineInputBorder(borderSide: const BorderSide(color: Colors.black), borderRadius: BorderRadius.circular(12)),
                 contentPadding: const EdgeInsets.all(8),
               ),
             ),
@@ -89,9 +82,7 @@ class _RegisterPageState extends State<RegisterPage> {
               onTap: registerUser,
               child: Container(
                 padding: const EdgeInsets.all(20),
-                decoration: BoxDecoration(
-                    color: Colors.green.shade400,
-                    borderRadius: BorderRadius.circular(12)),
+                decoration: BoxDecoration(color: Colors.green.shade400, borderRadius: BorderRadius.circular(12)),
                 child: const Center(
                   child: Text(
                     'Register',
@@ -115,9 +106,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 onTap: widget.showLoginPage,
                 child: Text(
                   ' Login',
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.green.shade400),
+                  style: TextStyle(fontWeight: FontWeight.bold, color: Colors.green.shade400),
                 ),
               ),
             ],

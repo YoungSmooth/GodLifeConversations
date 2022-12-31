@@ -1,16 +1,11 @@
-import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:god_life_conversations/providers/user_provider.dart';
-import 'package:god_life_conversations/responsive/mobile_folder/components/glass_box_2.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:blur/blur.dart';
-import 'package:god_life_conversations/models/user.dart' as model;
-import 'package:god_life_conversations/providers/user_provider.dart';
-import 'package:god_life_conversations/utilities.dart/colors.dart';
-import 'package:provider/provider.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
+import 'package:god_life_conversations/models/user.dart';
+import 'package:god_life_conversations/providers/user_provider.dart';
+import 'package:god_life_conversations/utilities.dart/colors.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -22,7 +17,7 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
-    model.User user = Provider.of<UserProvider>(context).getUser;
+    User user = Provider.of<UserProvider>(context).getUser;
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -30,15 +25,8 @@ class _ProfilePageState extends State<ProfilePage> {
           children: [
             Stack(
               children: [
-                SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.6,
-                        width: double.infinity,
-                        child: Image.network(user.photoUrl))
-                    .blurred(
-                        colorOpacity: 0.5,
-                        borderRadius: const BorderRadius.horizontal(
-                            right: Radius.circular(20)),
-                        blur: 8),
+                SizedBox(height: MediaQuery.of(context).size.height * 0.6, width: double.infinity, child: Image.network(user.photoUrl))
+                    .blurred(colorOpacity: 0.5, borderRadius: const BorderRadius.horizontal(right: Radius.circular(20)), blur: 8),
                 Positioned.fill(
                   child: Align(
                     alignment: Alignment.center,
@@ -91,10 +79,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                     children: [
                                       Container(
                                         decoration: const BoxDecoration(
-                                          border: Border(
-                                              bottom: BorderSide(
-                                                  width: 1,
-                                                  color: Colors.white)),
+                                          border: Border(bottom: BorderSide(width: 1, color: Colors.white)),
                                         ),
                                         child: const IconButton(
                                             iconSize: 30,
@@ -106,22 +91,11 @@ class _ProfilePageState extends State<ProfilePage> {
                                       ),
                                       Container(
                                         decoration: const BoxDecoration(
-                                          border: Border(
-                                              bottom: BorderSide(
-                                                  width: 1,
-                                                  color: Colors.white)),
+                                          border: Border(bottom: BorderSide(width: 1, color: Colors.white)),
                                         ),
-                                        child: const IconButton(
-                                            iconSize: 30,
-                                            onPressed: null,
-                                            icon: Icon(Icons.add_a_photo,
-                                                color: Colors.white)),
+                                        child: const IconButton(iconSize: 30, onPressed: null, icon: Icon(Icons.add_a_photo, color: Colors.white)),
                                       ),
-                                      const IconButton(
-                                          iconSize: 30,
-                                          onPressed: null,
-                                          icon: Icon(Icons.share,
-                                              color: Colors.white)),
+                                      const IconButton(iconSize: 30, onPressed: null, icon: Icon(Icons.share, color: Colors.white)),
                                     ],
                                   ),
                                 )
@@ -139,8 +113,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                       const Shadow(
                                         blurRadius: 10.0, // shadow blur
                                         color: mainColor, // shadow color
-                                        offset: Offset(2.0,
-                                            2.0), // how much shadow will be shown
+                                        offset: Offset(2.0, 2.0), // how much shadow will be shown
                                       ),
                                     ],
                                     fontWeight: FontWeight.bold))),
@@ -182,10 +155,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       children: const [
                         Text(
                           '20',
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 16,
-                              color: mainColor),
+                          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16, color: mainColor),
                         ),
                         Text(
                           'Posts',
@@ -199,10 +169,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       children: const [
                         Text(
                           '50',
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 16,
-                              color: mainColor),
+                          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16, color: mainColor),
                         ),
                         Text(
                           'Testimonies',
@@ -242,18 +209,13 @@ class _ProfilePageState extends State<ProfilePage> {
                       children: [
                         Container(
                           decoration: BoxDecoration(
-                            border: Border(
-                                bottom: BorderSide(
-                                    width: 1, color: Colors.grey.shade400)),
+                            border: Border(bottom: BorderSide(width: 1, color: Colors.grey.shade400)),
                           ),
                           child: const Padding(
                             padding: EdgeInsets.fromLTRB(0, 0, 0, 6),
                             child: Text(
                               'Department                                   ',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 16,
-                                  color: Colors.blue),
+                              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16, color: Colors.blue),
                             ),
                           ),
                         ),

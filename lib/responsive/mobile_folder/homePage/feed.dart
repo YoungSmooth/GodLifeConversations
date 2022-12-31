@@ -1,18 +1,13 @@
 import 'dart:io';
 
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:god_life_conversations/responsive/mobile_folder/components/glass_Box.dart';
-import 'package:god_life_conversations/responsive/mobile_folder/components/glass_box_2.dart';
+import 'package:god_life_conversations/models/user.dart' as model;
 import 'package:god_life_conversations/utilities.dart/colors.dart';
 import 'package:god_life_conversations/utilities.dart/utils.dart';
-import 'package:provider/provider.dart';
-import '../../../providers/user_provider.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:god_life_conversations/models/user.dart' as model;
+import 'package:provider/provider.dart';
 
+import '../../../providers/user_provider.dart';
 import '../../widgets/text_field_input.dart';
 
 class GlcFeed extends StatefulWidget {
@@ -121,15 +116,11 @@ class _GlcFeedState extends State<GlcFeed> {
                               child: Container(
                                 decoration: BoxDecoration(
                                   image: DecorationImage(
-                                    image:
-                                        // MemoryImage(_postUpload!),
-
-                                        _postUpload == null
-                                            ? NetworkImage(
-                                                'https://images.unsplash.com/photo-1617791160536-598cf32026fb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHRoaW5raW5nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60',
-                                              ) as ImageProvider
-                                            : FileImage(_postUpload!)
-                                                as ImageProvider,
+                                    image: _postUpload == null
+                                        ? const NetworkImage(
+                                            'https://images.unsplash.com/photo-1617791160536-598cf32026fb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHRoaW5raW5nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60',
+                                          )
+                                        : FileImage(_postUpload!) as ImageProvider,
                                   ),
                                 ),
                               ),
@@ -138,7 +129,7 @@ class _GlcFeedState extends State<GlcFeed> {
                           const SizedBox(height: 20),
                           SizedBox(
                             width: MediaQuery.of(context).size.width * 0.3,
-                            child: TextFieldInputt(
+                            child: TextFieldInput(
                               textEditingController: _descriptionController,
                               hintText: 'Share as you are led...',
                               textInputType: TextInputType.text,
