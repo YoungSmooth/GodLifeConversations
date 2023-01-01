@@ -1,11 +1,11 @@
-// ignore_for_file: depend_on_referenced_packages
-
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
-import 'package:god_life_conversations/responsive/dektop_folder/pages/desktop_connect_page.dart';
-import 'package:god_life_conversations/responsive/dektop_folder/pages/desktop_home_page.dart';
+
+import '../../../resources/string_manager.dart';
 import '../pages/desktop_about_page.dart';
+import '../pages/desktop_connect_page.dart';
 import '../pages/desktop_events_page.dart';
 import '../pages/desktop_give_page.dart';
+import '../pages/desktop_home_page.dart';
 import '../pages/desktop_messages_page.dart';
 import '../pages/desktop_serve_page.dart';
 
@@ -48,10 +48,8 @@ class FootNote extends StatelessWidget {
                         child: const Padding(
                           padding: EdgeInsets.all(8.0),
                           child: Text(
-                            'HOME',
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold),
+                            StringManager.homeCAPS,
+                            style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
                           ),
                         ),
                       ),
@@ -66,10 +64,8 @@ class FootNote extends StatelessWidget {
                         child: const Padding(
                           padding: EdgeInsets.all(8.0),
                           child: Text(
-                            'CONNECT',
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold),
+                            StringManager.connectCAPS,
+                            style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
                           ),
                         ),
                       ),
@@ -84,10 +80,8 @@ class FootNote extends StatelessWidget {
                         child: const Padding(
                           padding: EdgeInsets.all(8.0),
                           child: Text(
-                            'MESSAGES',
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold),
+                            StringManager.messagesCAPS,
+                            style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
                           ),
                         ),
                       ),
@@ -102,10 +96,8 @@ class FootNote extends StatelessWidget {
                         child: const Padding(
                           padding: EdgeInsets.all(8.0),
                           child: Text(
-                            'SERVE',
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold),
+                            StringManager.serveCAPS,
+                            style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
                           ),
                         ),
                       ),
@@ -120,10 +112,8 @@ class FootNote extends StatelessWidget {
                         child: const Padding(
                           padding: EdgeInsets.all(8.0),
                           child: Text(
-                            'EVENTS',
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold),
+                            StringManager.eventsCAPS,
+                            style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
                           ),
                         ),
                       ),
@@ -138,10 +128,8 @@ class FootNote extends StatelessWidget {
                         child: const Padding(
                           padding: EdgeInsets.all(8.0),
                           child: Text(
-                            'GIVE',
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold),
+                            StringManager.giveCAPS,
+                            style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
                           ),
                         ),
                       ),
@@ -156,10 +144,8 @@ class FootNote extends StatelessWidget {
                         child: const Padding(
                           padding: EdgeInsets.all(8.0),
                           child: Text(
-                            'ABOUT',
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold),
+                            StringManager.aboutCAPS,
+                            style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
                           ),
                         ),
                       ),
@@ -175,8 +161,7 @@ class FootNote extends StatelessWidget {
                           child: NeumorphicIcon(
                             Icons.telegram,
                             size: 25,
-                            style: const NeumorphicStyle(
-                                color: Colors.black, depth: 1, intensity: 0.99),
+                            style: const NeumorphicStyle(color: Colors.black, depth: 1, intensity: 0.99),
                           ),
                         ),
                         Padding(
@@ -184,8 +169,7 @@ class FootNote extends StatelessWidget {
                           child: NeumorphicIcon(
                             Icons.facebook,
                             size: 25,
-                            style: const NeumorphicStyle(
-                                color: Colors.black, depth: 1, intensity: 0.99),
+                            style: const NeumorphicStyle(color: Colors.black, depth: 1, intensity: 0.99),
                           ),
                         ),
                         Padding(
@@ -193,8 +177,7 @@ class FootNote extends StatelessWidget {
                           child: NeumorphicIcon(
                             Icons.whatsapp,
                             size: 25,
-                            style: const NeumorphicStyle(
-                                color: Colors.black, depth: 1, intensity: 0.99),
+                            style: const NeumorphicStyle(color: Colors.black, depth: 1, intensity: 0.99),
                           ),
                         ),
                         Padding(
@@ -202,8 +185,7 @@ class FootNote extends StatelessWidget {
                           child: NeumorphicIcon(
                             Icons.mail,
                             size: 25,
-                            style: const NeumorphicStyle(
-                                color: Colors.black, depth: 1, intensity: 0.99),
+                            style: const NeumorphicStyle(color: Colors.black, depth: 1, intensity: 0.99),
                           ),
                         ),
                         Padding(
@@ -211,8 +193,7 @@ class FootNote extends StatelessWidget {
                           child: NeumorphicIcon(
                             Icons.call,
                             size: 25,
-                            style: const NeumorphicStyle(
-                                color: Colors.black, depth: 1, intensity: 0.99),
+                            style: const NeumorphicStyle(color: Colors.black, depth: 1, intensity: 0.99),
                           ),
                         ),
                       ],
@@ -232,10 +213,8 @@ class FootNote extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: const [
                           Text(
-                            'CONTACT US',
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black),
+                            StringManager.contactUsCAPS,
+                            style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
                           )
                         ],
                       ),
@@ -247,9 +226,8 @@ class FootNote extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: const [
                         Text(
-                          '© 2022 GODLIFE CONVERSATIONS',
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, color: Colors.black),
+                          StringManager.copyrightCAPS,
+                          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
                         )
                       ],
                     ),

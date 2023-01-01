@@ -1,10 +1,11 @@
 import 'dart:io';
-import 'dart:typed_data';
 
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:cloud_firestore/cloud_firestore.dart' show DocumentSnapshot, FirebaseFirestore;
 import 'package:firebase_auth/firebase_auth.dart' show FirebaseAuth, UserCredential;
-import 'package:god_life_conversations/models/user.dart';
-import 'package:god_life_conversations/resources/storage_methods.dart';
+import 'package:god_life_conversations/resources/string_manager.dart';
+
+import '../models/user.dart';
+import 'storage_methods.dart';
 
 class AuthMethods {
   final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -23,7 +24,7 @@ class AuthMethods {
     required String bio,
     required File? profileImage,
   }) async {
-    String res = 'Some error occurred';
+    String res = StringManager.errorOccured;
     try {
       if (email.isNotEmpty || password.isNotEmpty || username.isNotEmpty || bio.isNotEmpty || profileImage != null) {
         UserCredential cred = await _auth.createUserWithEmailAndPassword(email: email, password: password);
@@ -42,10 +43,12 @@ class AuthMethods {
           // department:department,
         );
 
-        await _firestore.collection('users').doc(cred.user!.uid).set(user.toJson()); 
-        res = 'success';
+        await _firestore.collection('users').doc(cred.user!.uid).set(
+              user.toJson(),
+            );
+        res = StringManager.success;
       } else {
-        res = "Please enter all the fields";
+        res = StringManager.fillAllFields;
       }
     } catch (err) {
       res = err.toString();
@@ -57,13 +60,13 @@ class AuthMethods {
     required String email,
     required String password,
   }) async {
-    String res = 'Some error occured';
+    String res = StringManager.errorOccured;
     try {
       if (email.isNotEmpty || password.isNotEmpty) {
         await _auth.signInWithEmailAndPassword(email: email, password: password);
-        res = 'Success';
+        res = StringManager.success;
       } else {
-        res = 'Please enter all credentials';
+        res = StringManager.fillAllFields;
       }
     } catch (err) {
       res = err.toString();

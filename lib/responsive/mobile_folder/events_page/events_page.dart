@@ -1,7 +1,7 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first, depend_on_referenced_packages
-// ignore_for_file: empty_constructor_bodies
 import 'package:flutter/material.dart';
 import 'package:list_timeline/custom_list_tracking.dart';
+
+import '../../../resources/string_manager.dart';
 
 class EventsPage extends StatefulWidget {
   const EventsPage({super.key});
@@ -15,54 +15,18 @@ class _EventsPageState extends State<EventsPage> {
 
   @override
   void initState() {
-    listExample.add(DataModel(
-      title: "Future Event",
-      desc: "The power of fasting",
-      dateTime: "10-10-2022",
-    ));
-
-    listExample.add(DataModel(
-      title: "Ongoing Event",
-      desc: "Dreams and Visions",
-      dateTime: "10-10-2022",
-    ));
-
-    listExample.add(DataModel(
-      title: "Past Event",
-      desc: "Roses are red.",
-      dateTime: "10-10-2022",
-    ));
-
-    listExample.add(DataModel(
-      title: "Past Event",
-      desc: "Keys to Growth",
-      dateTime: "10-10-2022",
-    ));
-
-    listExample.add(DataModel(
-      title: "Past Event",
-      desc: "The Joy of the Lord",
-      dateTime: "10-10-2022",
-    ));
-
-    listExample.add(DataModel(
-      title: "Past Event",
-      desc: "Roses are red.",
-      dateTime: "10-10-2022",
-    ));
-
-    listExample.add(DataModel(
-      title: "Past Event",
-      desc: "Keys to Growth",
-      dateTime: "10-10-2022",
-    ));
-
-    listExample.add(DataModel(
-      title: "Past Event",
-      desc: "The Joy of the Lord",
-      dateTime: "10-10-2022",
-    ));
-
+    listExample.addAll(
+      [
+        DataModel(title: StringManager.futureEvent, desc: StringManager.futureEventBody1, dateTime: StringManager.defaultDate1),
+        DataModel(title: StringManager.ongoingEvent, desc: StringManager.ongoingEventBody1, dateTime: StringManager.defaultDate1),
+        DataModel(title: StringManager.pastEvent, desc: StringManager.pastEventBody1, dateTime: StringManager.defaultDate1),
+        DataModel(title: StringManager.pastEvent, desc: StringManager.pastEventBody2, dateTime: StringManager.defaultDate1),
+        DataModel(title: StringManager.pastEvent, desc: StringManager.pastEventBody3, dateTime: StringManager.defaultDate1),
+        DataModel(title: StringManager.pastEvent, desc: StringManager.pastEventBody1, dateTime: StringManager.defaultDate1),
+        DataModel(title: StringManager.pastEvent, desc: StringManager.pastEventBody2, dateTime: StringManager.defaultDate1),
+        DataModel(title: StringManager.pastEvent, desc: StringManager.pastEventBody3, dateTime: StringManager.defaultDate1),
+      ],
+    );
     super.initState();
   }
 
@@ -74,10 +38,7 @@ class _EventsPageState extends State<EventsPage> {
           children: [
             const Padding(
               padding: EdgeInsets.all(20),
-              child: Text(
-                'Go through our past, ongoig and future events to keep track of our activities and tag along.',
-                textAlign: TextAlign.center,
-              ),
+              child: Text(StringManager.eventPageBody1, textAlign: TextAlign.center),
             ),
             SingleChildScrollView(
               child: Container(
@@ -89,9 +50,10 @@ class _EventsPageState extends State<EventsPage> {
                   // valueTextOfDesc: (listExample) => listExample.desc,
                   customTitleWidget: (e) => Container(
                     decoration: BoxDecoration(
-                        color: Colors.purple.withOpacity(0.1),
-                        border: Border.all(width: 0.7, color: Colors.grey),
-                        borderRadius: BorderRadius.circular(5)),
+                      color: Colors.purple.withOpacity(0.1),
+                      border: Border.all(width: 0.7, color: Colors.grey),
+                      borderRadius: BorderRadius.circular(5),
+                    ),
                     child: Padding(
                       padding: const EdgeInsets.all(3.0),
                       child: Text(
@@ -117,12 +79,11 @@ class _EventsPageState extends State<EventsPage> {
                       ),
                     ],
                   ),
-                  colorCircleTimeline: (listExample) =>
-                      listExample.title == "Future Event"
-                          ? Colors.yellow
-                          : listExample.title == "Ongoing Event"
-                              ? Colors.green
-                              : Colors.grey,
+                  colorCircleTimeline: (listExample) => listExample.title == StringManager.futureEvent
+                      ? Colors.yellow
+                      : listExample.title == StringManager.ongoingEvent
+                          ? Colors.green
+                          : Colors.grey,
                   showLeftWidget: true,
                   valueOfLeftSource: (e) => (e.dateTime),
                 ),

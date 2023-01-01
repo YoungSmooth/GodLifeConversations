@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:god_life_conversations/constants.dart';
-import 'package:god_life_conversations/responsive/mobile_folder/mobile_test_plugins.dart/menu_widget.dart';
-import 'package:god_life_conversations/utilities.dart/my_box.dart';
-import 'package:god_life_conversations/utilities.dart/my_tile.dart';
+
+import '../../../constants.dart';
+import '../../../resources/string_manager.dart';
+import '../../../utilities/my_box.dart';
+import '../../../utilities/my_tile.dart';
+import '../mobile_test_plugins.dart/menu_widget.dart';
 
 class DashboadPage extends StatefulWidget {
   const DashboadPage({super.key});
@@ -15,38 +17,24 @@ class _DashboadPageState extends State<DashboadPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: const MenuWidget(),
-        backgroundColor: Colors.black,
-        title: const Text('Home'),
-      ),
+      appBar: AppBar(leading: const MenuWidget(), backgroundColor: Colors.black, title: const Text(StringManager.home)),
       backgroundColor: myDefaultBackground,
       drawer: myDrawer,
       body: Column(
         children: [
-          // 4 box on the top
           AspectRatio(
             aspectRatio: 1,
             child: SizedBox(
               width: double.infinity,
               child: GridView.builder(
                 itemCount: 4,
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2),
-                itemBuilder: (context, index) {
-                  return const MyBox();
-                },
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+                itemBuilder: (context, index) => const MyBox()
               ),
             ),
           ),
-          // tiles below
           Expanded(
-            child: ListView.builder(
-              itemCount: 5,
-              itemBuilder: (context, index) {
-                return const MyTile();
-              },
-            ),
+            child: ListView.builder(itemCount: 5, itemBuilder: (context, index) => const MyTile()),
           ),
         ],
       ),

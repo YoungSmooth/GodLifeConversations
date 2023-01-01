@@ -2,8 +2,9 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:blur/blur.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
-import 'package:god_life_conversations/utilities.dart/colors.dart';
 
+import '../../../resources/string_manager.dart';
+import '../../../utilities/colors.dart';
 import '../../dektop_folder/constant_parts/constants.dart';
 import 'feed.dart';
 import 'home_page_inspirations.dart';
@@ -63,13 +64,13 @@ class MobileHomePage extends StatelessWidget {
                                   totalRepeatCount: 500,
                                   animatedTexts: [
                                     ColorizeAnimatedText(
-                                      'WELCOME TO GODLIFE CONVERSATIONS',
+                                      StringManager.welcomeToGLC,
                                       textStyle: colorizeTextStyleMobile,
                                       colors: colorizeColors,
                                       textDirection: TextDirection.ltr,
                                     ),
                                     ColorizeAnimatedText(
-                                      'WELCOME TO GODLIFE CONVERSATIONS',
+                                      StringManager.welcomeToGLC,
                                       textStyle: colorizeTextStyleMobile,
                                       colors: colorizeColors,
                                       textDirection: TextDirection.ltr,
@@ -104,15 +105,9 @@ class MobileHomePage extends StatelessWidget {
                         labelColor: mainColor,
                         indicatorColor: Colors.grey,
                         tabs: [
-                          Tab(
-                            text: 'Feed',
-                          ),
-                          Tab(
-                            text: 'Testimonies',
-                          ),
-                          Tab(
-                            text: 'Messages',
-                          ),
+                          Tab(text: StringManager.feed),
+                          Tab(text: StringManager.testimonies),
+                          Tab(text: StringManager.messages),
                         ],
                       ),
                       Expanded(

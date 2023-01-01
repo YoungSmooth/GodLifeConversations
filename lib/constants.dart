@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'resources/string_manager.dart';
+
 var myDefaultBackground = Colors.grey.shade300;
 var linearColor = const LinearGradient(
   begin: Alignment.centerLeft,
@@ -17,25 +19,26 @@ var myDrawer = Drawer(
     children: const [
       DrawerHeader(
         child: CircleAvatar(
-            radius: 5,
-            backgroundColor: Colors.pink,
-            child: Icon(Icons.favorite)),
+          radius: 5,
+          backgroundColor: Colors.pink,
+          child: Icon(Icons.favorite),
+        ),
       ),
       ListTile(
         leading: Icon(Icons.home),
-        title: Text('H O M E'),
+        title: Text(StringManager.homeSpaced),
       ),
       ListTile(
         leading: Icon(Icons.card_giftcard),
-        title: Text('G I F T C A R D'),
+        title: Text(StringManager.giftCardSpaced),
       ),
       ListTile(
         leading: Icon(Icons.messenger),
-        title: Text('M E S S E N G E R'),
+        title: Text(StringManager.messengerSpaced),
       ),
       ListTile(
         leading: Icon(Icons.more),
-        title: Text('M O R E'),
+        title: Text(StringManager.moreSpaced),
       ),
     ],
   ),
@@ -49,25 +52,26 @@ var sideColumn = Container(
         height: 300,
         width: 300,
         child: CircleAvatar(
-            radius: 50,
-            backgroundColor: Colors.green,
-            child: Icon(Icons.favorite)),
+          radius: 50,
+          backgroundColor: Colors.green,
+          child: Icon(Icons.favorite),
+        ),
       ),
       ListTile(
         leading: Icon(Icons.home),
-        title: Text('H O M E'),
+        title: Text(StringManager.homeSpaced),
       ),
       ListTile(
         leading: Icon(Icons.card_giftcard),
-        title: Text('G I F T C A R D'),
+        title: Text(StringManager.giftCardSpaced),
       ),
       ListTile(
         leading: Icon(Icons.messenger),
-        title: Text('M E S S E N G E R'),
+        title: Text(StringManager.messengerSpaced),
       ),
       ListTile(
         leading: Icon(Icons.more),
-        title: Text('M O R E'),
+        title: Text(StringManager.giftCardSpaced),
       ),
     ],
   ),

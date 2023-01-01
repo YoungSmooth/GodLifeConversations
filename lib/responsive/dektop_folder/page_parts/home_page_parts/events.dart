@@ -1,7 +1,6 @@
-// ignore_for_file: depend_on_referenced_packages
-
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 
+import '../../../../resources/string_manager.dart';
 import '../../pages/desktop_events_page.dart';
 
 class Events extends StatelessWidget {
@@ -31,31 +30,28 @@ class Events extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(1),
                     child: NeumorphicText(
-                      'EVENTS',
+                      StringManager.eventsCAPS,
                       style: const NeumorphicStyle(
                           shadowDarkColor: Colors.grey,
                           color: Colors.black,
-                          border:
-                              NeumorphicBorder(color: Colors.white, width: 0.8),
+                          border: NeumorphicBorder(color: Colors.white, width: 0.8),
                           depth: 2,
                           intensity: 0.95),
-                      textStyle: NeumorphicTextStyle(
-                          fontSize: 40, fontWeight: FontWeight.bold),
+                      textStyle: NeumorphicTextStyle(fontSize: 40, fontWeight: FontWeight.bold),
                     ),
                   ),
                 ),
                 const Padding(
                   padding: EdgeInsets.all(24),
                   child: Text(
-                    'View our timeline of activities. We are currently running a series on Roses Are Red. Ignite the Love that is in you, the right way.',
+                    StringManager.eventPageBody2,
                     textAlign: TextAlign.center,
                   ),
                 ),
                 NeumorphicIcon(
                   Icons.event_available,
                   size: 40,
-                  style: const NeumorphicStyle(
-                      color: Colors.black, depth: 3, intensity: 0.99),
+                  style: const NeumorphicStyle(color: Colors.black, depth: 3, intensity: 0.99),
                 ),
               ],
             ),

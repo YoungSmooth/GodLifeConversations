@@ -3,6 +3,8 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
+import '../resources/string_manager.dart';
+
  Future<File?> pickImage(ImageSource source) async {
   final ImagePicker imagePicker = ImagePicker();
 
@@ -37,7 +39,7 @@ Future showGenericDialog({
     context: context,
     builder: (context) {
       return AlertDialog(
-        title: const Text('An error occurred'),
+        title: const Text(StringManager.errorOccured),
         content: Text(content),
         actions: options.keys.map((optionTitle) {
           final value = options[optionTitle];

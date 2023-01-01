@@ -1,4 +1,3 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 
 class MessageStyle extends StatelessWidget {
@@ -25,9 +24,7 @@ class MessageStyle extends StatelessWidget {
               SizedBox(
                 height: 200,
                 width: 330,
-                child: ClipRRect(
-                    borderRadius: BorderRadius.circular(20),
-                    child: messageImage),
+                child: ClipRRect(borderRadius: BorderRadius.circular(20), child: messageImage),
               ),
               Positioned(
                 top: 0,
@@ -35,17 +32,11 @@ class MessageStyle extends StatelessWidget {
                 child: Container(
                   decoration: BoxDecoration(
                     color: Colors.black.withOpacity(0.5),
-                    borderRadius: const BorderRadius.only(
-                      bottomLeft: Radius.circular(15),
-                      topRight: Radius.circular(15),
-                    ),
+                    borderRadius: const BorderRadius.only(bottomLeft: Radius.circular(15), topRight: Radius.circular(15)),
                   ),
                   height: 40,
                   width: 40,
-                  child: const Icon(
-                    Icons.download_for_offline_outlined,
-                    color: Colors.white,
-                  ),
+                  child: const Icon(Icons.download_for_offline_outlined, color: Colors.white),
                 ),
               ),
               Positioned(
@@ -53,9 +44,7 @@ class MessageStyle extends StatelessWidget {
                 child: Stack(children: [
                   Container(
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        border: Border.all(width: 0.6, color: Colors.black54),
-                        color: Colors.grey.shade300),
+                        borderRadius: BorderRadius.circular(20), border: Border.all(width: 0.6, color: Colors.black54), color: Colors.grey.shade300),
                     height: 50,
                     width: 330,
                     child: Row(
@@ -67,53 +56,33 @@ class MessageStyle extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(
-                                padding:
-                                    const EdgeInsets.only(top: 3, left: 10),
+                                padding: const EdgeInsets.only(top: 3, left: 10),
                                 child: Row(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Padding(
                                       padding: const EdgeInsets.only(top: 3),
-                                      child: SizedBox(
-                                        height: 12,
-                                        width: 12,
-                                        child: Image.asset(
-                                            'lib/assets/playing.png'),
-                                      ),
+                                      child: SizedBox(height: 12, width: 12, child: Image.asset('lib/assets/playing.png')),
                                     ),
                                     Padding(
                                       padding: const EdgeInsets.only(left: 8),
-                                      child: Text(
-                                        messageTitle,
-                                        style: const TextStyle(
-                                            color: Colors.black),
-                                      ),
+                                      child: Text(messageTitle, style: const TextStyle(color: Colors.black)),
                                     ),
                                   ],
                                 ),
                               ),
                               Padding(
-                                padding:
-                                    const EdgeInsets.only(top: 3, left: 10),
+                                padding: const EdgeInsets.only(top: 3, left: 10),
                                 child: Row(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Padding(
                                       padding: const EdgeInsets.only(top: 1),
-                                      child: SizedBox(
-                                        height: 13,
-                                        width: 13,
-                                        child: Image.asset(
-                                            'lib/assets/artistname.png'),
-                                      ),
+                                      child: SizedBox(height: 13, width: 13, child: Image.asset('lib/assets/artistname.png')),
                                     ),
                                     Padding(
                                       padding: const EdgeInsets.only(left: 8),
-                                      child: Text(
-                                        messageOwner,
-                                        style: const TextStyle(
-                                            color: Colors.grey, fontSize: 12),
-                                      ),
+                                      child: Text(messageOwner, style: const TextStyle(color: Colors.grey, fontSize: 12)),
                                     ),
                                   ],
                                 ),
@@ -126,18 +95,10 @@ class MessageStyle extends StatelessWidget {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              SizedBox(
-                                height: 25,
-                                width: 25,
-                                child: Image.asset('lib/assets/left.png'),
-                              ),
+                              SizedBox(height: 25, width: 25, child: Image.asset('lib/assets/left.png')),
                               Padding(
                                 padding: const EdgeInsets.only(left: 70),
-                                child: SizedBox(
-                                  height: 25,
-                                  width: 25,
-                                  child: Image.asset('lib/assets/right.png'),
-                                ),
+                                child: SizedBox(height: 25, width: 25, child: Image.asset('lib/assets/right.png')),
                               ),
                             ],
                           ),
@@ -152,11 +113,7 @@ class MessageStyle extends StatelessWidget {
                         border: Border.all(width: 7, color: Colors.white),
                         borderRadius: BorderRadius.circular(30),
                       ),
-                      child: SizedBox(
-                        height: 35,
-                        width: 35,
-                        child: Image.asset('lib/assets/play2.png'),
-                      ),
+                      child: SizedBox(height: 35, width: 35, child: Image.asset('lib/assets/play2.png')),
                     ),
                   ),
                 ]),

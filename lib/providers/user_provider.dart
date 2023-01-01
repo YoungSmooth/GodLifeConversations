@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:god_life_conversations/resources/auth_methods.dart';
+import '../resources/auth_methods.dart';
 import '../models/user.dart';
 
 class UserProvider extends ChangeNotifier {

@@ -1,7 +1,6 @@
-// ignore_for_file: depend_on_referenced_packages
-
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 
+import '../../../../resources/string_manager.dart';
 import '../../pages/desktop_home_page.dart';
 
 class ServePageHeader extends StatelessWidget {
@@ -10,7 +9,7 @@ class ServePageHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
-      children: <Widget>[
+      children: [
         SizedBox(
           height: 350,
           width: double.infinity,
@@ -61,14 +60,7 @@ class ServePageHeader extends StatelessWidget {
                     child: const Padding(
                       padding: EdgeInsets.all(10),
                       child: Center(
-                        child: Text(
-                          'S E R V E',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.w500,
-                            fontSize: 30,
-                          ),
-                        ),
+                        child: Text(StringManager.serveSpaced, style: TextStyle(color: Colors.white, fontWeight: FontWeight.w500, fontSize: 30)),
                       ),
                     ),
                   ),

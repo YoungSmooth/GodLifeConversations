@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../resources/string_manager.dart';
+
 const colorizeColors = [
   Colors.black,
   Colors.grey,
@@ -43,5 +45,5 @@ const colorizeTextStyleMobile = TextStyle(
 
 const connectMessage = Text(
   textAlign: TextAlign.center,
-  'We would love to connect with you. We have been praying for you and would love to grow with you. You can visit our location, connect with us via our social media platforms or contact us directly with the information below.',
+  StringManager.connectMessage1,
 );
