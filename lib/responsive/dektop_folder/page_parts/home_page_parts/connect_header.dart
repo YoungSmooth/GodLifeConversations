@@ -1,5 +1,6 @@
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 
+import '../../../../resources/font_size_manager.dart';
 import '../../../../resources/string_manager.dart';
 import '../../pages/desktop_connect_page.dart';
 
@@ -46,7 +47,7 @@ class SecondHeaderBackground extends StatelessWidget {
                         child: Center(
                           child: Text(
                             StringManager.connectSpaced,
-                            style: TextStyle(color: Colors.white, fontWeight: FontWeight.w500, fontSize: 30),
+                            style: TextStyle(color: Colors.white, fontWeight: FontWeight.w500, fontSize: FontSizeManager.s30),
                           ),
                         ),
                       ),

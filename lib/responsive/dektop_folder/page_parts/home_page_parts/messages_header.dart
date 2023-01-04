@@ -1,6 +1,7 @@
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../../../../resources/font_size_manager.dart';
 import '../../../../resources/string_manager.dart';
 import '../../pages/desktop_messages_page.dart';
 
@@ -46,7 +47,7 @@ class MessagesHeader extends StatelessWidget {
                           border: NeumorphicBorder(color: Colors.white, width: 0.8),
                           depth: 2,
                           intensity: 0.95),
-                      textStyle: NeumorphicTextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+                      textStyle: NeumorphicTextStyle(fontSize: FontSizeManager.s40, fontWeight: FontWeight.bold),
                     ),
                   ),
                   Padding(
@@ -58,7 +59,11 @@ class MessagesHeader extends StatelessWidget {
                         children: [
                           TextSpan(
                             text: StringManager.messagesBody1,
-                            style: TextStyle(color: Colors.grey.shade600, fontSize: 14, fontWeight: FontWeight.w400, backgroundColor: Colors.white),
+                            style: TextStyle(
+                                color: Colors.grey.shade600,
+                                fontSize: FontSizeManager.s14,
+                                fontWeight: FontWeight.w400,
+                                backgroundColor: Colors.white),
                           ),
                         ],
                       ),

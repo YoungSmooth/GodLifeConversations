@@ -2,6 +2,7 @@ import 'package:blur/blur.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 
+import '../../../../resources/font_size_manager.dart';
 import '../../../../resources/string_manager.dart';
 
 class ServeBody extends StatelessWidget {
@@ -49,14 +50,14 @@ class ServeBody extends StatelessWidget {
                           padding: EdgeInsets.only(bottom: 10, left: 20),
                           child: Text(
                             StringManager.administration,
-                            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                            style: TextStyle(fontWeight: FontWeight.bold, fontSize: FontSizeManager.s15),
                           ),
                         ),
                         Padding(
                           padding: EdgeInsets.only(left: 20, right: 20),
                           child: Text(
                             StringManager.administrationBody,
-                            style: TextStyle(fontSize: 12),
+                            style: TextStyle(fontSize: FontSizeManager.s12),
                           ),
                         ),
                       ],
@@ -102,14 +103,14 @@ class ServeBody extends StatelessWidget {
                           padding: EdgeInsets.only(bottom: 10, left: 20),
                           child: Text(
                             StringManager.media,
-                            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                            style: TextStyle(fontWeight: FontWeight.bold, fontSize: FontSizeManager.s15),
                           ),
                         ),
                         Padding(
                           padding: EdgeInsets.only(left: 20, right: 20),
                           child: Text(
                             StringManager.mediaBody,
-                            style: TextStyle(fontSize: 12),
+                            style: TextStyle(fontSize: FontSizeManager.s12),
                           ),
                         ),
                       ],
@@ -160,14 +161,14 @@ class ServeBody extends StatelessWidget {
                           padding: EdgeInsets.only(bottom: 10, left: 20),
                           child: Text(
                             StringManager.music,
-                            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                            style: TextStyle(fontWeight: FontWeight.bold, fontSize: FontSizeManager.s15),
                           ),
                         ),
                         Padding(
                           padding: EdgeInsets.only(left: 20, right: 20),
                           child: Text(
                             StringManager.musicBody,
-                            style: TextStyle(fontSize: 12),
+                            style: TextStyle(fontSize: FontSizeManager.s12),
                           ),
                         ),
                       ],
@@ -213,14 +214,14 @@ class ServeBody extends StatelessWidget {
                           padding: EdgeInsets.only(bottom: 10, left: 20),
                           child: Text(
                             StringManager.facilityManagement,
-                            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                            style: TextStyle(fontWeight: FontWeight.bold, fontSize: FontSizeManager.s15),
                           ),
                         ),
                         Padding(
                           padding: EdgeInsets.only(left: 20, right: 20),
                           child: Text(
                             StringManager.facilityManagementBody,
-                            style: TextStyle(fontSize: 12),
+                            style: TextStyle(fontSize: FontSizeManager.s12),
                           ),
                         ),
                       ],
@@ -271,14 +272,14 @@ class ServeBody extends StatelessWidget {
                           padding: EdgeInsets.only(bottom: 10, left: 20),
                           child: Text(
                             StringManager.ushering,
-                            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                            style: TextStyle(fontWeight: FontWeight.bold, fontSize: FontSizeManager.s15),
                           ),
                         ),
                         Padding(
                           padding: EdgeInsets.only(left: 20, right: 20),
                           child: Text(
                             StringManager.usheringBody,
-                            style: TextStyle(fontSize: 12),
+                            style: TextStyle(fontSize: FontSizeManager.s12),
                           ),
                         ),
                       ],
@@ -324,14 +325,14 @@ class ServeBody extends StatelessWidget {
                           padding: EdgeInsets.only(bottom: 10, left: 20),
                           child: Text(
                             StringManager.mobility,
-                            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                            style: TextStyle(fontWeight: FontWeight.bold, fontSize: FontSizeManager.s15),
                           ),
                         ),
                         Padding(
                           padding: EdgeInsets.only(left: 20, right: 20),
                           child: Text(
                             StringManager.mobilityBody,
-                            style: TextStyle(fontSize: 12),
+                            style: TextStyle(fontSize: FontSizeManager.s12),
                           ),
                         ),
                       ],
@@ -383,14 +384,14 @@ class ServeBody extends StatelessWidget {
                           padding: EdgeInsets.only(bottom: 10, left: 20),
                           child: Text(
                             StringManager.prayer,
-                            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                            style: TextStyle(fontWeight: FontWeight.bold, fontSize: FontSizeManager.s15),
                           ),
                         ),
                         Padding(
                           padding: EdgeInsets.only(left: 20, right: 20),
                           child: Text(
                             StringManager.prayerBody,
-                            style: TextStyle(fontSize: 12),
+                            style: TextStyle(fontSize: FontSizeManager.s12),
                           ),
                         ),
                       ],
@@ -436,14 +437,14 @@ class ServeBody extends StatelessWidget {
                           padding: EdgeInsets.only(bottom: 10, left: 20),
                           child: Text(
                             StringManager.discipleship,
-                            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                            style: TextStyle(fontWeight: FontWeight.bold, fontSize: FontSizeManager.s15),
                           ),
                         ),
                         Padding(
                           padding: EdgeInsets.only(left: 20, right: 20),
                           child: Text(
                             StringManager.discipleshipBody,
-                            style: TextStyle(fontSize: 12),
+                            style: TextStyle(fontSize: FontSizeManager.s12),
                           ),
                         ),
                       ],
@@ -494,14 +495,14 @@ class ServeBody extends StatelessWidget {
                           padding: EdgeInsets.only(bottom: 10, left: 20),
                           child: Text(
                             StringManager.finance,
-                            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                            style: TextStyle(fontWeight: FontWeight.bold, fontSize: FontSizeManager.s15),
                           ),
                         ),
                         Padding(
                           padding: EdgeInsets.only(left: 20, right: 20),
                           child: Text(
                             StringManager.financeBody,
-                            style: TextStyle(fontSize: 12),
+                            style: TextStyle(fontSize: FontSizeManager.s12),
                           ),
                         ),
                       ],
@@ -547,14 +548,14 @@ class ServeBody extends StatelessWidget {
                           padding: EdgeInsets.only(bottom: 10, left: 20),
                           child: Text(
                             'General Secretary',
-                            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                            style: TextStyle(fontWeight: FontWeight.bold, fontSize: FontSizeManager.s15),
                           ),
                         ),
                         Padding(
                           padding: EdgeInsets.only(left: 20, right: 20),
                           child: Text(
                             'Takes minutes during all executive meetings. Performs oheer task assigned by the  executive committee.',
-                            style: TextStyle(fontSize: 12),
+                            style: TextStyle(fontSize: FontSizeManager.s12),
                           ),
                         ),
                       ],

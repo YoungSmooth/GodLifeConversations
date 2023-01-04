@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 import 'package:hovering/hovering.dart';
 
+import '../../../../resources/font_size_manager.dart';
 import '../../../../resources/string_manager.dart';
 import '../../constant_parts/constants.dart';
 import '../../pages/desktop_about_page.dart';
@@ -101,7 +102,7 @@ class HeaderBackground extends StatelessWidget {
                           style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.w500,
-                            fontSize: 15,
+                            fontSize: FontSizeManager.s15,
                           ),
                         ),
                       ),
@@ -137,7 +138,7 @@ class HeaderBackground extends StatelessWidget {
                           style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.w500,
-                            fontSize: 15,
+                            fontSize: FontSizeManager.s15,
                           ),
                         ),
                       ),
@@ -173,7 +174,7 @@ class HeaderBackground extends StatelessWidget {
                           style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.w500,
-                            fontSize: 15,
+                            fontSize: FontSizeManager.s15,
                           ),
                         ),
                       ),
@@ -209,7 +210,7 @@ class HeaderBackground extends StatelessWidget {
                           style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.w500,
-                            fontSize: 15,
+                            fontSize: FontSizeManager.s15,
                           ),
                         ),
                       ),
@@ -245,7 +246,7 @@ class HeaderBackground extends StatelessWidget {
                           style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.w500,
-                            fontSize: 15,
+                            fontSize: FontSizeManager.s15,
                           ),
                         ),
                       ),
@@ -278,7 +279,7 @@ class HeaderBackground extends StatelessWidget {
                       child: Center(
                         child: Text(
                           StringManager.aboutCAPS,
-                          style: TextStyle(color: Colors.white, fontWeight: FontWeight.w500, fontSize: 15),
+                          style: TextStyle(color: Colors.white, fontWeight: FontWeight.w500, fontSize: FontSizeManager.s15),
                         ),
                       ),
                     ),

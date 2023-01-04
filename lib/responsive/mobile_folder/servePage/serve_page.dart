@@ -2,6 +2,7 @@ import 'package:blur/blur.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 
+import '../../../resources/font_size_manager.dart';
 import '../../../resources/string_manager.dart';
 
 class ServePage extends StatelessWidget {
@@ -50,11 +51,12 @@ class ServePage extends StatelessWidget {
                             children: const [
                               Padding(
                                 padding: EdgeInsets.only(bottom: 10, left: 20),
-                                child: Text(StringManager.administration, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
+                                child:
+                                    Text(StringManager.administration, style: TextStyle(fontWeight: FontWeight.bold, fontSize: FontSizeManager.s15)),
                               ),
                               Padding(
                                 padding: EdgeInsets.only(left: 20, right: 20),
-                                child: Text(StringManager.administrationBody, style: TextStyle(fontSize: 12)),
+                                child: Text(StringManager.administrationBody, style: TextStyle(fontSize: FontSizeManager.s12)),
                               ),
                             ],
                           ).frosted(
@@ -99,12 +101,12 @@ class ServePage extends StatelessWidget {
                                 padding: EdgeInsets.only(bottom: 10, left: 20),
                                 child: Text(
                                   StringManager.media,
-                                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: FontSizeManager.s15),
                                 ),
                               ),
                               Padding(
                                 padding: EdgeInsets.only(left: 20, right: 20),
-                                child: Text(StringManager.mediaBody, style: TextStyle(fontSize: 12)),
+                                child: Text(StringManager.mediaBody, style: TextStyle(fontSize: FontSizeManager.s12)),
                               ),
                             ],
                           ).frosted(
@@ -152,11 +154,11 @@ class ServePage extends StatelessWidget {
                             children: const [
                               Padding(
                                 padding: EdgeInsets.only(bottom: 10, left: 20),
-                                child: Text(StringManager.music, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
+                                child: Text(StringManager.music, style: TextStyle(fontWeight: FontWeight.bold, fontSize: FontSizeManager.s15)),
                               ),
                               Padding(
                                 padding: EdgeInsets.only(left: 20, right: 20),
-                                child: Text(StringManager.musicBody, style: TextStyle(fontSize: 12)),
+                                child: Text(StringManager.musicBody, style: TextStyle(fontSize: FontSizeManager.s12)),
                               ),
                             ],
                           ).frosted(
@@ -199,11 +201,12 @@ class ServePage extends StatelessWidget {
                             children: const [
                               Padding(
                                 padding: EdgeInsets.only(bottom: 10, left: 20),
-                                child: Text(StringManager.facilityManagement, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
+                                child: Text(StringManager.facilityManagement,
+                                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: FontSizeManager.s15)),
                               ),
                               Padding(
                                 padding: EdgeInsets.only(left: 20, right: 20),
-                                child: Text(StringManager.facilityManagementBody, style: TextStyle(fontSize: 12)),
+                                child: Text(StringManager.facilityManagementBody, style: TextStyle(fontSize: FontSizeManager.s12)),
                               ),
                             ],
                           ).frosted(
@@ -251,11 +254,11 @@ class ServePage extends StatelessWidget {
                             children: const [
                               Padding(
                                 padding: EdgeInsets.only(bottom: 10, left: 20),
-                                child: Text(StringManager.ushering, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
+                                child: Text(StringManager.ushering, style: TextStyle(fontWeight: FontWeight.bold, fontSize: FontSizeManager.s15)),
                               ),
                               Padding(
                                 padding: EdgeInsets.only(left: 20, right: 20),
-                                child: Text(StringManager.usheringBody, style: TextStyle(fontSize: 12)),
+                                child: Text(StringManager.usheringBody, style: TextStyle(fontSize: FontSizeManager.s12)),
                               ),
                             ],
                           ).frosted(
@@ -298,11 +301,11 @@ class ServePage extends StatelessWidget {
                             children: const [
                               Padding(
                                 padding: EdgeInsets.only(bottom: 10, left: 20),
-                                child: Text(StringManager.mobility, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
+                                child: Text(StringManager.mobility, style: TextStyle(fontWeight: FontWeight.bold, fontSize: FontSizeManager.s15)),
                               ),
                               Padding(
                                 padding: EdgeInsets.only(left: 20, right: 20),
-                                child: Text(StringManager.mobilityBody, style: TextStyle(fontSize: 12)),
+                                child: Text(StringManager.mobilityBody, style: TextStyle(fontSize: FontSizeManager.s12)),
                               ),
                             ],
                           ).frosted(
@@ -353,14 +356,14 @@ class ServePage extends StatelessWidget {
                                 padding: EdgeInsets.only(bottom: 10, left: 20),
                                 child: Text(
                                   StringManager.prayer,
-                                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: FontSizeManager.s15),
                                 ),
                               ),
                               Padding(
                                 padding: EdgeInsets.only(left: 20, right: 20),
                                 child: Text(
                                   StringManager.prayerBody,
-                                  style: TextStyle(fontSize: 12),
+                                  style: TextStyle(fontSize: FontSizeManager.s12),
                                 ),
                               ),
                             ],
@@ -406,12 +409,12 @@ class ServePage extends StatelessWidget {
                                 padding: EdgeInsets.only(bottom: 10, left: 20),
                                 child: Text(
                                   StringManager.discipleship,
-                                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: FontSizeManager.s15),
                                 ),
                               ),
                               Padding(
                                 padding: EdgeInsets.only(left: 20, right: 20),
-                                child: Text(StringManager.discipleshipBody, style: TextStyle(fontSize: 12)),
+                                child: Text(StringManager.discipleshipBody, style: TextStyle(fontSize: FontSizeManager.s12)),
                               ),
                             ],
                           ).frosted(
@@ -459,11 +462,11 @@ class ServePage extends StatelessWidget {
                             children: const [
                               Padding(
                                 padding: EdgeInsets.only(bottom: 10, left: 20),
-                                child: Text(StringManager.finance, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
+                                child: Text(StringManager.finance, style: TextStyle(fontWeight: FontWeight.bold, fontSize: FontSizeManager.s15)),
                               ),
                               Padding(
                                 padding: EdgeInsets.only(left: 20, right: 20),
-                                child: Text(StringManager.financeBody, style: TextStyle(fontSize: 12)),
+                                child: Text(StringManager.financeBody, style: TextStyle(fontSize: FontSizeManager.s12)),
                               ),
                             ],
                           ).frosted(
@@ -506,11 +509,12 @@ class ServePage extends StatelessWidget {
                             children: const [
                               Padding(
                                 padding: EdgeInsets.only(bottom: 10, left: 20),
-                                child: Text(StringManager.generalSecretary, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15)),
+                                child: Text(StringManager.generalSecretary,
+                                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: FontSizeManager.s15)),
                               ),
                               Padding(
                                 padding: EdgeInsets.only(left: 20, right: 20),
-                                child: Text(StringManager.generalSecretaryBody, style: TextStyle(fontSize: 12)),
+                                child: Text(StringManager.generalSecretaryBody, style: TextStyle(fontSize: FontSizeManager.s12)),
                               ),
                             ],
                           ).frosted(

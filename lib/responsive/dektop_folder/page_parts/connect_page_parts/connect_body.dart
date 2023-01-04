@@ -1,6 +1,7 @@
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../../../../resources/font_size_manager.dart';
 import '../../../../resources/string_manager.dart';
 import '../../constant_parts/constants.dart';
 
@@ -53,7 +54,7 @@ class DesktopConnectBody extends StatelessWidget {
                             child: NeumorphicText(
                               textAlign: TextAlign.center,
                               StringManager.ourLocationBody,
-                              textStyle: NeumorphicTextStyle(fontWeight: FontWeight.bold, fontSize: 13),
+                              textStyle: NeumorphicTextStyle(fontWeight: FontWeight.bold, fontSize: FontSizeManager.s13),
                               style: const NeumorphicStyle(color: Colors.black, depth: 5, intensity: 0.99),
                             ),
                           ),
@@ -62,7 +63,7 @@ class DesktopConnectBody extends StatelessWidget {
                           padding: const EdgeInsets.only(bottom: 10),
                           child: NeumorphicText(
                             StringManager.ourLocation,
-                            textStyle: NeumorphicTextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                            textStyle: NeumorphicTextStyle(fontWeight: FontWeight.bold, fontSize: FontSizeManager.s20),
                             style: const NeumorphicStyle(color: Colors.white, depth: 5, intensity: 0.99),
                           ),
                         ),
@@ -102,7 +103,7 @@ class DesktopConnectBody extends StatelessWidget {
                                 padding: const EdgeInsets.only(top: 10),
                                 child: NeumorphicText(
                                   StringManager.telegram,
-                                  textStyle: NeumorphicTextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                                  textStyle: NeumorphicTextStyle(fontWeight: FontWeight.bold, fontSize: FontSizeManager.s15),
                                   style: const NeumorphicStyle(color: Colors.white, depth: 5, intensity: 0.99),
                                 ),
                               )
@@ -136,7 +137,7 @@ class DesktopConnectBody extends StatelessWidget {
                                   padding: const EdgeInsets.only(top: 10),
                                   child: NeumorphicText(
                                     StringManager.facebook,
-                                    textStyle: NeumorphicTextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                                    textStyle: NeumorphicTextStyle(fontWeight: FontWeight.bold, fontSize: FontSizeManager.s15),
                                     style: const NeumorphicStyle(color: Colors.white, depth: 5, intensity: 0.99),
                                   ),
                                 ),
@@ -171,7 +172,7 @@ class DesktopConnectBody extends StatelessWidget {
                                   padding: const EdgeInsets.only(top: 10),
                                   child: NeumorphicText(
                                     StringManager.whatsApp,
-                                    textStyle: NeumorphicTextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                                    textStyle: NeumorphicTextStyle(fontWeight: FontWeight.bold, fontSize: FontSizeManager.s15),
                                     style: const NeumorphicStyle(color: Colors.white, depth: 5, intensity: 0.99),
                                   ),
                                 ),
@@ -206,7 +207,7 @@ class DesktopConnectBody extends StatelessWidget {
                                   padding: const EdgeInsets.only(top: 10),
                                   child: NeumorphicText(
                                     StringManager.email,
-                                    textStyle: NeumorphicTextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                                    textStyle: NeumorphicTextStyle(fontWeight: FontWeight.bold, fontSize: FontSizeManager.s15),
                                     style: const NeumorphicStyle(color: Colors.white, depth: 5, intensity: 0.99),
                                   ),
                                 ),
@@ -241,7 +242,7 @@ class DesktopConnectBody extends StatelessWidget {
                                   padding: const EdgeInsets.only(top: 10),
                                   child: NeumorphicText(
                                     StringManager.call,
-                                    textStyle: NeumorphicTextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                                    textStyle: NeumorphicTextStyle(fontWeight: FontWeight.bold, fontSize: FontSizeManager.s15),
                                     style: const NeumorphicStyle(color: Colors.white, depth: 5, intensity: 0.99),
                                   ),
                                 ),

@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
+import '../../resources/font_size_manager.dart';
 import '../../resources/string_manager.dart';
 
 class SignIn extends StatefulWidget {
@@ -75,7 +76,7 @@ class _SignInState extends State<SignIn> {
                 padding: const EdgeInsets.all(20),
                 decoration: BoxDecoration(color: Colors.green.shade400, borderRadius: BorderRadius.circular(12)),
                 child: const Center(
-                  child: Text(StringManager.login, style: TextStyle(fontSize: 20, color: Colors.white)),
+                  child: Text(StringManager.login, style: TextStyle(fontSize: FontSizeManager.s20, color: Colors.white)),
                 ),
               ),
             ),

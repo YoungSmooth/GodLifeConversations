@@ -1,5 +1,6 @@
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 
+import '../../../../resources/font_size_manager.dart';
 import '../../../../resources/string_manager.dart';
 import '../../pages/desktop_events_page.dart';
 
@@ -37,7 +38,7 @@ class Events extends StatelessWidget {
                           border: NeumorphicBorder(color: Colors.white, width: 0.8),
                           depth: 2,
                           intensity: 0.95),
-                      textStyle: NeumorphicTextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+                      textStyle: NeumorphicTextStyle(fontSize: FontSizeManager.s40, fontWeight: FontWeight.bold),
                     ),
                   ),
                 ),

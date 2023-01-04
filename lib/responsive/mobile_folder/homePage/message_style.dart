@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../resources/font_size_manager.dart';
+
 class MessageStyle extends StatelessWidget {
   // final String image;
   final String messageTitle;
@@ -82,7 +84,7 @@ class MessageStyle extends StatelessWidget {
                                     ),
                                     Padding(
                                       padding: const EdgeInsets.only(left: 8),
-                                      child: Text(messageOwner, style: const TextStyle(color: Colors.grey, fontSize: 12)),
+                                      child: Text(messageOwner, style: const TextStyle(color: Colors.grey, fontSize: FontSizeManager.s12)),
                                     ),
                                   ],
                                 ),

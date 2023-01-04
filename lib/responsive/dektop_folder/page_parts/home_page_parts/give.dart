@@ -1,5 +1,6 @@
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 
+import '../../../../resources/font_size_manager.dart';
 import '../../../../resources/string_manager.dart';
 import '../../pages/desktop_give_page.dart';
 
@@ -46,7 +47,7 @@ class GiveHeader extends StatelessWidget {
                         child: Center(
                           child: Text(
                             StringManager.giveSpaced,
-                            style: TextStyle(color: Colors.white, fontWeight: FontWeight.w500, fontSize: 30),
+                            style: TextStyle(color: Colors.white, fontWeight: FontWeight.w500, fontSize: FontSizeManager.s30),
                           ),
                         ),
                       ),

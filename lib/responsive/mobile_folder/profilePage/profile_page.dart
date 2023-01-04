@@ -7,6 +7,7 @@ import 'package:god_life_conversations/utilities/colors.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
+import '../../../resources/font_size_manager.dart';
 import '../../../resources/string_manager.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -110,7 +111,7 @@ class _ProfilePageState extends State<ProfilePage> {
                             child: Text(
                               user.username,
                               style: (GoogleFonts.pacifico(
-                                  fontSize: 40,
+                                  fontSize: FontSizeManager.s40,
                                   color: Colors.white,
                                   shadows: [
                                     const Shadow(blurRadius: 10.0, color: mainColor, offset: Offset(2.0, 2.0)),
@@ -156,11 +157,11 @@ class _ProfilePageState extends State<ProfilePage> {
                       children: const [
                         Text(
                           '20',
-                          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16, color: mainColor),
+                          style: TextStyle(fontWeight: FontWeight.bold, fontSize: FontSizeManager.s16, color: mainColor),
                         ),
                         Text(
                           StringManager.post,
-                          style: TextStyle(fontSize: 16),
+                          style: TextStyle(fontSize: FontSizeManager.s16),
                         )
                       ],
                     ),
@@ -170,11 +171,11 @@ class _ProfilePageState extends State<ProfilePage> {
                       children: const [
                         Text(
                           '50',
-                          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16, color: mainColor),
+                          style: TextStyle(fontWeight: FontWeight.bold, fontSize: FontSizeManager.s16, color: mainColor),
                         ),
                         Text(
                           StringManager.testimonies,
-                          style: TextStyle(fontSize: 16),
+                          style: TextStyle(fontSize: FontSizeManager.s16),
                         )
                       ],
                     )
@@ -215,7 +216,7 @@ class _ProfilePageState extends State<ProfilePage> {
                             padding: EdgeInsets.fromLTRB(0, 0, 0, 6),
                             child: Text(
                               '${StringManager.department}                                   ',
-                              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16, color: Colors.blue),
+                              style: TextStyle(fontWeight: FontWeight.bold, fontSize: FontSizeManager.s16, color: Colors.blue),
                             ),
                           ),
                         ),

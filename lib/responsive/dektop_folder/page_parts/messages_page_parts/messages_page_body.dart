@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../../resources/font_size_manager.dart';
 import '../../../../resources/string_manager.dart';
 
 class DesktopMessagesBody extends StatefulWidget {
@@ -251,7 +252,7 @@ class _DesktopMessagesBodyState extends State<DesktopMessagesBody> {
                                               padding: EdgeInsets.only(bottom: 5),
                                               child: Text(
                                                 StringManager.messagesBody2,
-                                                style: TextStyle(fontSize: 10, color: Colors.grey),
+                                                style: TextStyle(fontSize: FontSizeManager.s10, color: Colors.grey),
                                               ),
                                             ),
                                           ],
@@ -326,7 +327,7 @@ class _DesktopMessagesBodyState extends State<DesktopMessagesBody> {
                                               padding: EdgeInsets.only(bottom: 5),
                                               child: Text(
                                                 StringManager.messagesBody2,
-                                                style: TextStyle(fontSize: 10, color: Colors.grey),
+                                                style: TextStyle(fontSize: FontSizeManager.s10, color: Colors.grey),
                                               ),
                                             ),
                                           ],
@@ -401,7 +402,7 @@ class _DesktopMessagesBodyState extends State<DesktopMessagesBody> {
                                               padding: EdgeInsets.only(bottom: 5),
                                               child: Text(
                                                 StringManager.messagesBody2,
-                                                style: TextStyle(fontSize: 10, color: Colors.grey),
+                                                style: TextStyle(fontSize: FontSizeManager.s10, color: Colors.grey),
                                               ),
                                             ),
                                           ],
@@ -476,7 +477,7 @@ class _DesktopMessagesBodyState extends State<DesktopMessagesBody> {
                                               padding: EdgeInsets.only(bottom: 5),
                                               child: Text(
                                                 StringManager.messagesBody2,
-                                                style: TextStyle(fontSize: 10, color: Colors.grey),
+                                                style: TextStyle(fontSize: FontSizeManager.s10, color: Colors.grey),
                                               ),
                                             ),
                                           ],
@@ -551,7 +552,7 @@ class _DesktopMessagesBodyState extends State<DesktopMessagesBody> {
                                               padding: EdgeInsets.only(bottom: 5),
                                               child: Text(
                                                 StringManager.defaultDate2,
-                                                style: TextStyle(fontSize: 10, color: Colors.grey),
+                                                style: TextStyle(fontSize: FontSizeManager.s10, color: Colors.grey),
                                               ),
                                             ),
                                           ],

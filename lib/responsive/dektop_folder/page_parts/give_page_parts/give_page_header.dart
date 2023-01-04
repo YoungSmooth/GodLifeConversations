@@ -1,5 +1,6 @@
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 
+import '../../../../resources/font_size_manager.dart';
 import '../../../../resources/string_manager.dart';
 import '../../pages/desktop_home_page.dart';
 
@@ -65,7 +66,7 @@ class GivePageHeader extends StatelessWidget {
                           style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.w500,
-                            fontSize: 30,
+                            fontSize: FontSizeManager.s30,
                           ),
                         ),
                       ),
