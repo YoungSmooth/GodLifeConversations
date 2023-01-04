@@ -1,12 +1,10 @@
-// ignore_for_file: use_build_context_synchronously
-
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:god_life_conversations/resources/auth_methods.dart';
 import 'package:god_life_conversations/responsive/registration/signup_screen.dart';
-import 'package:god_life_conversations/utilities.dart/utils.dart';
+import 'package:god_life_conversations/utilities/utils.dart';
 
-import '../../utilities.dart/colors.dart';
+import '../../resources/string_manager.dart';
+import '../../utilities/colors.dart';
 import '../dektop_folder/pages/desktop_home_page.dart';
 import '../mobile_folder/mobile_scaffold.dart';
 import '../responsive_layout.dart';
@@ -23,38 +21,35 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  bool isLoading = false;
+  bool _isLoading = false;
 
   @override
   void dispose() {
-    super.dispose();
     _emailController.dispose();
     _passwordController.dispose();
+    super.dispose();
   }
 
   Future loginUser() async {
     setState(() {
-      isLoading = true;
+      _isLoading = true;
     });
-    String res = await AuthMethods().loginUser(
-        email: _emailController.text, password: _passwordController.text);
-
-    if (res == 'success') {
-      Navigator.of(context).pushReplacement(
-        MaterialPageRoute(
-          builder: (context) => const ResponsiveLayout(
-            mobileScaffold: MobileScaffold(),
-            tabletScaffold: TabletScaffold(),
-            desktopScaffld: DesktopScaffold(),
+    try {
+      String res = await AuthMethods().loginUser(email: _emailController.text, password: _passwordController.text);
+      if (res != "StringManager.success") throw res;
+      if (mounted) {
+        Navigator.of(context).pushReplacement(
+          MaterialPageRoute(
+            builder: (context) =>
+                const ResponsiveLayout(mobileScaffold: MobileScaffold(), tabletScaffold: TabletScaffold(), desktopScaffld: DesktopScaffold()),
           ),
-        ),
-      );
-    } else {
-      showSnackBar(res, context);
-      // showSnackBar('Wrong credentials', context);
+        );
+      }
+    } catch (e) {
       setState(() {
-        isLoading = false;
+        _isLoading = false;
       });
+      showSnackBar(e.toString(), context);
     }
   }
 
@@ -68,49 +63,24 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-          child: SingleChildScrollView(
+    return SafeArea(
+      child: SingleChildScrollView(
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 32),
           width: double.infinity,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const SizedBox(
-                height: 30,
-              ),
-              // Instagram svg image
-
+              const SizedBox(height: 30),
               SizedBox(
-                child: Image.asset(
-                  'lib/assets/Logoblack.png',
-                  height: 64,
-                ),
+                child: Image.asset('lib/assets/Logoblack.png', height: 64),
               ),
               const SizedBox(height: 64),
-              // Textfield for email
-              TextFieldInput(
-                textEditingController: _emailController,
-                hintText: 'Enter your email',
-                textInputType: TextInputType.emailAddress,
-              ),
-              const SizedBox(
-                height: 24,
-              ),
-              // Textfield for password
-              TextFieldInput(
-                textEditingController: _passwordController,
-                hintText: 'Enter your password',
-                textInputType: TextInputType.text,
-                isPass: true,
-              ),
-
-              const SizedBox(
-                height: 24,
-              ),
-
-              // Text Login
+              TextFieldInput(textEditingController: _emailController, hintText: StringManager.enterEmail, textInputType: TextInputType.emailAddress),
+              const SizedBox(height: 24),
+              PasswordInputField(
+                  textEditingController: _passwordController, hintText: StringManager.enterPassword, textInputType: TextInputType.text, isPass: true),
+              const SizedBox(height: 24),
               InkWell(
                 onTap: loginUser,
                 child: Container(
@@ -125,48 +95,22 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     color: mainColor,
                   ),
-                  child: isLoading
-                      ? const Center(
-                          child: CircularProgressIndicator(
-                            color: primaryColor,
-                          ),
-                        )
-                      : const Text(
-                          'Log In',
-                          style: TextStyle(color: Colors.white),
-                        ),
+                  child: _isLoading
+                      ? const Center(child: CircularProgressIndicator(color: primaryColor))
+                      : const Text(StringManager.logIn, style: TextStyle(color: Colors.white)),
                 ),
               ),
-              const SizedBox(
-                height: 14,
-              ),
-              const SizedBox(
-                height: 30,
-              ),
-
-              // Text sign up
+              const SizedBox(height: 14),
+              const SizedBox(height: 30),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Container(
-                    padding: const EdgeInsets.symmetric(
-                      vertical: 8,
-                    ),
-                    child: const Text("Don't have an account?"),
-                  ),
-                  const SizedBox(
-                    width: 10,
-                  ),
+                  const SizedBox(width: 10),
                   GestureDetector(
                     onTap: navigateToSignUp,
                     child: Container(
-                      padding: const EdgeInsets.symmetric(
-                        vertical: 8,
-                      ),
-                      child: const Text(
-                        "Sign Up",
-                        style: TextStyle(fontWeight: FontWeight.bold),
-                      ),
+                      padding: const EdgeInsets.symmetric(vertical: 8),
+                      child: const Text(StringManager.signUp, style: TextStyle(fontWeight: FontWeight.bold)),
                     ),
                   ),
                 ],
@@ -174,7 +118,7 @@ class _LoginScreenState extends State<LoginScreen> {
             ],
           ),
         ),
-      )),
+      ),
     );
   }
 }

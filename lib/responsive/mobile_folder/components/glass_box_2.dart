@@ -1,11 +1,9 @@
-// ignore_for_file: file_names
-
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
 class GlassBox2 extends StatelessWidget {
-  final child;
+  final dynamic child;
 
   const GlassBox2({super.key, this.child});
 
@@ -16,14 +14,8 @@ class GlassBox2 extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(2),
         child: BackdropFilter(
-          filter: ImageFilter.blur(
-            sigmaX: 10,
-            sigmaY: 10,
-          ),
-          child: Container(
-            alignment: Alignment.bottomCenter,
-            child: child,
-          ),
+          filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+          child: Container(alignment: Alignment.bottomCenter, child: child),
         ),
       ),
     );

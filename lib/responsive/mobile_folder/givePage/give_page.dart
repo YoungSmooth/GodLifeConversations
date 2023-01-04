@@ -13,10 +13,7 @@ class GivePage extends StatelessWidget {
             child: SizedBox(
               height: 400,
               width: 300,
-              child: Image.asset(
-                'lib/assets/give.jpg',
-                fit: BoxFit.contain,
-              ),
+              child: Image.asset('lib/assets/give.jpg', fit: BoxFit.contain),
             ),
           ),
         ),

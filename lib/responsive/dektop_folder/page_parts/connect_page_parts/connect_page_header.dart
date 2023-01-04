@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-// ignore: depend_on_referenced_packages
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 
+import '../../../../resources/font_size_manager.dart';
+import '../../../../resources/string_manager.dart';
 import '../../pages/desktop_home_page.dart';
 
 class ConnectPageHeader extends StatelessWidget {
@@ -10,7 +11,7 @@ class ConnectPageHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
-      children: <Widget>[
+      children: [
         SizedBox(
           height: 350,
           width: double.infinity,
@@ -61,12 +62,8 @@ class ConnectPageHeader extends StatelessWidget {
                       padding: EdgeInsets.all(10),
                       child: Center(
                         child: Text(
-                          'C O N N E C T',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.w500,
-                            fontSize: 30,
-                          ),
+                          StringManager.connectSpaced,
+                          style: TextStyle(color: Colors.white, fontWeight: FontWeight.w500, fontSize: FontSizeManager.s30),
                         ),
                       ),
                     ),

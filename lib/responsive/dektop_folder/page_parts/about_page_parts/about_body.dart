@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../../resources/string_manager.dart';
+
 class AboutBody extends StatelessWidget {
   const AboutBody({super.key});
 
@@ -10,8 +12,7 @@ class AboutBody extends StatelessWidget {
         Expanded(
           child: Center(
             child: Padding(
-              padding: const EdgeInsets.only(
-                  left: 100, right: 100, top: 50, bottom: 50),
+              padding: const EdgeInsets.only(left: 100, right: 100, top: 50, bottom: 50),
               child: Column(
                 children: [
                   Column(
@@ -19,15 +20,11 @@ class AboutBody extends StatelessWidget {
                       Padding(
                         padding: EdgeInsets.only(bottom: 20),
                         child: Text(
-                          'About The Church',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                          ),
+                          StringManager.aboutChurch,
+                          style: TextStyle(fontWeight: FontWeight.bold),
                         ),
                       ),
-                      Text(
-                          textAlign: TextAlign.center,
-                          'We would love to connect with you. We have been praying for you and would love to grow with you. You can visit our location, connect with us via our social media platforms or contact us directly with the information below. We would love to connect with you.'),
+                      Text(textAlign: TextAlign.center, StringManager.aboutChurchBody),
                     ],
                   ),
                   Column(
@@ -35,15 +32,11 @@ class AboutBody extends StatelessWidget {
                       Padding(
                         padding: EdgeInsets.only(bottom: 20, top: 20),
                         child: Text(
-                          'About Pastor Joseph Victor',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                          ),
+                          StringManager.aboutPstJoseph,
+                          style: TextStyle(fontWeight: FontWeight.bold),
                         ),
                       ),
-                      Text(
-                          textAlign: TextAlign.center,
-                          'We would love to connect with you. We have been praying for you and would love to grow with you. You can visit our location, connect with us via our social media platforms or contact us directly with the information below. We would love to connect with you.'),
+                      Text(textAlign: TextAlign.center, StringManager.aboutPstJosephBody),
                     ],
                   ),
                 ],

@@ -1,66 +1,52 @@
-// ignore_for_file: depend_on_referenced_packages
 import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
-pickImage(ImageSource source) async {
-  final ImagePicker _imagePicker = ImagePicker();
+import '../resources/string_manager.dart';
 
-  XFile? _file = await _imagePicker.pickImage(source: source);
-
-  if (_file != null) {
-    // return await _file.readAsBytes();
-    return await _file.path;
-  } else {
-    return const Text('No Image selected!');
-  }
-  // print('no image selected');
-}
-
-pickImagee(ImageSource source) async {
+ Future<File?> pickImage(ImageSource source) async {
   final ImagePicker imagePicker = ImagePicker();
+
   XFile? file = await imagePicker.pickImage(source: source);
-  if (file == null) return "No Image Selected";
+
+  if (file == null) return null;
+
   return File(file.path);
 }
 
-showSnackBar(String content, BuildContext context) {
+void showSnackBar(String content, BuildContext context) {
   ScaffoldMessenger.of(context).showSnackBar(
     SnackBar(
       backgroundColor: Colors.grey.shade800,
       elevation: 1.0,
       padding: const EdgeInsets.all(5),
-      content: Text(
-        content,
-      ),
+      content: Text(content),
     ),
   );
 }
 
 typedef DialogOptionBuilder<T> = Map<String, T?> Function();
 
-Future<T?> showGenericDialog<T>({
+Future showGenericDialog({
   required BuildContext context,
   required String title,
   required String content,
   required DialogOptionBuilder optionBuilder,
 }) {
   final options = optionBuilder();
-  return showDialog<T>(
+  return showDialog(
     context: context,
     builder: (context) {
       return AlertDialog(
-        title: const Text('An error occurred'),
+        title: const Text(StringManager.errorOccured),
         content: Text(content),
         actions: options.keys.map((optionTitle) {
           final value = options[optionTitle];
           return TextButton(
             onPressed: () {
-              if (value != null) {
-                Navigator.of(context).pop(value);
-              } else {
-                Navigator.of(context).pop();
-              }
+              if (value == null) Navigator.of(context).pop();
+              Navigator.of(context).pop(value);
             },
             child: Text(optionTitle),
           );

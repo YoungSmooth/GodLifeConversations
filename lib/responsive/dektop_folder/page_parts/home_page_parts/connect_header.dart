@@ -1,6 +1,7 @@
-// ignore: depend_on_referenced_packages
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 
+import '../../../../resources/font_size_manager.dart';
+import '../../../../resources/string_manager.dart';
 import '../../pages/desktop_connect_page.dart';
 
 class SecondHeaderBackground extends StatelessWidget {
@@ -9,7 +10,7 @@ class SecondHeaderBackground extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
-      children: <Widget>[
+      children: [
         SizedBox(
           height: 400,
           width: double.infinity,
@@ -45,12 +46,8 @@ class SecondHeaderBackground extends StatelessWidget {
                         padding: EdgeInsets.all(10),
                         child: Center(
                           child: Text(
-                            'C O N N E C T',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.w500,
-                              fontSize: 30,
-                            ),
+                            StringManager.connectSpaced,
+                            style: TextStyle(color: Colors.white, fontWeight: FontWeight.w500, fontSize: FontSizeManager.s30),
                           ),
                         ),
                       ),
@@ -61,15 +58,10 @@ class SecondHeaderBackground extends StatelessWidget {
                   padding: const EdgeInsets.all(10),
                   child: Center(
                     child: NeumorphicText(
-                      'Be a part of something transformational, connect with people as passionate as you.',
+                      StringManager.connectMessage2,
                       style: const NeumorphicStyle(
-                          shadowDarkColor: Colors.black,
-                          color: Colors.white,
-                          shadowLightColor: Colors.black,
-                          depth: 1,
-                          intensity: 0.5),
-                      textStyle:
-                          NeumorphicTextStyle(fontWeight: FontWeight.bold),
+                          shadowDarkColor: Colors.black, color: Colors.white, shadowLightColor: Colors.black, depth: 1, intensity: 0.5),
+                      textStyle: NeumorphicTextStyle(fontWeight: FontWeight.bold),
                     ),
                   ),
                 ),

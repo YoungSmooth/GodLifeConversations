@@ -1,18 +1,14 @@
 import 'dart:io';
 
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:god_life_conversations/responsive/mobile_folder/components/glass_Box.dart';
-import 'package:god_life_conversations/responsive/mobile_folder/components/glass_box_2.dart';
-import 'package:god_life_conversations/utilities.dart/colors.dart';
-import 'package:god_life_conversations/utilities.dart/utils.dart';
-import 'package:provider/provider.dart';
-import '../../../providers/user_provider.dart';
-import 'package:image_picker/image_picker.dart';
 import 'package:god_life_conversations/models/user.dart' as model;
+import 'package:god_life_conversations/utilities/colors.dart';
+import 'package:god_life_conversations/utilities/utils.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:provider/provider.dart';
 
+import '../../../providers/user_provider.dart';
+import '../../../resources/string_manager.dart';
 import '../../widgets/text_field_input.dart';
 
 class GlcFeed extends StatefulWidget {
@@ -37,29 +33,25 @@ class _GlcFeedState extends State<GlcFeed> {
         builder: (context) {
           return SimpleDialog(
             title: const Center(
-                child: Text(
-              'Pick an image',
-              style: TextStyle(fontWeight: FontWeight.bold, color: mainColor),
-            )),
+              child: Text(StringManager.pickImage, style: TextStyle(fontWeight: FontWeight.bold, color: mainColor)),
+            ),
             children: [
               SimpleDialogOption(
                 padding: const EdgeInsets.all(20),
-                child: const Center(child: Text('Take a picture!')),
+                child: const Center(
+                  child: Text(StringManager.takePicture),
+                ),
                 onPressed: () async {
                   Navigator.of(context).pop();
-                  _postUpload = await pickImagee(
-                    ImageSource.camera,
-                  );
+                  _postUpload = await pickImage(ImageSource.camera);
                 },
               ),
               SimpleDialogOption(
                 padding: const EdgeInsets.all(20),
-                child: const Center(child: Text('Choose from Gallery')),
+                child: const Center(child: Text(StringManager.fromGallery)),
                 onPressed: () async {
                   Navigator.of(context).pop();
-                  _postUpload = await pickImagee(
-                    ImageSource.gallery,
-                  );
+                  _postUpload = await pickImage(ImageSource.gallery);
                 },
               )
             ],
@@ -105,7 +97,7 @@ class _GlcFeedState extends State<GlcFeed> {
                     child: Center(
                       child: ListView(
                         controller: controller,
-                        children: <Widget>[
+                        children: [
                           CircleAvatar(
                             radius: 40,
                             backgroundColor: mainColor,
@@ -121,15 +113,11 @@ class _GlcFeedState extends State<GlcFeed> {
                               child: Container(
                                 decoration: BoxDecoration(
                                   image: DecorationImage(
-                                    image:
-                                        // MemoryImage(_postUpload!),
-
-                                        _postUpload == null
-                                            ? NetworkImage(
-                                                'https://images.unsplash.com/photo-1617791160536-598cf32026fb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHRoaW5raW5nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60',
-                                              ) as ImageProvider
-                                            : FileImage(_postUpload!)
-                                                as ImageProvider,
+                                    image: _postUpload == null
+                                        ? const NetworkImage(
+                                            'https://images.unsplash.com/photo-1617791160536-598cf32026fb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHRoaW5raW5nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60',
+                                          )
+                                        : FileImage(_postUpload!) as ImageProvider,
                                   ),
                                 ),
                               ),
@@ -138,21 +126,16 @@ class _GlcFeedState extends State<GlcFeed> {
                           const SizedBox(height: 20),
                           SizedBox(
                             width: MediaQuery.of(context).size.width * 0.3,
-                            child: TextFieldInputt(
+                            child: TextFieldInput(
                               textEditingController: _descriptionController,
-                              hintText: 'Share as you are led...',
+                              hintText: StringManager.descriptionHint,
                               textInputType: TextInputType.text,
                             ),
                           ),
                           const SizedBox(height: 20),
                           const ElevatedButton(
                             onPressed: null,
-                            child: Text(
-                              'Post',
-                              style: TextStyle(
-                                color: Colors.white,
-                              ),
-                            ),
+                            child: Text(StringManager.post, style: TextStyle(color: Colors.white)),
                           )
                         ],
                       ),
@@ -164,14 +147,8 @@ class _GlcFeedState extends State<GlcFeed> {
           );
           _postImage(context);
         },
-        label: const Text(
-          'Post',
-          style: TextStyle(color: Colors.white),
-        ),
-        icon: const Icon(
-          Icons.post_add_rounded,
-          color: Colors.white,
-        ),
+        label: const Text(StringManager.post, style: TextStyle(color: Colors.white)),
+        icon: const Icon(Icons.post_add_rounded, color: Colors.white),
         backgroundColor: mainColor,
       ),
     );

@@ -5,7 +5,7 @@ class MenuWidget extends StatelessWidget {
   const MenuWidget({super.key});
 
   @override
-  Widget build(BuildContext context) => IconButton(
-      onPressed: () => ZoomDrawer.of(context)!.toggle(),
-      icon: const Icon(Icons.menu));
+  Widget build(BuildContext context) {
+    return IconButton(onPressed: () => ZoomDrawer.of(context)!.toggle(), icon: const Icon(Icons.menu));
+  }
 }
