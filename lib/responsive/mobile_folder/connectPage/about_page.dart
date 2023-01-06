@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../../resources/string_manager.dart';
-
 class AboutPage extends StatelessWidget {
   const AboutPage({super.key});
 
@@ -24,14 +22,23 @@ class AboutPage extends StatelessWidget {
                   ),
                   const Padding(
                     padding: EdgeInsets.only(bottom: 5, top: 10),
-                    child: Text(StringManager.aboutChurch, style: TextStyle(fontWeight: FontWeight.bold)),
+                    child: Text(
+                      'About The Church',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
                   ),
-                  const Text(textAlign: TextAlign.center, StringManager.aboutChurchBody),
+                  const Text(
+                      textAlign: TextAlign.center,
+                      'We would love to connect with you. We have been praying for you and would love to grow with you. You can visit our location, connect with us via our social media platforms or contact us directly with the information below. We would love to connect with you.'),
                 ],
               ),
               Column(
                 children: [
-                  const SizedBox(height: 30),
+                  SizedBox(
+                    height: 30,
+                  ),
                   SizedBox(
                     height: 200,
                     width: double.infinity,
@@ -42,14 +49,18 @@ class AboutPage extends StatelessWidget {
                   const Padding(
                     padding: EdgeInsets.only(bottom: 5, top: 20),
                     child: Text(
-                      StringManager.aboutPstJoseph,
+                      'About Pastor Joseph Victor',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                   ),
-                  const Text(textAlign: TextAlign.center, StringManager.aboutPstJosephBody),
-                  const SizedBox(height: 30),
+                  const Text(
+                      textAlign: TextAlign.center,
+                      'We would love to connect with you. We have been praying for you and would love to grow with you. You can visit our location, connect with us via our social media platforms or contact us directly with the information below. We would love to connect with you.'),
+                  SizedBox(
+                    height: 30,
+                  ),
                 ],
               ),
             ],

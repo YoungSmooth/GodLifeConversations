@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../../../resources/string_manager.dart';
-
 class AboutBody extends StatelessWidget {
   const AboutBody({super.key});
 
@@ -12,7 +10,8 @@ class AboutBody extends StatelessWidget {
         Expanded(
           child: Center(
             child: Padding(
-              padding: const EdgeInsets.only(left: 100, right: 100, top: 50, bottom: 50),
+              padding: const EdgeInsets.only(
+                  left: 100, right: 100, top: 50, bottom: 50),
               child: Column(
                 children: [
                   Column(
@@ -20,11 +19,15 @@ class AboutBody extends StatelessWidget {
                       Padding(
                         padding: EdgeInsets.only(bottom: 20),
                         child: Text(
-                          StringManager.aboutChurch,
-                          style: TextStyle(fontWeight: FontWeight.bold),
+                          'About The Church',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
-                      Text(textAlign: TextAlign.center, StringManager.aboutChurchBody),
+                      Text(
+                          textAlign: TextAlign.center,
+                          'We would love to connect with you. We have been praying for you and would love to grow with you. You can visit our location, connect with us via our social media platforms or contact us directly with the information below. We would love to connect with you.'),
                     ],
                   ),
                   Column(
@@ -32,11 +35,15 @@ class AboutBody extends StatelessWidget {
                       Padding(
                         padding: EdgeInsets.only(bottom: 20, top: 20),
                         child: Text(
-                          StringManager.aboutPstJoseph,
-                          style: TextStyle(fontWeight: FontWeight.bold),
+                          'About Pastor Joseph Victor',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
-                      Text(textAlign: TextAlign.center, StringManager.aboutPstJosephBody),
+                      Text(
+                          textAlign: TextAlign.center,
+                          'We would love to connect with you. We have been praying for you and would love to grow with you. You can visit our location, connect with us via our social media platforms or contact us directly with the information below. We would love to connect with you.'),
                     ],
                   ),
                 ],

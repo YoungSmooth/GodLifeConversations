@@ -1,37 +1,48 @@
+// ignore_for_file: unused_local_variable, unnecessary_null_comparison
 import 'dart:io';
+import 'dart:typed_data';
+import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:god_life_conversations/models/user.dart' as model;
+import 'package:god_life_conversations/resources/storage_methods.dart';
 
-import 'package:cloud_firestore/cloud_firestore.dart' show DocumentSnapshot, FirebaseFirestore;
-import 'package:firebase_auth/firebase_auth.dart' show FirebaseAuth, UserCredential;
-import 'package:god_life_conversations/resources/string_manager.dart';
-
-import '../models/user.dart';
-import 'storage_methods.dart';
+import '../utilities.dart/utils.dart';
 
 class AuthMethods {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
-  Future<User> getUserDetails() async {
-    final currentUser = _auth.currentUser!;
-    DocumentSnapshot snap = await _firestore.collection('users').doc(currentUser.uid).get();
-    return User.fromSnap(snap);
+  Future<model.User> getUserDetails() async {
+    User currentUser = _auth.currentUser!;
+    DocumentSnapshot snap =
+        await _firestore.collection('users').doc(currentUser.uid).get();
+    return model.User.fromSnap(snap);
   }
 
+  // sign up user
   Future<String> signUpUser({
     required String email,
     required String password,
     required String username,
     required String bio,
-    required File? profileImage,
+    required Uint8List file,
   }) async {
-    String res = StringManager.errorOccured;
+    String res = 'Some error occurred';
     try {
-      if (email.isNotEmpty || password.isNotEmpty || username.isNotEmpty || bio.isNotEmpty || profileImage != null) {
-        UserCredential cred = await _auth.createUserWithEmailAndPassword(email: email, password: password);
+      if (email.isNotEmpty ||
+          password.isNotEmpty ||
+          username.isNotEmpty ||
+          bio.isNotEmpty ||
+          file != null) {
+        // register user
+        UserCredential cred = await _auth.createUserWithEmailAndPassword(
+            email: email, password: password);
 
-        String photoUrl = await StorageMethods().uploadImageToStorage('profilePics', profileImage!, false);
+        String photoUrl = await StorageMethods()
+            .uploadImageToStorage('profilePics', file, false);
 
-        User user = User(
+        model.User user = model.User(
           email: email,
           uid: cred.user!.uid,
           photoUrl: photoUrl,
@@ -46,9 +57,10 @@ class AuthMethods {
         await _firestore.collection('users').doc(cred.user!.uid).set(
               user.toJson(),
             );
-        res = StringManager.success;
+
+        res = 'success';
       } else {
-        res = StringManager.fillAllFields;
+        res = "Please enter all the fields";
       }
     } catch (err) {
       res = err.toString();
@@ -56,17 +68,19 @@ class AuthMethods {
     return res;
   }
 
+  // logging in user
   Future<String> loginUser({
     required String email,
     required String password,
   }) async {
-    String res = StringManager.errorOccured;
+    String res = 'Some error occured';
     try {
       if (email.isNotEmpty || password.isNotEmpty) {
-        await _auth.signInWithEmailAndPassword(email: email, password: password);
-        res = StringManager.success;
+        await _auth.signInWithEmailAndPassword(
+            email: email, password: password);
+        res = 'Success';
       } else {
-        res = StringManager.fillAllFields;
+        res = 'Please enter all credentials';
       }
     } catch (err) {
       res = err.toString();

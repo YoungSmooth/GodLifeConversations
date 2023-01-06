@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
@@ -34,25 +35,29 @@ class _GlcFeedState extends State<GlcFeed> {
         builder: (context) {
           return SimpleDialog(
             title: const Center(
-              child: Text(StringManager.pickImage, style: TextStyle(fontWeight: FontWeight.bold, color: mainColor)),
-            ),
+                child: Text(
+              'Pick an image',
+              style: TextStyle(fontWeight: FontWeight.bold, color: mainColor),
+            )),
             children: [
               SimpleDialogOption(
                 padding: const EdgeInsets.all(20),
-                child: const Center(
-                  child: Text(StringManager.takePicture),
-                ),
+                child: const Center(child: Text('Take a picture!')),
                 onPressed: () async {
                   Navigator.of(context).pop();
-                  _postUpload = await pickImage(ImageSource.camera);
+                  _postUpload = await pickImagee(
+                    ImageSource.camera,
+                  );
                 },
               ),
               SimpleDialogOption(
                 padding: const EdgeInsets.all(20),
-                child: const Center(child: Text(StringManager.fromGallery)),
+                child: const Center(child: Text('Choose from Gallery')),
                 onPressed: () async {
                   Navigator.of(context).pop();
-                  _postUpload = await pickImage(ImageSource.gallery);
+                  _postUpload = await pickImagee(
+                    ImageSource.gallery,
+                  );
                 },
               )
             ],
@@ -74,7 +79,22 @@ class _GlcFeedState extends State<GlcFeed> {
         );
 
     return Scaffold(
-      body: Container(),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Image.network(
+                'https://images.unsplash.com/photo-1672696049977-5ef343a91556?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80'),
+            Image.network(
+                'https://images.unsplash.com/photo-1672843164650-b39a24c549a0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzMHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60'),
+            Image.network(
+                'https://plus.unsplash.com/premium_photo-1664439520270-93166cec3c37?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzN3x8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60'),
+            Image.network(
+                'https://plus.unsplash.com/premium_photo-1663013632891-de1b709442a2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw2Nnx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60'),
+            Image.network(
+                'https://images.unsplash.com/photo-1672842089797-70c750873c05?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw3MXx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60'),
+          ],
+        ),
+      ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () {
           showModalBottomSheet<void>(
@@ -98,7 +118,7 @@ class _GlcFeedState extends State<GlcFeed> {
                     child: Center(
                       child: ListView(
                         controller: controller,
-                        children: [
+                        children: <Widget>[
                           CircleAvatar(
                             radius: 40,
                             backgroundColor: mainColor,
@@ -114,11 +134,15 @@ class _GlcFeedState extends State<GlcFeed> {
                               child: Container(
                                 decoration: BoxDecoration(
                                   image: DecorationImage(
-                                    image: _postUpload == null
-                                        ? const NetworkImage(
-                                            'https://images.unsplash.com/photo-1617791160536-598cf32026fb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHRoaW5raW5nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60',
-                                          )
-                                        : FileImage(_postUpload!) as ImageProvider,
+                                    image:
+                                        // MemoryImage(_postUpload!),
+
+                                        _postUpload == null
+                                            ? NetworkImage(
+                                                'https://images.unsplash.com/photo-1617791160536-598cf32026fb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHRoaW5raW5nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60',
+                                              ) as ImageProvider
+                                            : FileImage(_postUpload!)
+                                                as ImageProvider,
                                   ),
                                 ),
                               ),
@@ -127,16 +151,17 @@ class _GlcFeedState extends State<GlcFeed> {
                           const SizedBox(height: 20),
                           SizedBox(
                             width: MediaQuery.of(context).size.width * 0.3,
-                            child: TextFieldInput(
+                            child: TextFieldInputt(
                               textEditingController: _descriptionController,
-                              hintText: StringManager.descriptionHint,
+                              hintText: 'Share as you are led...',
                               textInputType: TextInputType.text,
                             ),
                           ),
                           const SizedBox(height: 20),
                           const ElevatedButton(
                             onPressed: null,
-                            child: Text(StringManager.post, style: TextStyle(color: ColorManager.white)),
+                            child: Text(StringManager.post,
+                                style: TextStyle(color: ColorManager.white)),
                           )
                         ],
                       ),
@@ -148,7 +173,8 @@ class _GlcFeedState extends State<GlcFeed> {
           );
           _postImage(context);
         },
-        label: const Text(StringManager.post, style: TextStyle(color: ColorManager.white)),
+        label: const Text(StringManager.post,
+            style: TextStyle(color: ColorManager.white)),
         icon: const Icon(Icons.post_add_rounded, color: ColorManager.white),
         backgroundColor: mainColor,
       ),

@@ -1,9 +1,8 @@
-import 'package:blur/blur.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_neumorphic/flutter_neumorphic.dart';
+// ignore_for_file: depend_on_referenced_packages
 
-import '../../../resources/font_size_manager.dart';
-import '../../../resources/string_manager.dart';
+import 'package:flutter/material.dart';
+import 'package:blur/blur.dart';
+import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 
 class ServePage extends StatelessWidget {
   const ServePage({super.key});
@@ -17,13 +16,16 @@ class ServePage extends StatelessWidget {
             children: [
               const Padding(
                 padding: EdgeInsets.all(20.0),
-                child: Text(StringManager.serveBody2, textAlign: TextAlign.center),
+                child: Text(
+                  'Explore our departments and choose what best fits you in the body of Christ.',
+                  textAlign: TextAlign.center,
+                ),
               ),
               Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Stack(
-                    children: [
+                    children: <Widget>[
                       Padding(
                         padding: const EdgeInsets.all(20.0),
                         child: SizedBox(
@@ -39,39 +41,45 @@ class ServePage extends StatelessWidget {
                         ),
                       ),
                       Positioned(
-                        height: 200,
-                        width: 300,
-                        bottom: 20,
-                        right: 20,
-                        child: Padding(
-                          padding: const EdgeInsets.all(20.0),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: const [
-                              Padding(
-                                padding: EdgeInsets.only(bottom: 10, left: 20),
-                                child:
-                                    Text(StringManager.administration, style: TextStyle(fontWeight: FontWeight.bold, fontSize: FontSizeManager.s15)),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.only(left: 20, right: 20),
-                                child: Text(StringManager.administrationBody, style: TextStyle(fontSize: FontSizeManager.s12)),
-                              ),
-                            ],
-                          ).frosted(
-                            blur: 1.5,
-                            frostColor: Colors.white,
-                            alignment: Alignment.center,
-                            borderRadius: BorderRadius.circular(10),
-                            frostOpacity: 0.01,
-                          ),
-                        ),
-                      ),
+                          height: 200,
+                          width: 300,
+                          bottom: 20,
+                          right: 20,
+                          child: Padding(
+                            padding: const EdgeInsets.all(20.0),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: const [
+                                Padding(
+                                  padding:
+                                      EdgeInsets.only(bottom: 10, left: 20),
+                                  child: Text(
+                                    'Administration',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 15),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.only(left: 20, right: 20),
+                                  child: Text(
+                                    'Assign roles. Coordinate tasks. Ensures organisation. Coordinates volunteers. Oversee all departments and report to the Pastor. Follow up with the implementation of innovations. Keep detailed records of activities.',
+                                    style: TextStyle(fontSize: 12),
+                                  ),
+                                ),
+                              ],
+                            ).frosted(
+                                blur: 1.5,
+                                frostColor: Colors.white,
+                                alignment: Alignment.center,
+                                borderRadius: BorderRadius.circular(10),
+                                frostOpacity: 0.01),
+                          ))
                     ],
                   ),
                   Stack(
-                    children: [
+                    children: <Widget>[
                       Padding(
                         padding: const EdgeInsets.all(20.0),
                         child: SizedBox(
@@ -87,37 +95,41 @@ class ServePage extends StatelessWidget {
                         ),
                       ),
                       Positioned(
-                        height: 200,
-                        width: 300,
-                        bottom: 20,
-                        right: 20,
-                        child: Padding(
-                          padding: const EdgeInsets.all(20.0),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: const [
-                              Padding(
-                                padding: EdgeInsets.only(bottom: 10, left: 20),
-                                child: Text(
-                                  StringManager.media,
-                                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: FontSizeManager.s15),
+                          height: 200,
+                          width: 300,
+                          bottom: 20,
+                          right: 20,
+                          child: Padding(
+                            padding: const EdgeInsets.all(20.0),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: const [
+                                Padding(
+                                  padding:
+                                      EdgeInsets.only(bottom: 10, left: 20),
+                                  child: Text(
+                                    'Media',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 15),
+                                  ),
                                 ),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.only(left: 20, right: 20),
-                                child: Text(StringManager.mediaBody, style: TextStyle(fontSize: FontSizeManager.s12)),
-                              ),
-                            ],
-                          ).frosted(
-                            blur: 1.5,
-                            frostColor: Colors.white,
-                            alignment: Alignment.center,
-                            borderRadius: BorderRadius.circular(10),
-                            frostOpacity: 0.01,
-                          ),
-                        ),
-                      ),
+                                Padding(
+                                  padding: EdgeInsets.only(left: 20, right: 20),
+                                  child: Text(
+                                    'Handle audio and video recordings.',
+                                    style: TextStyle(fontSize: 12),
+                                  ),
+                                ),
+                              ],
+                            ).frosted(
+                                blur: 1.5,
+                                frostColor: Colors.white,
+                                alignment: Alignment.center,
+                                borderRadius: BorderRadius.circular(10),
+                                frostOpacity: 0.01),
+                          ))
                     ],
                   ),
                 ],
@@ -126,7 +138,7 @@ class ServePage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Stack(
-                    children: [
+                    children: <Widget>[
                       Padding(
                         padding: const EdgeInsets.all(20.0),
                         child: SizedBox(
@@ -142,38 +154,45 @@ class ServePage extends StatelessWidget {
                         ),
                       ),
                       Positioned(
-                        height: 200,
-                        width: 300,
-                        bottom: 20,
-                        right: 20,
-                        child: Padding(
-                          padding: const EdgeInsets.all(20.0),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: const [
-                              Padding(
-                                padding: EdgeInsets.only(bottom: 10, left: 20),
-                                child: Text(StringManager.music, style: TextStyle(fontWeight: FontWeight.bold, fontSize: FontSizeManager.s15)),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.only(left: 20, right: 20),
-                                child: Text(StringManager.musicBody, style: TextStyle(fontSize: FontSizeManager.s12)),
-                              ),
-                            ],
-                          ).frosted(
-                            blur: 1.5,
-                            frostColor: Colors.white,
-                            alignment: Alignment.center,
-                            borderRadius: BorderRadius.circular(10),
-                            frostOpacity: 0.01,
-                          ),
-                        ),
-                      ),
+                          height: 200,
+                          width: 300,
+                          bottom: 20,
+                          right: 20,
+                          child: Padding(
+                            padding: const EdgeInsets.all(20.0),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: const [
+                                Padding(
+                                  padding:
+                                      EdgeInsets.only(bottom: 10, left: 20),
+                                  child: Text(
+                                    'Music',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 15),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.only(left: 20, right: 20),
+                                  child: Text(
+                                    'Houses Worship team (trains vocalists), Instrumentals and Technical.',
+                                    style: TextStyle(fontSize: 12),
+                                  ),
+                                ),
+                              ],
+                            ).frosted(
+                                blur: 1.5,
+                                frostColor: Colors.white,
+                                alignment: Alignment.center,
+                                borderRadius: BorderRadius.circular(10),
+                                frostOpacity: 0.01),
+                          ))
                     ],
                   ),
                   Stack(
-                    children: [
+                    children: <Widget>[
                       Padding(
                         padding: const EdgeInsets.all(20.0),
                         child: SizedBox(
@@ -189,35 +208,41 @@ class ServePage extends StatelessWidget {
                         ),
                       ),
                       Positioned(
-                        height: 200,
-                        width: 300,
-                        bottom: 20,
-                        right: 20,
-                        child: Padding(
-                          padding: const EdgeInsets.all(20.0),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: const [
-                              Padding(
-                                padding: EdgeInsets.only(bottom: 10, left: 20),
-                                child: Text(StringManager.facilityManagement,
-                                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: FontSizeManager.s15)),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.only(left: 20, right: 20),
-                                child: Text(StringManager.facilityManagementBody, style: TextStyle(fontSize: FontSizeManager.s12)),
-                              ),
-                            ],
-                          ).frosted(
-                            blur: 1.5,
-                            frostColor: Colors.white,
-                            alignment: Alignment.center,
-                            borderRadius: BorderRadius.circular(10),
-                            frostOpacity: 0.01,
-                          ),
-                        ),
-                      ),
+                          height: 200,
+                          width: 300,
+                          bottom: 20,
+                          right: 20,
+                          child: Padding(
+                            padding: const EdgeInsets.all(20.0),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: const [
+                                Padding(
+                                  padding:
+                                      EdgeInsets.only(bottom: 10, left: 20),
+                                  child: Text(
+                                    'Facility Management',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 15),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.only(left: 20, right: 20),
+                                  child: Text(
+                                    'Responsible for hall setup and maintenance of equipments.',
+                                    style: TextStyle(fontSize: 12),
+                                  ),
+                                ),
+                              ],
+                            ).frosted(
+                                blur: 1.5,
+                                frostColor: Colors.white,
+                                alignment: Alignment.center,
+                                borderRadius: BorderRadius.circular(10),
+                                frostOpacity: 0.01),
+                          ))
                     ],
                   ),
                 ],
@@ -226,7 +251,7 @@ class ServePage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Stack(
-                    children: [
+                    children: <Widget>[
                       Padding(
                         padding: const EdgeInsets.all(20.0),
                         child: SizedBox(
@@ -242,38 +267,45 @@ class ServePage extends StatelessWidget {
                         ),
                       ),
                       Positioned(
-                        height: 200,
-                        width: 300,
-                        bottom: 20,
-                        right: 20,
-                        child: Padding(
-                          padding: const EdgeInsets.all(20.0),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: const [
-                              Padding(
-                                padding: EdgeInsets.only(bottom: 10, left: 20),
-                                child: Text(StringManager.ushering, style: TextStyle(fontWeight: FontWeight.bold, fontSize: FontSizeManager.s15)),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.only(left: 20, right: 20),
-                                child: Text(StringManager.usheringBody, style: TextStyle(fontSize: FontSizeManager.s12)),
-                              ),
-                            ],
-                          ).frosted(
-                            blur: 1.5,
-                            frostColor: Colors.white,
-                            alignment: Alignment.center,
-                            borderRadius: BorderRadius.circular(10),
-                            frostOpacity: 0.01,
-                          ),
-                        ),
-                      ),
+                          height: 200,
+                          width: 300,
+                          bottom: 20,
+                          right: 20,
+                          child: Padding(
+                            padding: const EdgeInsets.all(20.0),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: const [
+                                Padding(
+                                  padding:
+                                      EdgeInsets.only(bottom: 10, left: 20),
+                                  child: Text(
+                                    'Ushering',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 15),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.only(left: 20, right: 20),
+                                  child: Text(
+                                    'Welcome worshipers. Ensures decorum and organization during service. Takes attendance of each service. Arranges and cleans hall before and after service.',
+                                    style: TextStyle(fontSize: 12),
+                                  ),
+                                ),
+                              ],
+                            ).frosted(
+                                blur: 1.5,
+                                frostColor: Colors.white,
+                                alignment: Alignment.center,
+                                borderRadius: BorderRadius.circular(10),
+                                frostOpacity: 0.01),
+                          ))
                     ],
                   ),
                   Stack(
-                    children: [
+                    children: <Widget>[
                       Padding(
                         padding: const EdgeInsets.all(20.0),
                         child: SizedBox(
@@ -289,34 +321,41 @@ class ServePage extends StatelessWidget {
                         ),
                       ),
                       Positioned(
-                        height: 200,
-                        width: 300,
-                        bottom: 20,
-                        right: 20,
-                        child: Padding(
-                          padding: const EdgeInsets.all(20.0),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: const [
-                              Padding(
-                                padding: EdgeInsets.only(bottom: 10, left: 20),
-                                child: Text(StringManager.mobility, style: TextStyle(fontWeight: FontWeight.bold, fontSize: FontSizeManager.s15)),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.only(left: 20, right: 20),
-                                child: Text(StringManager.mobilityBody, style: TextStyle(fontSize: FontSizeManager.s12)),
-                              ),
-                            ],
-                          ).frosted(
-                            blur: 1.5,
-                            frostColor: Colors.white,
-                            alignment: Alignment.center,
-                            borderRadius: BorderRadius.circular(10),
-                            frostOpacity: 0.01,
-                          ),
-                        ),
-                      ),
+                          height: 200,
+                          width: 300,
+                          bottom: 20,
+                          right: 20,
+                          child: Padding(
+                            padding: const EdgeInsets.all(20.0),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: const [
+                                Padding(
+                                  padding:
+                                      EdgeInsets.only(bottom: 10, left: 20),
+                                  child: Text(
+                                    'Mobility',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 15),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.only(left: 20, right: 20),
+                                  child: Text(
+                                    'Make arrangements for bus service. Take attendance on the bus. Ensures all attendees return safely.',
+                                    style: TextStyle(fontSize: 12),
+                                  ),
+                                ),
+                              ],
+                            ).frosted(
+                                blur: 1.5,
+                                frostColor: Colors.white,
+                                alignment: Alignment.center,
+                                borderRadius: BorderRadius.circular(10),
+                                frostOpacity: 0.01),
+                          ))
                     ],
                   ),
                 ],
@@ -326,7 +365,7 @@ class ServePage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Stack(
-                    children: [
+                    children: <Widget>[
                       Padding(
                         padding: const EdgeInsets.all(20.0),
                         child: SizedBox(
@@ -342,44 +381,45 @@ class ServePage extends StatelessWidget {
                         ),
                       ),
                       Positioned(
-                        height: 200,
-                        width: 300,
-                        bottom: 20,
-                        right: 20,
-                        child: Padding(
-                          padding: const EdgeInsets.all(20.0),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: const [
-                              Padding(
-                                padding: EdgeInsets.only(bottom: 10, left: 20),
-                                child: Text(
-                                  StringManager.prayer,
-                                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: FontSizeManager.s15),
+                          height: 200,
+                          width: 300,
+                          bottom: 20,
+                          right: 20,
+                          child: Padding(
+                            padding: const EdgeInsets.all(20.0),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: const [
+                                Padding(
+                                  padding:
+                                      EdgeInsets.only(bottom: 10, left: 20),
+                                  child: Text(
+                                    'Prayer',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 15),
+                                  ),
                                 ),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.only(left: 20, right: 20),
-                                child: Text(
-                                  StringManager.prayerBody,
-                                  style: TextStyle(fontSize: FontSizeManager.s12),
+                                Padding(
+                                  padding: EdgeInsets.only(left: 20, right: 20),
+                                  child: Text(
+                                    'Responsible for Handling prayer meetings.',
+                                    style: TextStyle(fontSize: 12),
+                                  ),
                                 ),
-                              ),
-                            ],
-                          ).frosted(
-                            blur: 1.5,
-                            frostColor: Colors.white,
-                            alignment: Alignment.center,
-                            borderRadius: BorderRadius.circular(10),
-                            frostOpacity: 0.01,
-                          ),
-                        ),
-                      ),
+                              ],
+                            ).frosted(
+                                blur: 1.5,
+                                frostColor: Colors.white,
+                                alignment: Alignment.center,
+                                borderRadius: BorderRadius.circular(10),
+                                frostOpacity: 0.01),
+                          ))
                     ],
                   ),
                   Stack(
-                    children: [
+                    children: <Widget>[
                       Padding(
                         padding: const EdgeInsets.all(20.0),
                         child: SizedBox(
@@ -395,37 +435,41 @@ class ServePage extends StatelessWidget {
                         ),
                       ),
                       Positioned(
-                        height: 200,
-                        width: 300,
-                        bottom: 20,
-                        right: 20,
-                        child: Padding(
-                          padding: const EdgeInsets.all(20.0),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: const [
-                              Padding(
-                                padding: EdgeInsets.only(bottom: 10, left: 20),
-                                child: Text(
-                                  StringManager.discipleship,
-                                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: FontSizeManager.s15),
+                          height: 200,
+                          width: 300,
+                          bottom: 20,
+                          right: 20,
+                          child: Padding(
+                            padding: const EdgeInsets.all(20.0),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: const [
+                                Padding(
+                                  padding:
+                                      EdgeInsets.only(bottom: 10, left: 20),
+                                  child: Text(
+                                    'Discipleship',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 15),
+                                  ),
                                 ),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.only(left: 20, right: 20),
-                                child: Text(StringManager.discipleshipBody, style: TextStyle(fontSize: FontSizeManager.s12)),
-                              ),
-                            ],
-                          ).frosted(
-                            blur: 1.5,
-                            frostColor: Colors.white,
-                            alignment: Alignment.center,
-                            borderRadius: BorderRadius.circular(10),
-                            frostOpacity: 0.01,
-                          ),
-                        ),
-                      ),
+                                Padding(
+                                  padding: EdgeInsets.only(left: 20, right: 20),
+                                  child: Text(
+                                    'Responsible for follow-up of community members. Welcome first timers.',
+                                    style: TextStyle(fontSize: 12),
+                                  ),
+                                ),
+                              ],
+                            ).frosted(
+                                blur: 1.5,
+                                frostColor: Colors.white,
+                                alignment: Alignment.center,
+                                borderRadius: BorderRadius.circular(10),
+                                frostOpacity: 0.01),
+                          ))
                     ],
                   ),
                 ],
@@ -434,7 +478,7 @@ class ServePage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Stack(
-                    children: [
+                    children: <Widget>[
                       Padding(
                         padding: const EdgeInsets.all(20.0),
                         child: SizedBox(
@@ -450,38 +494,45 @@ class ServePage extends StatelessWidget {
                         ),
                       ),
                       Positioned(
-                        height: 200,
-                        width: 300,
-                        bottom: 20,
-                        right: 20,
-                        child: Padding(
-                          padding: const EdgeInsets.all(20.0),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: const [
-                              Padding(
-                                padding: EdgeInsets.only(bottom: 10, left: 20),
-                                child: Text(StringManager.finance, style: TextStyle(fontWeight: FontWeight.bold, fontSize: FontSizeManager.s15)),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.only(left: 20, right: 20),
-                                child: Text(StringManager.financeBody, style: TextStyle(fontSize: FontSizeManager.s12)),
-                              ),
-                            ],
-                          ).frosted(
-                            blur: 1.5,
-                            frostColor: Colors.white,
-                            alignment: Alignment.center,
-                            borderRadius: BorderRadius.circular(10),
-                            frostOpacity: 0.01,
-                          ),
-                        ),
-                      ),
+                          height: 200,
+                          width: 300,
+                          bottom: 20,
+                          right: 20,
+                          child: Padding(
+                            padding: const EdgeInsets.all(20.0),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: const [
+                                Padding(
+                                  padding:
+                                      EdgeInsets.only(bottom: 10, left: 20),
+                                  child: Text(
+                                    'Finance',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 15),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.only(left: 20, right: 20),
+                                  child: Text(
+                                    'Keep detailed records of all finances both income and expenditures. Approves all necesarry expenditures. In charge of funds raising for projects.',
+                                    style: TextStyle(fontSize: 12),
+                                  ),
+                                ),
+                              ],
+                            ).frosted(
+                                blur: 1.5,
+                                frostColor: Colors.white,
+                                alignment: Alignment.center,
+                                borderRadius: BorderRadius.circular(10),
+                                frostOpacity: 0.01),
+                          ))
                     ],
                   ),
                   Stack(
-                    children: [
+                    children: <Widget>[
                       Padding(
                         padding: const EdgeInsets.all(20.0),
                         child: SizedBox(
@@ -497,35 +548,41 @@ class ServePage extends StatelessWidget {
                         ),
                       ),
                       Positioned(
-                        height: 200,
-                        width: 300,
-                        bottom: 20,
-                        right: 20,
-                        child: Padding(
-                          padding: const EdgeInsets.all(20.0),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: const [
-                              Padding(
-                                padding: EdgeInsets.only(bottom: 10, left: 20),
-                                child: Text(StringManager.generalSecretary,
-                                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: FontSizeManager.s15)),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.only(left: 20, right: 20),
-                                child: Text(StringManager.generalSecretaryBody, style: TextStyle(fontSize: FontSizeManager.s12)),
-                              ),
-                            ],
-                          ).frosted(
-                            blur: 1.5,
-                            frostColor: Colors.white,
-                            alignment: Alignment.center,
-                            borderRadius: BorderRadius.circular(10),
-                            frostOpacity: 0.01,
-                          ),
-                        ),
-                      ),
+                          height: 200,
+                          width: 300,
+                          bottom: 20,
+                          right: 20,
+                          child: Padding(
+                            padding: const EdgeInsets.all(20.0),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: const [
+                                Padding(
+                                  padding:
+                                      EdgeInsets.only(bottom: 10, left: 20),
+                                  child: Text(
+                                    'General Secretary',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 15),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.only(left: 20, right: 20),
+                                  child: Text(
+                                    'Takes minutes during all executive meetings. Performs oheer task assigned by the  executive committee.',
+                                    style: TextStyle(fontSize: 12),
+                                  ),
+                                ),
+                              ],
+                            ).frosted(
+                                blur: 1.5,
+                                frostColor: Colors.white,
+                                alignment: Alignment.center,
+                                borderRadius: BorderRadius.circular(10),
+                                frostOpacity: 0.01),
+                          ))
                     ],
                   ),
                 ],
