@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../resources/color_manager.dart';
 import '../constant_parts/footnote.dart';
 import '../page_parts/events_page_parts/events_body.dart';
 import '../page_parts/events_page_parts/events_page_header.dart';
@@ -15,7 +16,7 @@ class _DesktopEventsPageState extends State<DesktopEventsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: ColorManager.white,
       body: SingleChildScrollView(
         child: Column(
           children: const [

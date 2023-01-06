@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 
 import '../../../models/user.dart' as model;
 import '../../../providers/user_provider.dart';
+import '../../../resources/color_manager.dart';
 import '../../../resources/string_manager.dart';
 import '../../../utilities/colors.dart';
 
@@ -18,7 +19,7 @@ class BottomBar extends StatelessWidget {
       currentIndex: index,
       onTap: onTap,
       selectedItemColor: mainColor,
-      backgroundColor: Colors.transparent,
+      backgroundColor: ColorManager.transparent,
       iconSize: 30,
       showSelectedLabels: true,
       showUnselectedLabels: true,

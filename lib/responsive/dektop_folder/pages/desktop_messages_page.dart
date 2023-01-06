@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../resources/color_manager.dart';
 import '../constant_parts/footnote.dart';
 import '../page_parts/messages_page_parts/message_page_header.dart';
 import '../page_parts/messages_page_parts/messages_page_body.dart';
@@ -15,7 +16,7 @@ class _DesktopMessagesPageState extends State<DesktopMessagesPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: ColorManager.white,
       body: SingleChildScrollView(
         child: Column(
           children: const [

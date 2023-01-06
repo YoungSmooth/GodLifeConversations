@@ -1,6 +1,8 @@
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 
+import '../../../../resources/color_manager.dart';
+
 class AudioSlides extends StatelessWidget {
   const AudioSlides({super.key});
 
@@ -15,8 +17,8 @@ class AudioSlides extends StatelessWidget {
             child: ImageSlideshow(
               width: 500,
               height: 350,
-              indicatorBackgroundColor: Colors.black,
-              indicatorColor: Colors.white,
+              indicatorBackgroundColor: ColorManager.black,
+              indicatorColor: ColorManager.white,
               autoPlayInterval: 5000,
               isLoop: true,
               children: [
