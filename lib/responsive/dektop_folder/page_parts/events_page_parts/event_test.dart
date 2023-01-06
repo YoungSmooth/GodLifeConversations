@@ -1,7 +1,7 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first, depend_on_referenced_packages
+
 import 'package:flutter/material.dart';
 import 'package:list_timeline/custom_list_tracking.dart';
-
-import '../../../../resources/string_manager.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({
@@ -17,24 +17,20 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   void initState() {
-    listExample.addAll([
-      DataModel(
-        title: StringManager.approved,
-        desc: StringManager.approvedBody,
-        dateTime: DateTime(2022, 08, 10).toString(),
-      ),
-      DataModel(
-        title: StringManager.warning,
-        desc: StringManager.warningBody,
-        dateTime: DateTime(2022, 08, 12).toString(),
-      ),
-      DataModel(
-        title: StringManager.rejected,
-        desc: StringManager.rejectedBody,
-        dateTime: DateTime(2022, 08, 23).toString(),
-      ),
-    ]);
+    listExample.add(DataModel(
+        title: "Approved",
+        desc: "This task was approved by your manager",
+        dateTime: DateTime(2022, 08, 10).toString()));
 
+    listExample.add(DataModel(
+        title: "Warning",
+        desc: "This task was got yellow notice by your manager",
+        dateTime: DateTime(2022, 08, 12).toString()));
+
+    listExample.add(DataModel(
+        title: "Rejected",
+        desc: "This task was rejected by your manager",
+        dateTime: DateTime(2022, 08, 23).toString()));
     super.initState();
   }
 
@@ -55,20 +51,19 @@ class _MyHomePageState extends State<MyHomePage> {
       // 3. customDescWidget: (e) => Container(),
 
       body: Container(
-        margin: const EdgeInsets.all(10),
-        child: CustomListTracking<DataModel>(
-          listItem: listExample,
-          valueTextOfTitle: (e) => e.title,
-          valueTextOfDesc: (e) => e.desc,
-          colorCircleTimeline: (e) => e.title == StringManager.warning
-              ? Colors.yellow
-              : e.title == StringManager.rejected
-                  ? Colors.red
-                  : Colors.blue,
-          showLeftWidget: true,
-          // valueOfLeftSource: (e) => _dateFormat(e.dateTime),
-        ),
-      ),
+          margin: const EdgeInsets.all(10),
+          child: CustomListTracking<DataModel>(
+            listItem: listExample,
+            valueTextOfTitle: (e) => e.title,
+            valueTextOfDesc: (e) => e.desc,
+            colorCircleTimeline: (e) => e.title == "Warning"
+                ? Colors.yellow
+                : e.title == "Rejected"
+                    ? Colors.red
+                    : Colors.blue,
+            showLeftWidget: true,
+            // valueOfLeftSource: (e) => _dateFormat(e.dateTime),
+          )),
     );
   }
 }

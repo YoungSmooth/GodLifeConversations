@@ -1,8 +1,8 @@
-import 'package:flutter_neumorphic/flutter_neumorphic.dart';
-import 'package:url_launcher/url_launcher.dart';
+// ignore_for_file: deprecated_member_use
 
-import '../../../resources/font_size_manager.dart';
-import '../../../resources/string_manager.dart';
+import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import '../../dektop_folder/constant_parts/constants.dart';
 
 class ConnectPage extends StatelessWidget {
@@ -11,285 +11,335 @@ class ConnectPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      child: Column(
-        children: [
-          const SizedBox(
-            height: 100,
-            width: double.infinity,
-            child: Center(
-              child: Padding(padding: EdgeInsets.only(left: 5, right: 5), child: connectMessage),
+        child: Column(
+      children: [
+        const SizedBox(
+          height: 100,
+          width: double.infinity,
+          child: Center(
+            child: Padding(
+              padding: EdgeInsets.only(left: 5, right: 5),
+              child: connectMessage,
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.only(top: 20),
-            child: Container(
-              decoration: BoxDecoration(
+        ),
+        Padding(
+          padding: const EdgeInsets.only(top: 20),
+          child: Container(
+            decoration: BoxDecoration(
                 color: Colors.black.withOpacity(0.2),
                 border: Border.all(width: 1.2, color: Colors.black),
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: NeumorphicIcon(
-                      Icons.location_on,
-                      size: 40,
-                      style: const NeumorphicStyle(color: Colors.black, depth: 3, intensity: 0.99),
+                borderRadius: BorderRadius.circular(10)),
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: NeumorphicIcon(
+                    Icons.location_on,
+                    size: 40,
+                    style: const NeumorphicStyle(
+                        color: Colors.black, depth: 3, intensity: 0.99),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: SizedBox(
+                    height: 90,
+                    width: 190,
+                    child: NeumorphicText(
+                      textAlign: TextAlign.center,
+                      'Desire of All Nations Cathederal, 9 Effanga Offiong Street, Off Edibe Edibe Road, Southern Calabar',
+                      textStyle: NeumorphicTextStyle(
+                          fontWeight: FontWeight.bold, fontSize: 13),
+                      style: const NeumorphicStyle(
+                        color: Colors.black,
+                        depth: 5,
+                        intensity: 0.99,
+                      ),
                     ),
                   ),
-                  Padding(
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 10),
+                  child: NeumorphicText(
+                    'Our Location',
+                    textStyle: NeumorphicTextStyle(
+                        fontWeight: FontWeight.bold, fontSize: 20),
+                    style: const NeumorphicStyle(
+                      color: Colors.white,
+                      depth: 5,
+                      intensity: 0.99,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+        InkWell(
+          onTap: openTelegram,
+          child: Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    height: 100,
+                    width: 100,
+                    decoration: BoxDecoration(
+                        color: Colors.black.withOpacity(0.2),
+                        border: Border.all(width: 1.2, color: Colors.black),
+                        borderRadius: BorderRadius.circular(10)),
+                    child: Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Column(
+                        children: [
+                          NeumorphicIcon(
+                            Icons.telegram,
+                            size: 40,
+                            style: const NeumorphicStyle(
+                                color: Colors.black, depth: 3, intensity: 0.99),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 10),
+                            child: NeumorphicText(
+                              'Telegram',
+                              textStyle: NeumorphicTextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 15),
+                              style: const NeumorphicStyle(
+                                color: Colors.white,
+                                depth: 5,
+                                intensity: 0.99,
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                InkWell(
+                  onTap: openFacebook,
+                  child: Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: SizedBox(
-                      height: 90,
-                      width: 190,
-                      child: NeumorphicText(
-                        textAlign: TextAlign.center,
-                        'Desire of All Nations Cathederal, 9 Effanga Offiong Street, Off Edibe Edibe Road, Southern Calabar',
-                        textStyle: NeumorphicTextStyle(fontWeight: FontWeight.bold, fontSize: FontSizeManager.s13),
-                        style: const NeumorphicStyle(
-                          color: Colors.black,
-                          depth: 5,
-                          intensity: 0.99,
+                    child: Container(
+                      height: 100,
+                      width: 100,
+                      decoration: BoxDecoration(
+                          color: Colors.black.withOpacity(0.2),
+                          border: Border.all(width: 1.2, color: Colors.black),
+                          borderRadius: BorderRadius.circular(10)),
+                      child: Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: Column(
+                          children: [
+                            NeumorphicIcon(
+                              Icons.facebook,
+                              size: 40,
+                              style: const NeumorphicStyle(
+                                  color: Colors.black,
+                                  depth: 3,
+                                  intensity: 0.99),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(top: 10),
+                              child: NeumorphicText(
+                                'Facebook',
+                                textStyle: NeumorphicTextStyle(
+                                    fontWeight: FontWeight.bold, fontSize: 15),
+                                style: const NeumorphicStyle(
+                                  color: Colors.white,
+                                  depth: 5,
+                                  intensity: 0.99,
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 10),
-                    child: NeumorphicText(
-                      'Our Location',
-                      textStyle: NeumorphicTextStyle(fontWeight: FontWeight.bold, fontSize: FontSizeManager.s20),
-                      style: const NeumorphicStyle(color: Colors.white, depth: 5, intensity: 0.99),
+                ),
+                InkWell(
+                  onTap: openWhatsapp,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Container(
+                      height: 100,
+                      width: 100,
+                      decoration: BoxDecoration(
+                          color: Colors.black.withOpacity(0.2),
+                          border: Border.all(width: 1.2, color: Colors.black),
+                          borderRadius: BorderRadius.circular(10)),
+                      child: Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: Column(
+                          children: [
+                            NeumorphicIcon(
+                              Icons.whatsapp,
+                              size: 40,
+                              style: const NeumorphicStyle(
+                                  color: Colors.black,
+                                  depth: 3,
+                                  intensity: 0.99),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(top: 10),
+                              child: NeumorphicText(
+                                'WhatsApp',
+                                textStyle: NeumorphicTextStyle(
+                                    fontWeight: FontWeight.bold, fontSize: 15),
+                                style: const NeumorphicStyle(
+                                  color: Colors.white,
+                                  depth: 5,
+                                  intensity: 0.99,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
                   ),
-                ],
-              ),
-            ),
-          ),
-          InkWell(
-            onTap: openTelegram,
-            child: Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Padding(
+                ),
+                InkWell(
+                  onTap: launchEmail,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Container(
+                      height: 100,
+                      width: 100,
+                      decoration: BoxDecoration(
+                          color: Colors.black.withOpacity(0.2),
+                          border: Border.all(width: 1.2, color: Colors.black),
+                          borderRadius: BorderRadius.circular(10)),
+                      child: Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: Column(
+                          children: [
+                            NeumorphicIcon(
+                              Icons.mail,
+                              size: 40,
+                              style: const NeumorphicStyle(
+                                  color: Colors.black,
+                                  depth: 3,
+                                  intensity: 0.99),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(top: 10),
+                              child: NeumorphicText(
+                                'Email',
+                                textStyle: NeumorphicTextStyle(
+                                    fontWeight: FontWeight.bold, fontSize: 15),
+                                style: const NeumorphicStyle(
+                                  color: Colors.white,
+                                  depth: 5,
+                                  intensity: 0.99,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                InkWell(
+                  onTap: makePhoneCall,
+                  child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Container(
                       height: 100,
                       width: 100,
                       decoration: BoxDecoration(
                         color: Colors.black.withOpacity(0.2),
-                        border: Border.all(width: 1.2, color: Colors.black),
                         borderRadius: BorderRadius.circular(10),
+                        border: Border.all(width: 1.2, color: Colors.black),
                       ),
                       child: Padding(
                         padding: const EdgeInsets.all(10.0),
                         child: Column(
                           children: [
                             NeumorphicIcon(
-                              Icons.telegram,
+                              Icons.call,
                               size: 40,
-                              style: const NeumorphicStyle(color: Colors.black, depth: 3, intensity: 0.99),
+                              style: const NeumorphicStyle(
+                                  color: Colors.black,
+                                  depth: 3,
+                                  intensity: 0.99),
                             ),
                             Padding(
                               padding: const EdgeInsets.only(top: 10),
                               child: NeumorphicText(
-                                StringManager.telegram,
-                                textStyle: NeumorphicTextStyle(fontWeight: FontWeight.bold, fontSize: FontSizeManager.s15),
-                                style: const NeumorphicStyle(color: Colors.white, depth: 5, intensity: 0.99),
+                                'Call',
+                                textStyle: NeumorphicTextStyle(
+                                    fontWeight: FontWeight.bold, fontSize: 15),
+                                style: const NeumorphicStyle(
+                                  color: Colors.white,
+                                  depth: 5,
+                                  intensity: 0.99,
+                                ),
                               ),
-                            )
+                            ),
                           ],
                         ),
                       ),
                     ),
                   ),
-                  InkWell(
-                    onTap: openFacebook,
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        height: 100,
-                        width: 100,
-                        decoration: BoxDecoration(
-                          color: Colors.black.withOpacity(0.2),
-                          border: Border.all(width: 1.2, color: Colors.black),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(10.0),
-                          child: Column(
-                            children: [
-                              NeumorphicIcon(
-                                Icons.facebook,
-                                size: 40,
-                                style: const NeumorphicStyle(color: Colors.black, depth: 3, intensity: 0.99),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(top: 10),
-                                child: NeumorphicText(
-                                  StringManager.facebook,
-                                  textStyle: NeumorphicTextStyle(fontWeight: FontWeight.bold, fontSize: FontSizeManager.s15),
-                                  style: const NeumorphicStyle(
-                                    color: Colors.white,
-                                    depth: 5,
-                                    intensity: 0.99,
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  InkWell(
-                    onTap: openWhatsapp,
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        height: 100,
-                        width: 100,
-                        decoration: BoxDecoration(
-                          color: Colors.black.withOpacity(0.2),
-                          border: Border.all(width: 1.2, color: Colors.black),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(10.0),
-                          child: Column(
-                            children: [
-                              NeumorphicIcon(
-                                Icons.whatsapp,
-                                size: 40,
-                                style: const NeumorphicStyle(color: Colors.black, depth: 3, intensity: 0.99),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(top: 10),
-                                child: NeumorphicText(
-                                  StringManager.whatsApp,
-                                  textStyle: NeumorphicTextStyle(fontWeight: FontWeight.bold, fontSize: FontSizeManager.s15),
-                                  style: const NeumorphicStyle(color: Colors.white, depth: 5, intensity: 0.99),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  InkWell(
-                    onTap: launchEmail,
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        height: 100,
-                        width: 100,
-                        decoration: BoxDecoration(
-                          color: Colors.black.withOpacity(0.2),
-                          border: Border.all(width: 1.2, color: Colors.black),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(10.0),
-                          child: Column(
-                            children: [
-                              NeumorphicIcon(
-                                Icons.mail,
-                                size: 40,
-                                style: const NeumorphicStyle(color: Colors.black, depth: 3, intensity: 0.99),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(top: 10),
-                                child: NeumorphicText(
-                                  StringManager.email,
-                                  textStyle: NeumorphicTextStyle(fontWeight: FontWeight.bold, fontSize: FontSizeManager.s15),
-                                  style: const NeumorphicStyle(color: Colors.white, depth: 5, intensity: 0.99),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  InkWell(
-                    onTap: makePhoneCall,
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        height: 100,
-                        width: 100,
-                        decoration: BoxDecoration(
-                          color: Colors.black.withOpacity(0.2),
-                          borderRadius: BorderRadius.circular(10),
-                          border: Border.all(width: 1.2, color: Colors.black),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(10.0),
-                          child: Column(
-                            children: [
-                              NeumorphicIcon(
-                                Icons.call,
-                                size: 40,
-                                style: const NeumorphicStyle(color: Colors.black, depth: 3, intensity: 0.99),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(top: 10),
-                                child: NeumorphicText(
-                                  StringManager.call,
-                                  textStyle: NeumorphicTextStyle(fontWeight: FontWeight.bold, fontSize: FontSizeManager.s15),
-                                  style: const NeumorphicStyle(color: Colors.white, depth: 5, intensity: 0.99),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                  )
-                ],
-              ),
+                )
+              ],
             ),
           ),
-        ],
-      ),
-    );
+        ),
+      ],
+    ));
   }
 }
 
 Future makePhoneCall() async {
   const phoneNumber = '+2347034975428';
-  final Uri url = Uri.parse('tel:$phoneNumber');
+  const url = 'tel:$phoneNumber';
 
-  if (await canLaunchUrl(url)) {
-    await launchUrl(url);
+  if (await canLaunch(url)) {
+    await launch(url);
   }
 }
 
 Future openWhatsapp() async {
-  final Uri url = Uri.parse("'https://chat.whatsapp.com/LNbsEodyYmaBuMMsdbPcBb'");
-  if (await canLaunchUrl(url)) {
-    await launchUrl(
+  const url = 'https://chat.whatsapp.com/LNbsEodyYmaBuMMsdbPcBb';
+  if (await canLaunch(url)) {
+    await launch(
       url,
-      mode: LaunchMode.platformDefault,
+      forceSafariVC: false,
+      forceWebView: false,
+      enableJavaScript: false,
     );
   }
 }
 
 Future openFacebook() async {
-  final Uri url = Uri.parse('https://facebook.com');
-  if (await canLaunchUrl(url)) {
-    await launchUrl(url, mode: LaunchMode.platformDefault);
+  const url = 'https://facebook.com';
+  if (await canLaunch(url)) {
+    await launch(
+      url,
+      forceSafariVC: false,
+      forceWebView: false,
+      enableJavaScript: false,
+    );
   }
 }
 
 Future openTelegram() async {
-  final Uri url = Uri.parse('https:bit.ly/33P2993');
-  if (await canLaunchUrl(url)) {
-    await launchUrl(url, mode: LaunchMode.platformDefault);
+  const url = 'https:bit.ly/33P2993';
+  if (await canLaunch(url)) {
+    await launch(
+      url,
+      forceSafariVC: false,
+      forceWebView: false,
+      enableJavaScript: false,
+    );
   }
 }
 

@@ -1,7 +1,7 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first, depend_on_referenced_packages
+// ignore_for_file: empty_constructor_bodies
 import 'package:flutter/material.dart';
 import 'package:list_timeline/custom_list_tracking.dart';
-
-import '../../../../resources/string_manager.dart';
 
 class EventsBody extends StatefulWidget {
   const EventsBody({super.key});
@@ -15,16 +15,54 @@ class _EventsBodyState extends State<EventsBody> {
 
   @override
   void initState() {
-    listExample.addAll([
-      DataModel(title: StringManager.futureEvent, desc: StringManager.futureEventBody1, date: StringManager.defaultDate1),
-      DataModel(title: StringManager.ongoingEvent, desc: StringManager.ongoingEventBody1, date: StringManager.defaultDate1),
-      DataModel(title: StringManager.pastEvent, desc: StringManager.pastEventBody1, date: StringManager.defaultDate1),
-      DataModel(title: StringManager.pastEvent, desc: StringManager.pastEventBody2, date: StringManager.defaultDate1),
-      DataModel(title: StringManager.pastEvent, desc: StringManager.pastEventBody3, date: StringManager.defaultDate1),
-      DataModel(title: StringManager.pastEvent, desc: StringManager.pastEventBody1, date: StringManager.defaultDate1),
-      DataModel(title: StringManager.pastEvent, desc: StringManager.pastEventBody2, date: StringManager.defaultDate1),
-      DataModel(title: StringManager.pastEvent, desc: StringManager.pastEventBody3, date: StringManager.defaultDate1),
-    ]);
+    listExample.add(DataModel(
+      title: "Future Event",
+      desc: "The power of fasting",
+      dateTime: "10-10-2022",
+    ));
+
+    listExample.add(DataModel(
+      title: "Ongoing Event",
+      desc: "Dreams and Visions",
+      dateTime: "10-10-2022",
+    ));
+
+    listExample.add(DataModel(
+      title: "Past Event",
+      desc: "Roses are red.",
+      dateTime: "10-10-2022",
+    ));
+
+    listExample.add(DataModel(
+      title: "Past Event",
+      desc: "Keys to Growth",
+      dateTime: "10-10-2022",
+    ));
+
+    listExample.add(DataModel(
+      title: "Past Event",
+      desc: "The Joy of the Lord",
+      dateTime: "10-10-2022",
+    ));
+
+    listExample.add(DataModel(
+      title: "Past Event",
+      desc: "Roses are red.",
+      dateTime: "10-10-2022",
+    ));
+
+    listExample.add(DataModel(
+      title: "Past Event",
+      desc: "Keys to Growth",
+      dateTime: "10-10-2022",
+    ));
+
+    listExample.add(DataModel(
+      title: "Past Event",
+      desc: "The Joy of the Lord",
+      dateTime: "10-10-2022",
+    ));
+
     super.initState();
   }
 
@@ -36,7 +74,10 @@ class _EventsBodyState extends State<EventsBody> {
           children: [
             const Padding(
               padding: EdgeInsets.all(20),
-              child: Text(StringManager.eventPageBody1, textAlign: TextAlign.center),
+              child: Text(
+                'Go through our past, ongoig and future events to keep track of our activities and tag along.',
+                textAlign: TextAlign.center,
+              ),
             ),
             Container(
               alignment: Alignment.center,
@@ -47,15 +88,16 @@ class _EventsBodyState extends State<EventsBody> {
                 // valueTextOfDesc: (listExample) => listExample.desc,
                 customTitleWidget: (e) => Container(
                   decoration: BoxDecoration(
-                    color: Colors.purple.withOpacity(0.1),
-                    border: Border.all(width: 0.7, color: Colors.grey),
-                    borderRadius: BorderRadius.circular(5),
-                  ),
+                      color: Colors.purple.withOpacity(0.1),
+                      border: Border.all(width: 0.7, color: Colors.grey),
+                      borderRadius: BorderRadius.circular(5)),
                   child: Padding(
                     padding: const EdgeInsets.all(3.0),
                     child: Text(
                       e.title,
-                      style: const TextStyle(color: Colors.black),
+                      style: const TextStyle(
+                        color: Colors.black,
+                      ),
                     ),
                   ),
                 ),
@@ -74,13 +116,14 @@ class _EventsBodyState extends State<EventsBody> {
                     ),
                   ],
                 ),
-                colorCircleTimeline: (listExample) => listExample.title == StringManager.futureEvent
-                    ? Colors.yellow
-                    : listExample.title == StringManager.ongoingEvent
-                        ? Colors.green
-                        : Colors.grey,
+                colorCircleTimeline: (listExample) =>
+                    listExample.title == "Future Event"
+                        ? Colors.yellow
+                        : listExample.title == "Ongoing Event"
+                            ? Colors.green
+                            : Colors.grey,
                 showLeftWidget: true,
-                valueOfLeftSource: (e) => (e.date),
+                valueOfLeftSource: (e) => (e.dateTime),
               ),
             ),
           ],
@@ -93,10 +136,10 @@ class _EventsBodyState extends State<EventsBody> {
 class DataModel {
   String title;
   String desc;
-  String date;
+  String dateTime;
   DataModel({
     required this.title,
     required this.desc,
-    required this.date,
+    required this.dateTime,
   });
 }

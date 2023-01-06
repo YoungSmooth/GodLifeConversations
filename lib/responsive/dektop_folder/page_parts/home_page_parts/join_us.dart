@@ -1,8 +1,7 @@
-import 'package:flutter_neumorphic/flutter_neumorphic.dart';
-import 'package:url_launcher/url_launcher.dart';
+// ignore_for_file: depend_on_referenced_packages, deprecated_member_use
 
-import '../../../../resources/font_size_manager.dart';
-import '../../../../resources/string_manager.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 
 class JoinUs extends StatelessWidget {
   const JoinUs({super.key});
@@ -18,19 +17,21 @@ class JoinUs extends StatelessWidget {
           Expanded(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
+              // crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Padding(
                   padding: const EdgeInsets.all(1),
                   child: NeumorphicText(
-                    StringManager.joinUs,
+                    'JOIN US THIS SUNDAY',
                     style: const NeumorphicStyle(
-                      shadowDarkColor: Colors.grey,
-                      color: Colors.black,
-                      border: NeumorphicBorder(color: Colors.white, width: 0.8),
-                      depth: 2,
-                      intensity: 0.95,
-                    ),
-                    textStyle: NeumorphicTextStyle(fontSize: FontSizeManager.s40, fontWeight: FontWeight.bold),
+                        shadowDarkColor: Colors.grey,
+                        color: Colors.black,
+                        border:
+                            NeumorphicBorder(color: Colors.white, width: 0.8),
+                        depth: 2,
+                        intensity: 0.95),
+                    textStyle: NeumorphicTextStyle(
+                        fontSize: 40, fontWeight: FontWeight.bold),
                   ),
                 ),
                 Padding(
@@ -41,16 +42,22 @@ class JoinUs extends StatelessWidget {
                     text: TextSpan(
                       children: [
                         TextSpan(
-                          text: StringManager.onsiteBody1,
-                          style: TextStyle(color: Colors.grey.shade600, fontSize: FontSizeManager.s15),
+                          text: 'Every service is designed for your ',
+                          style: TextStyle(
+                              color: Colors.grey.shade600, fontSize: 15),
                         ),
                         TextSpan(
-                          text: StringManager.onsiteBody2,
-                          style: TextStyle(color: Colors.grey.shade600, fontSize: FontSizeManager.s14, fontWeight: FontWeight.bold),
+                          text: 'spiritual, mental and emotional growth 🤗. ',
+                          style: TextStyle(
+                              color: Colors.grey.shade600,
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold),
                         ),
                         TextSpan(
-                          text: StringManager.onsiteBody3,
-                          style: TextStyle(color: Colors.grey.shade600, fontSize: FontSizeManager.s15),
+                          text:
+                              'Join us onsite or online as we grow in Gods presence this Sunday by 4:00 P.M (WAT)',
+                          style: TextStyle(
+                              color: Colors.grey.shade600, fontSize: 15),
                         ),
                       ],
                     ),
@@ -64,14 +71,16 @@ class JoinUs extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.all(10.0),
                           child: NeumorphicText(
-                            StringManager.onsite,
+                            'Onsite',
                             style: const NeumorphicStyle(
                                 shadowDarkColor: Colors.grey,
                                 color: Colors.black,
-                                border: NeumorphicBorder(color: Colors.white, width: 0.1),
+                                border: NeumorphicBorder(
+                                    color: Colors.white, width: 0.1),
                                 depth: 2,
                                 intensity: 0.55),
-                            textStyle: NeumorphicTextStyle(fontWeight: FontWeight.bold),
+                            textStyle: NeumorphicTextStyle(
+                                fontWeight: FontWeight.bold),
                           ),
                         ),
                         Container(
@@ -80,7 +89,7 @@ class JoinUs extends StatelessWidget {
                           width: 190,
                           child: Text(
                             textAlign: TextAlign.center,
-                            StringManager.ourLocationBody,
+                            'Desire of All Nations Cathederal, 9 Effanga Offiong Street, Off Edibe Edibe Road, Southern Calabar',
                             style: TextStyle(
                               fontWeight: FontWeight.w400,
                               color: Colors.grey.shade600,
@@ -90,7 +99,8 @@ class JoinUs extends StatelessWidget {
                         NeumorphicIcon(
                           Icons.location_on,
                           size: 40,
-                          style: const NeumorphicStyle(color: Colors.black, depth: 3, intensity: 0.99),
+                          style: const NeumorphicStyle(
+                              color: Colors.black, depth: 3, intensity: 0.99),
                         ),
                       ],
                     ),
@@ -100,14 +110,16 @@ class JoinUs extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.all(10.0),
                           child: NeumorphicText(
-                            StringManager.online,
+                            'Online',
                             style: const NeumorphicStyle(
                                 shadowDarkColor: Colors.grey,
                                 color: Colors.black,
-                                border: NeumorphicBorder(color: Colors.white, width: 0.1),
+                                border: NeumorphicBorder(
+                                    color: Colors.white, width: 0.1),
                                 depth: 2,
                                 intensity: 0.55),
-                            textStyle: NeumorphicTextStyle(fontWeight: FontWeight.bold),
+                            textStyle: NeumorphicTextStyle(
+                                fontWeight: FontWeight.bold),
                           ),
                         ),
                         InkWell(
@@ -117,15 +129,18 @@ class JoinUs extends StatelessWidget {
                             height: 100,
                             width: 100,
                             child: const Text(
-                              '     ${StringManager.telegram}',
-                              style: TextStyle(fontWeight: FontWeight.w400, color: Colors.blueAccent),
+                              '     Telegram',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w400,
+                                  color: Colors.blueAccent),
                             ),
                           ),
                         ),
                         NeumorphicIcon(
                           Icons.telegram_sharp,
                           size: 40,
-                          style: const NeumorphicStyle(color: Colors.black, depth: 3, intensity: 0.99),
+                          style: const NeumorphicStyle(
+                              color: Colors.black, depth: 3, intensity: 0.99),
                         ),
                       ],
                     ),
@@ -148,9 +163,14 @@ class JoinUs extends StatelessWidget {
   }
 
   Future openTelegram() async {
-    final Uri url = Uri.parse('https:bit.ly/33P2993');
-    if (await canLaunchUrl(url)) {
-      await launchUrl(url);
+    const url = 'https:bit.ly/33P2993';
+    if (await canLaunch(url)) {
+      await launch(
+        url,
+        forceSafariVC: false,
+        forceWebView: false,
+        enableJavaScript: false,
+      );
     }
   }
 }

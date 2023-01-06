@@ -1,5 +1,7 @@
-import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
+// ignore_for_file: depend_on_referenced_packages
+
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
+import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 
 class AudioSlides extends StatelessWidget {
   const AudioSlides({super.key});

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../../utilities/colors.dart';
+import 'package:god_life_conversations/utilities.dart/colors.dart';
 
-import '../../../resources/string_manager.dart';
 import 'about_page.dart';
 import 'connect_page.dart';
 
@@ -24,8 +23,12 @@ class MobileConnectPage extends StatelessWidget {
                   TabBar(
                     labelColor: mainColor,
                     tabs: [
-                      Tab(text: StringManager.connect),
-                      Tab(text: StringManager.about),
+                      Tab(
+                        text: 'Connect',
+                      ),
+                      Tab(
+                        text: 'About',
+                      ),
                     ],
                   ),
                   Expanded(

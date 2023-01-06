@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
+// ignore: depend_on_referenced_packages
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 
-import '../../../../resources/font_size_manager.dart';
-import '../../../../resources/string_manager.dart';
 import '../../pages/desktop_home_page.dart';
 
 class AboutPageHeader extends StatelessWidget {
@@ -11,7 +10,7 @@ class AboutPageHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
-      children: [
+      children: <Widget>[
         SizedBox(
           height: 350,
           width: double.infinity,
@@ -62,8 +61,12 @@ class AboutPageHeader extends StatelessWidget {
                       padding: EdgeInsets.all(10),
                       child: Center(
                         child: Text(
-                          StringManager.aboutSpaced,
-                          style: TextStyle(color: Colors.white, fontWeight: FontWeight.w500, fontSize: FontSizeManager.s30),
+                          'A B O U T',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w500,
+                            fontSize: 30,
+                          ),
                         ),
                       ),
                     ),

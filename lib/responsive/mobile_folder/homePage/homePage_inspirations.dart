@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../../resources/string_manager.dart';
-
 class HomePageInspirations extends StatefulWidget {
   const HomePageInspirations({super.key});
 
@@ -17,10 +15,13 @@ class _HomePageInspirationsState extends State<HomePageInspirations> {
         autofocus: true,
         backgroundColor: Colors.white,
         child: const IconButton(
-          onPressed: null,
-          icon: Icon(Icons.add, color: Colors.black, size: 20),
-        ),
-        onPressed: () {},
+            onPressed: null,
+            icon: Icon(
+              Icons.add,
+              color: Colors.black,
+              size: 20,
+            )),
+        onPressed: () => null,
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -51,7 +52,10 @@ class _HomePageInspirationsState extends State<HomePageInspirations> {
                         ),
                         const Padding(
                           padding: EdgeInsets.all(8.0),
-                          child: Text(StringManager.messagesBody6),
+                          child: Text(
+                            "First Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+                            style: TextStyle(),
+                          ),
                         ),
                       ],
                     ),
@@ -66,9 +70,8 @@ class _HomePageInspirationsState extends State<HomePageInspirations> {
                   child: Container(
                     width: double.infinity,
                     decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10)),
                     child: Column(
                       children: [
                         ClipRRect(
@@ -85,7 +88,8 @@ class _HomePageInspirationsState extends State<HomePageInspirations> {
                         const Padding(
                           padding: EdgeInsets.all(8.0),
                           child: Text(
-                            StringManager.messagesBody4,
+                            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+                            style: TextStyle(),
                           ),
                         ),
                       ],
@@ -101,9 +105,8 @@ class _HomePageInspirationsState extends State<HomePageInspirations> {
                   child: Container(
                     width: double.infinity,
                     decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10)),
                     child: Column(
                       children: [
                         ClipRRect(
@@ -120,7 +123,8 @@ class _HomePageInspirationsState extends State<HomePageInspirations> {
                         const Padding(
                           padding: EdgeInsets.all(8.0),
                           child: Text(
-                            StringManager.messagesBody5,
+                            'Read and meditate',
+                            style: TextStyle(),
                           ),
                         ),
                       ],
@@ -136,9 +140,8 @@ class _HomePageInspirationsState extends State<HomePageInspirations> {
                   child: Container(
                     width: double.infinity,
                     decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10)),
                     child: Column(
                       children: [
                         ClipRRect(
@@ -156,6 +159,7 @@ class _HomePageInspirationsState extends State<HomePageInspirations> {
                           padding: EdgeInsets.all(8.0),
                           child: Text(
                             '',
+                            style: TextStyle(),
                           ),
                         ),
                       ],
@@ -171,9 +175,8 @@ class _HomePageInspirationsState extends State<HomePageInspirations> {
                   child: Container(
                     width: double.infinity,
                     decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10)),
                     child: Column(
                       children: [
                         ClipRRect(
@@ -190,7 +193,8 @@ class _HomePageInspirationsState extends State<HomePageInspirations> {
                         const Padding(
                           padding: EdgeInsets.all(8.0),
                           child: Text(
-                            StringManager.hallelujah,
+                            "Hallelujah",
+                            style: TextStyle(),
                           ),
                         ),
                       ],

@@ -1,14 +1,14 @@
-import 'package:animated_text_kit/animated_text_kit.dart';
-import 'package:blur/blur.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
+// ignore_for_file: depend_on_referenced_packages
 
-import '../../../resources/string_manager.dart';
-import '../../../utilities/colors.dart';
+import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
+import 'package:flutter/material.dart';
+import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:god_life_conversations/utilities.dart/colors.dart';
 import '../../dektop_folder/constant_parts/constants.dart';
 import 'feed.dart';
-import 'home_page_inspirations.dart';
+import 'homePage_inspirations.dart';
 import 'message.dart';
+import 'package:blur/blur.dart';
 
 class MobileHomePage extends StatelessWidget {
   const MobileHomePage({super.key});
@@ -64,13 +64,13 @@ class MobileHomePage extends StatelessWidget {
                                   totalRepeatCount: 500,
                                   animatedTexts: [
                                     ColorizeAnimatedText(
-                                      StringManager.welcomeToGLC,
+                                      'WELCOME TO GODLIFE CONVERSATIONS',
                                       textStyle: colorizeTextStyleMobile,
                                       colors: colorizeColors,
                                       textDirection: TextDirection.ltr,
                                     ),
                                     ColorizeAnimatedText(
-                                      StringManager.welcomeToGLC,
+                                      'WELCOME TO GODLIFE CONVERSATIONS',
                                       textStyle: colorizeTextStyleMobile,
                                       colors: colorizeColors,
                                       textDirection: TextDirection.ltr,
@@ -105,9 +105,15 @@ class MobileHomePage extends StatelessWidget {
                         labelColor: mainColor,
                         indicatorColor: Colors.grey,
                         tabs: [
-                          Tab(text: StringManager.feed),
-                          Tab(text: StringManager.testimonies),
-                          Tab(text: StringManager.messages),
+                          Tab(
+                            text: 'Feed',
+                          ),
+                          Tab(
+                            text: 'Testimonies',
+                          ),
+                          Tab(
+                            text: 'Messages',
+                          ),
                         ],
                       ),
                       Expanded(

@@ -1,8 +1,8 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-import '../../resources/font_size_manager.dart';
-import '../../resources/string_manager.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+
 import '../mobile_folder/mobile_scaffold.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -25,8 +25,10 @@ class _RegisterPageState extends State<RegisterPage> {
   }
 
   Future registerUser() async {
-    await FirebaseAuth.instance.createUserWithEmailAndPassword(email: _emailController.text.trim(), password: _passwordController.text.trim());
-
+    await FirebaseAuth.instance.createUserWithEmailAndPassword(
+      email: _emailController.text.trim(),
+      password: _passwordController.text.trim(),
+    );
     Navigator.of(context).push(
       MaterialPageRoute(
         builder: (context) => const MobileScaffold(),
@@ -40,7 +42,7 @@ class _RegisterPageState extends State<RegisterPage> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Text(StringManager.glc),
+          const Text('GLC'),
           const SizedBox(height: 50),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 25),
@@ -48,18 +50,16 @@ class _RegisterPageState extends State<RegisterPage> {
               keyboardType: TextInputType.emailAddress,
               controller: _emailController,
               decoration: InputDecoration(
-                hintText: StringManager.enterEmail,
+                hintText: 'Input Email',
                 enabledBorder: OutlineInputBorder(
-                  borderSide: const BorderSide(color: Colors.white),
-                  borderRadius: BorderRadius.circular(12),
-                ),
+                    borderSide: const BorderSide(color: Colors.white),
+                    borderRadius: BorderRadius.circular(12)),
                 fillColor: Colors.grey[200],
                 filled: true,
                 border: InputBorder.none,
                 focusedBorder: OutlineInputBorder(
-                  borderSide: const BorderSide(color: Colors.black),
-                  borderRadius: BorderRadius.circular(12),
-                ),
+                    borderSide: const BorderSide(color: Colors.black),
+                    borderRadius: BorderRadius.circular(12)),
                 contentPadding: const EdgeInsets.all(8),
               ),
             ),
@@ -71,11 +71,13 @@ class _RegisterPageState extends State<RegisterPage> {
               obscureText: true,
               controller: _passwordController,
               decoration: InputDecoration(
-                hintText: StringManager.enterPassword,
+                hintText: 'Input Password',
                 fillColor: Colors.grey[200],
                 filled: true,
                 border: InputBorder.none,
-                focusedBorder: OutlineInputBorder(borderSide: const BorderSide(color: Colors.black), borderRadius: BorderRadius.circular(12)),
+                focusedBorder: OutlineInputBorder(
+                    borderSide: const BorderSide(color: Colors.black),
+                    borderRadius: BorderRadius.circular(12)),
                 contentPadding: const EdgeInsets.all(8),
               ),
             ),
@@ -87,9 +89,14 @@ class _RegisterPageState extends State<RegisterPage> {
               onTap: registerUser,
               child: Container(
                 padding: const EdgeInsets.all(20),
-                decoration: BoxDecoration(color: Colors.green.shade400, borderRadius: BorderRadius.circular(12)),
+                decoration: BoxDecoration(
+                    color: Colors.green.shade400,
+                    borderRadius: BorderRadius.circular(12)),
                 child: const Center(
-                  child: Text(StringManager.register, style: TextStyle(fontSize: FontSizeManager.s20, color: Colors.white)),
+                  child: Text(
+                    'Register',
+                    style: TextStyle(fontSize: 20, color: Colors.white),
+                  ),
                 ),
               ),
             ),
@@ -98,10 +105,20 @@ class _RegisterPageState extends State<RegisterPage> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Text(StringManager.aMember, style: TextStyle(fontWeight: FontWeight.bold)),
+              const Text(
+                'Already a member?',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
               GestureDetector(
                 onTap: widget.showLoginPage,
-                child: Text(' ${StringManager.login}', style: TextStyle(fontWeight: FontWeight.bold, color: Colors.green.shade400)),
+                child: Text(
+                  ' Login',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.green.shade400),
+                ),
               ),
             ],
           )

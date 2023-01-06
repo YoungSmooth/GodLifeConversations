@@ -1,18 +1,17 @@
-import 'package:animated_text_kit/animated_text_kit.dart';
-import 'package:blur/blur.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
-import 'package:hovering/hovering.dart';
+// ignore_for_file: depend_on_referenced_packages
 
-import '../../../../resources/font_size_manager.dart';
-import '../../../../resources/string_manager.dart';
+import 'package:flutter/material.dart';
+import 'package:god_life_conversations/responsive/dektop_folder/pages/desktop_connect_page.dart';
+import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
+import 'package:blur/blur.dart';
 import '../../constant_parts/constants.dart';
 import '../../pages/desktop_about_page.dart';
-import '../../pages/desktop_connect_page.dart';
 import '../../pages/desktop_events_page.dart';
 import '../../pages/desktop_give_page.dart';
 import '../../pages/desktop_messages_page.dart';
 import '../../pages/desktop_serve_page.dart';
+import 'package:hovering/hovering.dart';
+import 'package:animated_text_kit/animated_text_kit.dart';
 
 class HeaderBackground extends StatelessWidget {
   const HeaderBackground({super.key});
@@ -20,7 +19,7 @@ class HeaderBackground extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
-      children: [
+      children: <Widget>[
         SizedBox(
           height: 700,
           width: double.infinity,
@@ -57,10 +56,9 @@ class HeaderBackground extends StatelessWidget {
             child: Container(
               height: 60,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(15),
-                color: Colors.black,
-                border: Border.all(color: Colors.white, width: 2),
-              ),
+                  borderRadius: BorderRadius.circular(15),
+                  color: Colors.black,
+                  border: Border.all(color: Colors.white, width: 2)),
               child: Image.asset('lib/assets/logowhite.png'),
             ),
           ),
@@ -98,11 +96,11 @@ class HeaderBackground extends StatelessWidget {
                       padding: EdgeInsets.fromLTRB(15, 5, 15, 8),
                       child: Center(
                         child: Text(
-                          StringManager.connectCAPS,
+                          'Connect',
                           style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.w500,
-                            fontSize: FontSizeManager.s15,
+                            fontSize: 15,
                           ),
                         ),
                       ),
@@ -134,11 +132,11 @@ class HeaderBackground extends StatelessWidget {
                       padding: EdgeInsets.fromLTRB(15, 5, 15, 8),
                       child: Center(
                         child: Text(
-                          StringManager.messagesCAPS,
+                          'Messages',
                           style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.w500,
-                            fontSize: FontSizeManager.s15,
+                            fontSize: 15,
                           ),
                         ),
                       ),
@@ -170,11 +168,11 @@ class HeaderBackground extends StatelessWidget {
                       padding: EdgeInsets.fromLTRB(15, 5, 15, 8),
                       child: Center(
                         child: Text(
-                          StringManager.serveCAPS,
+                          'Serve',
                           style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.w500,
-                            fontSize: FontSizeManager.s15,
+                            fontSize: 15,
                           ),
                         ),
                       ),
@@ -206,11 +204,11 @@ class HeaderBackground extends StatelessWidget {
                       padding: EdgeInsets.fromLTRB(15, 5, 15, 8),
                       child: Center(
                         child: Text(
-                          StringManager.eventsCAPS,
+                          'Events',
                           style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.w500,
-                            fontSize: FontSizeManager.s15,
+                            fontSize: 15,
                           ),
                         ),
                       ),
@@ -242,11 +240,11 @@ class HeaderBackground extends StatelessWidget {
                       padding: EdgeInsets.fromLTRB(15, 5, 15, 8),
                       child: Center(
                         child: Text(
-                          StringManager.giveCAPS,
+                          'Give',
                           style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.w500,
-                            fontSize: FontSizeManager.s15,
+                            fontSize: 15,
                           ),
                         ),
                       ),
@@ -278,8 +276,12 @@ class HeaderBackground extends StatelessWidget {
                       padding: EdgeInsets.fromLTRB(15, 5, 15, 8),
                       child: Center(
                         child: Text(
-                          StringManager.aboutCAPS,
-                          style: TextStyle(color: Colors.white, fontWeight: FontWeight.w500, fontSize: FontSizeManager.s15),
+                          'About',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w500,
+                            fontSize: 15,
+                          ),
                         ),
                       ),
                     ),
@@ -303,8 +305,16 @@ class HeaderBackground extends StatelessWidget {
                       width: 450,
                       child: AnimatedTextKit(
                         animatedTexts: [
-                          ColorizeAnimatedText(StringManager.welcomeToGLC, textStyle: colorizeTextStyle, colors: colorizeColors),
-                          ColorizeAnimatedText(StringManager.welcomeToGLC, textStyle: colorizeTextStyle, colors: colorizeColors),
+                          ColorizeAnimatedText(
+                            'WELCOME TO GODLIFE CONVERSATIONS',
+                            textStyle: colorizeTextStyle,
+                            colors: colorizeColors,
+                          ),
+                          ColorizeAnimatedText(
+                            'WELCOME TO GODLIFE CONVERSATIONS',
+                            textStyle: colorizeTextStyle,
+                            colors: colorizeColors,
+                          ),
                         ],
                         isRepeatingAnimation: true,
                       ),
