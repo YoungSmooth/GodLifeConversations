@@ -6,7 +6,7 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:god_life_conversations/utilities.dart/colors.dart';
 import '../../dektop_folder/constant_parts/constants.dart';
 import 'feed.dart';
-import 'homePage_inspirations.dart';
+import 'testimonies.dart';
 import 'message.dart';
 import 'package:blur/blur.dart';
 
@@ -120,7 +120,7 @@ class MobileHomePage extends StatelessWidget {
                         child: TabBarView(
                           children: [
                             GlcFeed(),
-                            HomePageInspirations(),
+                            Testimonies(),
                             Messages(),
                           ],
                         ),
