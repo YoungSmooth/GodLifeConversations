@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 
+import '../../../../resources/color_manager.dart';
 import '../../../../resources/font_size_manager.dart';
 import '../../../../resources/string_manager.dart';
 import '../../pages/desktop_home_page.dart';
@@ -37,7 +38,7 @@ class MessagesPageHeader extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
                   color: Colors.black,
-                  border: Border.all(color: Colors.white, width: 2),
+                  border: Border.all(color: ColorManager.white, width: 2),
                 ),
                 child: Image.asset('lib/assets/logowhite.png'),
               ),
@@ -55,16 +56,16 @@ class MessagesPageHeader extends StatelessWidget {
                     height: 70,
                     width: 250,
                     decoration: BoxDecoration(
-                      color: Colors.black.withOpacity(0.3),
+                      color: ColorManager.blackOp0_3,
                       borderRadius: BorderRadius.circular(100),
-                      border: Border.all(width: 1.2, color: Colors.black),
+                      border: Border.all(width: 1.2, color: ColorManager.black),
                     ),
                     child: const Padding(
                       padding: EdgeInsets.all(10),
                       child: Center(
                         child: Text(
                           StringManager.messagesSpaced,
-                          style: TextStyle(color: Colors.white, fontWeight: FontWeight.w500, fontSize: FontSizeManager.s30),
+                          style: TextStyle(color: ColorManager.white, fontWeight: FontWeight.w500, fontSize: FontSizeManager.s30),
                         ),
                       ),
                     ),

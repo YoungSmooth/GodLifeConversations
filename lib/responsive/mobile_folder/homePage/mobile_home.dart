@@ -3,6 +3,7 @@ import 'package:blur/blur.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 
+import '../../../resources/color_manager.dart';
 import '../../../resources/string_manager.dart';
 import '../../../utilities/colors.dart';
 import '../../dektop_folder/constant_parts/constants.dart';
@@ -27,8 +28,8 @@ class MobileHomePage extends StatelessWidget {
                   child: ImageSlideshow(
                     width: double.infinity,
                     height: 200,
-                    indicatorBackgroundColor: Colors.black,
-                    indicatorColor: Colors.white,
+                    indicatorBackgroundColor: ColorManager.black,
+                    indicatorColor: ColorManager.white,
                     autoPlayInterval: 10000,
                     isLoop: true,
                     children: [
@@ -103,7 +104,7 @@ class MobileHomePage extends StatelessWidget {
                     children: const [
                       TabBar(
                         labelColor: mainColor,
-                        indicatorColor: Colors.grey,
+                        indicatorColor: ColorManager  .grey,
                         tabs: [
                           Tab(text: StringManager.feed),
                           Tab(text: StringManager.testimonies),

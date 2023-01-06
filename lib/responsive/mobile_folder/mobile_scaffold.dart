@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../resources/color_manager.dart';
 import '../dektop_folder/page_parts/events_page_parts/events_body.dart';
 import 'components/glass_box.dart';
 import 'components/my_bottom_bar.dart';
@@ -29,7 +30,7 @@ class _MobileScaffoldState extends State<MobileScaffold> {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBody: true,
-      backgroundColor: Colors.grey.shade200,
+      backgroundColor: ColorManager.greyS200,
       body: IndexedStack(index: _currentBottomIndex, children: _screens),
       bottomNavigationBar: GlassBox(child: BottomBar(index: _currentBottomIndex, onTap: _bottomIndexChange)),
     );

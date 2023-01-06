@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 import 'package:hovering/hovering.dart';
 
+import '../../../../resources/color_manager.dart';
 import '../../../../resources/font_size_manager.dart';
 import '../../../../resources/string_manager.dart';
 import '../../constant_parts/constants.dart';
@@ -27,8 +28,8 @@ class HeaderBackground extends StatelessWidget {
           child: ImageSlideshow(
             width: double.infinity,
             height: 700,
-            indicatorBackgroundColor: Colors.black,
-            indicatorColor: Colors.white,
+            indicatorBackgroundColor: ColorManager.black,
+            indicatorColor: ColorManager.white,
             autoPlayInterval: 10000,
             isLoop: true,
             children: [
@@ -58,8 +59,8 @@ class HeaderBackground extends StatelessWidget {
               height: 60,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15),
-                color: Colors.black,
-                border: Border.all(color: Colors.white, width: 2),
+                color: ColorManager.black,
+                border: Border.all(color: ColorManager.white, width: 2),
               ),
               child: Image.asset('lib/assets/logowhite.png'),
             ),
@@ -85,14 +86,14 @@ class HeaderBackground extends StatelessWidget {
                     height: 35,
                     hoverHeight: 30,
                     decoration: BoxDecoration(
-                      color: Colors.black,
+                      color: ColorManager.black,
                       borderRadius: BorderRadius.circular(20),
-                      border: Border.all(width: 0.7, color: Colors.white),
+                      border: Border.all(width: 0.7, color: ColorManager.white),
                     ),
                     hoverDecoration: BoxDecoration(
-                      color: Colors.grey,
+                      color: ColorManager.grey,
                       borderRadius: BorderRadius.circular(20),
-                      border: Border.all(width: 0.7, color: Colors.black),
+                      border: Border.all(width: 0.7, color: ColorManager.black),
                     ),
                     child: const Padding(
                       padding: EdgeInsets.fromLTRB(15, 5, 15, 8),
@@ -100,7 +101,7 @@ class HeaderBackground extends StatelessWidget {
                         child: Text(
                           StringManager.connectCAPS,
                           style: TextStyle(
-                            color: Colors.white,
+                            color: ColorManager.white,
                             fontWeight: FontWeight.w500,
                             fontSize: FontSizeManager.s15,
                           ),
@@ -121,14 +122,14 @@ class HeaderBackground extends StatelessWidget {
                     height: 35,
                     hoverHeight: 30,
                     decoration: BoxDecoration(
-                      color: Colors.black,
+                      color: ColorManager.black,
                       borderRadius: BorderRadius.circular(20),
-                      border: Border.all(width: 0.7, color: Colors.white),
+                      border: Border.all(width: 0.7, color: ColorManager.white),
                     ),
                     hoverDecoration: BoxDecoration(
-                      color: Colors.grey,
+                      color: ColorManager.grey,
                       borderRadius: BorderRadius.circular(20),
-                      border: Border.all(width: 0.7, color: Colors.black),
+                      border: Border.all(width: 0.7, color: ColorManager.black),
                     ),
                     child: const Padding(
                       padding: EdgeInsets.fromLTRB(15, 5, 15, 8),
@@ -136,7 +137,7 @@ class HeaderBackground extends StatelessWidget {
                         child: Text(
                           StringManager.messagesCAPS,
                           style: TextStyle(
-                            color: Colors.white,
+                            color: ColorManager.white,
                             fontWeight: FontWeight.w500,
                             fontSize: FontSizeManager.s15,
                           ),
@@ -157,14 +158,14 @@ class HeaderBackground extends StatelessWidget {
                     height: 35,
                     hoverHeight: 30,
                     decoration: BoxDecoration(
-                      color: Colors.black,
+                      color: ColorManager.black,
                       borderRadius: BorderRadius.circular(20),
-                      border: Border.all(width: 0.7, color: Colors.white),
+                      border: Border.all(width: 0.7, color: ColorManager.white),
                     ),
                     hoverDecoration: BoxDecoration(
-                      color: Colors.grey,
+                      color: ColorManager.grey,
                       borderRadius: BorderRadius.circular(20),
-                      border: Border.all(width: 0.7, color: Colors.black),
+                      border: Border.all(width: 0.7, color: ColorManager.black),
                     ),
                     child: const Padding(
                       padding: EdgeInsets.fromLTRB(15, 5, 15, 8),
@@ -172,7 +173,7 @@ class HeaderBackground extends StatelessWidget {
                         child: Text(
                           StringManager.serveCAPS,
                           style: TextStyle(
-                            color: Colors.white,
+                            color: ColorManager.white,
                             fontWeight: FontWeight.w500,
                             fontSize: FontSizeManager.s15,
                           ),
@@ -193,14 +194,14 @@ class HeaderBackground extends StatelessWidget {
                     height: 35,
                     hoverHeight: 30,
                     decoration: BoxDecoration(
-                      color: Colors.black,
+                      color: ColorManager.black,
                       borderRadius: BorderRadius.circular(20),
-                      border: Border.all(width: 0.7, color: Colors.white),
+                      border: Border.all(width: 0.7, color: ColorManager.white),
                     ),
                     hoverDecoration: BoxDecoration(
-                      color: Colors.grey,
+                      color: ColorManager.grey,
                       borderRadius: BorderRadius.circular(20),
-                      border: Border.all(width: 0.7, color: Colors.black),
+                      border: Border.all(width: 0.7, color: ColorManager.black),
                     ),
                     child: const Padding(
                       padding: EdgeInsets.fromLTRB(15, 5, 15, 8),
@@ -208,7 +209,7 @@ class HeaderBackground extends StatelessWidget {
                         child: Text(
                           StringManager.eventsCAPS,
                           style: TextStyle(
-                            color: Colors.white,
+                            color: ColorManager.white,
                             fontWeight: FontWeight.w500,
                             fontSize: FontSizeManager.s15,
                           ),
@@ -229,14 +230,14 @@ class HeaderBackground extends StatelessWidget {
                     height: 35,
                     hoverHeight: 30,
                     decoration: BoxDecoration(
-                      color: Colors.black,
+                      color: ColorManager.black,
                       borderRadius: BorderRadius.circular(20),
-                      border: Border.all(width: 0.7, color: Colors.white),
+                      border: Border.all(width: 0.7, color: ColorManager.white),
                     ),
                     hoverDecoration: BoxDecoration(
-                      color: Colors.grey,
+                      color: ColorManager.grey,
                       borderRadius: BorderRadius.circular(20),
-                      border: Border.all(width: 0.7, color: Colors.black),
+                      border: Border.all(width: 0.7, color: ColorManager.black),
                     ),
                     child: const Padding(
                       padding: EdgeInsets.fromLTRB(15, 5, 15, 8),
@@ -244,7 +245,7 @@ class HeaderBackground extends StatelessWidget {
                         child: Text(
                           StringManager.giveCAPS,
                           style: TextStyle(
-                            color: Colors.white,
+                            color: ColorManager.white,
                             fontWeight: FontWeight.w500,
                             fontSize: FontSizeManager.s15,
                           ),
@@ -265,21 +266,21 @@ class HeaderBackground extends StatelessWidget {
                     height: 35,
                     hoverHeight: 30,
                     decoration: BoxDecoration(
-                      color: Colors.black,
+                      color: ColorManager.black,
                       borderRadius: BorderRadius.circular(20),
-                      border: Border.all(width: 0.7, color: Colors.white),
+                      border: Border.all(width: 0.7, color: ColorManager.white),
                     ),
                     hoverDecoration: BoxDecoration(
-                      color: Colors.grey,
+                      color: ColorManager.grey,
                       borderRadius: BorderRadius.circular(20),
-                      border: Border.all(width: 0.7, color: Colors.black),
+                      border: Border.all(width: 0.7, color: ColorManager.black),
                     ),
                     child: const Padding(
                       padding: EdgeInsets.fromLTRB(15, 5, 15, 8),
                       child: Center(
                         child: Text(
                           StringManager.aboutCAPS,
-                          style: TextStyle(color: Colors.white, fontWeight: FontWeight.w500, fontSize: FontSizeManager.s15),
+                          style: TextStyle(color: ColorManager.white, fontWeight: FontWeight.w500, fontSize: FontSizeManager.s15),
                         ),
                       ),
                     ),

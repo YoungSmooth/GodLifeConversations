@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../../resources/color_manager.dart';
 import '../../../../resources/font_size_manager.dart';
 import '../../../../resources/string_manager.dart';
 
@@ -27,7 +28,7 @@ class _DesktopMessagesBodyState extends State<DesktopMessagesBody> {
                     height: 160,
                     width: 250,
                     decoration: BoxDecoration(
-                      color: Colors.grey.shade500,
+                      color: ColorManager.greyS500,
                       borderRadius: BorderRadius.circular(30),
                     ),
                     child: Column(
@@ -49,7 +50,7 @@ class _DesktopMessagesBodyState extends State<DesktopMessagesBody> {
                               padding: EdgeInsets.all(8.0),
                               child: Text(
                                 StringManager.messagesBody2,
-                                style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                                style: TextStyle(color: ColorManager.white, fontWeight: FontWeight.bold),
                                 textAlign: TextAlign.center,
                               ),
                             ),
@@ -65,7 +66,7 @@ class _DesktopMessagesBodyState extends State<DesktopMessagesBody> {
                     height: 160,
                     width: 250,
                     decoration: BoxDecoration(
-                      color: Colors.grey.shade500,
+                      color: ColorManager.greyS500,
                       borderRadius: BorderRadius.circular(30),
                     ),
                     child: Column(
@@ -86,7 +87,7 @@ class _DesktopMessagesBodyState extends State<DesktopMessagesBody> {
                             child: Padding(
                               padding: EdgeInsets.all(8.0),
                               child: Text(StringManager.messagesBody2,
-                                  style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold), textAlign: TextAlign.center),
+                                  style: TextStyle(color: ColorManager.white, fontWeight: FontWeight.bold), textAlign: TextAlign.center),
                             ),
                           ),
                         ),
@@ -100,7 +101,7 @@ class _DesktopMessagesBodyState extends State<DesktopMessagesBody> {
                     height: 160,
                     width: 250,
                     decoration: BoxDecoration(
-                      color: Colors.grey.shade500,
+                      color: ColorManager.greyS500,
                       borderRadius: BorderRadius.circular(30),
                     ),
                     child: Column(
@@ -122,7 +123,7 @@ class _DesktopMessagesBodyState extends State<DesktopMessagesBody> {
                               padding: EdgeInsets.all(8.0),
                               child: Text(
                                 StringManager.messagesBody2,
-                                style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                                style: TextStyle(color: ColorManager.white, fontWeight: FontWeight.bold),
                                 textAlign: TextAlign.center,
                               ),
                             ),
@@ -138,7 +139,7 @@ class _DesktopMessagesBodyState extends State<DesktopMessagesBody> {
                     height: 160,
                     width: 250,
                     decoration: BoxDecoration(
-                      color: Colors.grey.shade500,
+                      color: ColorManager.greyS500,
                       borderRadius: BorderRadius.circular(30),
                     ),
                     child: Column(
@@ -160,7 +161,7 @@ class _DesktopMessagesBodyState extends State<DesktopMessagesBody> {
                               padding: EdgeInsets.all(8.0),
                               child: Text(
                                 StringManager.messagesBody2,
-                                style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                                style: TextStyle(color: ColorManager.white, fontWeight: FontWeight.bold),
                                 textAlign: TextAlign.center,
                               ),
                             ),
@@ -183,7 +184,7 @@ class _DesktopMessagesBodyState extends State<DesktopMessagesBody> {
                     child: Container(
                       height: 550,
                       width: double.infinity,
-                      decoration: BoxDecoration(borderRadius: BorderRadius.circular(30), color: Colors.grey.shade100),
+                      decoration: BoxDecoration(borderRadius: BorderRadius.circular(30), color: ColorManager.greyS100),
                       child: SingleChildScrollView(
                         child: Column(
                           children: [
@@ -194,7 +195,7 @@ class _DesktopMessagesBodyState extends State<DesktopMessagesBody> {
                                   child: Container(
                                     width: double.infinity,
                                     decoration: BoxDecoration(
-                                      color: Colors.white,
+                                      color: ColorManager.white,
                                       borderRadius: BorderRadius.circular(10),
                                     ),
                                     child: Column(
@@ -224,9 +225,9 @@ class _DesktopMessagesBodyState extends State<DesktopMessagesBody> {
                                   left: 30,
                                   child: Container(
                                     decoration: BoxDecoration(
-                                      color: Colors.white,
+                                      color: ColorManager.white,
                                       borderRadius: BorderRadius.circular(25),
-                                      border: Border.all(width: 2, color: Colors.grey.shade500),
+                                      border: Border.all(width: 2, color: ColorManager.greyS500),
                                     ),
                                     child: Row(
                                       children: [
@@ -245,14 +246,14 @@ class _DesktopMessagesBodyState extends State<DesktopMessagesBody> {
                                               padding: EdgeInsets.only(top: 5, bottom: 5, right: 10),
                                               child: Text(
                                                 StringManager.messagesBody3,
-                                                style: TextStyle(color: Colors.black),
+                                                style: TextStyle(color: ColorManager.black),
                                               ),
                                             ),
                                             Padding(
                                               padding: EdgeInsets.only(bottom: 5),
                                               child: Text(
                                                 StringManager.messagesBody2,
-                                                style: TextStyle(fontSize: FontSizeManager.s10, color: Colors.grey),
+                                                style: TextStyle(fontSize: FontSizeManager.s10, color: ColorManager.grey),
                                               ),
                                             ),
                                           ],
@@ -270,7 +271,7 @@ class _DesktopMessagesBodyState extends State<DesktopMessagesBody> {
                                   child: Container(
                                     width: double.infinity,
                                     decoration: BoxDecoration(
-                                      color: Colors.white,
+                                      color: ColorManager.white,
                                       borderRadius: BorderRadius.circular(10),
                                     ),
                                     child: Column(
@@ -299,9 +300,9 @@ class _DesktopMessagesBodyState extends State<DesktopMessagesBody> {
                                   left: 30,
                                   child: Container(
                                     decoration: BoxDecoration(
-                                      color: Colors.white,
+                                      color: ColorManager.white,
                                       borderRadius: BorderRadius.circular(25),
-                                      border: Border.all(width: 2, color: Colors.grey.shade500),
+                                      border: Border.all(width: 2, color: ColorManager.greyS500),
                                     ),
                                     child: Row(
                                       children: [
@@ -320,14 +321,14 @@ class _DesktopMessagesBodyState extends State<DesktopMessagesBody> {
                                               padding: EdgeInsets.only(top: 5, bottom: 5, right: 10),
                                               child: Text(
                                                 StringManager.messagesBody3,
-                                                style: TextStyle(color: Colors.black),
+                                                style: TextStyle(color: ColorManager.black),
                                               ),
                                             ),
                                             Padding(
                                               padding: EdgeInsets.only(bottom: 5),
                                               child: Text(
                                                 StringManager.messagesBody2,
-                                                style: TextStyle(fontSize: FontSizeManager.s10, color: Colors.grey),
+                                                style: TextStyle(fontSize: FontSizeManager.s10, color: ColorManager.grey),
                                               ),
                                             ),
                                           ],
@@ -345,7 +346,7 @@ class _DesktopMessagesBodyState extends State<DesktopMessagesBody> {
                                   child: Container(
                                     width: double.infinity,
                                     decoration: BoxDecoration(
-                                      color: Colors.white,
+                                      color: ColorManager.white,
                                       borderRadius: BorderRadius.circular(10),
                                     ),
                                     child: Column(
@@ -374,9 +375,9 @@ class _DesktopMessagesBodyState extends State<DesktopMessagesBody> {
                                   left: 30,
                                   child: Container(
                                     decoration: BoxDecoration(
-                                      color: Colors.white,
+                                      color: ColorManager.white,
                                       borderRadius: BorderRadius.circular(25),
-                                      border: Border.all(width: 2, color: Colors.grey.shade500),
+                                      border: Border.all(width: 2, color: ColorManager.greyS500),
                                     ),
                                     child: Row(
                                       children: [
@@ -395,14 +396,14 @@ class _DesktopMessagesBodyState extends State<DesktopMessagesBody> {
                                               padding: EdgeInsets.only(top: 5, bottom: 5, right: 10),
                                               child: Text(
                                                 StringManager.messagesBody3,
-                                                style: TextStyle(color: Colors.black),
+                                                style: TextStyle(color: ColorManager.black),
                                               ),
                                             ),
                                             Padding(
                                               padding: EdgeInsets.only(bottom: 5),
                                               child: Text(
                                                 StringManager.messagesBody2,
-                                                style: TextStyle(fontSize: FontSizeManager.s10, color: Colors.grey),
+                                                style: TextStyle(fontSize: FontSizeManager.s10, color: ColorManager.grey),
                                               ),
                                             ),
                                           ],
@@ -420,7 +421,7 @@ class _DesktopMessagesBodyState extends State<DesktopMessagesBody> {
                                   child: Container(
                                     width: double.infinity,
                                     decoration: BoxDecoration(
-                                      color: Colors.white,
+                                      color: ColorManager.white,
                                       borderRadius: BorderRadius.circular(10),
                                     ),
                                     child: Column(
@@ -449,9 +450,9 @@ class _DesktopMessagesBodyState extends State<DesktopMessagesBody> {
                                   left: 30,
                                   child: Container(
                                     decoration: BoxDecoration(
-                                      color: Colors.white,
+                                      color: ColorManager.white,
                                       borderRadius: BorderRadius.circular(25),
-                                      border: Border.all(width: 2, color: Colors.grey.shade500),
+                                      border: Border.all(width: 2, color: ColorManager.greyS500),
                                     ),
                                     child: Row(
                                       children: [
@@ -470,14 +471,14 @@ class _DesktopMessagesBodyState extends State<DesktopMessagesBody> {
                                               padding: EdgeInsets.only(top: 5, bottom: 5, right: 10),
                                               child: Text(
                                                 StringManager.messagesBody3,
-                                                style: TextStyle(color: Colors.black),
+                                                style: TextStyle(color: ColorManager.black),
                                               ),
                                             ),
                                             Padding(
                                               padding: EdgeInsets.only(bottom: 5),
                                               child: Text(
                                                 StringManager.messagesBody2,
-                                                style: TextStyle(fontSize: FontSizeManager.s10, color: Colors.grey),
+                                                style: TextStyle(fontSize: FontSizeManager.s10, color: ColorManager.grey),
                                               ),
                                             ),
                                           ],
@@ -495,7 +496,7 @@ class _DesktopMessagesBodyState extends State<DesktopMessagesBody> {
                                   child: Container(
                                     width: double.infinity,
                                     decoration: BoxDecoration(
-                                      color: Colors.white,
+                                      color: ColorManager.white,
                                       borderRadius: BorderRadius.circular(10),
                                     ),
                                     child: Column(
@@ -524,9 +525,9 @@ class _DesktopMessagesBodyState extends State<DesktopMessagesBody> {
                                   left: 30,
                                   child: Container(
                                     decoration: BoxDecoration(
-                                      color: Colors.white,
+                                      color: ColorManager.white,
                                       borderRadius: BorderRadius.circular(25),
-                                      border: Border.all(width: 2, color: Colors.grey.shade500),
+                                      border: Border.all(width: 2, color: ColorManager.greyS500),
                                     ),
                                     child: Row(
                                       children: [
@@ -545,14 +546,14 @@ class _DesktopMessagesBodyState extends State<DesktopMessagesBody> {
                                               padding: EdgeInsets.only(top: 5, bottom: 5, right: 10),
                                               child: Text(
                                                 StringManager.messagesBody3,
-                                                style: TextStyle(color: Colors.black),
+                                                style: TextStyle(color: ColorManager.black),
                                               ),
                                             ),
                                             Padding(
                                               padding: EdgeInsets.only(bottom: 5),
                                               child: Text(
                                                 StringManager.defaultDate2,
-                                                style: TextStyle(fontSize: FontSizeManager.s10, color: Colors.grey),
+                                                style: TextStyle(fontSize: FontSizeManager.s10, color: ColorManager.grey),
                                               ),
                                             ),
                                           ],

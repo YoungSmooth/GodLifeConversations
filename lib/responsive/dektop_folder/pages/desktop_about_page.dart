@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../resources/color_manager.dart';
 import '../constant_parts/footnote.dart';
 import '../page_parts/about_page_parts/about_body.dart';
 import '../page_parts/about_page_parts/about_page_header.dart';
@@ -15,7 +16,7 @@ class _DesktopAboutPageState extends State<DesktopAboutPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: ColorManager.white,
       body: SingleChildScrollView(
         child: Column(
           children: const [

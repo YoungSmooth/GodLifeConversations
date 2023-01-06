@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:list_timeline/custom_list_tracking.dart';
 
+import '../../../resources/color_manager.dart';
 import '../../../resources/string_manager.dart';
 
 class EventsPage extends StatefulWidget {
@@ -50,8 +51,8 @@ class _EventsPageState extends State<EventsPage> {
                   // valueTextOfDesc: (listExample) => listExample.desc,
                   customTitleWidget: (e) => Container(
                     decoration: BoxDecoration(
-                      color: Colors.purple.withOpacity(0.1),
-                      border: Border.all(width: 0.7, color: Colors.grey),
+                      color: ColorManager.purpleOp0_1,
+                      border: Border.all(width: 0.7, color: ColorManager.grey),
                       borderRadius: BorderRadius.circular(5),
                     ),
                     child: Padding(
@@ -59,7 +60,7 @@ class _EventsPageState extends State<EventsPage> {
                       child: Text(
                         e.title,
                         style: const TextStyle(
-                          color: Colors.black,
+                          color: ColorManager.black,
                         ),
                       ),
                     ),
@@ -80,10 +81,10 @@ class _EventsPageState extends State<EventsPage> {
                     ],
                   ),
                   colorCircleTimeline: (listExample) => listExample.title == StringManager.futureEvent
-                      ? Colors.yellow
+                      ? ColorManager.yellow
                       : listExample.title == StringManager.ongoingEvent
-                          ? Colors.green
-                          : Colors.grey,
+                          ? ColorManager.green
+                          : ColorManager.grey,
                   showLeftWidget: true,
                   valueOfLeftSource: (e) => (e.dateTime),
                 ),

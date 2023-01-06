@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../resources/color_manager.dart';
 import '../constant_parts/footnote.dart';
 import '../page_parts/home_page_parts/connect_header.dart';
 import '../page_parts/home_page_parts/events.dart';
@@ -20,7 +21,7 @@ class _DesktopScaffoldState extends State<DesktopScaffold> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: ColorManager.white,
       body: SingleChildScrollView(
         child: Column(
           children: const [

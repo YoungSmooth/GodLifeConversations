@@ -1,6 +1,7 @@
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../../../../resources/color_manager.dart';
 import '../../../../resources/font_size_manager.dart';
 import '../../../../resources/string_manager.dart';
 import '../../pages/desktop_messages_page.dart';
@@ -42,9 +43,9 @@ class MessagesHeader extends StatelessWidget {
                     child: NeumorphicText(
                       StringManager.messagesCAPS,
                       style: const NeumorphicStyle(
-                          shadowDarkColor: Colors.grey,
-                          color: Colors.black,
-                          border: NeumorphicBorder(color: Colors.white, width: 0.8),
+                          shadowDarkColor: ColorManager.grey,
+                          color: ColorManager.black,
+                          border: NeumorphicBorder(color: ColorManager.white, width: 0.8),
                           depth: 2,
                           intensity: 0.95),
                       textStyle: NeumorphicTextStyle(fontSize: FontSizeManager.s40, fontWeight: FontWeight.bold),
@@ -54,16 +55,16 @@ class MessagesHeader extends StatelessWidget {
                     padding: const EdgeInsets.all(24),
                     child: RichText(
                       textAlign: TextAlign.center,
-                      selectionColor: Colors.black,
+                      selectionColor: ColorManager.black,
                       text: TextSpan(
                         children: [
                           TextSpan(
                             text: StringManager.messagesBody1,
                             style: TextStyle(
-                                color: Colors.grey.shade600,
+                                color: ColorManager.greyS600,
                                 fontSize: FontSizeManager.s14,
                                 fontWeight: FontWeight.w400,
-                                backgroundColor: Colors.white),
+                                backgroundColor: ColorManager.white),
                           ),
                         ],
                       ),
@@ -72,7 +73,7 @@ class MessagesHeader extends StatelessWidget {
                   NeumorphicIcon(
                     Icons.library_books_sharp,
                     size: 40,
-                    style: const NeumorphicStyle(color: Colors.black, depth: 3, intensity: 0.99),
+                    style: const NeumorphicStyle(color: ColorManager.black, depth: 3, intensity: 0.99),
                   ),
                 ],
               ),

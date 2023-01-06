@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../resources/color_manager.dart';
 import '../../../resources/string_manager.dart';
 
 class HomePageInspirations extends StatefulWidget {
@@ -15,10 +16,10 @@ class _HomePageInspirationsState extends State<HomePageInspirations> {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         autofocus: true,
-        backgroundColor: Colors.white,
+        backgroundColor: ColorManager.white,
         child: const IconButton(
           onPressed: null,
-          icon: Icon(Icons.add, color: Colors.black, size: 20),
+          icon: Icon(Icons.add, color: ColorManager.black, size: 20),
         ),
         onPressed: () {},
       ),
@@ -32,7 +33,7 @@ class _HomePageInspirationsState extends State<HomePageInspirations> {
                   child: Container(
                     width: double.infinity,
                     decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: ColorManager.white,
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: Column(
@@ -66,7 +67,7 @@ class _HomePageInspirationsState extends State<HomePageInspirations> {
                   child: Container(
                     width: double.infinity,
                     decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: ColorManager.white,
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: Column(
@@ -101,7 +102,7 @@ class _HomePageInspirationsState extends State<HomePageInspirations> {
                   child: Container(
                     width: double.infinity,
                     decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: ColorManager.white,
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: Column(
@@ -136,7 +137,7 @@ class _HomePageInspirationsState extends State<HomePageInspirations> {
                   child: Container(
                     width: double.infinity,
                     decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: ColorManager.white,
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: Column(
@@ -171,7 +172,7 @@ class _HomePageInspirationsState extends State<HomePageInspirations> {
                   child: Container(
                     width: double.infinity,
                     decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: ColorManager.white,
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: Column(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:list_timeline/custom_list_tracking.dart';
 
+import '../../../../resources/color_manager.dart';
 import '../../../../resources/string_manager.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -61,10 +62,10 @@ class _MyHomePageState extends State<MyHomePage> {
           valueTextOfTitle: (e) => e.title,
           valueTextOfDesc: (e) => e.desc,
           colorCircleTimeline: (e) => e.title == StringManager.warning
-              ? Colors.yellow
+              ? ColorManager.yellow
               : e.title == StringManager.rejected
-                  ? Colors.red
-                  : Colors.blue,
+                  ? ColorManager.red
+                  : ColorManager.blue,
           showLeftWidget: true,
           // valueOfLeftSource: (e) => _dateFormat(e.dateTime),
         ),

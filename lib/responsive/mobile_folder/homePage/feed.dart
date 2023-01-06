@@ -1,14 +1,15 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:god_life_conversations/models/user.dart' as model;
-import 'package:god_life_conversations/utilities/colors.dart';
-import 'package:god_life_conversations/utilities/utils.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
 
+import '../../../models/user.dart' as model;
 import '../../../providers/user_provider.dart';
+import '../../../resources/color_manager.dart';
 import '../../../resources/string_manager.dart';
+import '../../../utilities/colors.dart';
+import '../../../utilities/utils.dart';
 import '../../widgets/text_field_input.dart';
 
 class GlcFeed extends StatefulWidget {
@@ -78,7 +79,7 @@ class _GlcFeedState extends State<GlcFeed> {
         onPressed: () {
           showModalBottomSheet<void>(
             isScrollControlled: true,
-            backgroundColor: Colors.transparent,
+            backgroundColor: ColorManager.transparent,
             context: context,
             builder: (BuildContext context) {
               return makeDismissible(
@@ -88,7 +89,7 @@ class _GlcFeedState extends State<GlcFeed> {
                   maxChildSize: 0.9,
                   builder: (_, controller) => Container(
                     decoration: const BoxDecoration(
-                      color: Colors.white,
+                      color: ColorManager.white,
                       borderRadius: BorderRadius.vertical(
                         top: Radius.circular(20),
                       ),
@@ -135,7 +136,7 @@ class _GlcFeedState extends State<GlcFeed> {
                           const SizedBox(height: 20),
                           const ElevatedButton(
                             onPressed: null,
-                            child: Text(StringManager.post, style: TextStyle(color: Colors.white)),
+                            child: Text(StringManager.post, style: TextStyle(color: ColorManager.white)),
                           )
                         ],
                       ),
@@ -147,8 +148,8 @@ class _GlcFeedState extends State<GlcFeed> {
           );
           _postImage(context);
         },
-        label: const Text(StringManager.post, style: TextStyle(color: Colors.white)),
-        icon: const Icon(Icons.post_add_rounded, color: Colors.white),
+        label: const Text(StringManager.post, style: TextStyle(color: ColorManager.white)),
+        icon: const Icon(Icons.post_add_rounded, color: ColorManager.white),
         backgroundColor: mainColor,
       ),
     );

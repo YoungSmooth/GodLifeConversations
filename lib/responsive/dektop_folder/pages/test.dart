@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:timelines/timelines.dart';
 
+import '../../../resources/color_manager.dart';
 import '../../../resources/string_manager.dart';
 
 class TestPage extends StatefulWidget {
@@ -16,7 +17,7 @@ class _TestPageState extends State<TestPage> {
     return Scaffold(
       body: SingleChildScrollView(
         child: FixedTimeline.tileBuilder(
-          theme: TimelineThemeData(color: Colors.black),
+          theme: TimelineThemeData(color: ColorManager.black),
           builder: TimelineTileBuilder.connectedFromStyle(
             contentsAlign: ContentsAlign.alternating,
             oppositeContentsBuilder: (context, index) => const Padding(padding: EdgeInsets.all(8.0), child: Text(StringManager.details)),

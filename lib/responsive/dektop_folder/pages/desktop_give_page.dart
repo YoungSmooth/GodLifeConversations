@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../resources/color_manager.dart';
 import '../constant_parts/footnote.dart';
 import '../page_parts/give_page_parts/give_body.dart';
 import '../page_parts/give_page_parts/give_page_header.dart';
@@ -15,7 +16,7 @@ class _DesktopGivePageState extends State<DesktopGivePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: ColorManager.white,
       body: SingleChildScrollView(
         child: Column(
           children: const [

@@ -2,6 +2,7 @@ import 'package:blur/blur.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 
+import '../../../../resources/color_manager.dart';
 import '../../../../resources/font_size_manager.dart';
 import '../../../../resources/string_manager.dart';
 
@@ -63,7 +64,7 @@ class ServeBody extends StatelessWidget {
                       ],
                     ).frosted(
                       blur: 1.5,
-                      frostColor: Colors.white,
+                      frostColor: ColorManager.white,
                       alignment: Alignment.center,
                       borderRadius: BorderRadius.circular(10),
                       frostOpacity: 0.01,
@@ -116,7 +117,7 @@ class ServeBody extends StatelessWidget {
                       ],
                     ).frosted(
                       blur: 1.5,
-                      frostColor: Colors.white,
+                      frostColor: ColorManager.white,
                       alignment: Alignment.center,
                       borderRadius: BorderRadius.circular(10),
                       frostOpacity: 0.01,
@@ -174,7 +175,7 @@ class ServeBody extends StatelessWidget {
                       ],
                     ).frosted(
                       blur: 1.5,
-                      frostColor: Colors.white,
+                      frostColor: ColorManager.white,
                       alignment: Alignment.center,
                       borderRadius: BorderRadius.circular(10),
                       frostOpacity: 0.01,
@@ -227,7 +228,7 @@ class ServeBody extends StatelessWidget {
                       ],
                     ).frosted(
                       blur: 1.5,
-                      frostColor: Colors.white,
+                      frostColor: ColorManager.white,
                       alignment: Alignment.center,
                       borderRadius: BorderRadius.circular(10),
                       frostOpacity: 0.01,
@@ -285,7 +286,7 @@ class ServeBody extends StatelessWidget {
                       ],
                     ).frosted(
                       blur: 1.5,
-                      frostColor: Colors.white,
+                      frostColor: ColorManager.white,
                       alignment: Alignment.center,
                       borderRadius: BorderRadius.circular(10),
                       frostOpacity: 0.01,
@@ -338,7 +339,7 @@ class ServeBody extends StatelessWidget {
                       ],
                     ).frosted(
                       blur: 1.5,
-                      frostColor: Colors.white,
+                      frostColor: ColorManager.white,
                       alignment: Alignment.center,
                       borderRadius: BorderRadius.circular(10),
                       frostOpacity: 0.01,
@@ -397,7 +398,7 @@ class ServeBody extends StatelessWidget {
                       ],
                     ).frosted(
                       blur: 1.5,
-                      frostColor: Colors.white,
+                      frostColor: ColorManager.white,
                       alignment: Alignment.center,
                       borderRadius: BorderRadius.circular(10),
                       frostOpacity: 0.01,
@@ -450,7 +451,7 @@ class ServeBody extends StatelessWidget {
                       ],
                     ).frosted(
                       blur: 1.5,
-                      frostColor: Colors.white,
+                      frostColor: ColorManager.white,
                       alignment: Alignment.center,
                       borderRadius: BorderRadius.circular(10),
                       frostOpacity: 0.01,
@@ -508,7 +509,7 @@ class ServeBody extends StatelessWidget {
                       ],
                     ).frosted(
                       blur: 1.5,
-                      frostColor: Colors.white,
+                      frostColor: ColorManager.white,
                       alignment: Alignment.center,
                       borderRadius: BorderRadius.circular(10),
                       frostOpacity: 0.01,
@@ -561,7 +562,7 @@ class ServeBody extends StatelessWidget {
                       ],
                     ).frosted(
                       blur: 1.5,
-                      frostColor: Colors.white,
+                      frostColor: ColorManager.white,
                       alignment: Alignment.center,
                       borderRadius: BorderRadius.circular(10),
                       frostOpacity: 0.01,
