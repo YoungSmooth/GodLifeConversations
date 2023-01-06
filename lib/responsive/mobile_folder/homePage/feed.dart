@@ -2,17 +2,15 @@ import 'dart:io';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:god_life_conversations/responsive/mobile_folder/components/glass_Box.dart';
-import 'package:god_life_conversations/responsive/mobile_folder/components/glass_box_2.dart';
-import 'package:god_life_conversations/utilities.dart/colors.dart';
-import 'package:god_life_conversations/utilities.dart/utils.dart';
-import 'package:provider/provider.dart';
-import '../../../providers/user_provider.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:god_life_conversations/models/user.dart' as model;
+import 'package:provider/provider.dart';
 
+import '../../../models/user.dart' as model;
+import '../../../providers/user_provider.dart';
+import '../../../resources/color_manager.dart';
+import '../../../resources/string_manager.dart';
+import '../../../utilities/colors.dart';
+import '../../../utilities/utils.dart';
 import '../../widgets/text_field_input.dart';
 
 class GlcFeed extends StatefulWidget {
@@ -101,7 +99,7 @@ class _GlcFeedState extends State<GlcFeed> {
         onPressed: () {
           showModalBottomSheet<void>(
             isScrollControlled: true,
-            backgroundColor: Colors.transparent,
+            backgroundColor: ColorManager.transparent,
             context: context,
             builder: (BuildContext context) {
               return makeDismissible(
@@ -111,7 +109,7 @@ class _GlcFeedState extends State<GlcFeed> {
                   maxChildSize: 0.9,
                   builder: (_, controller) => Container(
                     decoration: const BoxDecoration(
-                      color: Colors.white,
+                      color: ColorManager.white,
                       borderRadius: BorderRadius.vertical(
                         top: Radius.circular(20),
                       ),
@@ -162,12 +160,8 @@ class _GlcFeedState extends State<GlcFeed> {
                           const SizedBox(height: 20),
                           const ElevatedButton(
                             onPressed: null,
-                            child: Text(
-                              'Post',
-                              style: TextStyle(
-                                color: Colors.white,
-                              ),
-                            ),
+                            child: Text(StringManager.post,
+                                style: TextStyle(color: ColorManager.white)),
                           )
                         ],
                       ),
@@ -179,14 +173,9 @@ class _GlcFeedState extends State<GlcFeed> {
           );
           _postImage(context);
         },
-        label: const Text(
-          'Post',
-          style: TextStyle(color: Colors.white),
-        ),
-        icon: const Icon(
-          Icons.post_add_rounded,
-          color: Colors.white,
-        ),
+        label: const Text(StringManager.post,
+            style: TextStyle(color: ColorManager.white)),
+        icon: const Icon(Icons.post_add_rounded, color: ColorManager.white),
         backgroundColor: mainColor,
       ),
     );

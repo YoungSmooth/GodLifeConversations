@@ -1,6 +1,8 @@
-// ignore: depend_on_referenced_packages
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 
+import '../../../../resources/color_manager.dart';
+import '../../../../resources/font_size_manager.dart';
+import '../../../../resources/string_manager.dart';
 import '../../pages/desktop_connect_page.dart';
 
 class SecondHeaderBackground extends StatelessWidget {
@@ -9,7 +11,7 @@ class SecondHeaderBackground extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
-      children: <Widget>[
+      children: [
         SizedBox(
           height: 400,
           width: double.infinity,
@@ -25,11 +27,7 @@ class SecondHeaderBackground extends StatelessWidget {
               children: [
                 InkWell(
                   onTap: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) => const DesktopConnectPage(),
-                      ),
-                    );
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const DesktopConnectPage()));
                   },
                   child: Padding(
                     padding: const EdgeInsets.only(top: 250),
@@ -37,20 +35,16 @@ class SecondHeaderBackground extends StatelessWidget {
                       height: 70,
                       width: 250,
                       decoration: BoxDecoration(
-                        color: Colors.black.withOpacity(0.3),
+                        color: ColorManager.blackOp0_3,
                         borderRadius: BorderRadius.circular(100),
-                        border: Border.all(width: 1.2, color: Colors.black),
+                        border: Border.all(width: 1.2, color: ColorManager.black),
                       ),
                       child: const Padding(
                         padding: EdgeInsets.all(10),
                         child: Center(
                           child: Text(
-                            'C O N N E C T',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.w500,
-                              fontSize: 30,
-                            ),
+                            StringManager.connectSpaced,
+                            style: TextStyle(color: ColorManager.white, fontWeight: FontWeight.w500, fontSize: FontSizeManager.s30),
                           ),
                         ),
                       ),
@@ -61,15 +55,14 @@ class SecondHeaderBackground extends StatelessWidget {
                   padding: const EdgeInsets.all(10),
                   child: Center(
                     child: NeumorphicText(
-                      'Be a part of something transformational, connect with people as passionate as you.',
+                      StringManager.connectMessage2,
                       style: const NeumorphicStyle(
-                          shadowDarkColor: Colors.black,
-                          color: Colors.white,
-                          shadowLightColor: Colors.black,
+                          shadowDarkColor: ColorManager.black,
+                          color: ColorManager.white,
+                          shadowLightColor: ColorManager.black,
                           depth: 1,
                           intensity: 0.5),
-                      textStyle:
-                          NeumorphicTextStyle(fontWeight: FontWeight.bold),
+                      textStyle: NeumorphicTextStyle(fontWeight: FontWeight.bold),
                     ),
                   ),
                 ),

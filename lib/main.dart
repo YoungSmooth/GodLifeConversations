@@ -10,6 +10,13 @@ import 'package:god_life_conversations/responsive/responsive_layout.dart';
 import 'package:god_life_conversations/responsive/registration/login_screen.dart';
 import 'package:god_life_conversations/responsive/registration/signup_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+
+import 'firebase_options.dart';
+import 'providers/user_provider.dart';
+import 'resources/color_manager.dart';
+import 'responsive/dektop_folder/pages/desktop_home_page.dart';
+import 'responsive/mobile_folder/components/select_login_view.dart';
 import 'responsive/registration/landing_page.dart';
 import 'responsive/mobile_folder/mobile_scaffold.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -33,6 +40,10 @@ void main() async {
   }
 
   SystemChrome.setSystemUIOverlayStyle(
+    const SystemUiOverlayStyle(
+        statusBarColor: ColorManager.white24,
+        systemStatusBarContrastEnforced: true,
+        statusBarIconBrightness: Brightness.dark),
     const SystemUiOverlayStyle(
       statusBarColor: Colors.white24,
       systemStatusBarContrastEnforced: true,
@@ -78,7 +89,7 @@ class MyApp extends StatelessWidget {
             }
             if (snapshot.connectionState == ConnectionState.waiting) {
               return const Center(
-                child: CircularProgressIndicator(color: Colors.purple),
+                child: CircularProgressIndicator(color: ColorManager.purple),
               );
             }
             return const SelectFittedLogin();
@@ -90,7 +101,7 @@ class MyApp extends StatelessWidget {
 
   ThemeData darkTheme() {
     return ThemeData(
-      colorSchemeSeed: Colors.deepPurple,
+      colorSchemeSeed: ColorManager.deepPurple,
       brightness: Brightness.dark,
       useMaterial3: true,
     );
@@ -102,7 +113,11 @@ class MyApp extends StatelessWidget {
       buttonColor: Colors.black,
       brightness: Brightness.light,
       textTheme: GoogleFonts.montserratTextTheme(),
-      scaffoldBackgroundColor: Colors.grey.shade100,
+      scaffoldBackgroundColor: ColorManager.greyS100,
+      appBarTheme: AppBarTheme(
+        backgroundColor: ColorManager.greyS900,
+      ),
+      drawerTheme: DrawerThemeData(backgroundColor: ColorManager.greyS300),
       // primarySwatch: Colors.deepPurple,
       useMaterial3: true,
     );

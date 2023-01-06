@@ -1,17 +1,19 @@
-// ignore_for_file: depend_on_referenced_packages
-
-import 'package:flutter/material.dart';
-import 'package:god_life_conversations/responsive/dektop_folder/pages/desktop_connect_page.dart';
-import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:blur/blur.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
+import 'package:hovering/hovering.dart';
+
+import '../../../../resources/color_manager.dart';
+import '../../../../resources/font_size_manager.dart';
+import '../../../../resources/string_manager.dart';
 import '../../constant_parts/constants.dart';
 import '../../pages/desktop_about_page.dart';
+import '../../pages/desktop_connect_page.dart';
 import '../../pages/desktop_events_page.dart';
 import '../../pages/desktop_give_page.dart';
 import '../../pages/desktop_messages_page.dart';
 import '../../pages/desktop_serve_page.dart';
-import 'package:hovering/hovering.dart';
-import 'package:animated_text_kit/animated_text_kit.dart';
 
 class HeaderBackground extends StatelessWidget {
   const HeaderBackground({super.key});
@@ -19,15 +21,15 @@ class HeaderBackground extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
-      children: <Widget>[
+      children: [
         SizedBox(
           height: 700,
           width: double.infinity,
           child: ImageSlideshow(
             width: double.infinity,
             height: 700,
-            indicatorBackgroundColor: Colors.black,
-            indicatorColor: Colors.white,
+            indicatorBackgroundColor: ColorManager.black,
+            indicatorColor: ColorManager.white,
             autoPlayInterval: 10000,
             isLoop: true,
             children: [
@@ -56,9 +58,10 @@ class HeaderBackground extends StatelessWidget {
             child: Container(
               height: 60,
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  color: Colors.black,
-                  border: Border.all(color: Colors.white, width: 2)),
+                borderRadius: BorderRadius.circular(15),
+                color: ColorManager.black,
+                border: Border.all(color: ColorManager.white, width: 2),
+              ),
               child: Image.asset('lib/assets/logowhite.png'),
             ),
           ),
@@ -83,24 +86,24 @@ class HeaderBackground extends StatelessWidget {
                     height: 35,
                     hoverHeight: 30,
                     decoration: BoxDecoration(
-                      color: Colors.black,
+                      color: ColorManager.black,
                       borderRadius: BorderRadius.circular(20),
-                      border: Border.all(width: 0.7, color: Colors.white),
+                      border: Border.all(width: 0.7, color: ColorManager.white),
                     ),
                     hoverDecoration: BoxDecoration(
-                      color: Colors.grey,
+                      color: ColorManager.grey,
                       borderRadius: BorderRadius.circular(20),
-                      border: Border.all(width: 0.7, color: Colors.black),
+                      border: Border.all(width: 0.7, color: ColorManager.black),
                     ),
                     child: const Padding(
                       padding: EdgeInsets.fromLTRB(15, 5, 15, 8),
                       child: Center(
                         child: Text(
-                          'Connect',
+                          StringManager.connectCAPS,
                           style: TextStyle(
-                            color: Colors.white,
+                            color: ColorManager.white,
                             fontWeight: FontWeight.w500,
-                            fontSize: 15,
+                            fontSize: FontSizeManager.s15,
                           ),
                         ),
                       ),
@@ -119,24 +122,24 @@ class HeaderBackground extends StatelessWidget {
                     height: 35,
                     hoverHeight: 30,
                     decoration: BoxDecoration(
-                      color: Colors.black,
+                      color: ColorManager.black,
                       borderRadius: BorderRadius.circular(20),
-                      border: Border.all(width: 0.7, color: Colors.white),
+                      border: Border.all(width: 0.7, color: ColorManager.white),
                     ),
                     hoverDecoration: BoxDecoration(
-                      color: Colors.grey,
+                      color: ColorManager.grey,
                       borderRadius: BorderRadius.circular(20),
-                      border: Border.all(width: 0.7, color: Colors.black),
+                      border: Border.all(width: 0.7, color: ColorManager.black),
                     ),
                     child: const Padding(
                       padding: EdgeInsets.fromLTRB(15, 5, 15, 8),
                       child: Center(
                         child: Text(
-                          'Messages',
+                          StringManager.messagesCAPS,
                           style: TextStyle(
-                            color: Colors.white,
+                            color: ColorManager.white,
                             fontWeight: FontWeight.w500,
-                            fontSize: 15,
+                            fontSize: FontSizeManager.s15,
                           ),
                         ),
                       ),
@@ -155,24 +158,24 @@ class HeaderBackground extends StatelessWidget {
                     height: 35,
                     hoverHeight: 30,
                     decoration: BoxDecoration(
-                      color: Colors.black,
+                      color: ColorManager.black,
                       borderRadius: BorderRadius.circular(20),
-                      border: Border.all(width: 0.7, color: Colors.white),
+                      border: Border.all(width: 0.7, color: ColorManager.white),
                     ),
                     hoverDecoration: BoxDecoration(
-                      color: Colors.grey,
+                      color: ColorManager.grey,
                       borderRadius: BorderRadius.circular(20),
-                      border: Border.all(width: 0.7, color: Colors.black),
+                      border: Border.all(width: 0.7, color: ColorManager.black),
                     ),
                     child: const Padding(
                       padding: EdgeInsets.fromLTRB(15, 5, 15, 8),
                       child: Center(
                         child: Text(
-                          'Serve',
+                          StringManager.serveCAPS,
                           style: TextStyle(
-                            color: Colors.white,
+                            color: ColorManager.white,
                             fontWeight: FontWeight.w500,
-                            fontSize: 15,
+                            fontSize: FontSizeManager.s15,
                           ),
                         ),
                       ),
@@ -191,24 +194,24 @@ class HeaderBackground extends StatelessWidget {
                     height: 35,
                     hoverHeight: 30,
                     decoration: BoxDecoration(
-                      color: Colors.black,
+                      color: ColorManager.black,
                       borderRadius: BorderRadius.circular(20),
-                      border: Border.all(width: 0.7, color: Colors.white),
+                      border: Border.all(width: 0.7, color: ColorManager.white),
                     ),
                     hoverDecoration: BoxDecoration(
-                      color: Colors.grey,
+                      color: ColorManager.grey,
                       borderRadius: BorderRadius.circular(20),
-                      border: Border.all(width: 0.7, color: Colors.black),
+                      border: Border.all(width: 0.7, color: ColorManager.black),
                     ),
                     child: const Padding(
                       padding: EdgeInsets.fromLTRB(15, 5, 15, 8),
                       child: Center(
                         child: Text(
-                          'Events',
+                          StringManager.eventsCAPS,
                           style: TextStyle(
-                            color: Colors.white,
+                            color: ColorManager.white,
                             fontWeight: FontWeight.w500,
-                            fontSize: 15,
+                            fontSize: FontSizeManager.s15,
                           ),
                         ),
                       ),
@@ -227,24 +230,24 @@ class HeaderBackground extends StatelessWidget {
                     height: 35,
                     hoverHeight: 30,
                     decoration: BoxDecoration(
-                      color: Colors.black,
+                      color: ColorManager.black,
                       borderRadius: BorderRadius.circular(20),
-                      border: Border.all(width: 0.7, color: Colors.white),
+                      border: Border.all(width: 0.7, color: ColorManager.white),
                     ),
                     hoverDecoration: BoxDecoration(
-                      color: Colors.grey,
+                      color: ColorManager.grey,
                       borderRadius: BorderRadius.circular(20),
-                      border: Border.all(width: 0.7, color: Colors.black),
+                      border: Border.all(width: 0.7, color: ColorManager.black),
                     ),
                     child: const Padding(
                       padding: EdgeInsets.fromLTRB(15, 5, 15, 8),
                       child: Center(
                         child: Text(
-                          'Give',
+                          StringManager.giveCAPS,
                           style: TextStyle(
-                            color: Colors.white,
+                            color: ColorManager.white,
                             fontWeight: FontWeight.w500,
-                            fontSize: 15,
+                            fontSize: FontSizeManager.s15,
                           ),
                         ),
                       ),
@@ -263,25 +266,21 @@ class HeaderBackground extends StatelessWidget {
                     height: 35,
                     hoverHeight: 30,
                     decoration: BoxDecoration(
-                      color: Colors.black,
+                      color: ColorManager.black,
                       borderRadius: BorderRadius.circular(20),
-                      border: Border.all(width: 0.7, color: Colors.white),
+                      border: Border.all(width: 0.7, color: ColorManager.white),
                     ),
                     hoverDecoration: BoxDecoration(
-                      color: Colors.grey,
+                      color: ColorManager.grey,
                       borderRadius: BorderRadius.circular(20),
-                      border: Border.all(width: 0.7, color: Colors.black),
+                      border: Border.all(width: 0.7, color: ColorManager.black),
                     ),
                     child: const Padding(
                       padding: EdgeInsets.fromLTRB(15, 5, 15, 8),
                       child: Center(
                         child: Text(
-                          'About',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.w500,
-                            fontSize: 15,
-                          ),
+                          StringManager.aboutCAPS,
+                          style: TextStyle(color: ColorManager.white, fontWeight: FontWeight.w500, fontSize: FontSizeManager.s15),
                         ),
                       ),
                     ),
@@ -305,16 +304,8 @@ class HeaderBackground extends StatelessWidget {
                       width: 450,
                       child: AnimatedTextKit(
                         animatedTexts: [
-                          ColorizeAnimatedText(
-                            'WELCOME TO GODLIFE CONVERSATIONS',
-                            textStyle: colorizeTextStyle,
-                            colors: colorizeColors,
-                          ),
-                          ColorizeAnimatedText(
-                            'WELCOME TO GODLIFE CONVERSATIONS',
-                            textStyle: colorizeTextStyle,
-                            colors: colorizeColors,
-                          ),
+                          ColorizeAnimatedText(StringManager.welcomeToGLC, textStyle: colorizeTextStyle, colors: colorizeColors),
+                          ColorizeAnimatedText(StringManager.welcomeToGLC, textStyle: colorizeTextStyle, colors: colorizeColors),
                         ],
                         isRepeatingAnimation: true,
                       ),
