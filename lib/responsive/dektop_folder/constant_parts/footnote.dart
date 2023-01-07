@@ -1,11 +1,12 @@
-// ignore_for_file: depend_on_referenced_packages
-
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
-import 'package:god_life_conversations/responsive/dektop_folder/pages/desktop_connect_page.dart';
-import 'package:god_life_conversations/responsive/dektop_folder/pages/desktop_home_page.dart';
+
+import '../../../resources/color_manager.dart';
+import '../../../resources/string_manager.dart';
 import '../pages/desktop_about_page.dart';
+import '../pages/desktop_connect_page.dart';
 import '../pages/desktop_events_page.dart';
 import '../pages/desktop_give_page.dart';
+import '../pages/desktop_home_page.dart';
 import '../pages/desktop_messages_page.dart';
 import '../pages/desktop_serve_page.dart';
 
@@ -17,241 +18,130 @@ class FootNote extends StatelessWidget {
     return Container(
       height: 300,
       width: double.infinity,
-      decoration: BoxDecoration(
-        color: Colors.grey.shade600,
-      ),
+      decoration: BoxDecoration(color: ColorManager.greyS600),
       child: Column(
         children: [
           Expanded(
-            // flex: 3,
             child: Center(
               child: Column(
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.all(30.0),
-                    child: SizedBox(
-                      // height: 60,
-                      child: Image.asset('lib/assets/logowhite.png'),
-                    ),
-                  ),
+                  Padding(padding: const EdgeInsets.all(30), child: Image.asset('lib/assets/logowhite.png')),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       InkWell(
                         onTap: () {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (context) => const DesktopScaffold(),
-                            ),
-                          );
+                          Navigator.of(context).push(MaterialPageRoute(builder: (context) => const DesktopScaffold()));
                         },
                         child: const Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: Text(
-                            'HOME',
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold),
-                          ),
+                          padding: EdgeInsets.all(8),
+                          child: Text(StringManager.homeCAPS, style: TextStyle(color: ColorManager.black, fontWeight: FontWeight.bold)),
                         ),
                       ),
                       InkWell(
                         onTap: () {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (context) => const DesktopConnectPage(),
-                            ),
-                          );
+                          Navigator.of(context).push(MaterialPageRoute(builder: (context) => const DesktopConnectPage()));
                         },
                         child: const Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: Text(
-                            'CONNECT',
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold),
-                          ),
+                          padding: EdgeInsets.all(8),
+                          child: Text(StringManager.connectCAPS, style: TextStyle(color: ColorManager.black, fontWeight: FontWeight.bold)),
                         ),
                       ),
                       InkWell(
                         onTap: () {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (context) => const DesktopMessagesPage(),
-                            ),
-                          );
+                          Navigator.of(context).push(MaterialPageRoute(builder: (context) => const DesktopMessagesPage()));
                         },
                         child: const Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: Text(
-                            'MESSAGES',
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold),
-                          ),
+                          padding: EdgeInsets.all(8),
+                          child: Text(StringManager.messagesCAPS, style: TextStyle(color: ColorManager.black, fontWeight: FontWeight.bold)),
                         ),
                       ),
                       InkWell(
                         onTap: () {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (context) => const DesktopServePage(),
-                            ),
-                          );
+                          Navigator.of(context).push(MaterialPageRoute(builder: (context) => const DesktopServePage()));
                         },
                         child: const Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: Text(
-                            'SERVE',
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold),
-                          ),
+                          padding: EdgeInsets.all(8),
+                          child: Text(StringManager.serveCAPS, style: TextStyle(color: ColorManager.black, fontWeight: FontWeight.bold)),
                         ),
                       ),
                       InkWell(
                         onTap: () {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (context) => const DesktopEventsPage(),
-                            ),
-                          );
+                          Navigator.of(context).push(MaterialPageRoute(builder: (context) => const DesktopEventsPage()));
                         },
                         child: const Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: Text(
-                            'EVENTS',
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold),
-                          ),
+                          padding: EdgeInsets.all(8),
+                          child: Text(StringManager.eventsCAPS, style: TextStyle(color: ColorManager.black, fontWeight: FontWeight.bold)),
                         ),
                       ),
                       InkWell(
                         onTap: () {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (context) => const DesktopGivePage(),
-                            ),
-                          );
+                          Navigator.of(context).push(MaterialPageRoute(builder: (context) => const DesktopGivePage()));
                         },
                         child: const Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: Text(
-                            'GIVE',
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold),
-                          ),
+                          padding: EdgeInsets.all(8),
+                          child: Text(StringManager.giveCAPS, style: TextStyle(color: ColorManager.black, fontWeight: FontWeight.bold)),
                         ),
                       ),
                       InkWell(
                         onTap: () {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (context) => const DesktopAboutPage(),
-                            ),
-                          );
+                          Navigator.of(context).push(MaterialPageRoute(builder: (context) => const DesktopAboutPage()));
                         },
                         child: const Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: Text(
-                            'ABOUT',
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold),
-                          ),
+                          padding: EdgeInsets.all(8),
+                          child: Text(StringManager.aboutCAPS, style: TextStyle(color: ColorManager.black, fontWeight: FontWeight.bold)),
                         ),
                       ),
                     ],
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(2.0),
+                    padding: const EdgeInsets.all(2),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: NeumorphicIcon(
-                            Icons.telegram,
-                            size: 25,
-                            style: const NeumorphicStyle(
-                                color: Colors.black, depth: 1, intensity: 0.99),
-                          ),
+                          padding: const EdgeInsets.all(8),
+                          child:
+                              NeumorphicIcon(Icons.telegram, size: 25, style: const NeumorphicStyle(color: ColorManager.black, depth: 1, intensity: 0.99)),
                         ),
                         Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: NeumorphicIcon(
-                            Icons.facebook,
-                            size: 25,
-                            style: const NeumorphicStyle(
-                                color: Colors.black, depth: 1, intensity: 0.99),
-                          ),
+                          padding: const EdgeInsets.all(8),
+                          child:
+                              NeumorphicIcon(Icons.facebook, size: 25, style: const NeumorphicStyle(color: ColorManager.black, depth: 1, intensity: 0.99)),
                         ),
                         Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: NeumorphicIcon(
-                            Icons.whatsapp,
-                            size: 25,
-                            style: const NeumorphicStyle(
-                                color: Colors.black, depth: 1, intensity: 0.99),
-                          ),
+                          padding: const EdgeInsets.all(8),
+                          child:
+                              NeumorphicIcon(Icons.whatsapp, size: 25, style: const NeumorphicStyle(color: ColorManager.black, depth: 1, intensity: 0.99)),
                         ),
                         Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: NeumorphicIcon(
-                            Icons.mail,
-                            size: 25,
-                            style: const NeumorphicStyle(
-                                color: Colors.black, depth: 1, intensity: 0.99),
-                          ),
+                          padding: const EdgeInsets.all(8),
+                          child: NeumorphicIcon(Icons.mail, size: 25, style: const NeumorphicStyle(color: ColorManager.black, depth: 1, intensity: 0.99)),
                         ),
                         Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: NeumorphicIcon(
-                            Icons.call,
-                            size: 25,
-                            style: const NeumorphicStyle(
-                                color: Colors.black, depth: 1, intensity: 0.99),
-                          ),
+                          padding: const EdgeInsets.all(8),
+                          child: NeumorphicIcon(Icons.call, size: 25, style: const NeumorphicStyle(color: ColorManager.black, depth: 1, intensity: 0.99)),
                         ),
                       ],
                     ),
                   ),
                   InkWell(
                     onTap: () {
-                      Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) => const DesktopConnectPage(),
-                        ),
-                      );
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => const DesktopConnectPage()));
                     },
                     child: Padding(
-                      padding: const EdgeInsets.all(10.0),
+                      padding: const EdgeInsets.all(10),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        children: const [
-                          Text(
-                            'CONTACT US',
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.black),
-                          )
-                        ],
+                        children: const [Text(StringManager.contactUsCAPS, style: TextStyle(fontWeight: FontWeight.bold, color: ColorManager.black))],
                       ),
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(10.0),
+                    padding: const EdgeInsets.all(10),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [
-                        Text(
-                          '© 2022 GODLIFE CONVERSATIONS',
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, color: Colors.black),
-                        )
-                      ],
+                      children: const [Text(StringManager.copyrightCAPS, style: TextStyle(fontWeight: FontWeight.bold, color: ColorManager.black))],
                     ),
                   ),
                 ],

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:god_life_conversations/responsive/dektop_folder/constant_parts/footnote.dart';
+
+import '../../../resources/color_manager.dart';
+import '../constant_parts/footnote.dart';
 import '../page_parts/about_page_parts/about_body.dart';
 import '../page_parts/about_page_parts/about_page_header.dart';
 
@@ -14,21 +16,18 @@ class _DesktopAboutPageState extends State<DesktopAboutPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
-        body: SingleChildScrollView(
-          child: Column(
-            children: const [
-              AboutPageHeader(),
-              SizedBox(
-                height: 40,
-              ),
-              AboutBody(),
-              SizedBox(
-                height: 40,
-              ),
-              FootNote(),
-            ],
-          ),
-        ));
+      backgroundColor: ColorManager.white,
+      body: SingleChildScrollView(
+        child: Column(
+          children: const [
+            AboutPageHeader(),
+            SizedBox(height: 40),
+            AboutBody(),
+            SizedBox(height: 40),
+            FootNote(),
+          ],
+        ),
+      ),
+    );
   }
 }

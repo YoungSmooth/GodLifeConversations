@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:god_life_conversations/responsive/dektop_folder/constant_parts/footnote.dart';
+
+import '../../../resources/color_manager.dart';
+import '../constant_parts/footnote.dart';
 import '../page_parts/give_page_parts/give_body.dart';
 import '../page_parts/give_page_parts/give_page_header.dart';
 
@@ -14,21 +16,18 @@ class _DesktopGivePageState extends State<DesktopGivePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
-        body: SingleChildScrollView(
-          child: Column(
-            children: const [
-              GivePageHeader(),
-              SizedBox(
-                height: 40,
-              ),
-              GiveBody(),
-              SizedBox(
-                height: 40,
-              ),
-              FootNote(),
-            ],
-          ),
-        ));
+      backgroundColor: ColorManager.white,
+      body: SingleChildScrollView(
+        child: Column(
+          children: const [
+            GivePageHeader(),
+            SizedBox(height: 40),
+            GiveBody(),
+            SizedBox(height: 40),
+            FootNote(),
+          ],
+        ),
+      ),
+    );
   }
 }

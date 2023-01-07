@@ -1,73 +1,74 @@
 import 'package:flutter/material.dart';
 
-var myDefaultBackground = Colors.grey.shade300;
-var linearColor = const LinearGradient(
+import 'resources/color_manager.dart';
+import 'resources/string_manager.dart';
+
+Color myDefaultBackground = ColorManager.greyS300;
+LinearGradient linearColor = const LinearGradient(
   begin: Alignment.centerLeft,
   end: Alignment.centerRight,
   colors: [Color.fromRGBO(195, 20, 50, 1.0), Color.fromRGBO(36, 11, 54, 0.1)],
 );
 
-var myAppBar = AppBar(
-  backgroundColor: Colors.grey.shade900,
-);
-var myDrawer = Drawer(
+Drawer myDrawer = Drawer(
   width: 300,
-  backgroundColor: Colors.grey.shade300,
   child: Column(
     children: const [
       DrawerHeader(
         child: CircleAvatar(
-            radius: 5,
-            backgroundColor: Colors.pink,
-            child: Icon(Icons.favorite)),
+          radius: 5,
+          backgroundColor: ColorManager.pink,
+          child: Icon(Icons.favorite),
+        ),
       ),
       ListTile(
         leading: Icon(Icons.home),
-        title: Text('H O M E'),
+        title: Text(StringManager.homeSpaced),
       ),
       ListTile(
         leading: Icon(Icons.card_giftcard),
-        title: Text('G I F T C A R D'),
+        title: Text(StringManager.giftCardSpaced),
       ),
       ListTile(
         leading: Icon(Icons.messenger),
-        title: Text('M E S S E N G E R'),
+        title: Text(StringManager.messengerSpaced),
       ),
       ListTile(
         leading: Icon(Icons.more),
-        title: Text('M O R E'),
+        title: Text(StringManager.moreSpaced),
       ),
     ],
   ),
 );
 
-var sideColumn = Container(
-  color: Colors.grey.shade300,
+Container sideColumn = Container(
+  color: ColorManager.greyS300,
   child: Column(
     children: const [
       SizedBox(
         height: 300,
         width: 300,
         child: CircleAvatar(
-            radius: 50,
-            backgroundColor: Colors.green,
-            child: Icon(Icons.favorite)),
+          radius: 50,
+          backgroundColor: ColorManager.green,
+          child: Icon(Icons.favorite),
+        ),
       ),
       ListTile(
         leading: Icon(Icons.home),
-        title: Text('H O M E'),
+        title: Text(StringManager.homeSpaced),
       ),
       ListTile(
         leading: Icon(Icons.card_giftcard),
-        title: Text('G I F T C A R D'),
+        title: Text(StringManager.giftCardSpaced),
       ),
       ListTile(
         leading: Icon(Icons.messenger),
-        title: Text('M E S S E N G E R'),
+        title: Text(StringManager.messengerSpaced),
       ),
       ListTile(
         leading: Icon(Icons.more),
-        title: Text('M O R E'),
+        title: Text(StringManager.moreSpaced),
       ),
     ],
   ),
