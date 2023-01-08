@@ -5,12 +5,13 @@ import '../../../models/user.dart' as model;
 import '../../../providers/user_provider.dart';
 import '../../../resources/color_manager.dart';
 import '../../../resources/string_manager.dart';
-import '../../../utilities/colors.dart';
+import '../../../utilities.dart/colors.dart';
 
 class BottomBar extends StatelessWidget {
   final int index;
   final Function(int?) onTap;
-  const BottomBar({Key? key, required this.index, required this.onTap}) : super(key: key);
+  const BottomBar({Key? key, required this.index, required this.onTap})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -34,15 +35,23 @@ class BottomBar extends StatelessWidget {
           activeIcon: Icon(Icons.home),
           label: StringManager.home,
         ),
-        const BottomNavigationBarItem(icon: Icon(Icons.event_available_outlined), label: StringManager.events),
-        const BottomNavigationBarItem(icon: Icon(Icons.assistant_direction_outlined), label: StringManager.serve),
-        const BottomNavigationBarItem(icon: Icon(Icons.attach_money_outlined), label: StringManager.give),
-        const BottomNavigationBarItem(icon: Icon(Icons.info_outline), label: StringManager.connect),
+        const BottomNavigationBarItem(
+            icon: Icon(Icons.event_available_outlined),
+            label: StringManager.events),
+        const BottomNavigationBarItem(
+            icon: Icon(Icons.assistant_direction_outlined),
+            label: StringManager.serve),
+        const BottomNavigationBarItem(
+            icon: Icon(Icons.attach_money_outlined), label: StringManager.give),
+        const BottomNavigationBarItem(
+            icon: Icon(Icons.info_outline), label: StringManager.connect),
         // BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
         BottomNavigationBarItem(
           icon: Container(
             padding: const EdgeInsets.only(top: 5),
-            child: Center(child: CircleAvatar(backgroundImage: NetworkImage(user.photoUrl))),
+            child: Center(
+                child:
+                    CircleAvatar(backgroundImage: NetworkImage(user.photoUrl))),
           ),
           label: '',
           backgroundColor: primaryColor,

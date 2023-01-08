@@ -9,7 +9,7 @@ import '../../../models/user.dart' as model;
 import '../../../providers/user_provider.dart';
 import '../../../resources/color_manager.dart';
 import '../../../resources/string_manager.dart';
-import '../../../utilities/colors.dart';
+import '../../../utilities.dart/colors.dart';
 import '../../../utilities/utils.dart';
 import '../../widgets/text_field_input.dart';
 
