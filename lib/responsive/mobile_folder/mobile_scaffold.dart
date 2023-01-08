@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:god_life_conversations/responsive/mobile_folder/connectPage/mobileConnect_Page.dart';
-
+import 'package:god_life_conversations/responsive/mobile_folder/connectPage/mobile_connect_Page.dart';
 import '../../resources/color_manager.dart';
 import '../dektop_folder/page_parts/events_page_parts/events_body.dart';
 import 'components/glass_box.dart';
-import 'components/my_bottomBar.dart';
+import 'components/my_bottom_bar.dart';
 import 'givePage/give_page.dart';
-import 'homePage/mobileHome.dart';
+import 'homePage/mobile_home.dart';
 import 'profilePage/profile_page.dart';
 import 'servePage/serve_page.dart';
 

@@ -1,5 +1,5 @@
+// ignore_for_file: depend_on_referenced_packages
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
-
 import '../../../../resources/color_manager.dart';
 import '../../../../resources/font_size_manager.dart';
 import '../../../../resources/string_manager.dart';
@@ -27,7 +27,8 @@ class SecondHeaderBackground extends StatelessWidget {
               children: [
                 InkWell(
                   onTap: () {
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const DesktopConnectPage()));
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const DesktopConnectPage()));
                   },
                   child: Padding(
                     padding: const EdgeInsets.only(top: 250),
@@ -37,14 +38,18 @@ class SecondHeaderBackground extends StatelessWidget {
                       decoration: BoxDecoration(
                         color: ColorManager.blackOp0_3,
                         borderRadius: BorderRadius.circular(100),
-                        border: Border.all(width: 1.2, color: ColorManager.black),
+                        border:
+                            Border.all(width: 1.2, color: ColorManager.black),
                       ),
                       child: const Padding(
                         padding: EdgeInsets.all(10),
                         child: Center(
                           child: Text(
                             StringManager.connectSpaced,
-                            style: TextStyle(color: ColorManager.white, fontWeight: FontWeight.w500, fontSize: FontSizeManager.s30),
+                            style: TextStyle(
+                                color: ColorManager.white,
+                                fontWeight: FontWeight.w500,
+                                fontSize: FontSizeManager.s30),
                           ),
                         ),
                       ),
@@ -62,7 +67,8 @@ class SecondHeaderBackground extends StatelessWidget {
                           shadowLightColor: ColorManager.black,
                           depth: 1,
                           intensity: 0.5),
-                      textStyle: NeumorphicTextStyle(fontWeight: FontWeight.bold),
+                      textStyle:
+                          NeumorphicTextStyle(fontWeight: FontWeight.bold),
                     ),
                   ),
                 ),

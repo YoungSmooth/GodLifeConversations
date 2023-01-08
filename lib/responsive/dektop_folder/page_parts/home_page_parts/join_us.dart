@@ -1,6 +1,6 @@
+// ignore_for_file: depend_on_referenced_packages
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:url_launcher/url_launcher.dart';
-
 import '../../../../resources/color_manager.dart';
 import '../../../../resources/font_size_manager.dart';
 import '../../../../resources/string_manager.dart';
@@ -27,11 +27,14 @@ class JoinUs extends StatelessWidget {
                     style: const NeumorphicStyle(
                       shadowDarkColor: ColorManager.grey,
                       color: ColorManager.black,
-                      border: NeumorphicBorder(color: ColorManager.white, width: 0.8),
+                      border: NeumorphicBorder(
+                          color: ColorManager.white, width: 0.8),
                       depth: 2,
                       intensity: 0.95,
                     ),
-                    textStyle: NeumorphicTextStyle(fontSize: FontSizeManager.s40, fontWeight: FontWeight.bold),
+                    textStyle: NeumorphicTextStyle(
+                        fontSize: FontSizeManager.s40,
+                        fontWeight: FontWeight.bold),
                   ),
                 ),
                 Padding(
@@ -43,15 +46,22 @@ class JoinUs extends StatelessWidget {
                       children: [
                         TextSpan(
                           text: StringManager.onsiteBody1,
-                          style: TextStyle(color: ColorManager.greyS600, fontSize: FontSizeManager.s15),
+                          style: TextStyle(
+                              color: ColorManager.greyS600,
+                              fontSize: FontSizeManager.s15),
                         ),
                         TextSpan(
                           text: StringManager.onsiteBody2,
-                          style: TextStyle(color: ColorManager.greyS600, fontSize: FontSizeManager.s14, fontWeight: FontWeight.bold),
+                          style: TextStyle(
+                              color: ColorManager.greyS600,
+                              fontSize: FontSizeManager.s14,
+                              fontWeight: FontWeight.bold),
                         ),
                         TextSpan(
                           text: StringManager.onsiteBody3,
-                          style: TextStyle(color: ColorManager.greyS600, fontSize: FontSizeManager.s15),
+                          style: TextStyle(
+                              color: ColorManager.greyS600,
+                              fontSize: FontSizeManager.s15),
                         ),
                       ],
                     ),
@@ -69,10 +79,12 @@ class JoinUs extends StatelessWidget {
                             style: const NeumorphicStyle(
                                 shadowDarkColor: ColorManager.grey,
                                 color: ColorManager.black,
-                                border: NeumorphicBorder(color: ColorManager.white, width: 0.1),
+                                border: NeumorphicBorder(
+                                    color: ColorManager.white, width: 0.1),
                                 depth: 2,
                                 intensity: 0.55),
-                            textStyle: NeumorphicTextStyle(fontWeight: FontWeight.bold),
+                            textStyle: NeumorphicTextStyle(
+                                fontWeight: FontWeight.bold),
                           ),
                         ),
                         Container(
@@ -91,7 +103,10 @@ class JoinUs extends StatelessWidget {
                         NeumorphicIcon(
                           Icons.location_on,
                           size: 40,
-                          style: const NeumorphicStyle(color: ColorManager.black, depth: 3, intensity: 0.99),
+                          style: const NeumorphicStyle(
+                              color: ColorManager.black,
+                              depth: 3,
+                              intensity: 0.99),
                         ),
                       ],
                     ),
@@ -105,10 +120,12 @@ class JoinUs extends StatelessWidget {
                             style: const NeumorphicStyle(
                                 shadowDarkColor: ColorManager.grey,
                                 color: ColorManager.black,
-                                border: NeumorphicBorder(color: ColorManager.white, width: 0.1),
+                                border: NeumorphicBorder(
+                                    color: ColorManager.white, width: 0.1),
                                 depth: 2,
                                 intensity: 0.55),
-                            textStyle: NeumorphicTextStyle(fontWeight: FontWeight.bold),
+                            textStyle: NeumorphicTextStyle(
+                                fontWeight: FontWeight.bold),
                           ),
                         ),
                         InkWell(
@@ -119,14 +136,19 @@ class JoinUs extends StatelessWidget {
                             width: 100,
                             child: const Text(
                               '     ${StringManager.telegram}',
-                              style: TextStyle(fontWeight: FontWeight.w400, color: ColorManager.blue),
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w400,
+                                  color: ColorManager.blue),
                             ),
                           ),
                         ),
                         NeumorphicIcon(
                           Icons.telegram_sharp,
                           size: 40,
-                          style: const NeumorphicStyle(color: ColorManager.black, depth: 3, intensity: 0.99),
+                          style: const NeumorphicStyle(
+                              color: ColorManager.black,
+                              depth: 3,
+                              intensity: 0.99),
                         ),
                       ],
                     ),

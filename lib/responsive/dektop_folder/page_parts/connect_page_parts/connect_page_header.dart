@@ -1,3 +1,5 @@
+// ignore_for_file: depend_on_referenced_packages
+
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 
@@ -64,7 +66,10 @@ class ConnectPageHeader extends StatelessWidget {
                       child: Center(
                         child: Text(
                           StringManager.connectSpaced,
-                          style: TextStyle(color: ColorManager.white, fontWeight: FontWeight.w500, fontSize: FontSizeManager.s30),
+                          style: TextStyle(
+                              color: ColorManager.white,
+                              fontWeight: FontWeight.w500,
+                              fontSize: FontSizeManager.s30),
                         ),
                       ),
                     ),

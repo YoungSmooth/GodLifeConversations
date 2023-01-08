@@ -1,6 +1,6 @@
+// ignore_for_file: depend_on_referenced_packages
 import 'package:flutter/material.dart';
 import 'package:list_timeline/custom_list_tracking.dart';
-
 import '../../../../resources/color_manager.dart';
 import '../../../../resources/string_manager.dart';
 

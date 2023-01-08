@@ -1,12 +1,9 @@
-import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+// ignore_for_file: depend_on_referenced_packages
+
 import 'package:god_life_conversations/providers/user_provider.dart';
-import 'package:god_life_conversations/responsive/mobile_folder/components/glass_box_2.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:blur/blur.dart';
 import 'package:god_life_conversations/models/user.dart' as model;
-import 'package:god_life_conversations/providers/user_provider.dart';
 import 'package:god_life_conversations/utilities.dart/colors.dart';
 import 'package:provider/provider.dart';
 import 'package:dotted_border/dotted_border.dart';

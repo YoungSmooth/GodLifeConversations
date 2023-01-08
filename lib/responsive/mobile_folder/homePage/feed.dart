@@ -1,6 +1,7 @@
+// ignore_for_file: depend_on_referenced_packages
+
 import 'dart:io';
 
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
@@ -138,9 +139,11 @@ class _GlcFeedState extends State<GlcFeed> {
                                         // MemoryImage(_postUpload!),
 
                                         _postUpload == null
-                                            ? NetworkImage(
+                                            // ignore: unnecessary_cast
+                                            ? const NetworkImage(
                                                 'https://images.unsplash.com/photo-1617791160536-598cf32026fb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHRoaW5raW5nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60',
                                               ) as ImageProvider
+                                            // ignore: unnecessary_cast
                                             : FileImage(_postUpload!)
                                                 as ImageProvider,
                                   ),

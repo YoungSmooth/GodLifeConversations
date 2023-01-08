@@ -1,6 +1,6 @@
+// ignore_for_file: depend_on_referenced_packages, unused_local_variable
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:url_launcher/url_launcher.dart';
-
 import '../../../../resources/color_manager.dart';
 import '../../../../resources/font_size_manager.dart';
 import '../../../../resources/string_manager.dart';
@@ -45,10 +45,13 @@ class MessagesHeader extends StatelessWidget {
                       style: const NeumorphicStyle(
                           shadowDarkColor: ColorManager.grey,
                           color: ColorManager.black,
-                          border: NeumorphicBorder(color: ColorManager.white, width: 0.8),
+                          border: NeumorphicBorder(
+                              color: ColorManager.white, width: 0.8),
                           depth: 2,
                           intensity: 0.95),
-                      textStyle: NeumorphicTextStyle(fontSize: FontSizeManager.s40, fontWeight: FontWeight.bold),
+                      textStyle: NeumorphicTextStyle(
+                          fontSize: FontSizeManager.s40,
+                          fontWeight: FontWeight.bold),
                     ),
                   ),
                   Padding(
@@ -73,7 +76,8 @@ class MessagesHeader extends StatelessWidget {
                   NeumorphicIcon(
                     Icons.library_books_sharp,
                     size: 40,
-                    style: const NeumorphicStyle(color: ColorManager.black, depth: 3, intensity: 0.99),
+                    style: const NeumorphicStyle(
+                        color: ColorManager.black, depth: 3, intensity: 0.99),
                   ),
                 ],
               ),

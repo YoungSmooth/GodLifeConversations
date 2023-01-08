@@ -1,9 +1,10 @@
+// ignore_for_file: depend_on_referenced_packages
+
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:blur/blur.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 import 'package:hovering/hovering.dart';
-
 import '../../../../resources/color_manager.dart';
 import '../../../../resources/font_size_manager.dart';
 import '../../../../resources/string_manager.dart';
@@ -280,7 +281,10 @@ class HeaderBackground extends StatelessWidget {
                       child: Center(
                         child: Text(
                           StringManager.aboutCAPS,
-                          style: TextStyle(color: ColorManager.white, fontWeight: FontWeight.w500, fontSize: FontSizeManager.s15),
+                          style: TextStyle(
+                              color: ColorManager.white,
+                              fontWeight: FontWeight.w500,
+                              fontSize: FontSizeManager.s15),
                         ),
                       ),
                     ),
@@ -304,8 +308,12 @@ class HeaderBackground extends StatelessWidget {
                       width: 450,
                       child: AnimatedTextKit(
                         animatedTexts: [
-                          ColorizeAnimatedText(StringManager.welcomeToGLC, textStyle: colorizeTextStyle, colors: colorizeColors),
-                          ColorizeAnimatedText(StringManager.welcomeToGLC, textStyle: colorizeTextStyle, colors: colorizeColors),
+                          ColorizeAnimatedText(StringManager.welcomeToGLC,
+                              textStyle: colorizeTextStyle,
+                              colors: colorizeColors),
+                          ColorizeAnimatedText(StringManager.welcomeToGLC,
+                              textStyle: colorizeTextStyle,
+                              colors: colorizeColors),
                         ],
                         isRepeatingAnimation: true,
                       ),

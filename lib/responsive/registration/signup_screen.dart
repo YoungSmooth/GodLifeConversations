@@ -1,7 +1,5 @@
 // ignore_for_file: unused_local_variable, depend_on_referenced_packages, unused_import, use_build_context_synchronously
-
 // import 'dart:ffi';
-import 'dart:typed_data';
 import 'dart:io';
 // import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
@@ -45,13 +43,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
   }
 
   void selectImage() async {
-    try {
-      Uint8List im = await pickImage(ImageSource.gallery);
+    Uint8List im = await pickImage(ImageSource.gallery);
 
-      setState(() {
-        _image = im;
-      });
-    } on PlatformException catch (e) {}
+    setState(() {
+      _image = im;
+    });
   }
 
   Future signUpUser() async {
@@ -105,7 +101,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 30,
                 ),
                 SizedBox(

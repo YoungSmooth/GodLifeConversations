@@ -1,5 +1,6 @@
-import 'package:flutter_neumorphic/flutter_neumorphic.dart';
+// ignore_for_file: depend_on_referenced_packages
 
+import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import '../../../../resources/color_manager.dart';
 import '../../../../resources/font_size_manager.dart';
 import '../../../../resources/string_manager.dart';
@@ -22,7 +23,8 @@ class Events extends StatelessWidget {
               children: [
                 InkWell(
                   onTap: () {
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => const DesktopEventsPage()));
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => const DesktopEventsPage()));
                   },
                   child: Padding(
                     padding: const EdgeInsets.all(1),
@@ -31,10 +33,13 @@ class Events extends StatelessWidget {
                       style: const NeumorphicStyle(
                           shadowDarkColor: ColorManager.grey,
                           color: ColorManager.black,
-                          border: NeumorphicBorder(color: ColorManager.white, width: 0.8),
+                          border: NeumorphicBorder(
+                              color: ColorManager.white, width: 0.8),
                           depth: 2,
                           intensity: 0.95),
-                      textStyle: NeumorphicTextStyle(fontSize: FontSizeManager.s40, fontWeight: FontWeight.bold),
+                      textStyle: NeumorphicTextStyle(
+                          fontSize: FontSizeManager.s40,
+                          fontWeight: FontWeight.bold),
                     ),
                   ),
                 ),
@@ -48,7 +53,8 @@ class Events extends StatelessWidget {
                 NeumorphicIcon(
                   Icons.event_available,
                   size: 40,
-                  style: const NeumorphicStyle(color: ColorManager.black, depth: 3, intensity: 0.99),
+                  style: const NeumorphicStyle(
+                      color: ColorManager.black, depth: 3, intensity: 0.99),
                 ),
               ],
             ),

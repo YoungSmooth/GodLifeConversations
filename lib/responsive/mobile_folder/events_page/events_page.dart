@@ -1,6 +1,7 @@
+// ignore_for_file: depend_on_referenced_packages
+
 import 'package:flutter/material.dart';
 import 'package:list_timeline/custom_list_tracking.dart';
-
 import '../../../resources/color_manager.dart';
 import '../../../resources/string_manager.dart';
 
@@ -18,14 +19,38 @@ class _EventsPageState extends State<EventsPage> {
   void initState() {
     listExample.addAll(
       [
-        DataModel(title: StringManager.futureEvent, desc: StringManager.futureEventBody1, dateTime: StringManager.defaultDate1),
-        DataModel(title: StringManager.ongoingEvent, desc: StringManager.ongoingEventBody1, dateTime: StringManager.defaultDate1),
-        DataModel(title: StringManager.pastEvent, desc: StringManager.pastEventBody1, dateTime: StringManager.defaultDate1),
-        DataModel(title: StringManager.pastEvent, desc: StringManager.pastEventBody2, dateTime: StringManager.defaultDate1),
-        DataModel(title: StringManager.pastEvent, desc: StringManager.pastEventBody3, dateTime: StringManager.defaultDate1),
-        DataModel(title: StringManager.pastEvent, desc: StringManager.pastEventBody1, dateTime: StringManager.defaultDate1),
-        DataModel(title: StringManager.pastEvent, desc: StringManager.pastEventBody2, dateTime: StringManager.defaultDate1),
-        DataModel(title: StringManager.pastEvent, desc: StringManager.pastEventBody3, dateTime: StringManager.defaultDate1),
+        DataModel(
+            title: StringManager.futureEvent,
+            desc: StringManager.futureEventBody1,
+            dateTime: StringManager.defaultDate1),
+        DataModel(
+            title: StringManager.ongoingEvent,
+            desc: StringManager.ongoingEventBody1,
+            dateTime: StringManager.defaultDate1),
+        DataModel(
+            title: StringManager.pastEvent,
+            desc: StringManager.pastEventBody1,
+            dateTime: StringManager.defaultDate1),
+        DataModel(
+            title: StringManager.pastEvent,
+            desc: StringManager.pastEventBody2,
+            dateTime: StringManager.defaultDate1),
+        DataModel(
+            title: StringManager.pastEvent,
+            desc: StringManager.pastEventBody3,
+            dateTime: StringManager.defaultDate1),
+        DataModel(
+            title: StringManager.pastEvent,
+            desc: StringManager.pastEventBody1,
+            dateTime: StringManager.defaultDate1),
+        DataModel(
+            title: StringManager.pastEvent,
+            desc: StringManager.pastEventBody2,
+            dateTime: StringManager.defaultDate1),
+        DataModel(
+            title: StringManager.pastEvent,
+            desc: StringManager.pastEventBody3,
+            dateTime: StringManager.defaultDate1),
       ],
     );
     super.initState();
@@ -39,7 +64,8 @@ class _EventsPageState extends State<EventsPage> {
           children: [
             const Padding(
               padding: EdgeInsets.all(20),
-              child: Text(StringManager.eventPageBody1, textAlign: TextAlign.center),
+              child: Text(StringManager.eventPageBody1,
+                  textAlign: TextAlign.center),
             ),
             SingleChildScrollView(
               child: Container(
@@ -80,11 +106,12 @@ class _EventsPageState extends State<EventsPage> {
                       ),
                     ],
                   ),
-                  colorCircleTimeline: (listExample) => listExample.title == StringManager.futureEvent
-                      ? ColorManager.yellow
-                      : listExample.title == StringManager.ongoingEvent
-                          ? ColorManager.green
-                          : ColorManager.grey,
+                  colorCircleTimeline: (listExample) =>
+                      listExample.title == StringManager.futureEvent
+                          ? ColorManager.yellow
+                          : listExample.title == StringManager.ongoingEvent
+                              ? ColorManager.green
+                              : ColorManager.grey,
                   showLeftWidget: true,
                   valueOfLeftSource: (e) => (e.dateTime),
                 ),

@@ -1,3 +1,5 @@
+// ignore_for_file: depend_on_referenced_packages
+
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 
 import '../../../resources/color_manager.dart';
@@ -25,71 +27,103 @@ class FootNote extends StatelessWidget {
             child: Center(
               child: Column(
                 children: [
-                  Padding(padding: const EdgeInsets.all(30), child: Image.asset('lib/assets/logowhite.png')),
+                  Padding(
+                      padding: const EdgeInsets.all(30),
+                      child: Image.asset('lib/assets/logowhite.png')),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       InkWell(
                         onTap: () {
-                          Navigator.of(context).push(MaterialPageRoute(builder: (context) => const DesktopScaffold()));
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => const DesktopScaffold()));
                         },
                         child: const Padding(
                           padding: EdgeInsets.all(8),
-                          child: Text(StringManager.homeCAPS, style: TextStyle(color: ColorManager.black, fontWeight: FontWeight.bold)),
+                          child: Text(StringManager.homeCAPS,
+                              style: TextStyle(
+                                  color: ColorManager.black,
+                                  fontWeight: FontWeight.bold)),
                         ),
                       ),
                       InkWell(
                         onTap: () {
-                          Navigator.of(context).push(MaterialPageRoute(builder: (context) => const DesktopConnectPage()));
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) =>
+                                  const DesktopConnectPage()));
                         },
                         child: const Padding(
                           padding: EdgeInsets.all(8),
-                          child: Text(StringManager.connectCAPS, style: TextStyle(color: ColorManager.black, fontWeight: FontWeight.bold)),
+                          child: Text(StringManager.connectCAPS,
+                              style: TextStyle(
+                                  color: ColorManager.black,
+                                  fontWeight: FontWeight.bold)),
                         ),
                       ),
                       InkWell(
                         onTap: () {
-                          Navigator.of(context).push(MaterialPageRoute(builder: (context) => const DesktopMessagesPage()));
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) =>
+                                  const DesktopMessagesPage()));
                         },
                         child: const Padding(
                           padding: EdgeInsets.all(8),
-                          child: Text(StringManager.messagesCAPS, style: TextStyle(color: ColorManager.black, fontWeight: FontWeight.bold)),
+                          child: Text(StringManager.messagesCAPS,
+                              style: TextStyle(
+                                  color: ColorManager.black,
+                                  fontWeight: FontWeight.bold)),
                         ),
                       ),
                       InkWell(
                         onTap: () {
-                          Navigator.of(context).push(MaterialPageRoute(builder: (context) => const DesktopServePage()));
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => const DesktopServePage()));
                         },
                         child: const Padding(
                           padding: EdgeInsets.all(8),
-                          child: Text(StringManager.serveCAPS, style: TextStyle(color: ColorManager.black, fontWeight: FontWeight.bold)),
+                          child: Text(StringManager.serveCAPS,
+                              style: TextStyle(
+                                  color: ColorManager.black,
+                                  fontWeight: FontWeight.bold)),
                         ),
                       ),
                       InkWell(
                         onTap: () {
-                          Navigator.of(context).push(MaterialPageRoute(builder: (context) => const DesktopEventsPage()));
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => const DesktopEventsPage()));
                         },
                         child: const Padding(
                           padding: EdgeInsets.all(8),
-                          child: Text(StringManager.eventsCAPS, style: TextStyle(color: ColorManager.black, fontWeight: FontWeight.bold)),
+                          child: Text(StringManager.eventsCAPS,
+                              style: TextStyle(
+                                  color: ColorManager.black,
+                                  fontWeight: FontWeight.bold)),
                         ),
                       ),
                       InkWell(
                         onTap: () {
-                          Navigator.of(context).push(MaterialPageRoute(builder: (context) => const DesktopGivePage()));
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => const DesktopGivePage()));
                         },
                         child: const Padding(
                           padding: EdgeInsets.all(8),
-                          child: Text(StringManager.giveCAPS, style: TextStyle(color: ColorManager.black, fontWeight: FontWeight.bold)),
+                          child: Text(StringManager.giveCAPS,
+                              style: TextStyle(
+                                  color: ColorManager.black,
+                                  fontWeight: FontWeight.bold)),
                         ),
                       ),
                       InkWell(
                         onTap: () {
-                          Navigator.of(context).push(MaterialPageRoute(builder: (context) => const DesktopAboutPage()));
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => const DesktopAboutPage()));
                         },
                         child: const Padding(
                           padding: EdgeInsets.all(8),
-                          child: Text(StringManager.aboutCAPS, style: TextStyle(color: ColorManager.black, fontWeight: FontWeight.bold)),
+                          child: Text(StringManager.aboutCAPS,
+                              style: TextStyle(
+                                  color: ColorManager.black,
+                                  fontWeight: FontWeight.bold)),
                         ),
                       ),
                     ],
@@ -101,39 +135,67 @@ class FootNote extends StatelessWidget {
                       children: [
                         Padding(
                           padding: const EdgeInsets.all(8),
-                          child:
-                              NeumorphicIcon(Icons.telegram, size: 25, style: const NeumorphicStyle(color: ColorManager.black, depth: 1, intensity: 0.99)),
+                          child: NeumorphicIcon(Icons.telegram,
+                              size: 25,
+                              style: const NeumorphicStyle(
+                                  color: ColorManager.black,
+                                  depth: 1,
+                                  intensity: 0.99)),
                         ),
                         Padding(
                           padding: const EdgeInsets.all(8),
-                          child:
-                              NeumorphicIcon(Icons.facebook, size: 25, style: const NeumorphicStyle(color: ColorManager.black, depth: 1, intensity: 0.99)),
+                          child: NeumorphicIcon(Icons.facebook,
+                              size: 25,
+                              style: const NeumorphicStyle(
+                                  color: ColorManager.black,
+                                  depth: 1,
+                                  intensity: 0.99)),
                         ),
                         Padding(
                           padding: const EdgeInsets.all(8),
-                          child:
-                              NeumorphicIcon(Icons.whatsapp, size: 25, style: const NeumorphicStyle(color: ColorManager.black, depth: 1, intensity: 0.99)),
+                          child: NeumorphicIcon(Icons.whatsapp,
+                              size: 25,
+                              style: const NeumorphicStyle(
+                                  color: ColorManager.black,
+                                  depth: 1,
+                                  intensity: 0.99)),
                         ),
                         Padding(
                           padding: const EdgeInsets.all(8),
-                          child: NeumorphicIcon(Icons.mail, size: 25, style: const NeumorphicStyle(color: ColorManager.black, depth: 1, intensity: 0.99)),
+                          child: NeumorphicIcon(Icons.mail,
+                              size: 25,
+                              style: const NeumorphicStyle(
+                                  color: ColorManager.black,
+                                  depth: 1,
+                                  intensity: 0.99)),
                         ),
                         Padding(
                           padding: const EdgeInsets.all(8),
-                          child: NeumorphicIcon(Icons.call, size: 25, style: const NeumorphicStyle(color: ColorManager.black, depth: 1, intensity: 0.99)),
+                          child: NeumorphicIcon(Icons.call,
+                              size: 25,
+                              style: const NeumorphicStyle(
+                                  color: ColorManager.black,
+                                  depth: 1,
+                                  intensity: 0.99)),
                         ),
                       ],
                     ),
                   ),
                   InkWell(
                     onTap: () {
-                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => const DesktopConnectPage()));
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => const DesktopConnectPage()));
                     },
                     child: Padding(
                       padding: const EdgeInsets.all(10),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        children: const [Text(StringManager.contactUsCAPS, style: TextStyle(fontWeight: FontWeight.bold, color: ColorManager.black))],
+                        children: const [
+                          Text(StringManager.contactUsCAPS,
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: ColorManager.black))
+                        ],
                       ),
                     ),
                   ),
@@ -141,7 +203,12 @@ class FootNote extends StatelessWidget {
                     padding: const EdgeInsets.all(10),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [Text(StringManager.copyrightCAPS, style: TextStyle(fontWeight: FontWeight.bold, color: ColorManager.black))],
+                      children: const [
+                        Text(StringManager.copyrightCAPS,
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: ColorManager.black))
+                      ],
                     ),
                   ),
                 ],

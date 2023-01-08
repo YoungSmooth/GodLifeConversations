@@ -1,3 +1,5 @@
+// ignore_for_file: depend_on_referenced_packages
+
 import 'package:flutter/material.dart';
 import 'package:list_timeline/custom_list_tracking.dart';
 
@@ -17,14 +19,38 @@ class _EventsBodyState extends State<EventsBody> {
   @override
   void initState() {
     listExample.addAll([
-      DataModel(title: StringManager.futureEvent, desc: StringManager.futureEventBody1, date: StringManager.defaultDate1),
-      DataModel(title: StringManager.ongoingEvent, desc: StringManager.ongoingEventBody1, date: StringManager.defaultDate1),
-      DataModel(title: StringManager.pastEvent, desc: StringManager.pastEventBody1, date: StringManager.defaultDate1),
-      DataModel(title: StringManager.pastEvent, desc: StringManager.pastEventBody2, date: StringManager.defaultDate1),
-      DataModel(title: StringManager.pastEvent, desc: StringManager.pastEventBody3, date: StringManager.defaultDate1),
-      DataModel(title: StringManager.pastEvent, desc: StringManager.pastEventBody1, date: StringManager.defaultDate1),
-      DataModel(title: StringManager.pastEvent, desc: StringManager.pastEventBody2, date: StringManager.defaultDate1),
-      DataModel(title: StringManager.pastEvent, desc: StringManager.pastEventBody3, date: StringManager.defaultDate1),
+      DataModel(
+          title: StringManager.futureEvent,
+          desc: StringManager.futureEventBody1,
+          date: StringManager.defaultDate1),
+      DataModel(
+          title: StringManager.ongoingEvent,
+          desc: StringManager.ongoingEventBody1,
+          date: StringManager.defaultDate1),
+      DataModel(
+          title: StringManager.pastEvent,
+          desc: StringManager.pastEventBody1,
+          date: StringManager.defaultDate1),
+      DataModel(
+          title: StringManager.pastEvent,
+          desc: StringManager.pastEventBody2,
+          date: StringManager.defaultDate1),
+      DataModel(
+          title: StringManager.pastEvent,
+          desc: StringManager.pastEventBody3,
+          date: StringManager.defaultDate1),
+      DataModel(
+          title: StringManager.pastEvent,
+          desc: StringManager.pastEventBody1,
+          date: StringManager.defaultDate1),
+      DataModel(
+          title: StringManager.pastEvent,
+          desc: StringManager.pastEventBody2,
+          date: StringManager.defaultDate1),
+      DataModel(
+          title: StringManager.pastEvent,
+          desc: StringManager.pastEventBody3,
+          date: StringManager.defaultDate1),
     ]);
     super.initState();
   }
@@ -37,7 +63,8 @@ class _EventsBodyState extends State<EventsBody> {
           children: [
             const Padding(
               padding: EdgeInsets.all(20),
-              child: Text(StringManager.eventPageBody1, textAlign: TextAlign.center),
+              child: Text(StringManager.eventPageBody1,
+                  textAlign: TextAlign.center),
             ),
             Container(
               alignment: Alignment.center,
@@ -75,11 +102,12 @@ class _EventsBodyState extends State<EventsBody> {
                     ),
                   ],
                 ),
-                colorCircleTimeline: (listExample) => listExample.title == StringManager.futureEvent
-                    ? ColorManager.yellow
-                    : listExample.title == StringManager.ongoingEvent
-                        ? ColorManager.green
-                        : ColorManager.grey,
+                colorCircleTimeline: (listExample) =>
+                    listExample.title == StringManager.futureEvent
+                        ? ColorManager.yellow
+                        : listExample.title == StringManager.ongoingEvent
+                            ? ColorManager.green
+                            : ColorManager.grey,
                 showLeftWidget: true,
                 valueOfLeftSource: (e) => (e.date),
               ),

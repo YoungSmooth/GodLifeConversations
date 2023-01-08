@@ -1,6 +1,7 @@
+// ignore_for_file: depend_on_referenced_packages, unused_local_variable
+
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:url_launcher/url_launcher.dart';
-
 import '../../../resources/color_manager.dart';
 import '../../../resources/font_size_manager.dart';
 import '../../../resources/string_manager.dart';
@@ -18,7 +19,9 @@ class ConnectPage extends StatelessWidget {
             height: 100,
             width: double.infinity,
             child: Center(
-              child: Padding(padding: EdgeInsets.only(left: 5, right: 5), child: connectMessage),
+              child: Padding(
+                  padding: EdgeInsets.only(left: 5, right: 5),
+                  child: connectMessage),
             ),
           ),
           Padding(
@@ -36,7 +39,8 @@ class ConnectPage extends StatelessWidget {
                     child: NeumorphicIcon(
                       Icons.location_on,
                       size: 40,
-                      style: const NeumorphicStyle(color: ColorManager.black, depth: 3, intensity: 0.99),
+                      style: const NeumorphicStyle(
+                          color: ColorManager.black, depth: 3, intensity: 0.99),
                     ),
                   ),
                   Padding(
@@ -47,7 +51,9 @@ class ConnectPage extends StatelessWidget {
                       child: NeumorphicText(
                         textAlign: TextAlign.center,
                         'Desire of All Nations Cathederal, 9 Effanga Offiong Street, Off Edibe Edibe Road, Southern Calabar',
-                        textStyle: NeumorphicTextStyle(fontWeight: FontWeight.bold, fontSize: FontSizeManager.s13),
+                        textStyle: NeumorphicTextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: FontSizeManager.s13),
                         style: const NeumorphicStyle(
                           color: ColorManager.black,
                           depth: 5,
@@ -60,8 +66,11 @@ class ConnectPage extends StatelessWidget {
                     padding: const EdgeInsets.only(bottom: 10),
                     child: NeumorphicText(
                       'Our Location',
-                      textStyle: NeumorphicTextStyle(fontWeight: FontWeight.bold, fontSize: FontSizeManager.s20),
-                      style: const NeumorphicStyle(color: ColorManager.white, depth: 5, intensity: 0.99),
+                      textStyle: NeumorphicTextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: FontSizeManager.s20),
+                      style: const NeumorphicStyle(
+                          color: ColorManager.white, depth: 5, intensity: 0.99),
                     ),
                   ),
                 ],
@@ -81,9 +90,9 @@ class ConnectPage extends StatelessWidget {
                       height: 100,
                       width: 100,
                       decoration: BoxDecoration(
-                        color: ColorManager.blackOp0_2
-                        ,
-                        border: Border.all(width: 1.2, color: ColorManager.black),
+                        color: ColorManager.blackOp0_2,
+                        border:
+                            Border.all(width: 1.2, color: ColorManager.black),
                         borderRadius: BorderRadius.circular(10),
                       ),
                       child: Padding(
@@ -93,14 +102,22 @@ class ConnectPage extends StatelessWidget {
                             NeumorphicIcon(
                               Icons.telegram,
                               size: 40,
-                              style: const NeumorphicStyle(color: ColorManager.black, depth: 3, intensity: 0.99),
+                              style: const NeumorphicStyle(
+                                  color: ColorManager.black,
+                                  depth: 3,
+                                  intensity: 0.99),
                             ),
                             Padding(
                               padding: const EdgeInsets.only(top: 10),
                               child: NeumorphicText(
                                 StringManager.telegram,
-                                textStyle: NeumorphicTextStyle(fontWeight: FontWeight.bold, fontSize: FontSizeManager.s15),
-                                style: const NeumorphicStyle(color: ColorManager.white, depth: 5, intensity: 0.99),
+                                textStyle: NeumorphicTextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: FontSizeManager.s15),
+                                style: const NeumorphicStyle(
+                                    color: ColorManager.white,
+                                    depth: 5,
+                                    intensity: 0.99),
                               ),
                             )
                           ],
@@ -117,7 +134,8 @@ class ConnectPage extends StatelessWidget {
                         width: 100,
                         decoration: BoxDecoration(
                           color: ColorManager.black.withOpacity(0.2),
-                          border: Border.all(width: 1.2, color: ColorManager.black),
+                          border:
+                              Border.all(width: 1.2, color: ColorManager.black),
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: Padding(
@@ -127,13 +145,18 @@ class ConnectPage extends StatelessWidget {
                               NeumorphicIcon(
                                 Icons.facebook,
                                 size: 40,
-                                style: const NeumorphicStyle(color: ColorManager.black, depth: 3, intensity: 0.99),
+                                style: const NeumorphicStyle(
+                                    color: ColorManager.black,
+                                    depth: 3,
+                                    intensity: 0.99),
                               ),
                               Padding(
                                 padding: const EdgeInsets.only(top: 10),
                                 child: NeumorphicText(
                                   StringManager.facebook,
-                                  textStyle: NeumorphicTextStyle(fontWeight: FontWeight.bold, fontSize: FontSizeManager.s15),
+                                  textStyle: NeumorphicTextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: FontSizeManager.s15),
                                   style: const NeumorphicStyle(
                                     color: ColorManager.white,
                                     depth: 5,
@@ -156,7 +179,8 @@ class ConnectPage extends StatelessWidget {
                         width: 100,
                         decoration: BoxDecoration(
                           color: ColorManager.blackOp0_2,
-                          border: Border.all(width: 1.2, color: ColorManager.black),
+                          border:
+                              Border.all(width: 1.2, color: ColorManager.black),
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: Padding(
@@ -166,14 +190,22 @@ class ConnectPage extends StatelessWidget {
                               NeumorphicIcon(
                                 Icons.whatsapp,
                                 size: 40,
-                                style: const NeumorphicStyle(color: ColorManager.black, depth: 3, intensity: 0.99),
+                                style: const NeumorphicStyle(
+                                    color: ColorManager.black,
+                                    depth: 3,
+                                    intensity: 0.99),
                               ),
                               Padding(
                                 padding: const EdgeInsets.only(top: 10),
                                 child: NeumorphicText(
                                   StringManager.whatsApp,
-                                  textStyle: NeumorphicTextStyle(fontWeight: FontWeight.bold, fontSize: FontSizeManager.s15),
-                                  style: const NeumorphicStyle(color: ColorManager.white, depth: 5, intensity: 0.99),
+                                  textStyle: NeumorphicTextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: FontSizeManager.s15),
+                                  style: const NeumorphicStyle(
+                                      color: ColorManager.white,
+                                      depth: 5,
+                                      intensity: 0.99),
                                 ),
                               ),
                             ],
@@ -191,7 +223,8 @@ class ConnectPage extends StatelessWidget {
                         width: 100,
                         decoration: BoxDecoration(
                           color: ColorManager.black.withOpacity(0.2),
-                          border: Border.all(width: 1.2, color: ColorManager.black),
+                          border:
+                              Border.all(width: 1.2, color: ColorManager.black),
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: Padding(
@@ -201,14 +234,22 @@ class ConnectPage extends StatelessWidget {
                               NeumorphicIcon(
                                 Icons.mail,
                                 size: 40,
-                                style: const NeumorphicStyle(color: ColorManager.black, depth: 3, intensity: 0.99),
+                                style: const NeumorphicStyle(
+                                    color: ColorManager.black,
+                                    depth: 3,
+                                    intensity: 0.99),
                               ),
                               Padding(
                                 padding: const EdgeInsets.only(top: 10),
                                 child: NeumorphicText(
                                   StringManager.email,
-                                  textStyle: NeumorphicTextStyle(fontWeight: FontWeight.bold, fontSize: FontSizeManager.s15),
-                                  style: const NeumorphicStyle(color: ColorManager.white, depth: 5, intensity: 0.99),
+                                  textStyle: NeumorphicTextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: FontSizeManager.s15),
+                                  style: const NeumorphicStyle(
+                                      color: ColorManager.white,
+                                      depth: 5,
+                                      intensity: 0.99),
                                 ),
                               ),
                             ],
@@ -227,7 +268,8 @@ class ConnectPage extends StatelessWidget {
                         decoration: BoxDecoration(
                           color: ColorManager.black.withOpacity(0.2),
                           borderRadius: BorderRadius.circular(10),
-                          border: Border.all(width: 1.2, color: ColorManager.black),
+                          border:
+                              Border.all(width: 1.2, color: ColorManager.black),
                         ),
                         child: Padding(
                           padding: const EdgeInsets.all(10.0),
@@ -236,14 +278,22 @@ class ConnectPage extends StatelessWidget {
                               NeumorphicIcon(
                                 Icons.call,
                                 size: 40,
-                                style: const NeumorphicStyle(color: ColorManager.black, depth: 3, intensity: 0.99),
+                                style: const NeumorphicStyle(
+                                    color: ColorManager.black,
+                                    depth: 3,
+                                    intensity: 0.99),
                               ),
                               Padding(
                                 padding: const EdgeInsets.only(top: 10),
                                 child: NeumorphicText(
                                   StringManager.call,
-                                  textStyle: NeumorphicTextStyle(fontWeight: FontWeight.bold, fontSize: FontSizeManager.s15),
-                                  style: const NeumorphicStyle(color: ColorManager.white, depth: 5, intensity: 0.99),
+                                  textStyle: NeumorphicTextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: FontSizeManager.s15),
+                                  style: const NeumorphicStyle(
+                                      color: ColorManager.white,
+                                      depth: 5,
+                                      intensity: 0.99),
                                 ),
                               ),
                             ],
@@ -272,7 +322,8 @@ Future makePhoneCall() async {
 }
 
 Future openWhatsapp() async {
-  final Uri url = Uri.parse("'https://chat.whatsapp.com/LNbsEodyYmaBuMMsdbPcBb'");
+  final Uri url =
+      Uri.parse("'https://chat.whatsapp.com/LNbsEodyYmaBuMMsdbPcBb'");
   if (await canLaunchUrl(url)) {
     await launchUrl(
       url,

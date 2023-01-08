@@ -3,7 +3,6 @@
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
-import '../../../resources/color_manager.dart';
 import '../../dektop_folder/constant_parts/constants.dart';
 import 'feed.dart';
 import 'testimonies.dart';

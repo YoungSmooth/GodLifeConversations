@@ -1,7 +1,7 @@
+// ignore_for_file: depend_on_referenced_packages
 import 'package:blur/blur.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
-
 import '../../../../resources/color_manager.dart';
 import '../../../../resources/font_size_manager.dart';
 import '../../../../resources/string_manager.dart';
@@ -51,7 +51,9 @@ class ServeBody extends StatelessWidget {
                           padding: EdgeInsets.only(bottom: 10, left: 20),
                           child: Text(
                             StringManager.administration,
-                            style: TextStyle(fontWeight: FontWeight.bold, fontSize: FontSizeManager.s15),
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: FontSizeManager.s15),
                           ),
                         ),
                         Padding(
@@ -104,7 +106,9 @@ class ServeBody extends StatelessWidget {
                           padding: EdgeInsets.only(bottom: 10, left: 20),
                           child: Text(
                             StringManager.media,
-                            style: TextStyle(fontWeight: FontWeight.bold, fontSize: FontSizeManager.s15),
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: FontSizeManager.s15),
                           ),
                         ),
                         Padding(
@@ -162,7 +166,9 @@ class ServeBody extends StatelessWidget {
                           padding: EdgeInsets.only(bottom: 10, left: 20),
                           child: Text(
                             StringManager.music,
-                            style: TextStyle(fontWeight: FontWeight.bold, fontSize: FontSizeManager.s15),
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: FontSizeManager.s15),
                           ),
                         ),
                         Padding(
@@ -215,7 +221,9 @@ class ServeBody extends StatelessWidget {
                           padding: EdgeInsets.only(bottom: 10, left: 20),
                           child: Text(
                             StringManager.facilityManagement,
-                            style: TextStyle(fontWeight: FontWeight.bold, fontSize: FontSizeManager.s15),
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: FontSizeManager.s15),
                           ),
                         ),
                         Padding(
@@ -273,7 +281,9 @@ class ServeBody extends StatelessWidget {
                           padding: EdgeInsets.only(bottom: 10, left: 20),
                           child: Text(
                             StringManager.ushering,
-                            style: TextStyle(fontWeight: FontWeight.bold, fontSize: FontSizeManager.s15),
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: FontSizeManager.s15),
                           ),
                         ),
                         Padding(
@@ -326,7 +336,9 @@ class ServeBody extends StatelessWidget {
                           padding: EdgeInsets.only(bottom: 10, left: 20),
                           child: Text(
                             StringManager.mobility,
-                            style: TextStyle(fontWeight: FontWeight.bold, fontSize: FontSizeManager.s15),
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: FontSizeManager.s15),
                           ),
                         ),
                         Padding(
@@ -385,7 +397,9 @@ class ServeBody extends StatelessWidget {
                           padding: EdgeInsets.only(bottom: 10, left: 20),
                           child: Text(
                             StringManager.prayer,
-                            style: TextStyle(fontWeight: FontWeight.bold, fontSize: FontSizeManager.s15),
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: FontSizeManager.s15),
                           ),
                         ),
                         Padding(
@@ -438,7 +452,9 @@ class ServeBody extends StatelessWidget {
                           padding: EdgeInsets.only(bottom: 10, left: 20),
                           child: Text(
                             StringManager.discipleship,
-                            style: TextStyle(fontWeight: FontWeight.bold, fontSize: FontSizeManager.s15),
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: FontSizeManager.s15),
                           ),
                         ),
                         Padding(
@@ -496,7 +512,9 @@ class ServeBody extends StatelessWidget {
                           padding: EdgeInsets.only(bottom: 10, left: 20),
                           child: Text(
                             StringManager.finance,
-                            style: TextStyle(fontWeight: FontWeight.bold, fontSize: FontSizeManager.s15),
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: FontSizeManager.s15),
                           ),
                         ),
                         Padding(
@@ -549,7 +567,9 @@ class ServeBody extends StatelessWidget {
                           padding: EdgeInsets.only(bottom: 10, left: 20),
                           child: Text(
                             'General Secretary',
-                            style: TextStyle(fontWeight: FontWeight.bold, fontSize: FontSizeManager.s15),
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: FontSizeManager.s15),
                           ),
                         ),
                         Padding(

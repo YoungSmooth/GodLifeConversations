@@ -1,5 +1,5 @@
+// ignore_for_file: depend_on_referenced_packages
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
-
 import '../../../../resources/color_manager.dart';
 import '../../../../resources/font_size_manager.dart';
 import '../../../../resources/string_manager.dart';
@@ -63,7 +63,10 @@ class ServePageHeader extends StatelessWidget {
                       padding: EdgeInsets.all(10),
                       child: Center(
                         child: Text(StringManager.serveSpaced,
-                            style: TextStyle(color: ColorManager.white, fontWeight: FontWeight.w500, fontSize: FontSizeManager.s30)),
+                            style: TextStyle(
+                                color: ColorManager.white,
+                                fontWeight: FontWeight.w500,
+                                fontSize: FontSizeManager.s30)),
                       ),
                     ),
                   ),

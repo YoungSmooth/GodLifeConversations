@@ -11,17 +11,17 @@ class _HomePageInspirationsState extends State<HomePageInspirations> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(
+      floatingActionButton: const FloatingActionButton(
         autofocus: true,
         backgroundColor: Colors.white,
-        child: const IconButton(
+        onPressed: null,
+        child: IconButton(
             onPressed: null,
             icon: Icon(
               Icons.add,
               color: Colors.black,
               size: 20,
             )),
-        onPressed: () => null,
       ),
       body: SingleChildScrollView(
         child: Column(

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../responsive/mobile_folder/mobile_scaffold.dart';
 import '../responsive/registration/register_page.dart';
 import '../responsive/registration/sign_in.dart';
 import '../responsive/registration/signup_screen.dart';

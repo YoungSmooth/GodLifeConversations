@@ -1,13 +1,9 @@
-// ignore_for_file: unused_local_variable, unnecessary_null_comparison
-import 'dart:io';
+// ignore_for_file: unused_local_variable, unnecessary_null_comparison, depend_on_referenced_packages
 import 'dart:typed_data';
-import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:god_life_conversations/models/user.dart' as model;
 import 'package:god_life_conversations/resources/storage_methods.dart';
-
-import '../utilities.dart/utils.dart';
 
 class AuthMethods {
   final FirebaseAuth _auth = FirebaseAuth.instance;

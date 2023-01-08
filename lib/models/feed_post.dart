@@ -1,14 +1,14 @@
-class Post {
+class FeedPost {
   final String description;
   final String uid;
   final String username;
   final String postId;
   final String datePublished;
-  final List postUrl;
-  final List profileimage;
-  final likes;
+  final String postUrl;
+  final String profileimage;
+  final List likes;
 
-  const Post({
+  const FeedPost({
     required this.description,
     required this.uid,
     required this.username,
@@ -30,10 +30,10 @@ class Post {
         'likes': likes,
       };
 
-  static Post fromSnap(snap) {
+  static FeedPost fromSnap(snap) {
     var snapshot = snap.data() as Map<String, dynamic>;
 
-    return Post(
+    return FeedPost(
       description: snapshot['description'],
       uid: snapshot['uid'],
       username: snapshot['username'],

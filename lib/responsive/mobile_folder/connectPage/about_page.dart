@@ -36,7 +36,7 @@ class AboutPage extends StatelessWidget {
               ),
               Column(
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     height: 30,
                   ),
                   SizedBox(
@@ -58,7 +58,7 @@ class AboutPage extends StatelessWidget {
                   const Text(
                       textAlign: TextAlign.center,
                       'We would love to connect with you. We have been praying for you and would love to grow with you. You can visit our location, connect with us via our social media platforms or contact us directly with the information below. We would love to connect with you.'),
-                  SizedBox(
+                  const SizedBox(
                     height: 30,
                   ),
                 ],

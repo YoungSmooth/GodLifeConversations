@@ -1,7 +1,6 @@
-// ignore_for_file: file_names
+// ignore_for_file: file_names, prefer_typing_uninitialized_variables
 
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
 class GlassBox2 extends StatelessWidget {

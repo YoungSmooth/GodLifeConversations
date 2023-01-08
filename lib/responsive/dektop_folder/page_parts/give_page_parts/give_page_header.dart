@@ -1,5 +1,6 @@
-import 'package:flutter_neumorphic/flutter_neumorphic.dart';
+// ignore_for_file: depend_on_referenced_packages
 
+import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import '../../../../resources/color_manager.dart';
 import '../../../../resources/font_size_manager.dart';
 import '../../../../resources/string_manager.dart';

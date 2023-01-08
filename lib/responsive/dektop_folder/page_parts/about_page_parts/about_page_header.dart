@@ -1,4 +1,5 @@
-import 'package:flutter/material.dart';
+// ignore_for_file: depend_on_referenced_packages
+
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 
 import '../../../../resources/color_manager.dart';
@@ -64,7 +65,10 @@ class AboutPageHeader extends StatelessWidget {
                       child: Center(
                         child: Text(
                           StringManager.aboutSpaced,
-                          style: TextStyle(color: ColorManager.white, fontWeight: FontWeight.w500, fontSize: FontSizeManager.s30),
+                          style: TextStyle(
+                              color: ColorManager.white,
+                              fontWeight: FontWeight.w500,
+                              fontSize: FontSizeManager.s30),
                         ),
                       ),
                     ),

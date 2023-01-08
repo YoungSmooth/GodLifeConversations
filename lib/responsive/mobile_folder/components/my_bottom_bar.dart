@@ -1,6 +1,7 @@
+// ignore_for_file: depend_on_referenced_packages
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import '../../../models/user.dart' as model;
 import '../../../providers/user_provider.dart';
 import '../../../resources/color_manager.dart';
