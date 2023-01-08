@@ -11,7 +11,7 @@ import 'firebase_options.dart';
 import 'providers/user_provider.dart';
 import 'resources/color_manager.dart';
 import 'responsive/dektop_folder/pages/desktop_home_page.dart';
-import 'responsive/mobile_folder/components/select_loginView.dart';
+import 'responsive/mobile_folder/components/select_login_view.dart';
 import 'responsive/mobile_folder/mobile_scaffold.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 // import 'firebase_options.dart';
@@ -89,7 +89,7 @@ class MyApp extends StatelessWidget {
   ThemeData lightTheme() {
     return ThemeData(
       colorSchemeSeed: Colors.deepPurple,
-      buttonColor: Colors.black,
+
       brightness: Brightness.light,
       textTheme: GoogleFonts.montserratTextTheme(),
       scaffoldBackgroundColor: ColorManager.greyS100,
