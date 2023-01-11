@@ -1,14 +1,13 @@
 // ignore_for_file: depend_on_referenced_packages
 
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
-
 import '../../../models/user.dart' as model;
 import '../../../providers/user_provider.dart';
 import '../../../resources/color_manager.dart';
+import '../../../resources/firestore_methods.dart';
 import '../../../resources/string_manager.dart';
 import '../../../utilities.dart/colors.dart';
 import '../../../utilities/utils.dart';
@@ -23,10 +22,40 @@ class GlcFeed extends StatefulWidget {
 
 class _GlcFeedState extends State<GlcFeed> {
   final TextEditingController _descriptionController = TextEditingController();
+  bool isLoading = false;
+
   @override
   void dispose() {
     _descriptionController.dispose();
     super.dispose();
+  }
+
+  void feedPost(
+    String uid,
+    String username,
+    String profileImage,
+  ) async {
+    setState(() {
+      isLoading = true;
+    });
+    try {
+      String res = await FirestoreMethods().uploadFeedPost(
+          _descriptionController.text,
+          _postUpload!,
+          uid,
+          username,
+          profileImage);
+      if (res == "success") {
+        setState(() {
+          isLoading = false;
+        });
+        showSnackBar('Posted!', context);
+      } else {
+        showSnackBar(res, context);
+      }
+    } catch (e) {
+      showSnackBar(e.toString(), context);
+    }
   }
 
   File? _postUpload;
@@ -83,6 +112,12 @@ class _GlcFeedState extends State<GlcFeed> {
       body: SingleChildScrollView(
         child: Column(
           children: [
+            isLoading
+                ? const LinearProgressIndicator(
+                    backgroundColor: ColorManager.blue,
+                    color: ColorManager.white,
+                  )
+                : const Padding(padding: EdgeInsets.only(bottom: 5)),
             Image.network(
                 'https://images.unsplash.com/photo-1672696049977-5ef343a91556?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80'),
             Image.network(
@@ -161,9 +196,15 @@ class _GlcFeedState extends State<GlcFeed> {
                             ),
                           ),
                           const SizedBox(height: 20),
-                          const ElevatedButton(
-                            onPressed: null,
-                            child: Text(StringManager.post,
+                          ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: ColorManager.blue,
+                            ),
+                            onPressed: () {
+                              feedPost(user.uid, user.username, user.photoUrl);
+                              Navigator.of(context).pop();
+                            },
+                            child: const Text(StringManager.post,
                                 style: TextStyle(color: ColorManager.white)),
                           )
                         ],

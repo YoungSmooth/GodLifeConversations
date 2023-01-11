@@ -4,6 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:god_life_conversations/models/user.dart' as model;
 import 'package:god_life_conversations/resources/storage_methods.dart';
+import 'dart:io';
 
 class AuthMethods {
   final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -22,7 +23,7 @@ class AuthMethods {
     required String password,
     required String username,
     required String bio,
-    required Uint8List file,
+    required File file,
   }) async {
     String res = 'Some error occurred';
     try {

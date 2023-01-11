@@ -29,7 +29,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _bioController = TextEditingController();
   final TextEditingController _usernameController = TextEditingController();
-  Uint8List? _image;
+  File? _image;
 
   bool _isLoading = false;
 
@@ -43,7 +43,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
   }
 
   void selectImage() async {
-    Uint8List im = await pickImage(ImageSource.gallery);
+    File im = await pickImage(ImageSource.gallery);
 
     setState(() {
       _image = im;
@@ -117,7 +117,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     _image != null
                         ? CircleAvatar(
                             radius: 60,
-                            backgroundImage: MemoryImage(_image!),
+                            backgroundImage: FileImage(_image!),
                           )
                         : const CircleAvatar(
                             radius: 64,
