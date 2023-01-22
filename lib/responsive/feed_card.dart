@@ -1,11 +1,12 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:god_life_conversations/resources/color_manager.dart';
+// ignore_for_file: prefer_typing_uninitialized_variables
 
-import '../utilities.dart/colors.dart';
+import 'package:flutter/material.dart';
+import 'package:god_life_conversations/resources/color_manager.dart';
+import 'package:intl/intl.dart';
 
 class FeedCard extends StatelessWidget {
-  const FeedCard({super.key});
+  final snap;
+  const FeedCard({super.key, required this.snap});
 
   @override
   Widget build(BuildContext context) {
@@ -31,11 +32,11 @@ class FeedCard extends StatelessWidget {
                   children: [
                     Row(
                       children: [
-                        const Padding(
-                          padding: EdgeInsets.only(left: 5),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 5),
                           child: CircleAvatar(
                             radius: 18,
-                            backgroundColor: mainColor,
+                            backgroundImage: NetworkImage(snap['profileimage']),
                           ),
                         ),
                         Padding(
@@ -46,8 +47,8 @@ class FeedCard extends StatelessWidget {
                               ConstrainedBox(
                                 constraints: const BoxConstraints(
                                     minWidth: 0, maxWidth: 120),
-                                child: const Text('Joseph Nwode three',
-                                    style: TextStyle(
+                                child: Text(snap['username'],
+                                    style: const TextStyle(
                                         fontWeight: FontWeight.bold,
                                         overflow: TextOverflow.ellipsis)),
                               ),
@@ -111,10 +112,9 @@ class FeedCard extends StatelessWidget {
 
         // Feed Image section
         SizedBox(
+          width: double.infinity,
           child: Image.network(
-            'https://images.unsplash.com/photo-1672696049977-5ef343a91556?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
-            width: double.infinity,
-            fit: BoxFit.cover,
+            snap['postUrl'],
           ),
         ),
 
@@ -155,7 +155,7 @@ class FeedCard extends StatelessWidget {
 
         // Feed Image Description section
         Container(
-          padding: EdgeInsets.symmetric(horizontal: 16),
+          padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -165,7 +165,7 @@ class FeedCard extends StatelessWidget {
                       fontWeight: FontWeight.w800,
                     ),
                 child: Text(
-                  '3456 likes',
+                  '${snap['likes'].length} likes',
                   style: Theme.of(context).textTheme.bodyText2,
                 ),
               ),
@@ -176,15 +176,18 @@ class FeedCard extends StatelessWidget {
                   bottom: 8,
                 ),
                 child: RichText(
-                  text: const TextSpan(
-                    style: TextStyle(color: ColorManager.black),
+                  text: TextSpan(
+                    style: const TextStyle(color: ColorManager.black),
                     children: [
                       TextSpan(
-                        text: 'Username ',
-                        style: TextStyle(fontWeight: FontWeight.bold),
+                        text: snap['username'],
+                        style: const TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      const TextSpan(
+                        text: ' ',
                       ),
                       TextSpan(
-                        text: 'This should contain some long description',
+                        text: snap['description'],
                       ),
                     ],
                   ),
@@ -196,10 +199,23 @@ class FeedCard extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(vertical: 4),
                   child: const Text(
                     'View all 4567 comments',
-                    style: TextStyle(fontSize: 16, color: ColorManager.grey),
+                    style: TextStyle(
+                      fontSize: 14,
+                      // color: ColorManager.grey,
+                    ),
                   ),
                 ),
-              )
+              ),
+              Container(
+                padding: const EdgeInsets.symmetric(vertical: 4),
+                child: Text(
+                  DateFormat.yMMMd().format(
+                    snap['datePublished'].toDate(),
+                  ),
+                  style:
+                      const TextStyle(fontSize: 10, color: ColorManager.grey),
+                ),
+              ),
             ],
           ),
         ),
