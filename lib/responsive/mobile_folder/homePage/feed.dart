@@ -208,6 +208,10 @@ class _GlcFeedState extends State<GlcFeed> {
                             ),
                             onPressed: () {
                               feedPost(user.uid, user.username, user.photoUrl);
+                              setState(() {
+                                _descriptionController.text = '';
+                                _postUpload == null;
+                              });
                               Navigator.of(context).pop();
                             },
                             child: const Text(StringManager.post,

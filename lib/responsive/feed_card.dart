@@ -2,14 +2,28 @@
 
 import 'package:flutter/material.dart';
 import 'package:god_life_conversations/resources/color_manager.dart';
+import 'package:god_life_conversations/resources/firestore_methods.dart';
+import 'package:god_life_conversations/responsive/mobile_folder/homePage/comment.dart';
 import 'package:intl/intl.dart';
+import 'package:provider/provider.dart';
 
-class FeedCard extends StatelessWidget {
+import '../models/user.dart';
+import '../providers/user_provider.dart';
+import 'like_animation.dart';
+
+class FeedCard extends StatefulWidget {
   final snap;
   const FeedCard({super.key, required this.snap});
 
   @override
+  State<FeedCard> createState() => _FeedCardState();
+}
+
+class _FeedCardState extends State<FeedCard> {
+  bool isLikeAnimating = false;
+  @override
   Widget build(BuildContext context) {
+    final User user = Provider.of<UserProvider>(context).getUser;
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -36,7 +50,8 @@ class FeedCard extends StatelessWidget {
                           padding: const EdgeInsets.only(left: 5),
                           child: CircleAvatar(
                             radius: 18,
-                            backgroundImage: NetworkImage(snap['profileimage']),
+                            backgroundImage:
+                                NetworkImage(widget.snap['profileimage']),
                           ),
                         ),
                         Padding(
@@ -47,7 +62,7 @@ class FeedCard extends StatelessWidget {
                               ConstrainedBox(
                                 constraints: const BoxConstraints(
                                     minWidth: 0, maxWidth: 120),
-                                child: Text(snap['username'],
+                                child: Text(widget.snap['username'],
                                     style: const TextStyle(
                                         fontWeight: FontWeight.bold,
                                         overflow: TextOverflow.ellipsis)),
@@ -111,35 +126,89 @@ class FeedCard extends StatelessWidget {
         ),
 
         // Feed Image section
-        SizedBox(
-          width: double.infinity,
-          child: Image.network(
-            snap['postUrl'],
-          ),
+        GestureDetector(
+          onDoubleTap: () async {
+            // await FirestoreMethods().likePost();
+            await FirestoreMethods().likePost(
+              widget.snap['postId'],
+              user.uid,
+              widget.snap['likes'],
+            );
+            setState(() {
+              isLikeAnimating = true;
+            });
+          },
+          child: Stack(alignment: Alignment.center, children: [
+            SizedBox(
+              width: double.infinity,
+              child: Image.network(
+                widget.snap['postUrl'],
+              ),
+            ),
+            AnimatedOpacity(
+              opacity: isLikeAnimating ? 1 : 0,
+              duration: const Duration(milliseconds: 100),
+              child: LikeAnimation(
+                isAnimating: isLikeAnimating,
+                duration: const Duration(microseconds: 400),
+                onEnd: () {
+                  setState(() {
+                    isLikeAnimating = false;
+                  });
+                },
+                child: const Icon(
+                  Icons.favorite,
+                  color: Colors.red,
+                  size: 150,
+                ),
+              ),
+            )
+          ]),
         ),
 
         // Feed Image comment section
         Row(
-          children: const [
-            IconButton(
-              onPressed: null,
-              icon: Icon(
-                Icons.favorite_outline,
+          children: [
+            LikeAnimation(
+              isAnimating: widget.snap['likes'].contains(user.uid),
+              smallLike: true,
+              child: IconButton(
+                onPressed: () async {
+                  await FirestoreMethods().likePost(
+                    widget.snap['postId'],
+                    user.uid,
+                    widget.snap['likes'],
+                  );
+                },
+                icon: widget.snap['likes'].contains(user.uid)
+                    ? const Icon(
+                        Icons.favorite,
+                        color: Colors.red,
+                      )
+                    : const Icon(
+                        Icons.favorite_outline,
+                      ),
               ),
             ),
             IconButton(
-              onPressed: null,
-              icon: Icon(
+              onPressed: () => Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context) => Comments(
+                    snap: widget.snap,
+                  ),
+                ),
+              ),
+              icon: const Icon(
                 Icons.mode_comment_outlined,
               ),
             ),
-            IconButton(
+            const IconButton(
               onPressed: null,
               icon: Icon(
                 Icons.speed_outlined,
               ),
             ),
-            Expanded(
+            const Expanded(
               child: Align(
                 alignment: Alignment.bottomRight,
                 child: IconButton(
@@ -165,7 +234,7 @@ class FeedCard extends StatelessWidget {
                       fontWeight: FontWeight.w800,
                     ),
                 child: Text(
-                  '${snap['likes'].length} likes',
+                  '${widget.snap['likes'].length} likes',
                   style: Theme.of(context).textTheme.bodyText2,
                 ),
               ),
@@ -180,21 +249,21 @@ class FeedCard extends StatelessWidget {
                     style: const TextStyle(color: ColorManager.black),
                     children: [
                       TextSpan(
-                        text: snap['username'],
+                        text: widget.snap['username'],
                         style: const TextStyle(fontWeight: FontWeight.bold),
                       ),
-                      const TextSpan(
-                        text: ' ',
-                      ),
                       TextSpan(
-                        text: snap['description'],
+                        text: ' ${widget.snap['description']}',
                       ),
                     ],
                   ),
                 ),
               ),
               InkWell(
-                onTap: null,
+                onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => Comments(
+                          snap: widget.snap['postId'].toString(),
+                        ))),
                 child: Container(
                   padding: const EdgeInsets.symmetric(vertical: 4),
                   child: const Text(
@@ -209,8 +278,8 @@ class FeedCard extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.symmetric(vertical: 4),
                 child: Text(
-                  DateFormat.yMMMd().format(
-                    snap['datePublished'].toDate(),
+                  DateFormat.MMMd().format(
+                    widget.snap['datePublished'].toDate(),
                   ),
                   style:
                       const TextStyle(fontSize: 10, color: ColorManager.grey),
