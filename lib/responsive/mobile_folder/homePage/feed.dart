@@ -120,7 +120,11 @@ class _GlcFeedState extends State<GlcFeed> {
           //           : const Padding(padding: EdgeInsets.only(bottom: 5)),
           //       const FeedCard(),
           StreamBuilder(
-        stream: FirebaseFirestore.instance.collection('feedposts').snapshots(),
+        stream: FirebaseFirestore.instance
+            .collection('feedposts')
+            .
+            // orderBy('datePublished', descending: true),
+            snapshots(),
         builder: (context,
             AsyncSnapshot<QuerySnapshot<Map<String, dynamic>>> snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {

@@ -1,9 +1,11 @@
 // ignore_for_file: prefer_typing_uninitialized_variables
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:god_life_conversations/resources/color_manager.dart';
 import 'package:god_life_conversations/resources/firestore_methods.dart';
 import 'package:god_life_conversations/responsive/mobile_folder/homePage/comment.dart';
+import 'package:god_life_conversations/utilities/utils.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
@@ -21,6 +23,28 @@ class FeedCard extends StatefulWidget {
 
 class _FeedCardState extends State<FeedCard> {
   bool isLikeAnimating = false;
+  int commentLength = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    getComments();
+  }
+
+  void getComments() async {
+    try {
+      QuerySnapshot snap = await FirebaseFirestore.instance
+          .collection('feedposts')
+          .doc(widget.snap['postId'])
+          .collection('comments')
+          .get();
+      commentLength = snap.docs.length;
+    } catch (e) {
+      showSnackBar(e.toString(), context);
+    }
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     final User user = Provider.of<UserProvider>(context).getUser;
@@ -266,11 +290,20 @@ class _FeedCardState extends State<FeedCard> {
                         ))),
                 child: Container(
                   padding: const EdgeInsets.symmetric(vertical: 4),
-                  child: const Text(
-                    'View all 4567 comments',
-                    style: TextStyle(
-                      fontSize: 14,
-                      // color: ColorManager.grey,
+                  child: InkWell(
+                    onTap: () => Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => Comments(
+                          snap: widget.snap,
+                        ),
+                      ),
+                    ),
+                    child: Text(
+                      'View all $commentLength comments',
+                      style: const TextStyle(
+                        fontSize: 14,
+                        // color: ColorManager.grey,
+                      ),
                     ),
                   ),
                 ),
