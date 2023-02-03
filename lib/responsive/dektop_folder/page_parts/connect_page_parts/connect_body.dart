@@ -198,7 +198,7 @@ class DesktopConnectBody extends StatelessWidget {
                             child: Column(
                               children: [
                                 NeumorphicIcon(
-                                  Icons.whatsapp,
+                                  Icons.wechat,
                                   size: 40,
                                   style: const NeumorphicStyle(
                                       color: ColorManager.black,

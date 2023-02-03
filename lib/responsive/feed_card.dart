@@ -124,7 +124,11 @@ class _FeedCardState extends State<FeedCard> {
                                   ]
                                       .map(
                                         (e) => InkWell(
-                                          onTap: null,
+                                          onTap: () async {
+                                            FirestoreMethods().deletePost(
+                                                widget.snap['postId']);
+                                            Navigator.of(context).pop();
+                                          },
                                           child: Container(
                                             padding: const EdgeInsets.symmetric(
                                                 vertical: 12, horizontal: 16),
@@ -171,10 +175,10 @@ class _FeedCardState extends State<FeedCard> {
             ),
             AnimatedOpacity(
               opacity: isLikeAnimating ? 1 : 0,
-              duration: const Duration(milliseconds: 100),
+              duration: const Duration(milliseconds: 300),
               child: LikeAnimation(
                 isAnimating: isLikeAnimating,
-                duration: const Duration(microseconds: 400),
+                duration: const Duration(microseconds: 600),
                 onEnd: () {
                   setState(() {
                     isLikeAnimating = false;
@@ -182,7 +186,7 @@ class _FeedCardState extends State<FeedCard> {
                 },
                 child: const Icon(
                   Icons.favorite,
-                  color: Colors.red,
+                  color: Colors.white,
                   size: 150,
                 ),
               ),

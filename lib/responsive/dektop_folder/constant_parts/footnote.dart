@@ -153,7 +153,7 @@ class FootNote extends StatelessWidget {
                         ),
                         Padding(
                           padding: const EdgeInsets.all(8),
-                          child: NeumorphicIcon(Icons.whatsapp,
+                          child: NeumorphicIcon(Icons.wechat,
                               size: 25,
                               style: const NeumorphicStyle(
                                   color: ColorManager.black,
