@@ -3,10 +3,10 @@ class FeedPost {
   final String uid;
   final String username;
   final String postId;
-  final datePublished;
+  final DateTime datePublished;
   final String postUrl;
   final String profileimage;
-  final likes;
+  final List likes;
 
   const FeedPost({
     required this.description,

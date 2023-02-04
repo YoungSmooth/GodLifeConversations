@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:god_life_conversations/responsive/mobile_folder/connectPage/mobile_connect_Page.dart';
+import 'package:god_life_conversations/responsive/mobile_folder/connectPage/mobile_connect_page.dart';
 import '../../resources/color_manager.dart';
 import '../dektop_folder/page_parts/events_page_parts/events_body.dart';
 import 'components/glass_box.dart';

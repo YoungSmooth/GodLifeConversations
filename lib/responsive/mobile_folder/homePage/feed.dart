@@ -1,4 +1,4 @@
-// ignore_for_file: depend_on_referenced_packages
+// ignore_for_file: depend_on_referenced_packages, use_build_context_synchronously
 
 import 'dart:io';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -111,20 +111,11 @@ class _GlcFeedState extends State<GlcFeed> {
         );
 
     return Scaffold(
-      body:
-          //  isLoading
-          //           ? const LinearProgressIndicator(
-          //               backgroundColor: ColorManager.blue,
-          //               color: ColorManager.white,
-          //             )
-          //           : const Padding(padding: EdgeInsets.only(bottom: 5)),
-          //       const FeedCard(),
-          StreamBuilder(
+      body: StreamBuilder(
         stream: FirebaseFirestore.instance
             .collection('feedposts')
-            .
-            // orderBy('datePublished', descending: true),
-            snapshots(),
+            .orderBy('datePublished', descending: true)
+            .snapshots(),
         builder: (context,
             AsyncSnapshot<QuerySnapshot<Map<String, dynamic>>> snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
@@ -136,7 +127,7 @@ class _GlcFeedState extends State<GlcFeed> {
           return ListView.builder(
             itemCount: snapshot.data!.docs.length,
             itemBuilder: (context, index) => FeedCard(
-              snap: snapshot.data!.docs[index].data(),
+              snap: querySnapshot!.docs[index].data(),
             ),
           );
         },

@@ -1,14 +1,13 @@
+// ignore_for_file: prefer_typing_uninitialized_variables
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:god_life_conversations/resources/firestore_methods.dart';
 import 'package:god_life_conversations/responsive/comment_card.dart';
 import 'package:provider/provider.dart';
 
 import '../../../models/user.dart';
 import '../../../providers/user_provider.dart';
-import '../../../resources/color_manager.dart';
 
 class Comments extends StatefulWidget {
   final snap;
@@ -75,7 +74,7 @@ class _CommentsState extends State<Comments> {
                 children: [
                   CircleAvatar(
                     backgroundImage: NetworkImage(
-                      widget.snap['profilePic'].toString(),
+                      widget.snap['profileimage'].toString(),
                     ),
                     radius: 18,
                   ),
@@ -109,7 +108,7 @@ class _CommentsState extends State<Comments> {
               ),
             ),
             // actual comments ,
-            Container(
+            SizedBox(
               height: 400,
               child: StreamBuilder(
                 stream: FirebaseFirestore.instance

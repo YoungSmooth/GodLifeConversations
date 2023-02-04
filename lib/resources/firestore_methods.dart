@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:god_life_conversations/models/feed_post.dart';
 import 'package:uuid/uuid.dart';

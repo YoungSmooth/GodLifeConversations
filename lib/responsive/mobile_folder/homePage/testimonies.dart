@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class HomePageInspirations extends StatefulWidget {
-  const HomePageInspirations({super.key});
+class Testimonies extends StatefulWidget {
+  const Testimonies({super.key});
 
   @override
-  State<HomePageInspirations> createState() => _HomePageInspirationsState();
+  State<Testimonies> createState() => _TestimoniesState();
 }
 
-class _HomePageInspirationsState extends State<HomePageInspirations> {
+class _TestimoniesState extends State<Testimonies> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

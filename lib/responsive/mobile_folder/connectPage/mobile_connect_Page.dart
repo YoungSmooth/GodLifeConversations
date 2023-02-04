@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:god_life_conversations/utilities.dart/colors.dart';
 
