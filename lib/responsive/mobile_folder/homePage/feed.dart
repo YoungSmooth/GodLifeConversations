@@ -156,17 +156,17 @@ class _GlcFeedState extends State<GlcFeed> {
                       child: ListView(
                         controller: controller,
                         children: <Widget>[
-                          CircleAvatar(
-                            radius: 40,
-                            backgroundColor: mainColor,
-                            foregroundImage: NetworkImage(
-                              user.photoUrl,
-                            ),
-                          ),
+                          // CircleAvatar(
+                          //   radius: 40,
+                          //   backgroundColor: mainColor,
+                          //   foregroundImage: NetworkImage(
+                          //     user.photoUrl,
+                          //   ),
+                          // ),
                           const SizedBox(height: 10),
                           Center(
                             child: SizedBox(
-                              width: 200,
+                              width: MediaQuery.of(context).size.width * 0.3,
                               height: 200,
                               child: Container(
                                 decoration: BoxDecoration(
@@ -177,7 +177,7 @@ class _GlcFeedState extends State<GlcFeed> {
                                         _postUpload == null
                                             // ignore: unnecessary_cast
                                             ? const NetworkImage(
-                                                'https://images.unsplash.com/photo-1617791160536-598cf32026fb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHRoaW5raW5nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60',
+                                                'http://images.unsplash.com/photo-1617791160536-598cf32026fb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHRoaW5raW5nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60',
                                               ) as ImageProvider
                                             // ignore: unnecessary_cast
                                             : FileImage(_postUpload!)
@@ -187,7 +187,7 @@ class _GlcFeedState extends State<GlcFeed> {
                               ),
                             ),
                           ),
-                          const SizedBox(height: 20),
+                          const SizedBox(height: 10),
                           SizedBox(
                             width: MediaQuery.of(context).size.width * 0.3,
                             child: TextFieldInputt(

@@ -12,6 +12,7 @@ import 'package:provider/provider.dart';
 import '../models/user.dart';
 import '../providers/user_provider.dart';
 import 'like_animation.dart';
+import 'mobile_folder/profilePage/profile_page.dart';
 
 class FeedCard extends StatefulWidget {
   final snap;
@@ -72,10 +73,19 @@ class _FeedCardState extends State<FeedCard> {
                       children: [
                         Padding(
                           padding: const EdgeInsets.only(left: 5),
-                          child: CircleAvatar(
-                            radius: 18,
-                            backgroundImage:
-                                NetworkImage(widget.snap['profileimage']),
+                          child: InkWell(
+                            onTap: () => Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (context) => ProfilePage(
+                                  uid: widget.snap['uid'],
+                                ),
+                              ),
+                            ),
+                            child: CircleAvatar(
+                              radius: 18,
+                              backgroundImage:
+                                  NetworkImage(widget.snap['profileimage']),
+                            ),
                           ),
                         ),
                         Padding(
@@ -86,10 +96,19 @@ class _FeedCardState extends State<FeedCard> {
                               ConstrainedBox(
                                 constraints: const BoxConstraints(
                                     minWidth: 0, maxWidth: 120),
-                                child: Text(widget.snap['username'],
-                                    style: const TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        overflow: TextOverflow.ellipsis)),
+                                child: InkWell(
+                                  onTap: () => Navigator.of(context).push(
+                                    MaterialPageRoute(
+                                      builder: (context) => ProfilePage(
+                                        uid: widget.snap['uid'],
+                                      ),
+                                    ),
+                                  ),
+                                  child: Text(widget.snap['username'],
+                                      style: const TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          overflow: TextOverflow.ellipsis)),
+                                ),
                               ),
                               const Text(
                                 'Usher',
@@ -272,18 +291,24 @@ class _FeedCardState extends State<FeedCard> {
                   top: 8,
                   bottom: 8,
                 ),
-                child: RichText(
-                  text: TextSpan(
-                    style: const TextStyle(color: ColorManager.black),
-                    children: [
-                      TextSpan(
-                        text: widget.snap['username'],
-                        style: const TextStyle(fontWeight: FontWeight.bold),
-                      ),
-                      TextSpan(
-                        text: ' ${widget.snap['description']}',
-                      ),
-                    ],
+                child: InkWell(
+                  onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => ProfilePage(
+                            uid: widget.snap['uid'],
+                          ))),
+                  child: RichText(
+                    text: TextSpan(
+                      style: const TextStyle(color: ColorManager.black),
+                      children: [
+                        TextSpan(
+                          text: widget.snap['username'],
+                          style: const TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        TextSpan(
+                          text: ' ${widget.snap['description']}',
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
