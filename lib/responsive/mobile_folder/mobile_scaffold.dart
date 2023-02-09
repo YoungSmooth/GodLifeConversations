@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:god_life_conversations/responsive/mobile_folder/connectPage/mobile_connect_page.dart';
 import '../../resources/color_manager.dart';
@@ -19,13 +20,15 @@ class MobileScaffold extends StatefulWidget {
 class _MobileScaffoldState extends State<MobileScaffold> {
   int _currentBottomIndex = 0;
 
-  final _screens = const [
-    MobileHomePage(),
-    EventsBody(),
-    ServePage(),
-    GivePage(),
-    MobileConnectPage(),
-    ProfilePage()
+  final _screens = [
+    const MobileHomePage(),
+    const EventsBody(),
+    const ServePage(),
+    const GivePage(),
+    const MobileConnectPage(),
+    ProfilePage(
+      uid: FirebaseAuth.instance.currentUser!.uid,
+    )
   ];
 
   void _bottomIndexChange(int? index) {
