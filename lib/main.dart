@@ -47,9 +47,7 @@ class MyApp extends StatelessWidget {
         theme: lightTheme(),
         darkTheme: darkTheme(),
         debugShowCheckedModeBanner: false,
-        home:
-            // const Landingpage()
-            StreamBuilder(
+        home: StreamBuilder(
           stream: FirebaseAuth.instance.authStateChanges(),
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.active) {

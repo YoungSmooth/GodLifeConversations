@@ -48,6 +48,15 @@ class _LoginScreenState extends State<LoginScreen> {
           ),
         ),
       );
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute(
+          builder: (context) => const ResponsiveLayout(
+            mobileScaffold: MobileScaffold(),
+            tabletScaffold: TabletScaffold(),
+            desktopScaffld: DesktopScaffold(),
+          ),
+        ),
+      );
     } else {
       showSnackBar(res, context);
       // showSnackBar('Wrong credentials', context);

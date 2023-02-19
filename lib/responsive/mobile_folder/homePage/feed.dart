@@ -151,18 +151,16 @@ class _GlcFeedState extends State<GlcFeed> {
                         top: Radius.circular(20),
                       ),
                     ),
-                    padding: const EdgeInsets.all(16),
+                    padding: EdgeInsets.only(
+                      top: 16,
+                      left: 16,
+                      right: 16,
+                      bottom: MediaQuery.of(context).viewInsets.bottom + 10,
+                    ),
                     child: Center(
                       child: ListView(
                         controller: controller,
                         children: <Widget>[
-                          // CircleAvatar(
-                          //   radius: 40,
-                          //   backgroundColor: mainColor,
-                          //   foregroundImage: NetworkImage(
-                          //     user.photoUrl,
-                          //   ),
-                          // ),
                           const SizedBox(height: 10),
                           Center(
                             child: SizedBox(
@@ -171,17 +169,14 @@ class _GlcFeedState extends State<GlcFeed> {
                               child: Container(
                                 decoration: BoxDecoration(
                                   image: DecorationImage(
-                                    image:
-                                        // MemoryImage(_postUpload!),
-
-                                        _postUpload == null
-                                            // ignore: unnecessary_cast
-                                            ? const NetworkImage(
-                                                'http://images.unsplash.com/photo-1617791160536-598cf32026fb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHRoaW5raW5nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60',
-                                              ) as ImageProvider
-                                            // ignore: unnecessary_cast
-                                            : FileImage(_postUpload!)
-                                                as ImageProvider,
+                                    image: _postUpload == null
+                                        // ignore: unnecessary_cast
+                                        ? const NetworkImage(
+                                            'http://images.unsplash.com/photo-1617791160536-598cf32026fb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHRoaW5raW5nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60',
+                                          ) as ImageProvider
+                                        // ignore: unnecessary_cast
+                                        : FileImage(_postUpload!)
+                                            as ImageProvider,
                                   ),
                                 ),
                               ),
