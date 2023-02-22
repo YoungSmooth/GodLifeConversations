@@ -172,6 +172,7 @@ class _GlcFeedState extends State<GlcFeed> {
                                     image: _postUpload == null
                                         // ignore: unnecessary_cast
                                         ? const NetworkImage(
+                                            scale: 1,
                                             'http://images.unsplash.com/photo-1617791160536-598cf32026fb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHRoaW5raW5nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60',
                                           ) as ImageProvider
                                         // ignore: unnecessary_cast
