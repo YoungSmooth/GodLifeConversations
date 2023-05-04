@@ -39,6 +39,7 @@ class _LoginScreenState extends State<LoginScreen> {
         email: _emailController.text, password: _passwordController.text);
 
     if (res == 'success') {
+      Navigator.of(context).pop;
       Navigator.of(context).push(
         MaterialPageRoute(
           builder: (context) => const ResponsiveLayout(
@@ -48,22 +49,14 @@ class _LoginScreenState extends State<LoginScreen> {
           ),
         ),
       );
-      Navigator.of(context).pushReplacement(
-        MaterialPageRoute(
-          builder: (context) => const ResponsiveLayout(
-            mobileScaffold: MobileScaffold(),
-            tabletScaffold: TabletScaffold(),
-            desktopScaffld: DesktopScaffold(),
-          ),
-        ),
-      );
     } else {
-      showSnackBar(res, context);
-      // showSnackBar('Wrong credentials', context);
+      // showSnackBar(res, context);
+      showSnackBar('Wrong credentials', context);
       setState(() {
         isLoading = false;
       });
     }
+    return null;
   }
 
   void navigateToSignUp() {

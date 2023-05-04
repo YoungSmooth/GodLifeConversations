@@ -35,15 +35,15 @@ class MobileHomePage extends StatelessWidget {
                     isLoop: true,
                     children: [
                       Image.network(
-                        'http://images.unsplash.com/photo-1597524678053-5e6fef52d8a3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGxhdWdodGVyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60',
+                        'https://images.unsplash.com/photo-1597524678053-5e6fef52d8a3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGxhdWdodGVyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60',
                         fit: BoxFit.cover,
                       ),
                       Image.network(
-                        'http://guardian.ng/wp-content/uploads/2022/09/Pastor-Chris-1424x802.jpg',
+                        'https://plus.unsplash.com/premium_photo-1663045894431-3e8745adff69?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cGFzdG9yfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60',
                         fit: BoxFit.cover,
                       ),
                       Image.network(
-                        'http://plus.unsplash.com/premium_photo-1661265914030-b06f820680a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nzh8fGxhdWdodGVyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60',
+                        'https://plus.unsplash.com/premium_photo-1661265914030-b06f820680a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nzh8fGxhdWdodGVyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60',
                         fit: BoxFit.cover,
                       ),
                     ],
@@ -109,30 +109,30 @@ class MobileHomePage extends StatelessWidget {
                         indicatorColor: Colors.grey,
                         tabs: [
                           Tab(
-                            text: 'Feed',
-                          ),
-                          Tab(
                             text: 'Testimonies',
                           ),
+                          // Tab(
+                          //   text: 'Testimonies',
+                          // ),
                           Tab(
                             text: 'Messages',
                           ),
-                          Tab(
-                            text: 'Chat',
-                          ),
-                          Tab(
-                            text: 'Search',
-                          ),
+                          // Tab(
+                          //   text: 'Chat',
+                          // ),
+                          // Tab(
+                          //   text: 'Search',
+                          // ),
                         ],
                       ),
                       Expanded(
                         child: TabBarView(
                           children: [
                             GlcFeed(),
-                            Testimonies(),
+                            // Testimonies(),
                             Messages(),
-                            Chat(),
-                            SearchScreen(),
+                            // Chat(),
+                            // SearchScreen(),
                           ],
                         ),
                       )

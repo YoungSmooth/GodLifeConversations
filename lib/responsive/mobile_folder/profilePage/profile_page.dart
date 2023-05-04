@@ -253,23 +253,6 @@ class _ProfilePageState extends State<ProfilePage> {
                                     color: mainColor),
                               ),
                               const Text(
-                                'Posts',
-                                style: TextStyle(fontSize: 16),
-                              )
-                            ],
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: const [
-                              Text(
-                                '50',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 16,
-                                    color: mainColor),
-                              ),
-                              Text(
                                 'Testimonies',
                                 style: TextStyle(fontSize: 16),
                               )
@@ -346,10 +329,10 @@ class _ProfilePageState extends State<ProfilePage> {
                               indicatorColor: Colors.grey,
                               tabs: [
                                 Tab(
-                                  text: 'Posts',
+                                  icon: Icon(Icons.grid_view_outlined),
                                 ),
                                 Tab(
-                                  text: 'Testimonies',
+                                  icon: Icon(Icons.view_list_outlined),
                                 ),
                               ],
                             ),
@@ -386,7 +369,35 @@ class _ProfilePageState extends State<ProfilePage> {
                                           );
                                         }),
                                   ),
-                                  const ProfileTestimonies(),
+                                  Scaffold(
+                                    body: FutureBuilder(
+                                        future: FirebaseFirestore.instance
+                                            .collection('feedposts')
+                                            .where('uid', isEqualTo: widget.uid)
+                                            .get(),
+                                        builder: (context, snapshot) {
+                                          if (!snapshot.hasData) {
+                                            return const Center(
+                                                child:
+                                                    CircularProgressIndicator());
+                                          }
+                                          return StaggeredGridView.countBuilder(
+                                            crossAxisCount: 3,
+                                            itemCount:
+                                                (snapshot.data! as dynamic)
+                                                    .docs
+                                                    .length,
+                                            itemBuilder: (context, index) =>
+                                                Image.network((snapshot.data
+                                                        as dynamic)
+                                                    .docs[index]['postUrl']),
+                                            staggeredTileBuilder: (index) =>
+                                                const StaggeredTile.fit(1),
+                                            mainAxisSpacing: 8,
+                                            crossAxisSpacing: 8,
+                                          );
+                                        }),
+                                  ),
                                 ],
                               ),
                             )

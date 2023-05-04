@@ -39,8 +39,8 @@ class HeaderBackground extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
               Image.network(
-                'https://guardian.ng/wp-content/uploads/2022/09/Pastor-Chris-1424x802.jpg',
-                fit: BoxFit.cover,
+                'https://plus.unsplash.com/premium_photo-1663045894431-3e8745adff69?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cGFzdG9yfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60',
+                fit: BoxFit.fitWidth,
               ),
               Image.network(
                 'https://plus.unsplash.com/premium_photo-1661265914030-b06f820680a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nzh8fGxhdWdodGVyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60',
@@ -70,8 +70,8 @@ class HeaderBackground extends StatelessWidget {
         Positioned(
           right: 13,
           top: 50,
-          child: SizedBox(
-            width: 520,
+          child: FractionallySizedBox(
+            // widthFactor: ,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
