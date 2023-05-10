@@ -40,7 +40,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
     if (res == 'success') {
       Navigator.of(context).pop;
-      Navigator.of(context).push(
+      Navigator.of(context).pushReplacement(
         MaterialPageRoute(
           builder: (context) => const ResponsiveLayout(
             mobileScaffold: MobileScaffold(),
@@ -50,8 +50,8 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
       );
     } else {
-      // showSnackBar(res, context);
-      showSnackBar('Wrong credentials', context);
+      showSnackBar(res, context);
+      // showSnackBar('Wrong credentials', context);
       setState(() {
         isLoading = false;
       });

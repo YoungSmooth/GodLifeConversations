@@ -3,7 +3,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:god_life_conversations/resources/auth_methods.dart';
-import 'package:god_life_conversations/responsive/mobile_folder/profilePage/profile_testimonies.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:blur/blur.dart';
 import 'package:god_life_conversations/utilities.dart/colors.dart';
@@ -46,7 +45,7 @@ class _ProfilePageState extends State<ProfilePage> {
       var postSnap = await FirebaseFirestore.instance
           .collection('feedposts')
           // .where('uid', isEqualTo: FirebaseAuth.instance.currentUser!.uid)
-          .where('uid', isEqualTo: userData['uid'])
+          .where('uid', isEqualTo: userData['uid']!)
           .get();
       profilePostLength = postSnap.docs.length;
 
@@ -191,9 +190,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                 const SizedBox(height: 10),
                                 Padding(
                                   padding: const EdgeInsets.only(left: 40),
-                                  child: Text(
-                                      // userData['username']
-                                      userData['username'],
+                                  child: Text(userData['username'],
                                       style: (GoogleFonts.pacifico(
                                           fontSize: 40,
                                           color: Colors.white,
@@ -307,7 +304,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                   ),
                                 ),
                               ),
-                              const Text('Ushering'),
+                              const Text('Select Department'),
                             ],
                           ),
                         ],

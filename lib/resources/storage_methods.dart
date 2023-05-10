@@ -25,4 +25,21 @@ class StorageMethods {
     String downloadUrl = await snapshot.ref.getDownloadURL();
     return downloadUrl;
   }
+
+  // Future<String> uploadDefaultImageToStorage(
+  //     String profilePic, String link) async {
+  //   Reference ref =
+  //       _storage.ref().child(profilePic).child(_auth.currentUser!.uid);
+  //   UploadTask uploadTask = ref.putString(link,
+  //       format: PutStringFormat.dataUrl,
+  //       metadata: SettableMetadata(
+  //         contentType: "image/jpeg",
+  //       ));
+  //   TaskSnapshot snapshot = await uploadTask;
+  //   String downloadUrl = snapshot.ref.getDownloadURL().toString();
+  //   return downloadUrl;
+  //   // TaskSnapshot snapshot = await uploadTask;
+  //   // String downloadUrl = await snapshot.ref.getDownloadURL();
+  //   // return downloadUrl;
+  // }
 }

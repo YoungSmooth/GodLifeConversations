@@ -39,7 +39,8 @@ class _ResponsiveLayoutState extends State<ResponsiveLayout> {
         if (constraints.maxWidth < 500) {
           return widget.mobileScaffold;
         } else if (constraints.maxWidth < 1000) {
-          return widget.tabletScaffold;
+          return widget.mobileScaffold;
+          // return widget.tabletScaffold;
         } else {
           return widget.desktopScaffld;
         }

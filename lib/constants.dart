@@ -73,3 +73,36 @@ Container sideColumn = Container(
     ],
   ),
 );
+
+InputDecoration kformDecoration = const InputDecoration(
+  icon: Icon(Icons.tag_faces_rounded),
+  iconColor: Colors.blue,
+  labelStyle: TextStyle(
+    fontSize: 14,
+  ),
+  focusColor: Colors.white,
+  // contentPadding: EdgeInsets.symmetric(vertical: 5, horizontal: 8),
+  enabledBorder: OutlineInputBorder(
+    borderRadius: BorderRadius.all(
+      Radius.circular(20.0),
+    ),
+  ),
+  filled: true,
+  fillColor: Colors.white,
+  label: Padding(
+    padding: EdgeInsets.only(left: 10),
+    child: Text(
+      'Full Name',
+    ),
+  ),
+  focusedBorder: OutlineInputBorder(
+      borderRadius: BorderRadius.all(
+        Radius.circular(20.0),
+      ),
+      gapPadding: 15),
+  border: OutlineInputBorder(
+      borderRadius: BorderRadius.all(
+        Radius.circular(20.0),
+      ),
+      gapPadding: 2),
+);

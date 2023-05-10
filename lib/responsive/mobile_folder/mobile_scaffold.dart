@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:god_life_conversations/responsive/mobile_folder/connectPage/mobile_connect_page.dart';
+import 'package:god_life_conversations/responsive/mobile_folder/mobile_screens/profile_form_screen.dart';
 import '../../resources/color_manager.dart';
 import '../dektop_folder/page_parts/events_page_parts/events_body.dart';
 import 'components/glass_box.dart';
@@ -22,7 +23,8 @@ class _MobileScaffoldState extends State<MobileScaffold> {
 
   final _screens = [
     const MobileHomePage(),
-    const EventsBody(),
+    const ProfileDetailsForm(),
+    // const EventsBody(),
     const ServePage(),
     const GivePage(),
     const MobileConnectPage(),

@@ -3,12 +3,14 @@ import 'package:god_life_conversations/resources/auth_methods.dart';
 import '../models/user.dart';
 
 class UserProvider with ChangeNotifier {
-  User _user = const User(
+  User _user = User(
+    fullName: '',
     email: '',
     uid: '',
     photoUrl: '',
     username: '',
     bio: '',
+    department: '',
     followers: [],
     following: [],
   );

@@ -3,12 +3,10 @@
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
-import 'package:god_life_conversations/responsive/mobile_folder/homePage/search.dart';
 import 'package:god_life_conversations/utilities.dart/colors.dart';
 import '../../dektop_folder/constant_parts/constants.dart';
-import 'chat.dart';
+import '../mobile_screens/profile_form_screen.dart';
 import 'feed.dart';
-import 'testimonies.dart';
 import 'message.dart';
 import 'package:blur/blur.dart';
 
@@ -98,7 +96,7 @@ class MobileHomePage extends StatelessWidget {
               // color: Colors.blueGrey,
               height: 670,
               child: DefaultTabController(
-                length: 5,
+                length: 2,
                 child: Scaffold(
                   // extendBody: true,
                   body: Column(
