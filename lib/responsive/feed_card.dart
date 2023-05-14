@@ -9,7 +9,8 @@ import 'package:god_life_conversations/utilities/utils.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
-import '../models/user.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import '../models/user.dart' as model;
 import '../providers/user_provider.dart';
 import 'like_animation.dart';
 import 'mobile_folder/profilePage/profile_page.dart';
@@ -25,7 +26,7 @@ class FeedCard extends StatefulWidget {
 class _FeedCardState extends State<FeedCard> {
   bool isLikeAnimating = false;
   int commentLength = 0;
-
+  final FirebaseAuth _auth = FirebaseAuth.instance;
   @override
   void initState() {
     super.initState();
@@ -48,7 +49,7 @@ class _FeedCardState extends State<FeedCard> {
 
   @override
   Widget build(BuildContext context) {
-    final User user = Provider.of<UserProvider>(context).getUser;
+    final model.User user = Provider.of<UserProvider>(context).getUser;
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -178,7 +179,7 @@ class _FeedCardState extends State<FeedCard> {
             // await FirestoreMethods().likePost();
             await FirestoreMethods().likePost(
               widget.snap['postId'],
-              user.uid,
+              _auth.currentUser!.uid,
               widget.snap['likes'],
             );
             setState(() {
@@ -217,17 +218,18 @@ class _FeedCardState extends State<FeedCard> {
         Row(
           children: [
             LikeAnimation(
-              isAnimating: widget.snap['likes'].contains(user.uid),
+              isAnimating:
+                  widget.snap['likes'].contains(_auth.currentUser!.uid),
               smallLike: true,
               child: IconButton(
                 onPressed: () async {
                   await FirestoreMethods().likePost(
                     widget.snap['postId'],
-                    user.uid,
+                    _auth.currentUser!.uid,
                     widget.snap['likes'],
                   );
                 },
-                icon: widget.snap['likes'].contains(user.uid)
+                icon: widget.snap['likes'].contains(_auth.currentUser!.uid)
                     ? const Icon(
                         Icons.favorite,
                         color: Colors.red,

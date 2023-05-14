@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:god_life_conversations/models/roles_model.dart';
 
+import '../models/gender.dart';
+
 const departmentRoles = {
   Roles.usher: Role(
     'Usher',
@@ -18,4 +20,9 @@ const departmentRoles = {
     'Other',
     Color.fromARGB(255, 0, 208, 255),
   ),
+};
+
+const selectGender = {
+  Gender.male: 'Male',
+  Gender.female: 'Female',
 };

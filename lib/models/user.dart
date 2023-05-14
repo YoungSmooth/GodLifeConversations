@@ -1,7 +1,7 @@
 class User {
   String fullName;
-  String email;
-  String uid;
+  // String email;
+  // String uid;
   String photoUrl;
   String username;
   String bio;
@@ -11,8 +11,8 @@ class User {
 
   User({
     required this.fullName,
-    required this.email,
-    required this.uid,
+    // required this.email,
+    // required this.uid,
     required this.photoUrl,
     required this.username,
     required this.bio,
@@ -23,8 +23,8 @@ class User {
 
   Map<String, dynamic> toJson() => {
         'fullName': fullName,
-        'email': email,
-        'uid': uid,
+        // 'email': email,
+        // 'uid': uid,
         'photoUrl': photoUrl,
         'username': username,
         'bio': bio,
@@ -39,8 +39,8 @@ class User {
 
     return User(
       fullName: snapshot['fullName'],
-      email: snapshot['email'],
-      uid: snapshot['uid'],
+      // email: snapshot['email'],
+      // uid: snapshot['uid'],
       photoUrl: snapshot['photoUrl'],
       username: snapshot['username'],
       bio: snapshot['bio'],

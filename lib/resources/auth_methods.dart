@@ -1,9 +1,10 @@
 // ignore_for_file: unused_local_variable, unnecessary_null_comparison, depend_on_referenced_packages
+import 'dart:io';
+
 import 'package:god_life_conversations/resources/storage_methods.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:god_life_conversations/models/user.dart' as model;
-import 'package:god_life_conversations/resources/string_manager.dart';
 
 class AuthMethods {
   final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -27,8 +28,51 @@ class AuthMethods {
         // register user
         UserCredential cred = await _auth.createUserWithEmailAndPassword(
             email: email, password: password);
+        await _firestore.collection('users').doc(cred.user!.uid).set(
+          {
+            'email': email,
+            'uid': cred.user!.uid,
+          },
+        );
         res = 'success';
       }
+    } catch (err) {
+      res = err.toString();
+    }
+    return res;
+  }
+
+  // update user profile
+  Future<String> updateUserProfileDetails({
+    required File image,
+    required String fullname,
+    required String bio,
+    required String username,
+    required String department,
+  }) async {
+    String res = 'Some error occurred';
+
+    try {
+      String photoUrl = await StorageMethods()
+          .uploadImageToStorage('profilePics', image, false);
+
+      model.User user = model.User(
+        fullName: fullname,
+        // email: email,
+        // uid: cred.user!.uid,
+        photoUrl: photoUrl,
+        username: username,
+        bio: bio,
+        department: department,
+        followers: [],
+        following: [],
+      );
+
+      await _firestore.collection('users').doc(_auth.currentUser!.uid).set(
+            user.toJson(),
+          );
+
+      res = 'success';
     } catch (err) {
       res = err.toString();
     }
@@ -60,8 +104,8 @@ class AuthMethods {
 
         model.User user = model.User(
           fullName: 'fullName',
-          email: email,
-          uid: cred.user!.uid,
+          // email: email,
+          // uid: cred.user!.uid,
           photoUrl: photoUrl,
           username: 'Username',
           bio: 'Bio',

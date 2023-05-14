@@ -5,8 +5,8 @@ import '../models/user.dart';
 class UserProvider with ChangeNotifier {
   User _user = User(
     fullName: '',
-    email: '',
-    uid: '',
+    // email: '',
+    // uid: '',
     photoUrl: '',
     username: '',
     bio: '',

@@ -4,6 +4,7 @@ import 'dart:io';
 // import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:god_life_conversations/responsive/form_widget.dart';
 import 'package:god_life_conversations/responsive/registration/login_screen.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
@@ -41,8 +42,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
     super.dispose();
     _emailController.dispose();
     _passwordController.dispose();
-    _bioController.dispose();
-    _usernameController.dispose();
   }
 
   void selectImage() async {
@@ -57,13 +56,16 @@ class _SignUpScreenState extends State<SignUpScreen> {
     setState(() {
       _isLoading = true;
     });
-    String res = await AuthMethods().signUpUser(
+    String res = await AuthMethods().quickSignUpUser(
       email: _emailController.text,
       password: _passwordController.text,
     );
     if (res == 'success') {
       Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (context) => const ProfileDetailsForm()));
+        MaterialPageRoute(
+          builder: (context) => const RegistrationFormWidget(),
+        ),
+      );
     } else {
       showSnackBar(res, context);
       setState(() {
@@ -104,7 +106,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
         _isLoading = false;
       });
     }
-    return null;
+    return;
   }
 
   void navigateToLogin() {
@@ -137,41 +139,41 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       height: 64,
                     ),
                   ),
-                  const SizedBox(height: 40),
-                  // circular widget to accept and show our selected file
-                  Stack(
-                    children: [
-                      _image != null
-                          ? CircleAvatar(
-                              radius: 60,
-                              backgroundImage: FileImage(_image!),
-                            )
-                          : const CircleAvatar(
-                              radius: 64,
-                              backgroundImage: NetworkImage(
-                                  'https://media.istockphoto.com/id/1316420668/vector/user-icon-human-person-symbol-social-profile-icon-avatar-login-sign-web-user-symbol.jpg?s=612x612&w=0&k=20&c=AhqW2ssX8EeI2IYFm6-ASQ7rfeBWfrFFV4E87SaFhJE='),
-                            ),
-                      Positioned(
-                        bottom: -10,
-                        left: 80,
-                        child: IconButton(
-                          onPressed: selectImage,
-                          icon: const Icon(
-                            Icons.add_a_photo,
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 24,
-                  ),
-                  // Textfield for username
-                  TextFieldInput(
-                    textEditingController: _usernameController,
-                    hintText: 'Enter your username',
-                    textInputType: TextInputType.text,
-                  ),
+                  // const SizedBox(height: 40),
+                  // // circular widget to accept and show our selected file
+                  // Stack(
+                  //   children: [
+                  //     _image != null
+                  //         ? CircleAvatar(
+                  //             radius: 60,
+                  //             backgroundImage: FileImage(_image!),
+                  //           )
+                  //         : const CircleAvatar(
+                  //             radius: 64,
+                  //             backgroundImage: NetworkImage(
+                  //                 'https://media.istockphoto.com/id/1316420668/vector/user-icon-human-person-symbol-social-profile-icon-avatar-login-sign-web-user-symbol.jpg?s=612x612&w=0&k=20&c=AhqW2ssX8EeI2IYFm6-ASQ7rfeBWfrFFV4E87SaFhJE='),
+                  //           ),
+                  //     Positioned(
+                  //       bottom: -10,
+                  //       left: 80,
+                  //       child: IconButton(
+                  //         onPressed: selectImage,
+                  //         icon: const Icon(
+                  //           Icons.add_a_photo,
+                  //         ),
+                  //       ),
+                  //     )
+                  //   ],
+                  // ),
+                  // const SizedBox(
+                  //   height: 24,
+                  // ),
+                  // // Textfield for username
+                  // TextFieldInput(
+                  //   textEditingController: _usernameController,
+                  //   hintText: 'Enter your username',
+                  //   textInputType: TextInputType.text,
+                  // ),
                   const SizedBox(
                     height: 24,
                   ),
@@ -191,21 +193,21 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     textInputType: TextInputType.text,
                     isPass: true,
                   ),
-                  const SizedBox(
-                    height: 24,
-                  ),
-                  // textfield input for username
-                  TextFieldInput(
-                    textEditingController: _bioController,
-                    hintText: 'Enter your bio',
-                    textInputType: TextInputType.text,
-                  ),
+                  // const SizedBox(
+                  //   height: 24,
+                  // ),
+                  // // textfield input for username
+                  // TextFieldInput(
+                  //   textEditingController: _bioController,
+                  //   hintText: 'Enter your bio',
+                  //   textInputType: TextInputType.text,
+                  // ),
                   const SizedBox(
                     height: 24,
                   ),
                   // Text Login
                   InkWell(
-                    onTap: signUpUser,
+                    onTap: signUpUserQuick,
                     child: Container(
                       width: double.infinity,
                       alignment: Alignment.center,

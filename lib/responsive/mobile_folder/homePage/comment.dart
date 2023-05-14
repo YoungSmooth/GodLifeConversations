@@ -1,12 +1,13 @@
 // ignore_for_file: prefer_typing_uninitialized_variables
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:god_life_conversations/resources/firestore_methods.dart';
 import 'package:god_life_conversations/responsive/comment_card.dart';
 import 'package:provider/provider.dart';
 
-import '../../../models/user.dart';
+import '../../../models/user.dart' as model;
 import '../../../providers/user_provider.dart';
 
 class Comments extends StatefulWidget {
@@ -20,6 +21,7 @@ class Comments extends StatefulWidget {
 class _CommentsState extends State<Comments> {
   final TextEditingController _commentController = TextEditingController();
 
+  final FirebaseAuth _auth = FirebaseAuth.instance;
   @override
   void dispose() {
     super.dispose();
@@ -28,7 +30,7 @@ class _CommentsState extends State<Comments> {
 
   @override
   Widget build(BuildContext context) {
-    final User user = Provider.of<UserProvider>(context).getUser;
+    final model.User user = Provider.of<UserProvider>(context).getUser;
     // final snap = snapshot.data!.docs[index].data();
     return Scaffold(
       body: SingleChildScrollView(
@@ -167,7 +169,7 @@ class _CommentsState extends State<Comments> {
                 await FirestoreMethods().postComment(
                   widget.snap['postId'],
                   _commentController.text,
-                  user.uid,
+                  _auth.currentUser!.uid,
                   user.username,
                   user.photoUrl,
                 );

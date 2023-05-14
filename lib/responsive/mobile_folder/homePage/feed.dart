@@ -2,6 +2,7 @@
 
 import 'dart:io';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
@@ -25,6 +26,7 @@ class GlcFeed extends StatefulWidget {
 class _GlcFeedState extends State<GlcFeed> {
   final TextEditingController _descriptionController = TextEditingController();
   bool isLoading = false;
+  final FirebaseAuth _auth = FirebaseAuth.instance;
 
   @override
   void dispose() {
@@ -198,7 +200,8 @@ class _GlcFeedState extends State<GlcFeed> {
                               backgroundColor: ColorManager.blue,
                             ),
                             onPressed: () {
-                              feedPost(user.uid, user.username, user.photoUrl);
+                              feedPost(_auth.currentUser!.uid, user.username,
+                                  user.photoUrl);
                               setState(() {
                                 _descriptionController.text = '';
                                 _postUpload == null;
