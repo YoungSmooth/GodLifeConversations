@@ -49,6 +49,9 @@ class AuthMethods {
     required String bio,
     required String username,
     required String department,
+    required String email,
+    required String uid,
+    required String gender,
   }) async {
     String res = 'Some error occurred';
 
@@ -58,12 +61,13 @@ class AuthMethods {
 
       model.User user = model.User(
         fullName: fullname,
-        // email: email,
-        // uid: cred.user!.uid,
+        email: email,
+        uid: uid,
         photoUrl: photoUrl,
         username: username,
         bio: bio,
         department: department,
+        gender: gender,
         followers: [],
         following: [],
       );
@@ -104,12 +108,13 @@ class AuthMethods {
 
         model.User user = model.User(
           fullName: 'fullName',
-          // email: email,
-          // uid: cred.user!.uid,
+          email: email,
+          uid: cred.user!.uid,
           photoUrl: photoUrl,
           username: 'Username',
           bio: 'Bio',
           department: 'department',
+          gender: 'gender',
           followers: [],
           following: [],
         );

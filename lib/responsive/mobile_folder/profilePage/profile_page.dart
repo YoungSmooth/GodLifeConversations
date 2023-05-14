@@ -296,7 +296,8 @@ class _ProfilePageState extends State<ProfilePage> {
                                 child: const Padding(
                                   padding: EdgeInsets.fromLTRB(0, 0, 0, 6),
                                   child: Text(
-                                    'Department                                   ',
+                                    'Department',
+                                    textAlign: TextAlign.start,
                                     style: TextStyle(
                                         fontWeight: FontWeight.bold,
                                         fontSize: 16,
@@ -304,7 +305,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                   ),
                                 ),
                               ),
-                              const Text('Select Department'),
+                              Text(userData['department']),
                             ],
                           ),
                         ],

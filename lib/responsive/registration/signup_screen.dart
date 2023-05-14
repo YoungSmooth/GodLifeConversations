@@ -17,6 +17,7 @@ import '../mobile_folder/mobile_screens/profile_form_screen.dart';
 import '../responsive_layout.dart';
 import '../tablet_folder/tablet_scaffold.dart';
 import '../widgets/text_field_input.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({Key? key}) : super(key: key);
@@ -28,9 +29,8 @@ class SignUpScreen extends StatefulWidget {
 class _SignUpScreenState extends State<SignUpScreen> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  final TextEditingController _bioController = TextEditingController();
-  final TextEditingController _usernameController = TextEditingController();
-  File? _image;
+
+  final FirebaseAuth _auth = FirebaseAuth.instance;
 
   String email = '';
   String password = '';
@@ -44,14 +44,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
     _passwordController.dispose();
   }
 
-  void selectImage() async {
-    File im = await pickImage(ImageSource.gallery);
-
-    setState(() {
-      _image = im;
-    });
-  }
-
   Future signUpUserQuick() async {
     setState(() {
       _isLoading = true;
@@ -63,7 +55,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
     if (res == 'success') {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(
-          builder: (context) => const RegistrationFormWidget(),
+          builder: (context) => RegistrationFormWidget(
+            emailFromSignUp: _emailController.text,
+            uidFromSignUp: _auth.currentUser!.uid,
+          ),
         ),
       );
     } else {
@@ -73,40 +68,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
       });
     }
     return null;
-  }
-
-  Future signUpUser() async {
-    setState(() {
-      _isLoading = true;
-    });
-
-    String res = await AuthMethods().signUpUser(
-      email: _emailController.text,
-      password: _passwordController.text,
-      // username: _usernameController.text,
-      // bio: _bioController.text,
-      // file: _image!,
-    );
-
-    if (res == 'success') {
-      Navigator.of(context).pushReplacement(
-        MaterialPageRoute(
-          builder: (context) => const ResponsiveLayout(
-            mobileScaffold: MobileScaffold(),
-            tabletScaffold: TabletScaffold(),
-            desktopScaffld: DesktopScaffold(),
-          ),
-        ),
-      );
-    } else {
-      showSnackBar(res, context);
-
-      // showSnackBar('Please fill in all details correctly', context);
-      setState(() {
-        _isLoading = false;
-      });
-    }
-    return;
   }
 
   void navigateToLogin() {
@@ -139,44 +100,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       height: 64,
                     ),
                   ),
-                  // const SizedBox(height: 40),
-                  // // circular widget to accept and show our selected file
-                  // Stack(
-                  //   children: [
-                  //     _image != null
-                  //         ? CircleAvatar(
-                  //             radius: 60,
-                  //             backgroundImage: FileImage(_image!),
-                  //           )
-                  //         : const CircleAvatar(
-                  //             radius: 64,
-                  //             backgroundImage: NetworkImage(
-                  //                 'https://media.istockphoto.com/id/1316420668/vector/user-icon-human-person-symbol-social-profile-icon-avatar-login-sign-web-user-symbol.jpg?s=612x612&w=0&k=20&c=AhqW2ssX8EeI2IYFm6-ASQ7rfeBWfrFFV4E87SaFhJE='),
-                  //           ),
-                  //     Positioned(
-                  //       bottom: -10,
-                  //       left: 80,
-                  //       child: IconButton(
-                  //         onPressed: selectImage,
-                  //         icon: const Icon(
-                  //           Icons.add_a_photo,
-                  //         ),
-                  //       ),
-                  //     )
-                  //   ],
-                  // ),
-                  // const SizedBox(
-                  //   height: 24,
-                  // ),
-                  // // Textfield for username
-                  // TextFieldInput(
-                  //   textEditingController: _usernameController,
-                  //   hintText: 'Enter your username',
-                  //   textInputType: TextInputType.text,
-                  // ),
                   const SizedBox(
-                    height: 24,
+                    height: 65,
                   ),
+
                   // Textfield for email
                   TextFieldInput(
                     textEditingController: _emailController,
@@ -193,15 +120,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     textInputType: TextInputType.text,
                     isPass: true,
                   ),
-                  // const SizedBox(
-                  //   height: 24,
-                  // ),
-                  // // textfield input for username
-                  // TextFieldInput(
-                  //   textEditingController: _bioController,
-                  //   hintText: 'Enter your bio',
-                  //   textInputType: TextInputType.text,
-                  // ),
+
                   const SizedBox(
                     height: 24,
                   ),
@@ -220,25 +139,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         ),
                         color: mainColor,
                       ),
-                      child:
-                          // _isLoading
-                          //     ? const Center(
-                          //         child: CircularProgressIndicator(
-                          //           color: primaryColor,
-                          //         ),
-                          //       )
-                          //     :
-                          const Text(
+                      child: const Text(
                         'Sign up',
                         style: TextStyle(color: Colors.white),
                       ),
                     ),
                   ),
                   const SizedBox(
-                    height: 5,
-                  ),
-                  const SizedBox(
-                    height: 30,
+                    height: 45,
                   ),
 
                   // Text sign up

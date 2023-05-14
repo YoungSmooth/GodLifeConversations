@@ -89,7 +89,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   height: 64,
                 ),
               ),
-              const SizedBox(height: 64),
+              const SizedBox(height: 65),
               // Textfield for email
               TextFieldInput(
                 textEditingController: _emailController,
@@ -139,10 +139,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
               const SizedBox(
-                height: 14,
-              ),
-              const SizedBox(
-                height: 30,
+                height: 45,
               ),
 
               // Text sign up

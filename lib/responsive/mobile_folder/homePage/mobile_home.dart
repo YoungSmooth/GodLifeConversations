@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:god_life_conversations/utilities.dart/colors.dart';
 import '../../dektop_folder/constant_parts/constants.dart';
-import '../mobile_screens/profile_form_screen.dart';
 import 'feed.dart';
 import 'message.dart';
 import 'package:blur/blur.dart';

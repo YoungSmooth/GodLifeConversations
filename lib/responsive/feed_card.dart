@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_typing_uninitialized_variables
+// ignore_for_file: prefer_typing_uninitialized_variables, unused_local_variable
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -15,6 +15,8 @@ import '../providers/user_provider.dart';
 import 'like_animation.dart';
 import 'mobile_folder/profilePage/profile_page.dart';
 
+final FirebaseAuth _auth = FirebaseAuth.instance;
+
 class FeedCard extends StatefulWidget {
   final snap;
   const FeedCard({super.key, required this.snap});
@@ -26,7 +28,7 @@ class FeedCard extends StatefulWidget {
 class _FeedCardState extends State<FeedCard> {
   bool isLikeAnimating = false;
   int commentLength = 0;
-  final FirebaseAuth _auth = FirebaseAuth.instance;
+
   @override
   void initState() {
     super.initState();
@@ -111,10 +113,6 @@ class _FeedCardState extends State<FeedCard> {
                                           overflow: TextOverflow.ellipsis)),
                                 ),
                               ),
-                              const Text(
-                                'Usher',
-                                style: TextStyle(fontSize: 12),
-                              ),
                             ],
                           ),
                         ),
@@ -129,39 +127,43 @@ class _FeedCardState extends State<FeedCard> {
                     ),
                     Padding(
                       padding: const EdgeInsets.only(left: 0),
-                      child: IconButton(
-                          onPressed: () {
-                            showDialog(
-                              context: context,
-                              builder: (context) => Dialog(
-                                child: ListView(
-                                  padding: const EdgeInsets.symmetric(
-                                    vertical: 16,
+                      child: widget.snap['uid'] == _auth.currentUser!.uid
+                          ? IconButton(
+                              onPressed: () {
+                                showDialog(
+                                  context: context,
+                                  builder: (context) => Dialog(
+                                    child: ListView(
+                                      padding: const EdgeInsets.symmetric(
+                                        vertical: 16,
+                                      ),
+                                      shrinkWrap: true,
+                                      children: [
+                                        'Delete',
+                                      ]
+                                          .map(
+                                            (e) => InkWell(
+                                              onTap: () async {
+                                                FirestoreMethods().deletePost(
+                                                    widget.snap['postId']);
+                                                Navigator.of(context).pop();
+                                              },
+                                              child: Container(
+                                                padding:
+                                                    const EdgeInsets.symmetric(
+                                                        vertical: 12,
+                                                        horizontal: 16),
+                                                child: Text(e),
+                                              ),
+                                            ),
+                                          )
+                                          .toList(),
+                                    ),
                                   ),
-                                  shrinkWrap: true,
-                                  children: [
-                                    'Delete',
-                                  ]
-                                      .map(
-                                        (e) => InkWell(
-                                          onTap: () async {
-                                            FirestoreMethods().deletePost(
-                                                widget.snap['postId']);
-                                            Navigator.of(context).pop();
-                                          },
-                                          child: Container(
-                                            padding: const EdgeInsets.symmetric(
-                                                vertical: 12, horizontal: 16),
-                                            child: Text(e),
-                                          ),
-                                        ),
-                                      )
-                                      .toList(),
-                                ),
-                              ),
-                            );
-                          },
-                          icon: const Icon(Icons.more_vert_outlined)),
+                                );
+                              },
+                              icon: const Icon(Icons.more_vert_outlined))
+                          : null,
                     )
                   ],
                 ),

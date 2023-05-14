@@ -1,7 +1,10 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
+// ignore_for_file: public_member_api_docs, sort_constructors_first, use_build_context_synchronously
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:god_life_conversations/models/gender.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 import 'package:god_life_conversations/constants.dart';
 import 'package:god_life_conversations/data/roles_and_gender.dart';
@@ -10,15 +13,17 @@ import 'package:god_life_conversations/resources/auth_methods.dart';
 import 'package:god_life_conversations/responsive/responsive_layout.dart';
 import 'package:god_life_conversations/responsive/tablet_folder/tablet_scaffold.dart';
 import 'package:god_life_conversations/utilities.dart/utils.dart';
-import 'package:image_picker/image_picker.dart';
 
-import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'dektop_folder/pages/desktop_home_page.dart';
 import 'mobile_folder/mobile_scaffold.dart';
 
 class RegistrationFormWidget extends StatefulWidget {
+  final String emailFromSignUp;
+  final String uidFromSignUp;
   const RegistrationFormWidget({
     Key? key,
+    required this.emailFromSignUp,
+    required this.uidFromSignUp,
   }) : super(key: key);
 
   @override
@@ -32,8 +37,13 @@ class _RegistrationFormWidgetState extends State<RegistrationFormWidget> {
   String _userName = '';
   String _bio = '';
   String _selectedDepartment = departmentRoles[Roles.pastor]!.role;
+  String _selectedGender = selectGender[Gender.male]!.genderType;
 
   bool _isLoading = false;
+  @override
+  void initState() {
+    super.initState();
+  }
 
   Future _updadeProfile() async {
     if (_formKey.currentState!.validate() && _image != null) {
@@ -48,6 +58,9 @@ class _RegistrationFormWidgetState extends State<RegistrationFormWidget> {
         bio: _bio,
         username: _userName,
         department: _selectedDepartment,
+        gender: _selectedGender,
+        uid: widget.uidFromSignUp,
+        email: widget.emailFromSignUp,
       );
       if (res == 'success') {
         Navigator.of(context).pushReplacement(
@@ -65,7 +78,7 @@ class _RegistrationFormWidgetState extends State<RegistrationFormWidget> {
           _isLoading = false;
         });
       }
-      return null;
+      return res;
     }
   }
 
@@ -91,7 +104,7 @@ class _RegistrationFormWidgetState extends State<RegistrationFormWidget> {
                 child: Column(
                   children: [
                     const SizedBox(
-                      height: 30,
+                      height: 100,
                     ),
                     Stack(
                       children: [
@@ -121,14 +134,12 @@ class _RegistrationFormWidgetState extends State<RegistrationFormWidget> {
                     const SizedBox(
                       height: 12,
                     ),
-                    _image == null
-                        ? const Text(
-                            'Image upload compulsory...',
-                            style: TextStyle(
-                                fontStyle: FontStyle.italic,
-                                color: Colors.brown),
-                          )
-                        : const Text(''),
+                    if (_image == null)
+                      const Text(
+                        'Image upload compulsory...',
+                        style: TextStyle(
+                            fontStyle: FontStyle.italic, color: Colors.brown),
+                      ),
                     const SizedBox(
                       height: 12,
                     ),
@@ -201,6 +212,8 @@ class _RegistrationFormWidgetState extends State<RegistrationFormWidget> {
                       padding: const EdgeInsets.symmetric(
                           horizontal: 20, vertical: 8),
                       child: DropdownButtonFormField(
+                        borderRadius: BorderRadius.circular(20),
+                        elevation: 15,
                         value: _selectedDepartment,
                         decoration: kformDecoration.copyWith(
                             label: const Text('Select Department'),
@@ -226,6 +239,41 @@ class _RegistrationFormWidgetState extends State<RegistrationFormWidget> {
                         onChanged: (value) {
                           setState(() {
                             _selectedDepartment = value!;
+                          });
+                        },
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 20, vertical: 8),
+                      child: DropdownButtonFormField(
+                        borderRadius: BorderRadius.circular(20),
+                        elevation: 15,
+                        value: _selectedGender,
+                        decoration: kformDecoration.copyWith(
+                            label: const Text('Select Gender'),
+                            icon: const Icon(Icons.male)),
+                        items: [
+                          for (final gender in selectGender.entries)
+                            DropdownMenuItem(
+                              value: gender.value.genderType,
+                              child: Row(
+                                children: [
+                                  CircleAvatar(
+                                    radius: 15,
+                                    backgroundColor: gender.value.color,
+                                  ),
+                                  const SizedBox(
+                                    width: 6,
+                                  ),
+                                  Text(gender.value.genderType),
+                                ],
+                              ),
+                            ),
+                        ],
+                        onChanged: (value) {
+                          setState(() {
+                            _selectedGender = value!;
                           });
                         },
                       ),

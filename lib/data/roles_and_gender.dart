@@ -22,7 +22,7 @@ const departmentRoles = {
   ),
 };
 
-const selectGender = {
-  Gender.male: 'Male',
-  Gender.female: 'Female',
+final selectGender = {
+  Gender.male: SingleGender(genderType: 'Male', color: Colors.blue),
+  Gender.female: SingleGender(genderType: 'Female', color: Colors.pink),
 };
