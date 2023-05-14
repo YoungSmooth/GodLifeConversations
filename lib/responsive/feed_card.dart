@@ -217,60 +217,49 @@ class _FeedCardState extends State<FeedCard> {
         ),
 
         // Feed Image comment section
-        Row(
-          children: [
-            LikeAnimation(
-              isAnimating:
-                  widget.snap['likes'].contains(_auth.currentUser!.uid),
-              smallLike: true,
-              child: IconButton(
-                onPressed: () async {
-                  await FirestoreMethods().likePost(
-                    widget.snap['postId'],
-                    _auth.currentUser!.uid,
-                    widget.snap['likes'],
-                  );
-                },
-                icon: widget.snap['likes'].contains(_auth.currentUser!.uid)
-                    ? const Icon(
-                        Icons.favorite,
-                        color: Colors.red,
-                      )
-                    : const Icon(
-                        Icons.favorite_outline,
-                      ),
-              ),
-            ),
-            IconButton(
-              onPressed: () => Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context) => Comments(
-                    snap: widget.snap,
-                  ),
-                ),
-              ),
-              icon: const Icon(
-                Icons.mode_comment_outlined,
-              ),
-            ),
-            const IconButton(
-              onPressed: null,
-              icon: Icon(
-                Icons.speed_outlined,
-              ),
-            ),
-            const Expanded(
-              child: Align(
-                alignment: Alignment.bottomRight,
+        Container(
+          decoration: BoxDecoration(color: Colors.blue.shade100),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              LikeAnimation(
+                isAnimating:
+                    widget.snap['likes'].contains(_auth.currentUser!.uid),
+                smallLike: true,
                 child: IconButton(
-                  onPressed: null,
-                  icon: Icon(
-                    Icons.bookmark_border_outlined,
-                  ),
+                  onPressed: () async {
+                    await FirestoreMethods().likePost(
+                      widget.snap['postId'],
+                      _auth.currentUser!.uid,
+                      widget.snap['likes'],
+                    );
+                  },
+                  icon: widget.snap['likes'].contains(_auth.currentUser!.uid)
+                      ? const Icon(
+                          Icons.favorite,
+                          color: Colors.red,
+                        )
+                      : const Icon(
+                          Icons.favorite_outline,
+                          color: Colors.white,
+                        ),
                 ),
               ),
-            ),
-          ],
+              IconButton(
+                onPressed: () => Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => Comments(
+                      snap: widget.snap,
+                    ),
+                  ),
+                ),
+                icon: const Icon(
+                  Icons.mode_comment_outlined,
+                  color: Colors.white,
+                ),
+              ),
+            ],
+          ),
         ),
 
         // Feed Image Description section

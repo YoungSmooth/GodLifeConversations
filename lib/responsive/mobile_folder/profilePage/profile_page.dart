@@ -1,6 +1,7 @@
 // ignore_for_file: depend_on_referenced_packages, use_build_context_synchronously
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:god_life_conversations/resources/auth_methods.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -24,7 +25,7 @@ class _ProfilePageState extends State<ProfilePage> {
   int profilePostLength = 0;
   var userData = {};
   bool isLoading = false;
-
+  final FirebaseAuth _auth = FirebaseAuth.instance;
   @override
   void initState() {
     super.initState();
@@ -152,35 +153,31 @@ class _ProfilePageState extends State<ProfilePage> {
                                                     color: Colors.white,
                                                   )),
                                             ),
-                                            Container(
-                                              decoration: const BoxDecoration(
-                                                border: Border(
-                                                    bottom: BorderSide(
-                                                        width: 1,
+                                            const IconButton(
+                                                iconSize: 30,
+                                                onPressed: null,
+                                                icon: Icon(Icons.add_a_photo,
+                                                    color: Colors.white)),
+
+                                            // sign out
+                                            if (userData['uid'] ==
+                                                _auth.currentUser!.uid)
+                                              InkWell(
+                                                onTap: () async {
+                                                  await AuthMethods().signOut();
+                                                  Navigator.of(context)
+                                                      .pushReplacement(
+                                                          MaterialPageRoute(
+                                                              builder: (context) =>
+                                                                  const LoginScreen()));
+                                                },
+                                                child: const IconButton(
+                                                    iconSize: 30,
+                                                    onPressed: null,
+                                                    icon: Icon(
+                                                        Icons.outbond_outlined,
                                                         color: Colors.white)),
                                               ),
-                                              child: const IconButton(
-                                                  iconSize: 30,
-                                                  onPressed: null,
-                                                  icon: Icon(Icons.add_a_photo,
-                                                      color: Colors.white)),
-                                            ),
-                                            InkWell(
-                                              onTap: () async {
-                                                await AuthMethods().signOut();
-                                                Navigator.of(context)
-                                                    .pushReplacement(
-                                                        MaterialPageRoute(
-                                                            builder: (context) =>
-                                                                const LoginScreen()));
-                                              },
-                                              child: const IconButton(
-                                                  iconSize: 30,
-                                                  onPressed: null,
-                                                  icon: Icon(
-                                                      Icons.outbond_outlined,
-                                                      color: Colors.white)),
-                                            ),
                                           ],
                                         ),
                                       )
