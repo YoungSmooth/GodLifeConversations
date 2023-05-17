@@ -119,12 +119,42 @@ class _ProfilePageState extends State<ProfilePage> {
                                                 lightSource:
                                                     LightSource.topRight,
                                                 color: Colors.black),
-                                            child: CircleAvatar(
-                                              radius: 110,
-                                              backgroundColor: mainColor,
-                                              foregroundImage: NetworkImage(
-                                                userData['photoUrl']!,
-                                              ),
+                                            child: Stack(
+                                              children: [
+                                                CircleAvatar(
+                                                  radius: 110,
+                                                  backgroundColor: mainColor,
+                                                  foregroundImage: NetworkImage(
+                                                    userData['photoUrl']!,
+                                                  ),
+                                                ),
+                                                if (userData['uid'] !=
+                                                    _auth.currentUser!.uid)
+                                                  Positioned.fill(
+                                                    left: -150,
+                                                    child: Container(
+                                                      decoration: BoxDecoration(
+                                                          border: Border.all(
+                                                              width: 2,
+                                                              color:
+                                                                  Colors.white),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      50)),
+                                                      child: IconButton(
+                                                        onPressed: Navigator.of(
+                                                                context)
+                                                            .pop,
+                                                        icon: const Icon(
+                                                          Icons
+                                                              .arrow_back_ios_new_outlined,
+                                                          color: mainColor,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                              ],
                                             ),
                                           ),
                                         ),
@@ -132,7 +162,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                       Container(
                                         decoration: BoxDecoration(
                                           border: Border.all(color: mainColor),
-                                          color: Colors.transparent,
+                                          color: Colors.white,
                                           borderRadius:
                                               BorderRadius.circular(20),
                                         ),
@@ -143,21 +173,21 @@ class _ProfilePageState extends State<ProfilePage> {
                                                 border: Border(
                                                     bottom: BorderSide(
                                                         width: 1,
-                                                        color: Colors.white)),
+                                                        color: mainColor)),
                                               ),
                                               child: const IconButton(
                                                   iconSize: 30,
                                                   onPressed: null,
                                                   icon: Icon(
                                                     Icons.favorite,
-                                                    color: Colors.white,
+                                                    color: mainColor,
                                                   )),
                                             ),
                                             const IconButton(
                                                 iconSize: 30,
                                                 onPressed: null,
                                                 icon: Icon(Icons.add_a_photo,
-                                                    color: Colors.white)),
+                                                    color: mainColor)),
 
                                             // sign out
                                             if (userData['uid'] ==
@@ -175,8 +205,9 @@ class _ProfilePageState extends State<ProfilePage> {
                                                     iconSize: 30,
                                                     onPressed: null,
                                                     icon: Icon(
+                                                        grade: 5,
                                                         Icons.outbond_outlined,
-                                                        color: Colors.white)),
+                                                        color: mainColor)),
                                               ),
                                           ],
                                         ),
