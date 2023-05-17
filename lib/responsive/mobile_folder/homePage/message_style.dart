@@ -21,12 +21,12 @@ class MessageStyle extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.only(top: 10),
+          padding: const EdgeInsets.all(15),
           child: Stack(
             children: [
               SizedBox(
-                height: 200,
-                width: 330,
+                height: 400,
+                width: double.infinity,
                 child: ClipRRect(
                     borderRadius: BorderRadius.circular(20),
                     child: messageImage),
@@ -55,9 +55,9 @@ class MessageStyle extends StatelessWidget {
                         borderRadius: BorderRadius.circular(20),
                         border:
                             Border.all(width: 0.6, color: ColorManager.black54),
-                        color: ColorManager.greyS300),
+                        color: ColorManager.white),
                     height: 50,
-                    width: 330,
+                    width: double.infinity,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -116,39 +116,7 @@ class MessageStyle extends StatelessWidget {
                             ],
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(right: 20),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              SizedBox(
-                                  height: 25,
-                                  width: 25,
-                                  child: Image.asset('lib/assets/left.png')),
-                              Padding(
-                                padding: const EdgeInsets.only(left: 70),
-                                child: SizedBox(
-                                    height: 25,
-                                    width: 25,
-                                    child: Image.asset('lib/assets/right.png')),
-                              ),
-                            ],
-                          ),
-                        ),
                       ],
-                    ),
-                  ),
-                  Positioned(
-                    right: 55,
-                    child: Container(
-                      decoration: BoxDecoration(
-                        border: Border.all(width: 5, color: ColorManager.white),
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: const IconButton(
-                        onPressed: null,
-                        icon: Icon(Icons.play_arrow),
-                      ),
                     ),
                   ),
                 ]),
