@@ -1,12 +1,10 @@
 // ignore_for_file: depend_on_referenced_packages
 import 'package:firebase_core/firebase_core.dart';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:god_life_conversations/responsive/responsive_layout.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-
 import 'firebase_options.dart';
 import 'providers/user_provider.dart';
 import 'resources/color_manager.dart';
