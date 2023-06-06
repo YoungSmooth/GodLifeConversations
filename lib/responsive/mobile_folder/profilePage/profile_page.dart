@@ -378,20 +378,28 @@ class _ProfilePageState extends State<ProfilePage> {
                                                 child:
                                                     CircularProgressIndicator());
                                           }
-                                          return StaggeredGridView.countBuilder(
+                                          return AlignedGridView.count(
                                             crossAxisCount: 3,
-                                            itemCount:
-                                                (snapshot.data! as dynamic)
-                                                    .docs
-                                                    .length,
+                                            mainAxisSpacing: 8,
+                                            crossAxisSpacing: 8,
                                             itemBuilder: (context, index) =>
                                                 Image.network((snapshot.data
                                                         as dynamic)
                                                     .docs[index]['postUrl']),
-                                            staggeredTileBuilder: (index) =>
-                                                const StaggeredTile.fit(1),
-                                            mainAxisSpacing: 8,
-                                            crossAxisSpacing: 8,
+                                            // StaggeredGridView.countBuilder(
+                                            //   crossAxisCount: 3,
+                                            //   itemCount:
+                                            //       (snapshot.data! as dynamic)
+                                            //           .docs
+                                            //           .length,
+                                            //   itemBuilder: (context, index) =>
+                                            //       Image.network((snapshot.data
+                                            //               as dynamic)
+                                            //           .docs[index]['postUrl']),
+                                            //   staggeredTileBuilder: (index) =>
+                                            //       const StaggeredTile.fit(1),
+                                            //   mainAxisSpacing: 8,
+                                            //   crossAxisSpacing: 8,
                                           );
                                         }),
                                   ),
@@ -407,20 +415,24 @@ class _ProfilePageState extends State<ProfilePage> {
                                                 child:
                                                     CircularProgressIndicator());
                                           }
-                                          return StaggeredGridView.countBuilder(
+                                          return AlignedGridView.count(
                                             crossAxisCount: 3,
-                                            itemCount:
-                                                (snapshot.data! as dynamic)
-                                                    .docs
-                                                    .length,
+                                            mainAxisSpacing: 8,
+                                            crossAxisSpacing: 8,
                                             itemBuilder: (context, index) =>
                                                 Image.network((snapshot.data
                                                         as dynamic)
                                                     .docs[index]['postUrl']),
-                                            staggeredTileBuilder: (index) =>
-                                                const StaggeredTile.fit(1),
-                                            mainAxisSpacing: 8,
-                                            crossAxisSpacing: 8,
+                                            // itemCount:
+                                            //     (snapshot.data! as dynamic)
+                                            //         .docs
+                                            //         .length,
+                                            // itemBuilder: (context, index) =>
+                                            //     Image.network((snapshot.data
+                                            //             as dynamic)
+                                            //         .docs[index]['postUrl']),
+                                            // staggeredTileBuilder: (index) =>
+                                            //     const StaggeredTile.fit(1),
                                           );
                                         }),
                                   ),

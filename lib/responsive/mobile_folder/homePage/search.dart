@@ -111,15 +111,21 @@ class _SearchScreenState extends State<SearchScreen> {
                   if (!snapshot.hasData) {
                     return const Center(child: CircularProgressIndicator());
                   }
-                  return StaggeredGridView.countBuilder(
-                    crossAxisCount: 3,
-                    itemCount: (snapshot.data! as dynamic).docs.length,
-                    itemBuilder: (context, index) => Image.network(
-                        (snapshot.data as dynamic).docs[index]['postUrl']),
-                    staggeredTileBuilder: (index) => const StaggeredTile.fit(1),
-                    mainAxisSpacing: 8,
-                    crossAxisSpacing: 8,
-                  );
+                  return AlignedGridView.count(
+                      crossAxisCount: 3,
+                      mainAxisSpacing: 8,
+                      crossAxisSpacing: 8,
+                      itemBuilder: (context, index) => Image.network(
+                          (snapshot.data as dynamic).docs[index]['postUrl']));
+                  // StaggeredGridView.countBuilder(
+                  //   crossAxisCount: 3,
+                  //   itemCount: (snapshot.data! as dynamic).docs.length,
+                  //   itemBuilder: (context, index) => Image.network(
+                  //       (snapshot.data as dynamic).docs[index]['postUrl']),
+                  //   staggeredTileBuilder: (index) => const StaggeredTile.fit(1),
+                  //   mainAxisSpacing: 8,
+                  //   crossAxisSpacing: 8,
+                  // );
                 })
         // Center(
         //     child: Column(
