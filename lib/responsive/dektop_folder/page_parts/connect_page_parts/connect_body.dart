@@ -18,8 +18,8 @@ class DesktopConnectBody extends StatelessWidget {
         aspectRatio: 2,
         child: Column(
           children: [
-            Row(
-              children: const [
+            const Row(
+              children: [
                 Expanded(
                   child: Center(
                     child: Padding(

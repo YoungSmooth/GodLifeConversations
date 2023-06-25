@@ -10,10 +10,10 @@ LinearGradient linearColor = const LinearGradient(
   colors: [Color.fromRGBO(195, 20, 50, 1.0), Color.fromRGBO(36, 11, 54, 0.1)],
 );
 
-Drawer myDrawer = Drawer(
+Drawer myDrawer = const Drawer(
   width: 300,
   child: Column(
-    children: const [
+    children: [
       DrawerHeader(
         child: CircleAvatar(
           radius: 5,
@@ -43,8 +43,8 @@ Drawer myDrawer = Drawer(
 
 Container sideColumn = Container(
   color: ColorManager.greyS300,
-  child: Column(
-    children: const [
+  child: const Column(
+    children: [
       SizedBox(
         height: 300,
         width: 300,

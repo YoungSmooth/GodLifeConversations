@@ -1,7 +1,6 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
-import 'package:flutter_zoom_drawer/config.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:god_life_conversations/constants.dart';
 import 'package:god_life_conversations/responsive/mobile_folder/mobile_test_plugins.dart/dashboard.dart';

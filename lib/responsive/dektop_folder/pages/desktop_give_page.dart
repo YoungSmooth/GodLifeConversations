@@ -15,11 +15,11 @@ class DesktopGivePage extends StatefulWidget {
 class _DesktopGivePageState extends State<DesktopGivePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       backgroundColor: ColorManager.white,
       body: SingleChildScrollView(
         child: Column(
-          children: const [
+          children: [
             GivePageHeader(),
             SizedBox(height: 40),
             GiveBody(),

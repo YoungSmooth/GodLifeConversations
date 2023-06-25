@@ -47,10 +47,10 @@ class ServePage extends StatelessWidget {
                           right: 20,
                           child: Padding(
                             padding: const EdgeInsets.all(20.0),
-                            child: Column(
+                            child: const Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.start,
-                              children: const [
+                              children: [
                                 Padding(
                                   padding:
                                       EdgeInsets.only(bottom: 10, left: 20),
@@ -101,10 +101,10 @@ class ServePage extends StatelessWidget {
                           right: 20,
                           child: Padding(
                             padding: const EdgeInsets.all(20.0),
-                            child: Column(
+                            child: const Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.start,
-                              children: const [
+                              children: [
                                 Padding(
                                   padding:
                                       EdgeInsets.only(bottom: 10, left: 20),
@@ -160,10 +160,10 @@ class ServePage extends StatelessWidget {
                           right: 20,
                           child: Padding(
                             padding: const EdgeInsets.all(20.0),
-                            child: Column(
+                            child: const Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.start,
-                              children: const [
+                              children: [
                                 Padding(
                                   padding:
                                       EdgeInsets.only(bottom: 10, left: 20),
@@ -214,10 +214,10 @@ class ServePage extends StatelessWidget {
                           right: 20,
                           child: Padding(
                             padding: const EdgeInsets.all(20.0),
-                            child: Column(
+                            child: const Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.start,
-                              children: const [
+                              children: [
                                 Padding(
                                   padding:
                                       EdgeInsets.only(bottom: 10, left: 20),
@@ -273,10 +273,10 @@ class ServePage extends StatelessWidget {
                           right: 20,
                           child: Padding(
                             padding: const EdgeInsets.all(20.0),
-                            child: Column(
+                            child: const Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.start,
-                              children: const [
+                              children: [
                                 Padding(
                                   padding:
                                       EdgeInsets.only(bottom: 10, left: 20),
@@ -327,10 +327,10 @@ class ServePage extends StatelessWidget {
                           right: 20,
                           child: Padding(
                             padding: const EdgeInsets.all(20.0),
-                            child: Column(
+                            child: const Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.start,
-                              children: const [
+                              children: [
                                 Padding(
                                   padding:
                                       EdgeInsets.only(bottom: 10, left: 20),
@@ -387,10 +387,10 @@ class ServePage extends StatelessWidget {
                           right: 20,
                           child: Padding(
                             padding: const EdgeInsets.all(20.0),
-                            child: Column(
+                            child: const Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.start,
-                              children: const [
+                              children: [
                                 Padding(
                                   padding:
                                       EdgeInsets.only(bottom: 10, left: 20),
@@ -441,10 +441,10 @@ class ServePage extends StatelessWidget {
                           right: 20,
                           child: Padding(
                             padding: const EdgeInsets.all(20.0),
-                            child: Column(
+                            child: const Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.start,
-                              children: const [
+                              children: [
                                 Padding(
                                   padding:
                                       EdgeInsets.only(bottom: 10, left: 20),
@@ -500,10 +500,10 @@ class ServePage extends StatelessWidget {
                           right: 20,
                           child: Padding(
                             padding: const EdgeInsets.all(20.0),
-                            child: Column(
+                            child: const Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.start,
-                              children: const [
+                              children: [
                                 Padding(
                                   padding:
                                       EdgeInsets.only(bottom: 10, left: 20),
@@ -554,10 +554,10 @@ class ServePage extends StatelessWidget {
                           right: 20,
                           child: Padding(
                             padding: const EdgeInsets.all(20.0),
-                            child: Column(
+                            child: const Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.start,
-                              children: const [
+                              children: [
                                 Padding(
                                   padding:
                                       EdgeInsets.only(bottom: 10, left: 20),

@@ -19,7 +19,7 @@ class StringManager {
   static const String giveCAPS = "GIVE";
   static const String aboutCAPS = "ABOUT";
   static const String contactUsCAPS = "CONTACT US";
-  static const String copyrightCAPS = "© 2022 GODLIFE CONVERSATIONS";
+  static const String copyrightCAPS = "© 2023 GODLIFE CONVERSATIONS";
 
   static const String home = "Home";
   static const String events = 'Events';

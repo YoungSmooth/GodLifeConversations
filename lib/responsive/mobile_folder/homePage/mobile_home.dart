@@ -91,7 +91,7 @@ class MobileHomePage extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               // color: Colors.blueGrey,
               height: 670,
               child: DefaultTabController(
@@ -99,7 +99,7 @@ class MobileHomePage extends StatelessWidget {
                 child: Scaffold(
                   // extendBody: true,
                   body: Column(
-                    children: const [
+                    children: [
                       TabBar(
                         isScrollable: true,
                         labelColor: mainColor,

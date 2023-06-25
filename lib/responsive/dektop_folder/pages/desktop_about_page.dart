@@ -15,11 +15,11 @@ class DesktopAboutPage extends StatefulWidget {
 class _DesktopAboutPageState extends State<DesktopAboutPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       backgroundColor: ColorManager.white,
       body: SingleChildScrollView(
         child: Column(
-          children: const [
+          children: [
             AboutPageHeader(),
             SizedBox(height: 40),
             AboutBody(),

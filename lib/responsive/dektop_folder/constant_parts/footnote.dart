@@ -186,11 +186,11 @@ class FootNote extends StatelessWidget {
                       Navigator.of(context).push(MaterialPageRoute(
                           builder: (context) => const DesktopConnectPage()));
                     },
-                    child: Padding(
-                      padding: const EdgeInsets.all(10),
+                    child: const Padding(
+                      padding: EdgeInsets.all(10),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        children: const [
+                        children: [
                           Text(StringManager.contactUsCAPS,
                               style: TextStyle(
                                   fontWeight: FontWeight.bold,
@@ -199,11 +199,11 @@ class FootNote extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(10),
+                  const Padding(
+                    padding: EdgeInsets.all(10),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [
+                      children: [
                         Text(StringManager.copyrightCAPS,
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,

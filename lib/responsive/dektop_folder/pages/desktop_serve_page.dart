@@ -15,11 +15,11 @@ class DesktopServePage extends StatefulWidget {
 class _DesktopServePageState extends State<DesktopServePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       backgroundColor: ColorManager.white,
       body: SingleChildScrollView(
         child: Column(
-          children: const [
+          children: [
             ServePageHeader(),
             SizedBox(height: 40),
             ServeBody(),

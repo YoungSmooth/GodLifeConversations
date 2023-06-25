@@ -20,11 +20,11 @@ class DesktopScaffold extends StatefulWidget {
 class _DesktopScaffoldState extends State<DesktopScaffold> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       backgroundColor: ColorManager.white,
       body: SingleChildScrollView(
         child: Column(
-          children: const [
+          children: [
             HeaderBackground(),
             SizedBox(height: 40),
             JoinUs(),

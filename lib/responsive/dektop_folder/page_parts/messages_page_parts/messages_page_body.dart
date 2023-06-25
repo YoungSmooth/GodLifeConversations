@@ -40,7 +40,10 @@ class _DesktopMessagesBodyState extends State<DesktopMessagesBody> {
                                 topLeft: Radius.circular(30),
                                 topRight: Radius.circular(30),
                               ),
-                              child: Image.asset('lib/assets/wb1.jpg', fit: BoxFit.cover, height: 80, width: double.infinity),
+                              child: Image.asset('lib/assets/wb1.jpg',
+                                  fit: BoxFit.cover,
+                                  height: 80,
+                                  width: double.infinity),
                             ),
                           ],
                         ),
@@ -50,7 +53,9 @@ class _DesktopMessagesBodyState extends State<DesktopMessagesBody> {
                               padding: EdgeInsets.all(8.0),
                               child: Text(
                                 StringManager.messagesBody2,
-                                style: TextStyle(color: ColorManager.white, fontWeight: FontWeight.bold),
+                                style: TextStyle(
+                                    color: ColorManager.white,
+                                    fontWeight: FontWeight.bold),
                                 textAlign: TextAlign.center,
                               ),
                             ),
@@ -78,7 +83,10 @@ class _DesktopMessagesBodyState extends State<DesktopMessagesBody> {
                                 topLeft: Radius.circular(30),
                                 topRight: Radius.circular(30),
                               ),
-                              child: Image.asset('lib/assets/wb5.jpg', fit: BoxFit.cover, height: 80, width: double.infinity),
+                              child: Image.asset('lib/assets/wb5.jpg',
+                                  fit: BoxFit.cover,
+                                  height: 80,
+                                  width: double.infinity),
                             ),
                           ],
                         ),
@@ -87,7 +95,10 @@ class _DesktopMessagesBodyState extends State<DesktopMessagesBody> {
                             child: Padding(
                               padding: EdgeInsets.all(8.0),
                               child: Text(StringManager.messagesBody2,
-                                  style: TextStyle(color: ColorManager.white, fontWeight: FontWeight.bold), textAlign: TextAlign.center),
+                                  style: TextStyle(
+                                      color: ColorManager.white,
+                                      fontWeight: FontWeight.bold),
+                                  textAlign: TextAlign.center),
                             ),
                           ),
                         ),
@@ -113,7 +124,10 @@ class _DesktopMessagesBodyState extends State<DesktopMessagesBody> {
                                 topLeft: Radius.circular(30),
                                 topRight: Radius.circular(30),
                               ),
-                              child: Image.asset('lib/assets/wb4.jpg', fit: BoxFit.cover, height: 80, width: double.infinity),
+                              child: Image.asset('lib/assets/wb4.jpg',
+                                  fit: BoxFit.cover,
+                                  height: 80,
+                                  width: double.infinity),
                             ),
                           ],
                         ),
@@ -123,7 +137,9 @@ class _DesktopMessagesBodyState extends State<DesktopMessagesBody> {
                               padding: EdgeInsets.all(8.0),
                               child: Text(
                                 StringManager.messagesBody2,
-                                style: TextStyle(color: ColorManager.white, fontWeight: FontWeight.bold),
+                                style: TextStyle(
+                                    color: ColorManager.white,
+                                    fontWeight: FontWeight.bold),
                                 textAlign: TextAlign.center,
                               ),
                             ),
@@ -151,7 +167,10 @@ class _DesktopMessagesBodyState extends State<DesktopMessagesBody> {
                                 topLeft: Radius.circular(30),
                                 topRight: Radius.circular(30),
                               ),
-                              child: Image.asset('lib/assets/wb2.jpg', fit: BoxFit.cover, height: 80, width: double.infinity),
+                              child: Image.asset('lib/assets/wb2.jpg',
+                                  fit: BoxFit.cover,
+                                  height: 80,
+                                  width: double.infinity),
                             ),
                           ],
                         ),
@@ -161,7 +180,9 @@ class _DesktopMessagesBodyState extends State<DesktopMessagesBody> {
                               padding: EdgeInsets.all(8.0),
                               child: Text(
                                 StringManager.messagesBody2,
-                                style: TextStyle(color: ColorManager.white, fontWeight: FontWeight.bold),
+                                style: TextStyle(
+                                    color: ColorManager.white,
+                                    fontWeight: FontWeight.bold),
                                 textAlign: TextAlign.center,
                               ),
                             ),
@@ -184,7 +205,9 @@ class _DesktopMessagesBodyState extends State<DesktopMessagesBody> {
                     child: Container(
                       height: 550,
                       width: double.infinity,
-                      decoration: BoxDecoration(borderRadius: BorderRadius.circular(30), color: ColorManager.greyS100),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(30),
+                          color: ColorManager.greyS100),
                       child: SingleChildScrollView(
                         child: Column(
                           children: [
@@ -199,7 +222,8 @@ class _DesktopMessagesBodyState extends State<DesktopMessagesBody> {
                                       borderRadius: BorderRadius.circular(10),
                                     ),
                                     child: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
                                       children: [
                                         ClipRRect(
                                           borderRadius: const BorderRadius.only(
@@ -214,7 +238,8 @@ class _DesktopMessagesBodyState extends State<DesktopMessagesBody> {
                                         ),
                                         const Padding(
                                           padding: EdgeInsets.all(8.0),
-                                          child: Text(StringManager.messagesBody6),
+                                          child:
+                                              Text(StringManager.messagesBody6),
                                         ),
                                       ],
                                     ),
@@ -227,12 +252,18 @@ class _DesktopMessagesBodyState extends State<DesktopMessagesBody> {
                                     decoration: BoxDecoration(
                                       color: ColorManager.white,
                                       borderRadius: BorderRadius.circular(25),
-                                      border: Border.all(width: 2, color: ColorManager.greyS500),
+                                      border: Border.all(
+                                          width: 2,
+                                          color: ColorManager.greyS500),
                                     ),
-                                    child: Row(
+                                    child: const Row(
                                       children: [
-                                        const Padding(
-                                          padding: EdgeInsets.only(left: 2, top: 2, bottom: 2, right: 7),
+                                        Padding(
+                                          padding: EdgeInsets.only(
+                                              left: 2,
+                                              top: 2,
+                                              bottom: 2,
+                                              right: 7),
                                           child: CircleAvatar(
                                             backgroundImage: NetworkImage(
                                                 'https://images.unsplash.com/photo-1661961110218-35af7210f803?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60'),
@@ -240,20 +271,27 @@ class _DesktopMessagesBodyState extends State<DesktopMessagesBody> {
                                           ),
                                         ),
                                         Column(
-                                          crossAxisAlignment: CrossAxisAlignment.start,
-                                          children: const [
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
                                             Padding(
-                                              padding: EdgeInsets.only(top: 5, bottom: 5, right: 10),
+                                              padding: EdgeInsets.only(
+                                                  top: 5, bottom: 5, right: 10),
                                               child: Text(
                                                 StringManager.messagesBody3,
-                                                style: TextStyle(color: ColorManager.black),
+                                                style: TextStyle(
+                                                    color: ColorManager.black),
                                               ),
                                             ),
                                             Padding(
-                                              padding: EdgeInsets.only(bottom: 5),
+                                              padding:
+                                                  EdgeInsets.only(bottom: 5),
                                               child: Text(
                                                 StringManager.messagesBody2,
-                                                style: TextStyle(fontSize: FontSizeManager.s10, color: ColorManager.grey),
+                                                style: TextStyle(
+                                                    fontSize:
+                                                        FontSizeManager.s10,
+                                                    color: ColorManager.grey),
                                               ),
                                             ),
                                           ],
@@ -289,7 +327,8 @@ class _DesktopMessagesBodyState extends State<DesktopMessagesBody> {
                                         ),
                                         const Padding(
                                           padding: EdgeInsets.all(8.0),
-                                          child: Text(StringManager.messagesBody4),
+                                          child:
+                                              Text(StringManager.messagesBody4),
                                         ),
                                       ],
                                     ),
@@ -302,12 +341,18 @@ class _DesktopMessagesBodyState extends State<DesktopMessagesBody> {
                                     decoration: BoxDecoration(
                                       color: ColorManager.white,
                                       borderRadius: BorderRadius.circular(25),
-                                      border: Border.all(width: 2, color: ColorManager.greyS500),
+                                      border: Border.all(
+                                          width: 2,
+                                          color: ColorManager.greyS500),
                                     ),
-                                    child: Row(
+                                    child: const Row(
                                       children: [
-                                        const Padding(
-                                          padding: EdgeInsets.only(left: 2, top: 2, bottom: 2, right: 7),
+                                        Padding(
+                                          padding: EdgeInsets.only(
+                                              left: 2,
+                                              top: 2,
+                                              bottom: 2,
+                                              right: 7),
                                           child: CircleAvatar(
                                             backgroundImage: NetworkImage(
                                                 'https://images.unsplash.com/photo-1661961110218-35af7210f803?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60'),
@@ -315,20 +360,27 @@ class _DesktopMessagesBodyState extends State<DesktopMessagesBody> {
                                           ),
                                         ),
                                         Column(
-                                          crossAxisAlignment: CrossAxisAlignment.start,
-                                          children: const [
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
                                             Padding(
-                                              padding: EdgeInsets.only(top: 5, bottom: 5, right: 10),
+                                              padding: EdgeInsets.only(
+                                                  top: 5, bottom: 5, right: 10),
                                               child: Text(
                                                 StringManager.messagesBody3,
-                                                style: TextStyle(color: ColorManager.black),
+                                                style: TextStyle(
+                                                    color: ColorManager.black),
                                               ),
                                             ),
                                             Padding(
-                                              padding: EdgeInsets.only(bottom: 5),
+                                              padding:
+                                                  EdgeInsets.only(bottom: 5),
                                               child: Text(
                                                 StringManager.messagesBody2,
-                                                style: TextStyle(fontSize: FontSizeManager.s10, color: ColorManager.grey),
+                                                style: TextStyle(
+                                                    fontSize:
+                                                        FontSizeManager.s10,
+                                                    color: ColorManager.grey),
                                               ),
                                             ),
                                           ],
@@ -364,7 +416,8 @@ class _DesktopMessagesBodyState extends State<DesktopMessagesBody> {
                                         ),
                                         const Padding(
                                           padding: EdgeInsets.all(8.0),
-                                          child: Text(StringManager.messagesBody5),
+                                          child:
+                                              Text(StringManager.messagesBody5),
                                         ),
                                       ],
                                     ),
@@ -377,12 +430,18 @@ class _DesktopMessagesBodyState extends State<DesktopMessagesBody> {
                                     decoration: BoxDecoration(
                                       color: ColorManager.white,
                                       borderRadius: BorderRadius.circular(25),
-                                      border: Border.all(width: 2, color: ColorManager.greyS500),
+                                      border: Border.all(
+                                          width: 2,
+                                          color: ColorManager.greyS500),
                                     ),
-                                    child: Row(
+                                    child: const Row(
                                       children: [
-                                        const Padding(
-                                          padding: EdgeInsets.only(left: 2, top: 2, bottom: 2, right: 7),
+                                        Padding(
+                                          padding: EdgeInsets.only(
+                                              left: 2,
+                                              top: 2,
+                                              bottom: 2,
+                                              right: 7),
                                           child: CircleAvatar(
                                             backgroundImage: NetworkImage(
                                                 'https://images.unsplash.com/photo-1661961110218-35af7210f803?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60'),
@@ -390,20 +449,27 @@ class _DesktopMessagesBodyState extends State<DesktopMessagesBody> {
                                           ),
                                         ),
                                         Column(
-                                          crossAxisAlignment: CrossAxisAlignment.start,
-                                          children: const [
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
                                             Padding(
-                                              padding: EdgeInsets.only(top: 5, bottom: 5, right: 10),
+                                              padding: EdgeInsets.only(
+                                                  top: 5, bottom: 5, right: 10),
                                               child: Text(
                                                 StringManager.messagesBody3,
-                                                style: TextStyle(color: ColorManager.black),
+                                                style: TextStyle(
+                                                    color: ColorManager.black),
                                               ),
                                             ),
                                             Padding(
-                                              padding: EdgeInsets.only(bottom: 5),
+                                              padding:
+                                                  EdgeInsets.only(bottom: 5),
                                               child: Text(
                                                 StringManager.messagesBody2,
-                                                style: TextStyle(fontSize: FontSizeManager.s10, color: ColorManager.grey),
+                                                style: TextStyle(
+                                                    fontSize:
+                                                        FontSizeManager.s10,
+                                                    color: ColorManager.grey),
                                               ),
                                             ),
                                           ],
@@ -452,12 +518,18 @@ class _DesktopMessagesBodyState extends State<DesktopMessagesBody> {
                                     decoration: BoxDecoration(
                                       color: ColorManager.white,
                                       borderRadius: BorderRadius.circular(25),
-                                      border: Border.all(width: 2, color: ColorManager.greyS500),
+                                      border: Border.all(
+                                          width: 2,
+                                          color: ColorManager.greyS500),
                                     ),
-                                    child: Row(
+                                    child: const Row(
                                       children: [
-                                        const Padding(
-                                          padding: EdgeInsets.only(left: 2, top: 2, bottom: 2, right: 7),
+                                        Padding(
+                                          padding: EdgeInsets.only(
+                                              left: 2,
+                                              top: 2,
+                                              bottom: 2,
+                                              right: 7),
                                           child: CircleAvatar(
                                             backgroundImage: NetworkImage(
                                                 'https://images.unsplash.com/photo-1661961110218-35af7210f803?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60'),
@@ -465,20 +537,27 @@ class _DesktopMessagesBodyState extends State<DesktopMessagesBody> {
                                           ),
                                         ),
                                         Column(
-                                          crossAxisAlignment: CrossAxisAlignment.start,
-                                          children: const [
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
                                             Padding(
-                                              padding: EdgeInsets.only(top: 5, bottom: 5, right: 10),
+                                              padding: EdgeInsets.only(
+                                                  top: 5, bottom: 5, right: 10),
                                               child: Text(
                                                 StringManager.messagesBody3,
-                                                style: TextStyle(color: ColorManager.black),
+                                                style: TextStyle(
+                                                    color: ColorManager.black),
                                               ),
                                             ),
                                             Padding(
-                                              padding: EdgeInsets.only(bottom: 5),
+                                              padding:
+                                                  EdgeInsets.only(bottom: 5),
                                               child: Text(
                                                 StringManager.messagesBody2,
-                                                style: TextStyle(fontSize: FontSizeManager.s10, color: ColorManager.grey),
+                                                style: TextStyle(
+                                                    fontSize:
+                                                        FontSizeManager.s10,
+                                                    color: ColorManager.grey),
                                               ),
                                             ),
                                           ],
@@ -527,12 +606,18 @@ class _DesktopMessagesBodyState extends State<DesktopMessagesBody> {
                                     decoration: BoxDecoration(
                                       color: ColorManager.white,
                                       borderRadius: BorderRadius.circular(25),
-                                      border: Border.all(width: 2, color: ColorManager.greyS500),
+                                      border: Border.all(
+                                          width: 2,
+                                          color: ColorManager.greyS500),
                                     ),
-                                    child: Row(
+                                    child: const Row(
                                       children: [
-                                        const Padding(
-                                          padding: EdgeInsets.only(left: 2, top: 2, bottom: 2, right: 7),
+                                        Padding(
+                                          padding: EdgeInsets.only(
+                                              left: 2,
+                                              top: 2,
+                                              bottom: 2,
+                                              right: 7),
                                           child: CircleAvatar(
                                             backgroundImage: NetworkImage(
                                                 'https://images.unsplash.com/photo-1661961110218-35af7210f803?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60'),
@@ -540,20 +625,27 @@ class _DesktopMessagesBodyState extends State<DesktopMessagesBody> {
                                           ),
                                         ),
                                         Column(
-                                          crossAxisAlignment: CrossAxisAlignment.start,
-                                          children: const [
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
                                             Padding(
-                                              padding: EdgeInsets.only(top: 5, bottom: 5, right: 10),
+                                              padding: EdgeInsets.only(
+                                                  top: 5, bottom: 5, right: 10),
                                               child: Text(
                                                 StringManager.messagesBody3,
-                                                style: TextStyle(color: ColorManager.black),
+                                                style: TextStyle(
+                                                    color: ColorManager.black),
                                               ),
                                             ),
                                             Padding(
-                                              padding: EdgeInsets.only(bottom: 5),
+                                              padding:
+                                                  EdgeInsets.only(bottom: 5),
                                               child: Text(
                                                 StringManager.defaultDate2,
-                                                style: TextStyle(fontSize: FontSizeManager.s10, color: ColorManager.grey),
+                                                style: TextStyle(
+                                                    fontSize:
+                                                        FontSizeManager.s10,
+                                                    color: ColorManager.grey),
                                               ),
                                             ),
                                           ],

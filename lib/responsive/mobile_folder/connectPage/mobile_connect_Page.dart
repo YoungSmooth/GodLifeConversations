@@ -11,7 +11,7 @@ class MobileConnectPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
+    return const SafeArea(
       child: SingleChildScrollView(
         child: SizedBox(
           // color: Colors.blueGrey,
@@ -21,7 +21,7 @@ class MobileConnectPage extends StatelessWidget {
             child: Scaffold(
               // extendBody: true,
               body: Column(
-                children: const [
+                children: [
                   TabBar(
                     labelColor: mainColor,
                     tabs: [

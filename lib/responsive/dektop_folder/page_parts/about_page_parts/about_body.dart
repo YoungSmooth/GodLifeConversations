@@ -5,17 +5,17 @@ class AboutBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return const Row(
       children: [
         Expanded(
           child: Center(
             child: Padding(
-              padding: const EdgeInsets.only(
-                  left: 100, right: 100, top: 50, bottom: 50),
+              padding:
+                  EdgeInsets.only(left: 100, right: 100, top: 50, bottom: 50),
               child: Column(
                 children: [
                   Column(
-                    children: const [
+                    children: [
                       Padding(
                         padding: EdgeInsets.only(bottom: 20),
                         child: Text(
@@ -31,7 +31,7 @@ class AboutBody extends StatelessWidget {
                     ],
                   ),
                   Column(
-                    children: const [
+                    children: [
                       Padding(
                         padding: EdgeInsets.only(bottom: 20, top: 20),
                         child: Text(
